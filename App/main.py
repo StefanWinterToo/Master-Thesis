@@ -56,7 +56,7 @@ def preprocess_content(submissions):
     pass
 
 if __name__ == "__main__":
-    # load_data_from_pushshift(ticker, START, END)
+    load_data_from_pushshift(ticker, START, END)
     # I only copied this from the Scraper.ipynb notebook. Need to check if it actually works...
     submissions = pd.read_pickle("./data/submissions.pkl")
     submissions = drop_unneeded_columns(submissions)
