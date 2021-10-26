@@ -1,3 +1,4 @@
 .thesis
 App/data/submissions.csv
+App/data/most_content_is_missing.csv
 App/data/submissions.pkl
