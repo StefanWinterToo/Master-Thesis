@@ -119,6 +119,11 @@ def remove_special_character(l):
             new_l.append(word.replace("¿", ""))
     return new_l
 
+def remove_some_chars(sample):
+    """Remove URLs from a sample string"""
+    return re.sub(r"[“”—-]", "", str(sample))
+
+
 def prepare_data_frame(seed, submissions):
     submissions = remove_missing_content(submissions)
     submissions = concatenate_text(submissions)
@@ -134,6 +139,7 @@ def clean_text_column(submissions):
     submissions = lowercase_text(submissions)
     submissions["text"] = remove_stopwords(list(submissions["text"]))
     submissions["text"] = submissions["text"].apply(lambda x: remove_special_character(x))
+    submissions["text"] = submissions["text"].apply(lambda x: remove_some_chars(x))
     return submissions
 
 if __name__ == "__main__":
