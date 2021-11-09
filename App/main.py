@@ -1,7 +1,12 @@
+from re import sub
+from Dataframe_Cleaner import Cleaner
 from Reddit_Loader import Loader
 import datetime
 import pandas as pd
 import pickle
+import re
+import string
+import nltk, ssl
 
 START = "01/01/2020"
 END = datetime.datetime.now().strftime("%d/%m/%Y") #today
@@ -52,13 +57,92 @@ def flag_records_with_no_content(submissions):
 
     return submissions
 
-def preprocess_content(submissions):
-    pass
+def read_annotations():
+    seed = pd.read_excel("./data/annotation.xlsx", header = None, usecols = range(0, 4))
+    # Rename columns
+    seed = seed.rename(columns = {0 : "index", 1 : "title", 2 : "content", 3 : "sentiment"})
+    return seed
+
+def remove_missing_content(submissions):
+        submissions.loc[submissions["missing_content"] == True, "selftext"] = ""
+        return submissions
+
+def concatenate_text(submissions):
+    submissions["text"] = submissions["title"] + " " + submissions["selftext"]
+    return submissions
+
+def drop_columns(submissions):
+    submissions = submissions.drop(columns = {"title", "selftext"})
+    return submissions
+
+def add_sentiment_column(seed, submissions):
+    submissions["sentiment"] = ""
+    for i in seed["index"]:
+        submissions.loc[i, "sentiment"] = seed.loc[i/10, "sentiment"]
+    return submissions
+
+def remove_URL(sample):
+    """Remove URLs from a sample string"""
+    return re.sub(r"http\S+", "", str(sample))
+
+def remove_escape_newline(sample):
+    """Remove URLs from a sample string"""
+    return re.sub(r"\n", "", str(sample))
+
+def remove_escape_tab(sample):
+    """Remove URLs from a sample string"""
+    return re.sub(r"\t", "", str(sample))
+
+def remove_punctuation(text):
+    punctuationfree="".join([i for i in str(text) if i not in string.punctuation])
+    return punctuationfree
+
+def lowercase_text(submissions):
+    submissions["text"] = submissions["text"].str.lower()
+    return submissions
+
+def remove_stopwords(l):
+    new_list = []
+    new_sentence = []
+    for sentence in l:
+        for word in sentence.split(" "):
+            if word not in nltk.corpus.stopwords.words('english') and len(word) > 0:
+                new_sentence.append(word)
+        new_list.append(new_sentence)
+        new_sentence = []
+    return new_list
+
+def remove_special_character(l):
+    new_l = []
+    for word in l:
+        if word != "-" and word != "—":
+            new_l.append(word.replace("¿", ""))
+    return new_l
+
+def prepare_data_frame(seed, submissions):
+    submissions = remove_missing_content(submissions)
+    submissions = concatenate_text(submissions)
+    submissions = drop_columns(submissions)
+    submissions = add_sentiment_column(seed, submissions)
+    return submissions
+
+def clean_text_column(submissions):
+    submissions["text"] = submissions["text"].apply(lambda x: remove_URL(x))
+    submissions["text"] = submissions["text"].apply(lambda x: remove_escape_newline(x))
+    submissions["text"] = submissions["text"].apply(lambda x: remove_escape_tab(x))
+    submissions["text"] = submissions["text"].apply(lambda x: remove_punctuation(x))
+    submissions = lowercase_text(submissions)
+    submissions["text"] = remove_stopwords(list(submissions["text"]))
+    submissions["text"] = submissions["text"].apply(lambda x: remove_special_character(x))
+    return submissions
 
 if __name__ == "__main__":
-    load_data_from_pushshift(ticker, START, END)
+    # load_data_from_pushshift(ticker, START, END)
     # I only copied this from the Scraper.ipynb notebook. Need to check if it actually works...
     submissions = pd.read_pickle("./data/submissions.pkl")
     submissions = drop_unneeded_columns(submissions)
     submissions = flag_records_with_no_content(submissions)
-    print(submissions)
+    seed = read_annotations()
+    submissions = prepare_data_frame(seed, submissions)
+    submissions = clean_text_column(submissions[:10])
+    print(submissions["text"])
