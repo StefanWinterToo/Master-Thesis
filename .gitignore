@@ -2,6 +2,7 @@
 App/data/submissions.csv
 App/data/most_content_is_missing.csv
 App/data/submissions.pkl
+App/data/cleaned_submissions.pkl
 App/data/test.csv
 App/cache
 App/.thesis
