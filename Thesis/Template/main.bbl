@@ -1,0 +1,130 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Anand%
+\ \BBA {} Pathak%
+}{%
+Anand%
+\ \BBA {} Pathak%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+anand2021reddit}
+\APACinsertmetastar {%
+anand2021reddit}%
+\begin{APACrefauthors}%
+Anand, A.%
+\BCBT {}\ \BBA {} Pathak, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {WallStreetBets Against Wall Street: The Role of Reddit
+  in the GameStop Short Squeeze} {Wallstreetbets against wall street: The role
+  of reddit in the gamestop short squeeze}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Indian Institute of Management Bangalore Research Paper
+  Series}{20}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Danbolt%
+}{%
+Danbolt%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+danbot2015InvestorSentiment}
+\APACinsertmetastar {%
+danbot2015InvestorSentiment}%
+\begin{APACrefauthors}%
+Danbolt, A\BPBI V\BHBI N\BPBI E., Jo;~Siganos.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Investor sentiment and bidder announcement abnormal
+  returns} {Investor sentiment and bidder announcement abnormal
+  returns}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Corporate Finance}{}{}{164-179}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lewis%
+\ \BBA {} Gale%
+}{%
+Lewis%
+\ \BBA {} Gale%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+lewis1994sequential}
+\APACinsertmetastar {%
+lewis1994sequential}%
+\begin{APACrefauthors}%
+Lewis, D\BPBI D.%
+\BCBT {}\ \BBA {} Gale, W\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A sequential algorithm for training text classifiers} {A
+  sequential algorithm for training text classifiers}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {SIGIR’94} {Sigir’94}\ (\BPGS\ 3--12).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+MacKay%
+\ \BBA {} Mac~Kay%
+}{%
+MacKay%
+\ \BBA {} Mac~Kay%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+mackay2003information}
+\APACinsertmetastar {%
+mackay2003information}%
+\begin{APACrefauthors}%
+MacKay, D\BPBI J.%
+\BCBT {}\ \BBA {} Mac~Kay, D\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2003}.
+\newblock
+\APACrefbtitle {Information theory, inference and learning algorithms}
+  {Information theory, inference and learning algorithms}.
+\newblock
+\APACaddressPublisher{}{Cambridge university press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Minsky%
+}{%
+Minsky%
+}{%
+{\protect \APACyear {1961}}%
+}]{%
+minsky1961steps}
+\APACinsertmetastar {%
+minsky1961steps}%
+\begin{APACrefauthors}%
+Minsky, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1961}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Steps toward artificial intelligence} {Steps toward
+  artificial intelligence}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proceedings of the IRE}{49}{1}{8--30}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

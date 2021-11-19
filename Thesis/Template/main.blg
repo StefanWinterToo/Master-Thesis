@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: references.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5062 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5066 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5066 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5068 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5068 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5072 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5075 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5076 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5079 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5079 of file apacite.bst
+Too many commas in name 1 of "Danbolt, Jo; Siganos, Antonios; Vagenas-Nanos, Evangelos" for entry danbot2015InvestorSentiment
+while executing---line 5079 of file apacite.bst
+You've used 5 entries,
+            6951 wiz_defined-function locations,
+            1301 strings with 11427 characters,
+and the built_in function-call counts, 9030 in all, are:
+= -- 1167
+> -- 65
+< -- 389
++ -- 418
+- -- 10
+* -- 543
+:= -- 1628
+add.period$ -- 22
+call.type$ -- 5
+change.case$ -- 86
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 218
+empty$ -- 363
+format.name$ -- 100
+if$ -- 1760
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 0
+newline$ -- 122
+num.names$ -- 40
+pop$ -- 177
+preamble$ -- 1
+purify$ -- 20
+quote$ -- 0
+skip$ -- 620
+stack$ -- 0
+substring$ -- 468
+swap$ -- 129
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 464
+warning$ -- 0
+while$ -- 32
+width$ -- 0
+write$ -- 143
+(There were 11 error messages)
