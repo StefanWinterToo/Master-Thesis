@@ -21,8 +21,8 @@
 
 % !!! PLEASE CHANGE THESE VARIABLES TO MATCH YOUR INFORMATION !!!
 
-\def\thesistitle{The Main Title of the Thesis}                      % title
-\def\subtitle{The Subtitle of the Thesis If It Has One}             % subtitle
+\def\thesistitle{Measuring Sentiment}                      % title
+\def\subtitle{This is the subtitle}             % subtitle
     % ^if there is no subtitle, replace by \def\subtitle{}  
 \def\yourname{Stefan Winter}                                                                       % ^first and last name
 \def\yourprogramme{Data Science \& Society}                         % OR (remove this)
@@ -30,7 +30,7 @@
 \def\yourstudentnumber{2067606}                                      % ANR (or u-number)
 \def\finalmonth{January}
 \def\finalyear{2022}
-\def\supervisor{Dr. Peter Hendrix}
+\def\supervisor{dr. Peter Hendrix}
 \def\committee{prof. dr. The Second Reader}
 \def\acknowledgments{Some room for acknowledgements.}
 
@@ -66,35 +66,131 @@ This is where the abstract goes. Don't forget to change the variables in \texttt
 
 \section{Introduction} \label{sec:introduction}
 
-The internet has enabled humankind to access information, exchange ideas and become part of a community. Of course, that also applies to online message boards. Ever since the internet found mainstream adoption, people joined those message boards to discuss trading the stock market. Most recently the Reddit forum wallstreetbets attracted a lot of interest and now counts over 10 million members. In this subreddit, members talk about various investment ideas. However, most of those ideas are of speculative nature with members trying to get rich quick, usually by using risky derivatives like stock options. While the wallstreetbets community undoubtedly minted many millionaires, there are also numerous people who lost their life savings.
-
-
-Even though the Reddit subforum was already founded in 2012, it got most of its media attention in 2021 due to a short-squeeze of the GameStop (GME) stock that drove the stock price up several hundred percent. However, it was not the rapid price appreciation that amazed market participants. Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the wallstreetbets community that attracted attention \citep{anand2021reddit}.
-Interestingly, the story repeated itself when forum members sent other stocks, such as AMC Entertainment and BlackBerry to the moon.
-
-Organizing the mass-coordinated buying of stock, however, requires that enough participants share the same sentiment. Some research shows that social media sentiment has a particularly strong impact on uninformed traders 
-
+Modern society has been able to access information, communicate ideas, and become part of a community due to the advent of the internet. 
+Online discussion boards are playing a critical role by providing a platform where people can do so. Those discussion boards are also used by a 
+variety of people to talk about the stock market and discuss trading strategies. Recently, the Reddit forum WallStreetBets has become one of 
+the most well-known and influential investing online-forums.
+\\
+Even though the Reddit subforum was created in 2012 already, it received the majority of its media exposure in 2021 as a result of a short-squeeze 
+of the GameStop (GME) stock, which drove the stock price up hundreds of percentage points. However, it was not the rapid price appreciation that 
+amazed market participants. Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the WallStreetBets 
+community that attracted attention \citep{anand2021WallstreetbetsAgainstWallstreet}.
+\\
+Organizing the mass-coordinated buying of stock, however, requires that enough participants share the same sentiment. According to several studies, 
+social media sentiment has a particularly strong impact on uninformed traders \citep{danbolt2015InvestorSentiment}.
+\\
+Interestingly, finance scholars did not consider Reddit as a platform capable of having such a significant impact on the financial markets. 
+As a result, the site has been neglected in their research \citep{long2021LikeTheStock}.
+\\
+Hence, this thesis will try to answer the following Research Question:
 \begin{quote}
-\emph{Can sentiment analysis of the WallStreetBets Reddit-forum be used to predict daily changes in the stock price of Gamestop?}
+\emph{How can sentiment analysis best be performed on the WallStreetBets Reddit-forum?}
 \end{quote}
-
-\noindent The sub-questions can be listed seperately, as such:
+\noindent
+To begin, it must be determined how the discussions about the Gamestop stock on WallStreetBets should be handled to serve as suggestive input features for sentiment analysis. 
+One of the challenges, is the heavy use of peculiar terminology and domain-specific phrases on the WallStreetBets forum, as well as many novel words \citep{anand2021WallstreetbetsAgainstWallstreet}. 
+According to recent research, sentiment lexicons and corpora with a focus on a certain domain produce superior sentiment analysis results compared to a 
+general-purpose sentiment lexicon or corpora \citep{park2015EfficientExtractionOfDomain}. Furthermore, the text data needs to be cleaned and pre-processed in order to be accurately 
+processed by a machine learning algorithm \citep{jemai2021SentimentAnalysis}. As a result, the following sub-research question was formed:
 
 \begin{itemize}
-    \item[RQ1] \emph{Which sentiment analysis approach performs best on predefined key performance indicators?}
-    \item[RQ2] \emph{How can the domain-specific language of the Reddit forum WallStreetBets best be incorporated into sentiment analysis?}
-    \item[RQ3] \emph{Which machine learning algorithm delivers the best predictive performance for changes in daily stock prices of selected securities based on the sentiment analysis performed earlier?}
+    \item[RQ1] \emph{How can the domain-specific language of the Reddit forum WallStreetBets best be incorporated into sentiment analysis?}
 \end{itemize}
 
 \noindent Or, format it as you desire (tip: you can nest \texttt{itemize} as well). You can alternate \emph{emph} and \textbf{textbf} however you wish. This should cover most of the things required for the introduction.
 
+Subsequently, the machine learning models can be trained to perform sentiment analysis. However, 
+each machine learning algorithm has its own idiosyncrasies and assumptions, and no single classifier 
+works optimally in all possible scenarios. Hence, it is a good idea to evaluate the results and 
+performance of different machine learning algorithms. As a result, the best model with a given set 
+of hyperparameters can be selected to solve a particular problem \citep[p. 53]{raschka2019pythonmachinelearning}. 
+
+This thesis will explore traditional machine learning methods such as Naive Bayes (NB) 
+and Support Vector Machines (SVMs), as well as deep learning methods like 
+Long Short Term Memory (LSTM) and Bidirectional Encoder Representations from 
+Transformers (BERT). Due to the high dimensionality of textual data, deep learning methods have shown 
+to outperform traditional machine learning techniques in recent research. That can be explained by the 
+ability of deep learning methods to automatically learn the most important features, whereas traditional 
+methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhancedlstm}. \emph{(Note: Here I should have 5 authors. However, Latex throws an error when I add all names -> fix!!)}
+As was mentioned earlier, however, no classifier works best on all scenarios which is why the next research question needs to be answered:
+
+\begin{itemize}
+    \item[RQ2] \emph{Which sentiment analysis approach performs best on predefined key performance indicators?}
+\end{itemize}
+
 \section{Related Work}
 
-Copy paste BibTeX code\footnote{Using e.g. the quote icon in GScholar, then BibTeX at the bottom.} and put it in \texttt{references.bib}. After, you can cite some work \citep{mackay2003information} -- using \texttt{\textbackslash citep}. You can refer to the author of e.g. \cite{minsky1961steps} directly like using \texttt{\textbackslash cite} (this does not work when using bracket-citation). If you use bracket-style,\footnote{Find the \texttt{natbib} part in the \texttt{main.tex} \LaTeX{} script.} you might want use \texttt{\textbackslash citeauthor} when citing, like: see \citeauthor{danbot2015InvestorSentiment} \cite{danbot2015InvestorSentiment}.  If you want to add pages you can use brackets in \texttt{\textbackslash citep[][p. 5]\{mackay2003information\}}, which looks like: \citep[][p. 5]{mackay2003information}. The first brackets can be used for things like \emph{see}, and \emph{e.g.}. If you want to cite multiple authors, simply comma-separate them (\texttt{\textbackslash citep\{\-minsky\-1961\-steps,\-mackay\-2003\-information\}}) and it will aggregate them automatically \citep{minsky1961steps}.
+Copy paste BibTeX code\footnote{Using e.g. the quote icon in GScholar, then BibTeX at the bottom.} and put it in \texttt{references.bib}. After, you can cite some work -- using \texttt{\textbackslash citep}. You can refer to the author of e.g. \cite{minsky1961steps} directly like using \texttt{\textbackslash cite} (this does not work when using bracket-citation). If you use bracket-style,\footnote{Find the \texttt{natbib} part in the \texttt{main.tex} \LaTeX{} script.} you might want use \texttt{\textbackslash citeauthor} when citing, like: see \citeauthor{ananny2018seeing} \cite{ananny2018seeing}.  If you want to add pages you can use brackets in \texttt{\textbackslash citep[][p. 5]\{mackay2003information\}}, which looks like: \citep[][p. 5]{mackay2003information}. The first brackets can be used for things like \emph{see}, and \emph{e.g.}. If you want to cite multiple authors, simply comma-separate them (\texttt{\textbackslash citep\{\-minsky\-1961\-steps,\-mackay\-2003\-information\}}) and it will aggregate them automatically \citep{minsky1961steps,mackay2003information}.
+
+Gauging sentiment of online forums to predict movements in stock prices has been a research subject for many years now. 
+\citep{das2007yahoo} did a study on the Yahoo! message board, which was amongst the first ones on the internet for investors to exchange ideas. 
+
+also showed that as the discussion volume on WallStreetBets increased, the volatility of certain stocks got amplified. 
+\citep{umar2021ataleofcompanyfundamentals} also found that sentiment of investors on WallStreetBets affected the returns of the Gamestop stock. 
+
+However, they also show that other features such as the put-call ratio and the short-sale volume had a strong impact on the stock price.
+\citep{long2021LikeTheStock} tried to uncover the impact of specific emotions such as “Angry, Fear, Happy, Sad and Surprise” from the comments on 
+
+
+WallStreetBets discussions on intraday changes of the stock price of the affected stock. While they conclude that the tone as well as the number of 
+comments have an impact on the stock price, they show that the number of comments is not directly related to sentiment. Additionally, they argue it 
+is the number of comments that is posted within an hour that has the biggest effect on one minute changes in the stock price. Furthermore, the paper 
+shows that the emotions Sad, Anger and Surprise have a significant impact on the gamestop 1-minute stock price. The Happy sentiment does not show a 
+significant impact on 1-minute price changes, however, a causality test showed a link between the Happy sentiment and intraday returns of the GME stock. 
+In addition, the paper shows, that sentiment only impacts intraday returns if a thread has more than 2000 comments. Hence, the authors confirm that Reddit 
+sentiment has an impact on the stock market. They also argue that any asset that is targeted by a large crowd from wallstreetbets can become a subject 
+of excessive volatility, without being driven by any fundamental reasons.
+However, since the WallStreetBets ‘meme-stock movement’ is a relatively recent phenomenon, there is very little research on the impact of 
+WallStreetBets on individual stocks, especially with regards to sentiment analysis. Additionally, of all the published research none account 
+for the domain-specific language used on the forum. Because of the frequent usage of terminology that is specific to WallStreetBets, 
+this can lead to incorrect conclusions.
+
+Of course, this also applies to research in other fields, which usually also use a general-purpose sentiment lexicon, 
+because of the cost associated with building a domain-specific one. However, it has been demonstrated that using a domain-specific 
+knowledge base results in more accurate sentiment analysis \citep{park2015EfficientExtraction}.
+It is argued that there is no general-purpose sentiment lexicon that can be optimally applied on all domains. 
+In different domains, some terms can have completely different meanings. A good example is the word “unpredictable”, 
+which would have negative sentiment for electronics but can be a positive label for movies. It has been demonstrated 
+that by adapting sentiment lexicons to a certain domain performance for sentiment classification can be enhanced 
+\citep{Lu2011automaticconstruction}. This adapted lexicon can then be searched to find and score the sentiment 
+of a specific word \citep{ashgar2014DetectionSlang}. 
+While lexicon-based methods have found widespread adoption, mainly due to their simplicity, more advanced machine 
+learning methods have also shown strong performance \citep{wang2020automaticconstructiondomainsentiment}. For this reason other research 
+deviates from the aforementioned lexicon-based approaches. Instead, they examine how deep learning methods can be 
+used to automatically detect and identify domain-specific words from sentences. By doing so it is assumed that the 
+algorithm can not only detect whether domain-specific words are used (sentence-level detection), but also to identify 
+the exact position of the term in the sentence (token-level identification). Hence, it is possible to detect new meanings 
+of words in an already existing corpus. In addition, this approach also allows to classify novel words, that do not yet 
+exist in a dictionary. This can be achieved by having models that formulate domain-specific word detection as a 
+sequence-labelling task. Furthermore, novel domain-specific words can be learned by understanding the contextual 
+structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can be learned in the hidden layers of 
+LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be improved, by applying a character-based 
+convolutional neural network to encode the spelling of words \citep{pei2019slang}. Even though the literature suggests many 
+innovative ways to enhance model performance by a few percentage points, the biggest benefits seem to come from high quality 
+input data in the form of domain-specific labeled data.
+Creating a domain-specific annotated corpus to train machine learning models, however, is not without its own challenges. 
+For example, working with multiple human annotators can lead to discrepancies in the annotation results \citep{kim2008corpusannotation}. 
+Additionally, it is hard to estimate the total annotation cost and can depend on whether the annotator is capable of understanding 
+the language for the task at hand \citep{arora2009estimationgannotationcost}. Additionally, labelling an entire dataset incurs extremely high costs, 
+which can be avoided. With the support of an Active Learner, a complete domain-specific corpus with its respective labels can be 
+created using only partial annotations \citep{park2015EfficientExtractionOfDomain}. 
+One of the key concepts of Active Learners is that if a machine learning algorithm is allowed to choose the data from which it learns, 
+it will achieve higher accuracy with less training data. If a considerable amount of the data is unlabeled, this is especially desirable. 
+As a result, the total cost of annotation can be reduced drastically. Research shows that the total number of 
+manual annotations can be reduced by 80\% when using an Active Learner instead of randomly 
+selecting data to label \citep{baldridgeosborne2004active}.
+If data is manually annotated at random, the annotator will invest a lot of time into labeling irrelevant instances. 
+This may incur costs which could be avoided with an Active Learner. It is argued that Passive Learning, or randomly selecting instances 
+to be labeled by an annotator, is especially costly if the class distribution of the data is imbalanced or if there are many very similar documents. 
+For example, if a specific feature set appears on only 1\% of instances, the annotator would have to label 1000 documents to cover 
+the feature set on 10 relevant documents. When it comes to document similarity, large clusters of very similar documents might be 
+identifiable. Because features may be barely distinctable, the annotator might spend a lot of effort labeling uninformative instances 
+when selecting them random. An Active Learner, on the other hand, suggests which instances the annotator should label. Those instances can be 
+determined on various quantitative metrics \citep{miller2020activelearningapproaches}.
 
 \section{Method}
 
-If you define any equations (\verb|\begin{equation}...|), you probably might want to define everything using math operators (e.g., \verb|$D$|) and cite the work (!). So for example, following \cite{lewis1994sequential}, representing a document $d \in D$ as tf$(d)$, we define a probabilistic model $(d | Y = y)$ for all documents in class $y$, and select $y$ most likely to generate $d$:
+If you define any equations (\verb|\begin{equation}...|), you probably might want to define everything using math operators (e.g., \verb|$D$|) and cite the work (!). So for example, following , representing a document $d \in D$ as tf$(d)$, we define a probabilistic model $(d | Y = y)$ for all documents in class $y$, and select $y$ most likely to generate $d$:
 
 \begin{equation} \label{eq:nbarg}
     \hat{y} = \underset{y}{\mathrm{argmax}} \ P(d | y) \cdot P(y)
@@ -143,7 +239,24 @@ If you have anything specific to talk about, use subsections, and refer to them 
 
 \section{Discussion}
 
-The results were promising!
+
+The 'to the moon' WallStreetBets movement had a tremendous impact on the lives of individuals, both to the positive and negative. 
+Besides that, however, many investment funds have also been negatively impacted by the recent short-squeezes. 
+While it might seem noble to root for individuals who try to force large funds out of their positions at big losses, it is easy to forget that many 
+of those funds manage money for charitable endowments, pensions and others. 
+Furthermore, such disruptions to the financial markets can harm its stability, thus causing spillover effects which can also negatively impact the 
+lives of many people \citep{lyocsa2021yolotrading}.
+By being able to accurately measure and monitor the sentiment on WallStreetBets, market participants and regulators are able to preemptively take measures.\\
+However, since the wallstreetbets subreddit has become very popular just recently, there is little academic research about the impact of the community on 
+financial markets so far. Even though there is some research about sentiment analysis on wallstreetbets, that research does not use state of the art algorithms to perform 
+sentiment analysis. This thesis not only tries to shine some light on those new and influential market participants, but also tries to put forward some methods that work 
+best to perform sentiment analysis on the forum. \\
+Not only did this thesis compare the performance of different models, but also proposed a highly efficient and reliable way to create a domain-specific annotated corpus, 
+which can be used as the input to aforementioned models. To my knowledge, this thesis is the first research that creates a domain-specific corpus for the WallStreetBets forum. 
+Researchers, such as Talamás (2021), specifically propose future work on “inclusion of features derived from alternative manipulation of the data like sentiment analysis 
+could lead to new insights“. I strongly believe that the methods proposed in my thesis can lead to better sentiment classifiers, 
+which can then be used in other scientific or industrial applications.
+
 
 \section{Conclusion}
 

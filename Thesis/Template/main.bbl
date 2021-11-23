@@ -1,20 +1,20 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Anand%
-\ \BBA {} Pathak%
+Abhinav%
+\ \BBA {} Jalaj%
 }{%
-Anand%
-\ \BBA {} Pathak%
+Abhinav%
+\ \BBA {} Jalaj%
 }{%
 {\protect \APACyear {2021}}%
 }]{%
-anand2021reddit}
+anand2021WallstreetbetsAgainstWallstreet}
 \APACinsertmetastar {%
-anand2021reddit}%
+anand2021WallstreetbetsAgainstWallstreet}%
 \begin{APACrefauthors}%
-Anand, A.%
-\BCBT {}\ \BBA {} Pathak, J.%
+Abhinav, A.%
+\BCBT {}\ \BBA {} Jalaj, P.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
@@ -25,21 +25,81 @@ Anand, A.%
   of reddit in the gamestop short squeeze}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Indian Institute of Management Bangalore Research Paper
-  Series}{20}{}{}.
+  Series}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Danbolt%
+Ananny%
+\ \BBA {} Crawford%
 }{%
-Danbolt%
+Ananny%
+\ \BBA {} Crawford%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+ananny2018seeing}
+\APACinsertmetastar {%
+ananny2018seeing}%
+\begin{APACrefauthors}%
+Ananny, M.%
+\BCBT {}\ \BBA {} Crawford, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Seeing without knowing: Limitations of the transparency
+  ideal and its application to algorithmic accountability} {Seeing without
+  knowing: Limitations of the transparency ideal and its application to
+  algorithmic accountability}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{New Media \& Society}{20}{3}{973--989}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Arora~Shilpa%
+\ \BBA {} Carolyn%
+}{%
+Arora~Shilpa%
+\ \BBA {} Carolyn%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+arora2009estimationgannotationcost}
+\APACinsertmetastar {%
+arora2009estimationgannotationcost}%
+\begin{APACrefauthors}%
+Arora~Shilpa, N\BPBI E.%
+\BCBT {}\ \BBA {} Carolyn, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Estimating Annotation Cost for Active Learning in a
+  Multi-Annotator Environment} {Estimating annotation cost for active learning
+  in a multi-annotator environment}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{HLT-NAACL}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.3115/1564131.1564136} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Danbolt~Jo%
+\ \BBA {} Evangelos%
+}{%
+Danbolt~Jo%
+\ \BBA {} Evangelos%
 }{%
 {\protect \APACyear {2015}}%
 }]{%
-danbot2015InvestorSentiment}
+danbolt2015InvestorSentiment}
 \APACinsertmetastar {%
-danbot2015InvestorSentiment}%
+danbolt2015InvestorSentiment}%
 \begin{APACrefauthors}%
-Danbolt, A\BPBI V\BHBI N\BPBI E., Jo;~Siganos.%
+Danbolt~Jo, S\BPBI A.%
+\BCBT {}\ \BBA {} Evangelos, V\BHBI N.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
@@ -53,29 +113,212 @@ Danbolt, A\BPBI V\BHBI N\BPBI E., Jo;~Siganos.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Lewis%
-\ \BBA {} Gale%
+Fu~Xianghua%
+, Min%
+\BCBL {}\ \BBA {} Huihui%
 }{%
-Lewis%
-\ \BBA {} Gale%
-}{%
-{\protect \APACyear {1994}}%
+Fu~Xianghua%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
 }]{%
-lewis1994sequential}
+fu2018lexiconenhancedlstm}
 \APACinsertmetastar {%
-lewis1994sequential}%
+fu2018lexiconenhancedlstm}%
 \begin{APACrefauthors}%
-Lewis, D\BPBI D.%
-\BCBT {}\ \BBA {} Gale, W\BPBI A.%
+Fu~Xianghua, L\BPBI J., Yang~Jingying%
+, Min, F.%
+\BCBL {}\ \BBA {} Huihui, W.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{1994}{}{}.
+\APACrefYearMonthDay{2018}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {A sequential algorithm for training text classifiers} {A
-  sequential algorithm for training text classifiers}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Lexicon Enhanced LSTM With Attention for General
+  Sentiment Analysis} {Lexicon enhanced lstm with attention for general
+  sentiment analysis}.{\BBCQ}
 \newblock
-\BIn{} \APACrefbtitle {SIGIR’94} {Sigir’94}\ (\BPGS\ 3--12).
+\APACjournalVolNumPages{IEEE Access}{}{}{71884-71891}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jason%
+\ \BBA {} Miles%
+}{%
+Jason%
+\ \BBA {} Miles%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+baldridgeosborne2004active}
+\APACinsertmetastar {%
+baldridgeosborne2004active}%
+\begin{APACrefauthors}%
+Jason, B.%
+\BCBT {}\ \BBA {} Miles, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Active Learning and the Total Cost of Annotation}
+  {Active learning and the total cost of annotation}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2004 Conference on Empirical Methods
+  in Natural Language Processing} {Proceedings of the 2004 conference on
+  empirical methods in natural language processing}\ (\BPG~9-16).
+\newblock
+\APACaddressPublisher{Barcelona, Spain}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/W04-3202} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jemai~Fatma%
+\ \BBA {} Sahbi%
+}{%
+Jemai~Fatma%
+\ \BBA {} Sahbi%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+jemai2021SentimentAnalysis}
+\APACinsertmetastar {%
+jemai2021SentimentAnalysis}%
+\begin{APACrefauthors}%
+Jemai~Fatma, H\BPBI M.%
+\BCBT {}\ \BBA {} Sahbi, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sentiment Analysis Using Machine Learning Algorithms}
+  {Sentiment analysis using machine learning algorithms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Wireless Communications and Mobile
+  Computing}{}{}{775-779}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kim Jin-Dong%
+\ \BBA {} Junichi%
+}{%
+Kim Jin-Dong%
+\ \BBA {} Junichi%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+kim2008corpusannotation}
+\APACinsertmetastar {%
+kim2008corpusannotation}%
+\begin{APACrefauthors}%
+Kim Jin-Dong, O\BPBI T.%
+\BCBT {}\ \BBA {} Junichi, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{02}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Corpus annotation for mining biomedical events from
+  lterature} {Corpus annotation for mining biomedical events from
+  lterature}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{BMC bioinformatics}{9}{}{10}.
+\newblock
+\begin{APACrefDOI} \doi{10.1186/1471-2105-9-10} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Long~Cheng%
+\ \BBA {} Larisa%
+}{%
+Long~Cheng%
+\ \BBA {} Larisa%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+long2021LikeTheStock}
+\APACinsertmetastar {%
+long2021LikeTheStock}%
+\begin{APACrefauthors}%
+Long~Cheng, L\BPBI B\BPBI M.%
+\BCBT {}\ \BBA {} Larisa, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {'I Just Like the Stock' versus 'Fear and Loathing on
+  Main Street': The Role of Reddit Sentiment in the GameStop Short Squeeze} {'i
+  just like the stock' versus 'fear and loathing on main street': The role of
+  reddit sentiment in the gamestop short squeeze}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SSRN Electronic Journal}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lu~Yue%
+\ \BBA {} ChengXiang%
+}{%
+Lu~Yue%
+\ \BBA {} ChengXiang%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Lu2011automaticconstruction}
+\APACinsertmetastar {%
+Lu2011automaticconstruction}%
+\begin{APACrefauthors}%
+Lu~Yue, D\BPBI U., Castellanos~Malu%
+\BCBT {}\ \BBA {} ChengXiang, Z.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automatic Construction of a Context-Aware Sentiment
+  Lexicon: An Optimization Approach} {Automatic construction of a context-aware
+  sentiment lexicon: An optimization approach}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 20th International Conference on
+  World Wide Web} {Proceedings of the 20th international conference on world
+  wide web}\ (\BPG~347–356).
+\newblock
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefURL}
+  \url{https://doi-org.tilburguniversity.idm.oclc.org/10.1145/1963405.1963456}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1145/1963405.1963456} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lyócsa~Štefan%
+\ \BBA {} Tomáš%
+}{%
+Lyócsa~Štefan%
+\ \BBA {} Tomáš%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+lyocsa2021yolotrading}
+\APACinsertmetastar {%
+lyocsa2021yolotrading}%
+\begin{APACrefauthors}%
+Lyócsa~Štefan, B\BPBI E.%
+\BCBT {}\ \BBA {} Tomáš, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {YOLO trading: Riding with the herd during the GameStop
+  episode} {Yolo trading: Riding with the herd during the gamestop
+  episode}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Finance Research Letters}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -105,6 +348,36 @@ MacKay, D\BPBI J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Miller~Blake%
+\ \BBA {} R%
+}{%
+Miller~Blake%
+\ \BBA {} R%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+miller2020activelearningapproaches}
+\APACinsertmetastar {%
+miller2020activelearningapproaches}%
+\begin{APACrefauthors}%
+Miller~Blake, L\BPBI F.%
+\BCBT {}\ \BBA {} R, M\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Active Learning Approaches for Labeling Text: Review and
+  Assessment of the Performance of Active Learning Approaches} {Active learning
+  approaches for labeling text: Review and assessment of the performance of
+  active learning approaches}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Political Analysis}{28}{4}{532–551}.
+\newblock
+\begin{APACrefDOI} \doi{10.1017/pan.2020.4} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Minsky%
 }{%
 Minsky%
@@ -124,7 +397,257 @@ Minsky, M.%
 {\BBOQ}\APACrefatitle {Steps toward artificial intelligence} {Steps toward
   artificial intelligence}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Proceedings of the IRE}{49}{1}{8--30}.
+\APACjournalVolNumPages{Proceedings of the IRE}{49}{1}{8-30}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Muhammad%
+}{%
+Muhammad%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+ashgar2014DetectionSlang}
+\APACinsertmetastar {%
+ashgar2014DetectionSlang}%
+\begin{APACrefauthors}%
+Muhammad, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Detection and Scoring of Internet Slangs for Sentiment
+  Analysis Using SentiWordNet} {Detection and scoring of internet slangs for
+  sentiment analysis using sentiwordnet}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Life Science Journal}{11}{}{66-72}.
+\newblock
+\begin{APACrefDOI} \doi{10.6084/M9.FIGSHARE.1609621} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Park~Sungrae%
+\ \BBA {} Il-Chul%
+}{%
+Park~Sungrae%
+\ \BBA {} Il-Chul%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+park2015EfficientExtractionOfDomain}
+\APACinsertmetastar {%
+park2015EfficientExtractionOfDomain}%
+\begin{APACrefauthors}%
+Park~Sungrae, L\BPBI W.%
+\BCBT {}\ \BBA {} Il-Chul, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Efficient extraction of domain specific sentiment
+  lexicon with active learning} {Efficient extraction of domain specific
+  sentiment lexicon with active learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Pattern Recognition Letters}{}{}{38-44}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pei~Zhengqi%
+\ \BBA {} Yang%
+}{%
+Pei~Zhengqi%
+\ \BBA {} Yang%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+pei2019slang}
+\APACinsertmetastar {%
+pei2019slang}%
+\begin{APACrefauthors}%
+Pei~Zhengqi, S\BPBI Z.%
+\BCBT {}\ \BBA {} Yang, X.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{{\APACmonth{11}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Slang Detection and Identification} {Slang detection and
+  identification}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 23rd Conference on Computational
+  Natural Language Learning (CoNLL)} {Proceedings of the 23rd conference on
+  computational natural language learning (conll)}\ (\BPGS\ 881--889).
+\newblock
+\APACaddressPublisher{Hong Kong, China}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/K19-1082} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/K19-1082} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+R.%
+\ \BBA {} Y.%
+}{%
+R.%
+\ \BBA {} Y.%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+das2007yahoo}
+\APACinsertmetastar {%
+das2007yahoo}%
+\begin{APACrefauthors}%
+R., D\BPBI S.%
+\BCBT {}\ \BBA {} Y., C\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Yahoo! for Amazon: Sentiment Extraction from Small Talk
+  on the Web} {Yahoo! for amazon: Sentiment extraction from small talk on the
+  web}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Management Science}{}{}{1375-1388}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sebastian%
+\ \BBA {} Vahid%
+}{%
+Sebastian%
+\ \BBA {} Vahid%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+raschka2019pythonmachinelearning}
+\APACinsertmetastar {%
+raschka2019pythonmachinelearning}%
+\begin{APACrefauthors}%
+Sebastian, R.%
+\BCBT {}\ \BBA {} Vahid, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2019}.
+\newblock
+\APACrefbtitle {Python Machine Learning} {Python machine learning}.
+\newblock
+\APACaddressPublisher{}{Packt Publishing}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sepp%
+\ \BBA {} Jürgen%
+}{%
+Sepp%
+\ \BBA {} Jürgen%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+hochreiter1997lstm}
+\APACinsertmetastar {%
+hochreiter1997lstm}%
+\begin{APACrefauthors}%
+Sepp, H.%
+\BCBT {}\ \BBA {} Jürgen, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Long Short-term Memory} {Long short-term memory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Neural computation}{9}{}{1735-80}.
+\newblock
+\begin{APACrefDOI} \doi{10.1162/neco.1997.9.8.1735} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sungrae~Park%
+\ \BBA {} Moon%
+}{%
+Sungrae~Park%
+\ \BBA {} Moon%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+park2015EfficientExtraction}
+\APACinsertmetastar {%
+park2015EfficientExtraction}%
+\begin{APACrefauthors}%
+Sungrae~Park, W\BPBI L.%
+\BCBT {}\ \BBA {} Moon, I\BHBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Efficient extraction of domain specific sentiment
+  lexicon with active learning} {Efficient extraction of domain specific
+  sentiment lexicon with active learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Pattern Recognition Letters}{56}{}{38-44}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Umar~Zaghum%
+\ \BBA {} Shoaib%
+}{%
+Umar~Zaghum%
+\ \BBA {} Shoaib%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+umar2021ataleofcompanyfundamentals}
+\APACinsertmetastar {%
+umar2021ataleofcompanyfundamentals}%
+\begin{APACrefauthors}%
+Umar~Zaghum, Y\BPBI I., Gubareva~Mariya%
+\BCBT {}\ \BBA {} Shoaib, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A tale of company fundamentals vs sentiment driven
+  pricing: The case of GameStop} {A tale of company fundamentals vs sentiment
+  driven pricing: The case of gamestop}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Behavioral and Experimental Finance}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang~Yanyan%
+\ \BBA {} Marco%
+}{%
+Wang~Yanyan%
+\ \BBA {} Marco%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+wang2020automaticconstructiondomainsentiment}
+\APACinsertmetastar {%
+wang2020automaticconstructiondomainsentiment}%
+\begin{APACrefauthors}%
+Wang~Yanyan, L\BPBI J., Yin~Fulian%
+\BCBT {}\ \BBA {} Marco, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{08}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automatic construction of domain sentiment lexicon for
+  semantic disambiguation} {Automatic construction of domain sentiment lexicon
+  for semantic disambiguation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Multimedia Tools and Applications}{79}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s11042-020-09030-1} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
