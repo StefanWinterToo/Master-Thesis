@@ -294,7 +294,7 @@ If the stopping criterion is met, the process ends \citep{lu2019investigating}.
 To implement an Active Learner the \emph{modAL} package was used. modAL was designed with modularity, flexibility and extensibility as high priorities \citep{danka2018modal}. 
 The estimator defined in the Active Learner object is a Support Vector Machine (SVM). A SVM was chosen because of its strong generalization 
 performance \citep{alves2014comparisonsvm}. \emph{(Note: Here I should have 5 authors. However, Latex throws an error when I add all names -> fix!!)}
- Additionally, SVMs can be used to solve both regression and 
+Additionally, SVMs can be used to solve both regression and 
 classification problems. For the case at hand, the algorithm needs solve a classification problem, by optimally separating the data between bearish, 
 neutral and bullish instances. Classification is done by finding a hyper-plane with the biggest margin, meaning it looks for the greatest distance 
 to the nearest sample points \citep{jemai2021SentimentAnalysis}. SVMs use spatial transformations, commonly known as kernel functions, to fit the hyperplane. 
@@ -315,7 +315,8 @@ the samples about which it is most uncertain about \citep{osbonre2004ensemblebas
 \subsection{Sentiment Analysis Models} \label{subs:sentimentmodels}
 The next section explores the machine learning models that will be used to perform sentiment analysis on the domain-specific corpus created by the Active Learner. \\
 Because a SVM was used in the Active Learner to label the ground truth data, it will not be applied in the sentiment classification task. 
-Otherwise, the results might lack robustness and be biased.
+Otherwise, the results might lack robustness and be biased. \\
+Before training the models, 20\% of the data were set aside as the test set. To account for class imbalances, stratification was applied.  
 
 \subsubsection{Naïve Bayes (NB)} \label{subs:naivebayes}
 NB is a probabilistic supervised machine learning model. By working probabilistically, the classifier assigns the probability of 
@@ -324,7 +325,7 @@ which can be handled very well by NB, this algorithm has established itself as o
 This thesis will use Multinomial Naïve Bayes to classify the sentiment of the text. This is due to the model’s ability to handle 
 larger vocabulary sizes. In addition, the algorithm is simple to implement, suitable for real-time applications, and highly scalable. 
 However, the algorithm’s prediction accuracy is frequently lower than that of other sentiment analysis techniques \citep{song2017novelclassification}. 
-Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier.
+Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier. The classifier was implemented by using sklearn.
 
 \subsubsection{Long Short Term Memory (LSTM)} \label{subs:lstm}
 LSTMs are becoming increasingly popular for sentiment classification. 
@@ -333,19 +334,47 @@ As a result, the input from a time instance t\textsubscript{i} will also be used
 problem of vanishing gradients. LSTMS are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
-and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}.
+and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. The classifier was implemented using keras.
 
 \subsubsection{Bidirectional Encoder Representations from Transformers (BERT)} \label{subs:bert}
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
 natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
 pretraining users won’t need as much computing power to achieve good results, even if the dataset is relatively 
 small \citep{devlin2019bertpo}. The BERT github page even states that 
-“Most NLP researchers will never need to pre-train their own model from scratch” (google-reseach). \emph{(-> fix!!)}
+“Most NLP researchers will never need to pre-train their own model from scratch” (google-reseach). \emph{(-> fix!!)} The classifier was implemented by using huggingface.
 
 \subsection{Hyperparameter Tuning} \label{subs:hyperparams}
 In order to find the best performing models, some hyperparameter tuning steps were taken. For the implementation of the Naïve model, five-fold grid search cross-validation was used to find the best parameters in a pre-defined parameter grid.
 For the deep learning models, LSTM and BERT, a loop was created that iterates over a set of parameters. Within each iteration, the model is fit on the training data while setting aside 20\% of the data for validation. The best performing model
 and its respective parameters will then be used to classify the test data.
+
+\subsection{Data, Code and Ethics Statements} \label{datacodeethics}
+To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: \url{https://github.com/mattpodolak/pmaw}\\
+The data was manually verified, by comparing specific, randomly-sampled, instances with the actual posts on reddit.\\
+
+\noindent To label the initial train set, I created a graphical user interface using tkinter: \url{https://docs.python.org/3/library/tkinter.html}\\
+
+\noindent To create the t-sne visualization, I relied on the documentation provided by Yellowbrick: \url{https://www.scikit-yb.org/en/latest/api/text/tsne.html}\\
+
+\noindent To implement the Active Learner, I used modAL: \url{https://github.com/modAL-python/modAL}\\
+
+\noindent All scikit\-learn packages and classes, such as train\_test\_split, TfidfVecotricer, LabelEncoder, GridSearchCV, 
+Pipeline, SVM and NB were implemented based by utilizing material provided during the Machine Learning course at Tilburg University, taught by Dr. Güven Ç and Dr. Önal, I.\\
+
+\noindent The LSTM was implemented by using material provided during the Deep Learning course at Tilburg University, taught by Dr. Vanmassenhove E. and Dr. Saygili G.\\
+
+\noindent To implement BERT the following tutorial was used: \url{https://skimai.com/fine-tuning-bert-for-sentiment-analysis/}\\
+
+
+\noindent The code for this thesis is shared in the following github repository: \url{https://github.com/StefanWinterToo/Master-Thesis}\\
+Note: Currently the code mainly consists of notebooks. However, before the final submission, I will properly structure the code.\\
+
+\noindent All graphics used in this thesis were created by myself.\\
+
+\noindent Due to time constraints, this first-submission does not use the full set of all possible hyperparameters. 
+Furthermore, for the Active Learner the VADER sentiment lexicon was used as an oracle.\\
+
+\noindent To the best of my knowledge, the literature used was referenced appropriately.
 
 \section{Results}
 I didn't add my results yet. I will make a table as below and also add some graphics.

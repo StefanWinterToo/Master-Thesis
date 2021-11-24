@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  24 NOV 2021 15:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  24 NOV 2021 16:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,7 +762,7 @@ Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf logo.eps>
 (epstopdf)             \includegraphics on input line 8.
 Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=64, 339.2675pt x 86.3225pt>
+<logo-eps-converted-to.pdf, id=68, 339.2675pt x 86.3225pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
 Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 8.
@@ -888,37 +888,87 @@ LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 1
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 ) [5] [6]
-<tsne_projection.png, id=202, 364.36125pt x 324.21124pt>
+<tsne_projection.png, id=206, 364.36125pt x 324.21124pt>
 File: tsne_projection.png Graphic file (type png)
 <use tsne_projection.png>
 Package pdftex.def Info: tsne_projection.png  used on input line 250.
 (pdftex.def)             Requested size: 358.50473pt x 319.01108pt.
  [7] [8 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>]
-<al_workflow.png, id=231, 560.0925pt x 420.06938pt>
+<al_workflow.png, id=235, 560.0925pt x 420.06938pt>
 File: al_workflow.png Graphic file (type png)
 <use al_workflow.png>
 Package pdftex.def Info: al_workflow.png  used on input line 288.
 (pdftex.def)             Requested size: 358.50473pt x 268.88835pt.
  [9] [10 </Users/stefanwinter/Local/Thesis/Thesis/Template/al_workflow.png>] [11]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 376.
- [12] [13] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [14] [15] [16]) [17] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
+(Font)              scaled to size 9.30756pt on input line 352.
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--354
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
+
+ []
+
+[13] [14] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [15] [16] [17]) [18] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 229A6C576D1D8ACD0FFAD9D7247BA3D4;2624.
+(rerunfilecheck)             Checksum: 98C47A6F4048CAF79608BD53B2690C9D;2854.
  ) 
 Here is how much of TeX's memory you used:
- 17688 strings out of 478994
- 302324 string characters out of 5858184
- 688457 words of memory out of 5000000
- 34245 multiletter control sequences out of 15000+600000
- 547981 words of font info for 523 fonts, out of 8000000 for 9000
+ 17697 strings out of 478994
+ 302415 string characters out of 5858184
+ 688523 words of memory out of 5000000
+ 34247 multiletter control sequences out of 15000+600000
+ 548262 words of font info for 527 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,22n,130p,1026b,677s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 126i,23n,130p,1026b,675s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (19 pages, 313798 bytes).
+Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (20 pages, 317566 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 333 compressed objects within 4 object streams
- 75 named destinations out of 1000 (max. 500000)
- 135304 words of extra memory for PDF output out of 154059 (max. 10000000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 135312 words of extra memory for PDF output out of 154059 (max. 10000000)
 
