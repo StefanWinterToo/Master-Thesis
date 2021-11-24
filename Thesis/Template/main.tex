@@ -121,17 +121,12 @@ As was mentioned earlier, however, no classifier works best on all scenarios whi
 \section{Related Work}
 
 Copy paste BibTeX code\footnote{Using e.g. the quote icon in GScholar, then BibTeX at the bottom.} and put it in \texttt{references.bib}. After, you can cite some work -- using \texttt{\textbackslash citep}. You can refer to the author of e.g. \cite{minsky1961steps} directly like using \texttt{\textbackslash cite} (this does not work when using bracket-citation). If you use bracket-style,\footnote{Find the \texttt{natbib} part in the \texttt{main.tex} \LaTeX{} script.} you might want use \texttt{\textbackslash citeauthor} when citing, like: see \citeauthor{ananny2018seeing} \cite{ananny2018seeing}.  If you want to add pages you can use brackets in \texttt{\textbackslash citep[][p. 5]\{mackay2003information\}}, which looks like: \citep[][p. 5]{mackay2003information}. The first brackets can be used for things like \emph{see}, and \emph{e.g.}. If you want to cite multiple authors, simply comma-separate them (\texttt{\textbackslash citep\{\-minsky\-1961\-steps,\-mackay\-2003\-information\}}) and it will aggregate them automatically \citep{minsky1961steps,mackay2003information}.
-
 Gauging sentiment of online forums to predict movements in stock prices has been a research subject for many years now. 
 \citep{das2007yahoo} did a study on the Yahoo! message board, which was amongst the first ones on the internet for investors to exchange ideas. 
-
 also showed that as the discussion volume on WallStreetBets increased, the volatility of certain stocks got amplified. 
 \citep{umar2021ataleofcompanyfundamentals} also found that sentiment of investors on WallStreetBets affected the returns of the Gamestop stock. 
-
 However, they also show that other features such as the put-call ratio and the short-sale volume had a strong impact on the stock price.
 \citep{long2021LikeTheStock} tried to uncover the impact of specific emotions such as “Angry, Fear, Happy, Sad and Surprise” from the comments on 
-
-
 WallStreetBets discussions on intraday changes of the stock price of the affected stock. While they conclude that the tone as well as the number of 
 comments have an impact on the stock price, they show that the number of comments is not directly related to sentiment. Additionally, they argue it 
 is the number of comments that is posted within an hour that has the biggest effect on one minute changes in the stock price. Furthermore, the paper 
@@ -139,12 +134,11 @@ shows that the emotions Sad, Anger and Surprise have a significant impact on the
 significant impact on 1-minute price changes, however, a causality test showed a link between the Happy sentiment and intraday returns of the GME stock. 
 In addition, the paper shows, that sentiment only impacts intraday returns if a thread has more than 2000 comments. Hence, the authors confirm that Reddit 
 sentiment has an impact on the stock market. They also argue that any asset that is targeted by a large crowd from wallstreetbets can become a subject 
-of excessive volatility, without being driven by any fundamental reasons.
+of excessive volatility, without being driven by any fundamental reasons. \\
 However, since the WallStreetBets ‘meme-stock movement’ is a relatively recent phenomenon, there is very little research on the impact of 
 WallStreetBets on individual stocks, especially with regards to sentiment analysis. Additionally, of all the published research none account 
 for the domain-specific language used on the forum. Because of the frequent usage of terminology that is specific to WallStreetBets, 
-this can lead to incorrect conclusions.
-
+this can lead to incorrect conclusions.\\
 Of course, this also applies to research in other fields, which usually also use a general-purpose sentiment lexicon, 
 because of the cost associated with building a domain-specific one. However, it has been demonstrated that using a domain-specific 
 knowledge base results in more accurate sentiment analysis \citep{park2015EfficientExtraction}.
@@ -167,18 +161,18 @@ structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can
 LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be improved, by applying a character-based 
 convolutional neural network to encode the spelling of words \citep{pei2019slang}. Even though the literature suggests many 
 innovative ways to enhance model performance by a few percentage points, the biggest benefits seem to come from high quality 
-input data in the form of domain-specific labeled data.
+input data in the form of domain-specific labeled data. \\
 Creating a domain-specific annotated corpus to train machine learning models, however, is not without its own challenges. 
 For example, working with multiple human annotators can lead to discrepancies in the annotation results \citep{kim2008corpusannotation}. 
 Additionally, it is hard to estimate the total annotation cost and can depend on whether the annotator is capable of understanding 
 the language for the task at hand \citep{arora2009estimationgannotationcost}. Additionally, labelling an entire dataset incurs extremely high costs, 
 which can be avoided. With the support of an Active Learner, a complete domain-specific corpus with its respective labels can be 
-created using only partial annotations \citep{park2015EfficientExtractionOfDomain}. 
+created using only partial annotations \citep{park2015EfficientExtraction}. 
 One of the key concepts of Active Learners is that if a machine learning algorithm is allowed to choose the data from which it learns, 
 it will achieve higher accuracy with less training data. If a considerable amount of the data is unlabeled, this is especially desirable. 
 As a result, the total cost of annotation can be reduced drastically. Research shows that the total number of 
 manual annotations can be reduced by 80\% when using an Active Learner instead of randomly 
-selecting data to label \citep{baldridgeosborne2004active}.
+selecting data to label \citep{baldridgeosborne2004active}. \\
 If data is manually annotated at random, the annotator will invest a lot of time into labeling irrelevant instances. 
 This may incur costs which could be avoided with an Active Learner. It is argued that Passive Learning, or randomly selecting instances 
 to be labeled by an annotator, is especially costly if the class distribution of the data is imbalanced or if there are many very similar documents. 
@@ -190,23 +184,153 @@ determined on various quantitative metrics \citep{miller2020activelearningapproa
 
 \section{Method}
 
-If you define any equations (\verb|\begin{equation}...|), you probably might want to define everything using math operators (e.g., \verb|$D$|) and cite the work (!). So for example, following , representing a document $d \in D$ as tf$(d)$, we define a probabilistic model $(d | Y = y)$ for all documents in class $y$, and select $y$ most likely to generate $d$:
+\subsection{Data} \label{subs:data}
 
-\begin{equation} \label{eq:nbarg}
-    \hat{y} = \underset{y}{\mathrm{argmax}} \ P(d | y) \cdot P(y)
-\end{equation}
+While Reddit does offer an official API, the API is most useful for streaming data. 
+There are some strict limitations on loading historical data. As a result, the official API is not the best choice for this thesis. 
+However, pushshift.io provides a solution for the strict limits. Pushshift is maintained by the /r/datasets mod team. 
+The FAQ on the pushshift subreddit states, that pushshift data is best used to:\\
+•	Analyze large quantities of Reddit data\\
+•	Grab data for a specific date range in the past\\
+•	Search for comments\\
+•	Aggregate data
+\\\\
+Pushshift copies data from Reddit at the time it is posted. Since Pushshift uses the document-based database Elastic, it is extremely fast to query data. However, currently Pushshift does not regularly update certain metadata, such as scores, edits to a submission’s text or comments. Hence, there might be some minor inconsistencies of what is shown on Reddit and what is in the database. The scores, for example can easily be accessed via the official reddit API and, if needed, joined with the data obtained from Pushshift. Based on the data verification I performed, the number of comments only deviates by a marginally small amount. It is hypothesized that the small difference can be explained by forum moderators deleting spam. Those spam comments are assumed to not have a big impact the thesis anyways, which is why the small difference in the number of comments do not need to be addressed. \\
+To access the Pushshift API, I used an API wrapper called PMAW. Since requests are I/O-bound, PMAW is multithreaded. Hence requests can be run asynchronously which allows the data to be loaded much faster.
+When making the API request, the most important parameters are the following:\\
+•	subreddit: Name of the subreddit\\
+•	q: The search term based on which the subreddit is queried\\
+•	before: The starting date of the query\\
+•	after: The end date of the query\\\\
 
-With this we can detect spam (see Figure~\ref{fig:spam}) or bots.  Note that the figures (and tables for that matter) might not always be placed in this section (oh no)! \LaTeX{} determines where to best put your objects, so don't worry about that. The reader will find them. \textbf{NOTE}: this Figure has a Creative Commons license; you cannot re-use other authors' figures without explicit permission or permissive licensing (as this would mean copyright infringement). You can refer to the equations as well (Equation~\ref{eq:nbarg})!
+
+For this thesis all Gamestop (GME) related posts between January 1st, 2020 and October 26th, 2021 were requested from the subreddit WallStreetBets. 
+The query returns 89 columns. Most of which, however, can be dropped since they either aren’t useful or contain no data. 
+The most important columns are the number of comments, the title of the post and the content of the post. 
+Emoticons are also included in the content text. In total 179,544 posts were obtained.\\
+Out of the 179,544 posts, 10\% or 17,955 were manually labeled as bearish, neutral or bullish.
+
+\subsection{Data Preprocessing} \label{subs:datapreprocessing}
+The research by \citep{jemai2021SentimentAnalysis} presents a system for structuring a sentiment analysis project. 
+The data collection phase is the first step, where textual data is obtained from a source. 
+The data is then cleaned in the second step, the data pre-processing phase. To do so, several actions need to be performed. 
+Data tokenization is one of the actions. This is a common technique in which a large body of text is broken down into multiple sentences, 
+each of which is then broken down into a list of words. Stop words such as is, the, a and other common words are also removed during the 
+pre-processing phase. In addition, special characters such as @ and urls should also be removed. 
+It is also suggested that the text is converted to lowercase. As the final step, the research proposes lemmatization. By doing so,
+the structure of a word is analyzed and converted to its normalized form.\\
+Since it is shown that having data with emoticons leads to more accurate results than data without emoticons,
+emoticons are not removed from the corpus \citep{parveen2016sentimentanalysistwitter}.
+Eventually, term frequency-inverse document frequency (tf-idf), was applied on the text corpus. 
+Using this representation allows the extraction of the most descriptive terms in a document and easy computations. 
+However, it fails to capture semantics and word embeddings. For computational reasons, only words that occur at least five times were included in the tf-idf representation.
+
+\subsection{The Case for a Supervised Method over an Unsupervised Method} \label{subs:supervisedvsunsupervised}
+Since the data obtained from Reddit is unlabeled, it cannot be fed into a supervised machine learning algorithms. 
+However, many promising sentiment analysis methods rely on labeled data \citep{sazzed2021ssentia}. One approach to label 
+data is using unsupervised machine learning models. Unsupervised models are commonly applied in Natural Language Processing 
+and text classification \citep{jung2019automatedclassification}. However, unsupervised models are a better choice for uncovering hidden 
+patterns in a dataset, especially without any a priori knowledge of the structure of the data. As a result, unsupervised models 
+excel at summarizing or exploration a large text corpus. 
+For the case at hand, a t-Distributed Stochastic Neighbor embedding (t-sne) algorithm was applied on the data to extract similarity 
+features and project them onto a lower dimension \citep{binu2020dimreductiontsne}. As can be seen in the visualization below, admittedly 
+at a low dimension, the majority of the data do not belong to any particular cluster.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{spam.png}
-    \caption{Spam classification example. Source: \href{https://developers.google.com/machine-learning/guides/text-classification}{Google} (CC BY 4.0).}
-    \label{fig:spam}
+    \includegraphics[width=\textwidth]{tsne_projection.png}
+    \caption{t-sne visualization of seed data}
+    \label{fig:t-sne}
 \end{figure}
 
-\section{Results}
+Even though there are some approaches to clustering high dimensional data, it generally is difficult to do so. 
+One of the explanations for that is the increased sparsity and the difficulty to distinguish between the distances 
+of specific instances \citep{tomasev2014roleofhubness}.
 
+If there are labeled instances, supervised learning methods are more applicable than an unsupervised method. 
+One of the major disadvantages of supervised models, however, is the cost associated with manually labelling 
+the data \citep{miller2020activelearningapproaches}.
+This thesis proposes a methodology of creating a labeled dataset for the fraction of the total annotation cost. 
+As a result, a domain-specific labeled text corpus is created, which can be used to compare the performance of different supervised machine learning algorithms.
+The proposed methodology is an Active Learner. With its support, a complete domain-specific corpus can be labeled while only relying on partial annotations \citep{park2015EfficientExtraction}. 
+
+\subsection{Active Learner Workflow} \label{subs:activelearnerworkflow}
+The illustrated workflow provides an overview of how an Active Learner works. 
+To begin with, cleaned and pre-processed data needs to be available that can be used by the Active Learner. 
+Furthermore, the Active Learner can also be trained with some initial training data, which is also referred to as the seed. 
+By using clustering algorithms, the seed data can be selected methodologically, which allows the Active Learner to achieve 
+higher accuracy faster when compared to randomly picking the initial seed data \citep{kang2004usingclusterbasedsampling}. All the unlabeled 
+instances will become the pool data, which need to be labeled. The seed data is fed into the Active Learner and trains an estimator, 
+which needs to be defined when creating the Active Learner.\\
+In addition, a query strategy needs to be defined, based on which the Active Learner queries new instances from the aforementioned pool. 
+A query strategy evaluates the informativeness of unlabeled samples. Common strategies are uncertainty sampling, query-by-committee, 
+expected model change, expected error reduction and variance reduction. \\
+While each strategy has its own intricacies, all essentially try to find instances that are hard for the model to classify and hence might benefit from annotation. 
+After the query function selected instances from the pool, an oracle needs to label those. An oracle is normally at 
+least one human with knowledge on how to annotate the data at hand \citep{settles2009activeLL}. However, human annotators are 
+oftentimes inconsistent and the result may vary from person to person \citep{rayan2019sentimentanalysisemail}. Once the new instances are labeled, 
+those instances need to be removed from the pool, since they are now part of the labeled data. The Active Learner then needs 
+to be taught the new instances, which he can use to adjust the model. After each iteration, the results can be evaluated. 
+A common performance measure for Active Learners is accuracy.\\
+If a predefined stopping criterion is not yet met, the query strategy selects more instances from the pool and repeats the process.
+If the stopping criterion is met, the process ends \citep{lu2019investigating}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{al_workflow.png}
+    \caption{Visualized Workflow of an Active Learner. Created with lucid.app}
+    \label{fig:AL_Workflow}
+\end{figure}
+
+\subsection{Active Learner Implementation} \label{subs:activelearnerimplementation}
+To implement an Active Learner the modAL package was used. modAL was designed with modularity, flexibility and extensibility as high priorities \citep{danka2018modal}. 
+The estimator defined in the Active Learner object is a Support Vector Machine (SVM). A SVM was chosen because of its strong generalization 
+performance \citep{alves2014comparisonsvm}. \emph{(Note: Here I should have 5 authors. However, Latex throws an error when I add all names -> fix!!)}
+ Additionally, SVMs can be used to solve both regression and 
+classification problems. For the case at hand, the algorithm needs solve a classification problem, by optimally separating the data between bearish, 
+neutral and bullish instances. Classification is done by finding a hyper-plane with the biggest margin, meaning it looks for the greatest distance 
+to the nearest sample points \citep{jemai2021SentimentAnalysis}. SVMs use spatial transformations, commonly known as kernel functions, to fit the hyperplane. 
+Kernels can be linear, RBF or others. The radial basis function (rbf) kernel is best used for non-linear problems and is a general-purpose kernel that 
+is often used in pattern recognition problems. The linear kernel, on the other hand, is typically used when there are only two classes present. 
+A good example for that might be positive and negative sentiment \citep{alves2014comparisonsvm}.\\
+Uncertainty sampling was chosen as the query strategy because it has been demonstrated to be a strong baseline strategy. 
+This query strategy assumes, that instances that are far from the decision boundary are adequately explainable and instances close to the 
+decision boundary are uncertain. Naturally, this complements the SVM estimator very well. As a result, the Active Learner queries 
+the samples about which it is most uncertain about \citep{osbonre2004ensemblebased}.
+
+\subsection{Sentiment Analysis Models} \label{subs:sentimentmodels}
+The next section explores the machine learning models that will be used to perform sentiment analysis on the domain-specific corpus created by the Active Learner. \\
+Because a SVM was used in the Active Learner to label the ground truth data, it will not be applied in the sentiment classification task. 
+Otherwise, the results might lack robustness and be biased. \\
+
+Naïve Bayes (NB): NB is a probabilistic supervised machine learning model. By working probabilistically, the classifier assigns the probability of 
+belonging to a given class based on certain features \citep{jemai2021SentimentAnalysis}. Because of the high dimensionality of text data, 
+which can be handled very well by NB, this algorithm has established itself as one of the standards for sentiment analysis. 
+This thesis will use Multinomial Naïve Bayes to classify the sentiment of the text. This is due to the model’s ability to handle 
+larger vocabulary sizes. In addition, the algorithm is simple to implement, suitable for real-time applications, and highly scalable. 
+However, the algorithm’s prediction accuracy is frequently lower than that of other sentiment analysis techniques \citep{song2017novelclassification}. 
+Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier. \\
+
+Long Short Term Memory (LSTM): LSTMs are becoming increasingly popular for sentiment classification. 
+LSTMs are built on a recurrent neural network architecture (RNN). In an RNN the neurons are connected to themselves through time. 
+As a result, the input from a time instance ti will also be used as an input for the next time instance ti+1.That leads to the 
+problem of vanishing gradients. LSTMS are designed to overcome that problem.
+The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
+from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
+and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}.
+
+BERT: BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
+natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
+pretraining users won’t need as much computing power to achieve good results, even if the dataset is relatively 
+small \citep{devlin2019bertpo}. The BERT github page even states that 
+“Most NLP researchers will never need to pre-train their own model from scratch” (google-reseach). \emph{(-> fix!!)}
+
+\subsection{Hyperparameter Tuning} \label{subs:hyperparams}
+In order to find the best performing models, some hyperparameter tuning steps were taken. For the implementation of the Naïve model, five-fold grid search cross-validation was used to find the best parameters in a pre-defined parameter grid.
+For the deep learning models, LSTM and BERT, a loop was created that iterates over a set of parameters. Within each iteration, the model is fit on the training data while setting aside 20\% of the data for validation. 
+
+\section{Results}
+I didn't add my results yet. I will make a table as below and also add some graphics.
 \begin{table}
     \caption{Best scoring models classifying bots, on Twitter and Facebook respectively. $F_1$ scores report positive (bot) class. Outline text left (l) and numbers right (r).}
     \label{tab:results}
@@ -232,13 +356,6 @@ With this we can detect spam (see Figure~\ref{fig:spam}) or bots.  Note that the
 \end{table}
 
 You have results and want to show them --- probably in a table of some kind as you can see in Table~\ref{tab:results}. Highlight important scores with \verb|\textbf{}|, use booktabs commands for structure: \verb|\toprule \midrule \bottomrule|. APA does not allow vertical lines.
-
-\subsection{Some Model} \label{subs:model}
-
-If you have anything specific to talk about, use subsections, and refer to them as Section~\ref{subs:model}. Don't use paragraphs or subsubsections.
-
-\section{Discussion}
-
 
 The 'to the moon' WallStreetBets movement had a tremendous impact on the lives of individuals, both to the positive and negative. 
 Besides that, however, many investment funds have also been negatively impacted by the recent short-squeezes. 

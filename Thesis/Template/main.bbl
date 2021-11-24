@@ -113,6 +113,70 @@ Danbolt~Jo, S\BPBI A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Danka%
+\ \BBA {} Horvath%
+}{%
+Danka%
+\ \BBA {} Horvath%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+danka2018modal}
+\APACinsertmetastar {%
+danka2018modal}%
+\begin{APACrefauthors}%
+Danka, T.%
+\BCBT {}\ \BBA {} Horvath, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {modAL: A modular active learning framework for Python.} {modal:
+  A modular active learning framework for python.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Firmino~{Alves Andr\'{e} Luiz}%
+, {Maxwell Guimar\~{a}es de}%
+\BCBL {}\ \BBA {} {Anselmo Cardoso de}%
+}{%
+Firmino~{Alves Andr\'{e} Luiz}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+alves2014comparisonsvm}
+\APACinsertmetastar {%
+alves2014comparisonsvm}%
+\begin{APACrefauthors}%
+Firmino~{Alves Andr\'{e} Luiz}, F\BPBI A., Baptista~{Cl\'{a}udio de Souza}%
+, {Maxwell Guimar\~{a}es de}, O.%
+\BCBL {}\ \BBA {} {Anselmo Cardoso de}, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Comparison of SVM Versus Naive-Bayes Techniques for
+  Sentiment Analysis in Tweets: A Case Study with the 2013 FIFA Confederations
+  Cup} {A comparison of svm versus naive-bayes techniques for sentiment
+  analysis in tweets: A case study with the 2013 fifa confederations
+  cup}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 20th Brazilian Symposium on
+  Multimedia and the Web} {Proceedings of the 20th brazilian symposium on
+  multimedia and the web}\ (\BPG~123–130).
+\newblock
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefURL}
+  \url{https://doi-org.tilburguniversity.idm.oclc.org/10.1145/2664551.2664561}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1145/2664551.2664561} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Fu~Xianghua%
 , Min%
 \BCBL {}\ \BBA {} Huihui%
@@ -138,6 +202,90 @@ Fu~Xianghua, L\BPBI J., Yang~Jingying%
   sentiment analysis}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{IEEE Access}{}{}{71884-71891}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Huma%
+\ \BBA {} Shikha%
+}{%
+Huma%
+\ \BBA {} Shikha%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+parveen2016sentimentanalysistwitter}
+\APACinsertmetastar {%
+parveen2016sentimentanalysistwitter}%
+\begin{APACrefauthors}%
+Huma, P.%
+\BCBT {}\ \BBA {} Shikha, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sentiment analysis on Twitter Data-set using Naive Bayes
+  algorithm} {Sentiment analysis on twitter data-set using naive bayes
+  algorithm}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~416-419).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICATCCT.2016.7912034} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jacob~Devlin%
+\ \BBA {} Toutanova%
+}{%
+Jacob~Devlin%
+\ \BBA {} Toutanova%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+devlin2019bertpo}
+\APACinsertmetastar {%
+devlin2019bertpo}%
+\begin{APACrefauthors}%
+Jacob~Devlin, K\BPBI L., Ming-Wei~Chang%
+\BCBT {}\ \BBA {} Toutanova, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {BERT: Pre-training of Deep Bidirectional Transformers
+  for Language Understanding} {Bert: Pre-training of deep bidirectional
+  transformers for language understanding}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {NAACL.} {Naacl.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jaeho~Kang%
+\ \BBA {} chul Kwon%
+}{%
+Jaeho~Kang%
+\ \BBA {} chul Kwon%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+kang2004usingclusterbasedsampling}
+\APACinsertmetastar {%
+kang2004usingclusterbasedsampling}%
+\begin{APACrefauthors}%
+Jaeho~Kang, K\BPBI R\BPBI R.%
+\BCBT {}\ \BBA {} chul Kwon, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Using Cluster-Based Sampling to Select Initial Training
+  Set for Active Learning in Text Classification} {Using cluster-based sampling
+  to select initial training set for active learning in text
+  classification}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {PAKDD.} {Pakdd.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -198,6 +346,32 @@ Jemai~Fatma, H\BPBI M.%
 \newblock
 \APACjournalVolNumPages{International Wireless Communications and Mobile
   Computing}{}{}{775-779}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jinghui~Lu%
+\ \BBA {} Namee%
+}{%
+Jinghui~Lu%
+\ \BBA {} Namee%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+lu2019investigating}
+\APACinsertmetastar {%
+lu2019investigating}%
+\begin{APACrefauthors}%
+Jinghui~Lu, M\BPBI H.%
+\BCBT {}\ \BBA {} Namee, B\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+\APACrefbtitle {Investigating the Effectiveness of Representations Based on
+  Word-Embeddings in Active Learning for Labelling Text Datasets.}
+  {Investigating the effectiveness of representations based on word-embeddings
+  in active learning for labelling text datasets.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -348,6 +522,66 @@ MacKay, D\BPBI J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+{Melit Devassy}%
+\ \BBA {} George%
+}{%
+{Melit Devassy}%
+\ \BBA {} George%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+binu2020dimreductiontsne}
+\APACinsertmetastar {%
+binu2020dimreductiontsne}%
+\begin{APACrefauthors}%
+{Melit Devassy}, B.%
+\BCBT {}\ \BBA {} George, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Dimensionality reduction and visualisation of
+  hyperspectral ink data using t-SNE} {Dimensionality reduction and
+  visualisation of hyperspectral ink data using t-sne}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Forensic Science International}{311}{}{110194}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S0379073820300566}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.forsciint.2020.110194}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Miles%
+\ \BBA {} Jason%
+}{%
+Miles%
+\ \BBA {} Jason%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+osbonre2004ensemblebased}
+\APACinsertmetastar {%
+osbonre2004ensemblebased}%
+\begin{APACrefauthors}%
+Miles, O.%
+\BCBT {}\ \BBA {} Jason, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Ensemblebased Active Learning for Parse Selection.}
+  {Ensemblebased active learning for parse selection.}{\BBCQ}
+\newblock
+\BIn{} (\BPG~89-96).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Miller~Blake%
 \ \BBA {} R%
 }{%
@@ -427,30 +661,34 @@ Muhammad, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Park~Sungrae%
-\ \BBA {} Il-Chul%
+Namcheol%
+\ \BBA {} Ghang%
 }{%
-Park~Sungrae%
-\ \BBA {} Il-Chul%
+Namcheol%
+\ \BBA {} Ghang%
 }{%
-{\protect \APACyear {2015}}%
+{\protect \APACyear {2019}}%
 }]{%
-park2015EfficientExtractionOfDomain}
+jung2019automatedclassification}
 \APACinsertmetastar {%
-park2015EfficientExtractionOfDomain}%
+jung2019automatedclassification}%
 \begin{APACrefauthors}%
-Park~Sungrae, L\BPBI W.%
-\BCBT {}\ \BBA {} Il-Chul, M.%
+Namcheol, J.%
+\BCBT {}\ \BBA {} Ghang, L.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2015}{}{}.
+\APACrefYearMonthDay{2019}{04}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Efficient extraction of domain specific sentiment
-  lexicon with active learning} {Efficient extraction of domain specific
-  sentiment lexicon with active learning}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Automated classification of building information
+  modeling (BIM) case studies by BIM use based on natural language processing
+  (NLP) and unsupervised learning} {Automated classification of building
+  information modeling (bim) case studies by bim use based on natural language
+  processing (nlp) and unsupervised learning}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Pattern Recognition Letters}{}{}{38-44}.
+\APACjournalVolNumPages{Advanced Engineering Informatics}{41}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.aei.2019.04.007} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -516,6 +754,97 @@ R., D\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Reza%
+\ \BBA {} Riyanarto%
+}{%
+Reza%
+\ \BBA {} Riyanarto%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+priyantina2019sentimentanalysishotel}
+\APACinsertmetastar {%
+priyantina2019sentimentanalysishotel}%
+\begin{APACrefauthors}%
+Reza, P.%
+\BCBT {}\ \BBA {} Riyanarto, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{06}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sentiment Analysis of Hotel Reviews Using Latent
+  Dirichlet Allocation, Semantic Similarity and LSTM} {Sentiment analysis of
+  hotel reviews using latent dirichlet allocation, semantic similarity and
+  lstm}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Intelligent Engineering and
+  Systems}{12}{}{142-155}.
+\newblock
+\begin{APACrefDOI} \doi{10.22266/ijies2019.0831.14} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Salah%
+\ \BBA {} Gayar%
+}{%
+Salah%
+\ \BBA {} Gayar%
+}{%
+{\protect \APACyear {EasyChair, 2019}}%
+}]{%
+rayan2019sentimentanalysisemail}
+\APACinsertmetastar {%
+rayan2019sentimentanalysisemail}%
+\begin{APACrefauthors}%
+Salah, R.%
+\BCBT {}\ \BBA {} Gayar, N\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{EasyChair, 2019}{}{}.
+\newblock
+\APACrefbtitle {Sentiment Analysis using Unlabeled Email data.} {Sentiment
+  analysis using unlabeled email data.}
+\newblock
+\APAChowpublished {EasyChair Preprint no. 2080}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sazzed%
+\ \BBA {} Jayarathna%
+}{%
+Sazzed%
+\ \BBA {} Jayarathna%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+sazzed2021ssentia}
+\APACinsertmetastar {%
+sazzed2021ssentia}%
+\begin{APACrefauthors}%
+Sazzed, S.%
+\BCBT {}\ \BBA {} Jayarathna, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {SSentiA: A Self-supervised Sentiment Analyzer for
+  classification from unlabeled data} {Ssentia: A self-supervised sentiment
+  analyzer for classification from unlabeled data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Machine Learning with Applications}{4}{}{100026}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S2666827021000074}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.mlwa.2021.100026}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Sebastian%
 \ \BBA {} Vahid%
 }{%
@@ -568,6 +897,56 @@ Sepp, H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Settles%
+}{%
+Settles%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+settles2009activeLL}
+\APACinsertmetastar {%
+settles2009activeLL}%
+\begin{APACrefauthors}%
+Settles, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Active Learning Literature Survey} {Active learning
+  literature survey}.{\BBCQ}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Song~Junseok%
+, Sangyoung%
+\BCBL {}\ \BBA {} Yong%
+}{%
+Song~Junseok%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+song2017novelclassification}
+\APACinsertmetastar {%
+song2017novelclassification}%
+\begin{APACrefauthors}%
+Song~Junseok, L\BPBI B., Kim~{Kyung Tae}%
+, Sangyoung, K.%
+\BCBL {}\ \BBA {} Yong, Y\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A novel classification approach based on Naïve Bayes
+  for Twitter sentiment analysis} {A novel classification approach based on
+  naïve bayes for twitter sentiment analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{KSII TRANSACTIONS ON INTERNET AND INFORMATION
+  SYSTEMS}{}{}{2996-3011}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Sungrae~Park%
 \ \BBA {} Moon%
 }{%
@@ -592,6 +971,35 @@ Sungrae~Park, W\BPBI L.%
   sentiment lexicon with active learning}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Pattern Recognition Letters}{56}{}{38-44}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tomasev~Nenad%
+\ \BBA {} Mirjana%
+}{%
+Tomasev~Nenad%
+\ \BBA {} Mirjana%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+tomasev2014roleofhubness}
+\APACinsertmetastar {%
+tomasev2014roleofhubness}%
+\begin{APACrefauthors}%
+Tomasev~Nenad, M\BPBI D., Radovanovic~Milos%
+\BCBT {}\ \BBA {} Mirjana, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Role of Hubness in Clustering High-Dimensional Data}
+  {The role of hubness in clustering high-dimensional data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Knowledge and Data
+  Engineering}{26}{3}{739-751}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TKDE.2013.25} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

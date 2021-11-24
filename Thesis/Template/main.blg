@@ -12,45 +12,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
+Warning--I didn't find a database entry for "park2015EfficientExtractionOfDomain"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 23 entries,
+You've used 37 entries,
             6951 wiz_defined-function locations,
-            1425 strings with 15353 characters,
-and the built_in function-call counts, 44917 in all, are:
-= -- 5645
-> -- 337
-< -- 2156
-+ -- 2202
-- -- 46
-* -- 2889
-:= -- 8413
-add.period$ -- 98
-call.type$ -- 23
-change.case$ -- 408
+            1506 strings with 18550 characters,
+and the built_in function-call counts, 75223 in all, are:
+= -- 9554
+> -- 560
+< -- 3704
++ -- 3730
+- -- 74
+* -- 4803
+:= -- 14100
+add.period$ -- 165
+call.type$ -- 37
+change.case$ -- 657
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 1104
-empty$ -- 1739
-format.name$ -- 540
-if$ -- 8541
+cite$ -- 74
+duplicate$ -- 1774
+empty$ -- 2805
+format.name$ -- 882
+if$ -- 14287
 int.to.chr$ -- 0
-int.to.str$ -- 69
+int.to.str$ -- 111
 missing$ -- 0
-newline$ -- 601
-num.names$ -- 184
-pop$ -- 710
+newline$ -- 966
+num.names$ -- 296
+pop$ -- 1418
 preamble$ -- 1
-purify$ -- 106
+purify$ -- 170
 quote$ -- 0
-skip$ -- 2942
+skip$ -- 4739
 stack$ -- 0
-substring$ -- 2448
-swap$ -- 645
-text.length$ -- 79
+substring$ -- 4141
+swap$ -- 1022
+text.length$ -- 136
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2032
+type$ -- 3536
 warning$ -- 0
-while$ -- 179
+while$ -- 296
 width$ -- 0
-write$ -- 733
+write$ -- 1184
+(There was 1 warning)
