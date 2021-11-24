@@ -29,34 +29,6 @@ Abhinav, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Ananny%
-\ \BBA {} Crawford%
-}{%
-Ananny%
-\ \BBA {} Crawford%
-}{%
-{\protect \APACyear {2018}}%
-}]{%
-ananny2018seeing}
-\APACinsertmetastar {%
-ananny2018seeing}%
-\begin{APACrefauthors}%
-Ananny, M.%
-\BCBT {}\ \BBA {} Crawford, K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Seeing without knowing: Limitations of the transparency
-  ideal and its application to algorithmic accountability} {Seeing without
-  knowing: Limitations of the transparency ideal and its application to
-  algorithmic accountability}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{New Media \& Society}{20}{3}{973--989}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Arora~Shilpa%
 \ \BBA {} Carolyn%
 }{%
@@ -83,6 +55,33 @@ Arora~Shilpa, N\BPBI E.%
 \APACjournalVolNumPages{HLT-NAACL}{}{}{}.
 \newblock
 \begin{APACrefDOI} \doi{10.3115/1564131.1564136} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Brasetvik%
+}{%
+Brasetvik%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+elastic2015}
+\APACinsertmetastar {%
+elastic2015}%
+\begin{APACrefauthors}%
+Brasetvik, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{February}{15}.
+\newblock
+\APACrefbtitle {Uses of Elasticsearch, and Things to Learn.} {Uses of
+  elasticsearch, and things to learn.}
+\newblock
+\APAChowpublished {Web}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.elastic.co/blog/found-uses-of-elasticsearch}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -134,6 +133,58 @@ Danka, T.%
 \newblock
 \APACrefbtitle {modAL: A modular active learning framework for Python.} {modal:
   A modular active learning framework for python.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Das%
+\ \BBA {} Chen%
+}{%
+Das%
+\ \BBA {} Chen%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+das2007yahoo}
+\APACinsertmetastar {%
+das2007yahoo}%
+\begin{APACrefauthors}%
+Das, S\BPBI R.%
+\BCBT {}\ \BBA {} Chen, M\BPBI Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Yahoo! for Amazon: Sentiment Extraction from Small Talk
+  on the Web} {Yahoo! for amazon: Sentiment extraction from small talk on the
+  web}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Management Science}{}{}{1375-1388}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Diangson%
+\ \BBA {} Jung%
+}{%
+Diangson%
+\ \BBA {} Jung%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+diangson2021betonreddit}
+\APACinsertmetastar {%
+diangson2021betonreddit}%
+\begin{APACrefauthors}%
+Diangson, B.%
+\BCBT {}\ \BBA {} Jung, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {Bet it on Reddit: The Effects of Reddit Chatter on Highly
+  Shorted Stocks.} {Bet it on reddit: The effects of reddit chatter on highly
+  shorted stocks.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -496,32 +547,6 @@ Lyócsa~Štefan, B\BPBI E.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-MacKay%
-\ \BBA {} Mac~Kay%
-}{%
-MacKay%
-\ \BBA {} Mac~Kay%
-}{%
-{\protect \APACyear {2003}}%
-}]{%
-mackay2003information}
-\APACinsertmetastar {%
-mackay2003information}%
-\begin{APACrefauthors}%
-MacKay, D\BPBI J.%
-\BCBT {}\ \BBA {} Mac~Kay, D\BPBI J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2003}.
-\newblock
-\APACrefbtitle {Information theory, inference and learning algorithms}
-  {Information theory, inference and learning algorithms}.
-\newblock
-\APACaddressPublisher{}{Cambridge university press}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 {Melit Devassy}%
 \ \BBA {} George%
 }{%
@@ -609,29 +634,6 @@ Miller~Blake, L\BPBI F.%
 \APACjournalVolNumPages{Political Analysis}{28}{4}{532–551}.
 \newblock
 \begin{APACrefDOI} \doi{10.1017/pan.2020.4} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Minsky%
-}{%
-Minsky%
-}{%
-{\protect \APACyear {1961}}%
-}]{%
-minsky1961steps}
-\APACinsertmetastar {%
-minsky1961steps}%
-\begin{APACrefauthors}%
-Minsky, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1961}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Steps toward artificial intelligence} {Steps toward
-  artificial intelligence}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Proceedings of the IRE}{49}{1}{8-30}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -727,30 +729,28 @@ Pei~Zhengqi, S\BPBI Z.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-R.%
-\ \BBA {} Y.%
+Podolak%
 }{%
-R.%
-\ \BBA {} Y.%
+Podolak%
 }{%
-{\protect \APACyear {2007}}%
+{\protect \APACyear {2021}}%
 }]{%
-das2007yahoo}
+pmaw2021}
 \APACinsertmetastar {%
-das2007yahoo}%
+pmaw2021}%
 \begin{APACrefauthors}%
-R., D\BPBI S.%
-\BCBT {}\ \BBA {} Y., C\BPBI M.%
+Podolak, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2007}{}{}.
+\APACrefYearMonthDay{2021}{October}{1}.
 \newblock
-{\BBOQ}\APACrefatitle {Yahoo! for Amazon: Sentiment Extraction from Small Talk
-  on the Web} {Yahoo! for amazon: Sentiment extraction from small talk on the
-  web}.{\BBCQ}
+\APACrefbtitle {PMAW: Pushshift Multithread API Wrapper.} {Pmaw: Pushshift
+  multithread api wrapper.}
 \newblock
-\APACjournalVolNumPages{Management Science}{}{}{1375-1388}.
+\APAChowpublished {Web}.
+\newblock
+\begin{APACrefURL} \url{https://github.com/mattpodolak/pmaw} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -867,6 +867,31 @@ Sebastian, R.%
 \APACrefbtitle {Python Machine Learning} {Python machine learning}.
 \newblock
 \APACaddressPublisher{}{Packt Publishing}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Semenova%
+\ \BBA {} Winkler%
+}{%
+Semenova%
+\ \BBA {} Winkler%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+semenova2021reddits}
+\APACinsertmetastar {%
+semenova2021reddits}%
+\begin{APACrefauthors}%
+Semenova, V.%
+\BCBT {}\ \BBA {} Winkler, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {Reddit's self-organised bull runs: Social contagion and asset
+  prices.} {Reddit's self-organised bull runs: Social contagion and asset
+  prices.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
