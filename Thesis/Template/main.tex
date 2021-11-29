@@ -30,9 +30,9 @@
 \def\yourstudentnumber{2067606}                                      % ANR (or u-number)
 \def\finalmonth{January}
 \def\finalyear{2022}
-\def\supervisor{dr. Peter Hendrix}
-\def\committee{prof. dr. The Second Reader}
-\def\acknowledgments{I want to thank dr. Peter Hendrix for his invaluable guidance during this thesis.\\
+\def\supervisor{Dr. Peter Hendrix}
+\def\committee{Dr. Raquel Garrido Alhama}
+\def\acknowledgments{I want to thank Dr. Peter Hendrix for his invaluable guidance during this thesis.\\
 Additionally, I want to thank Sveva Cadura and Anna Carolina van Melis for \\their support during the writing process.}
 
 % METADATA
@@ -62,7 +62,13 @@ Additionally, I want to thank Sveva Cadura and Anna Carolina van Melis for \\the
 % --- start writing below:
 
 \begin{abstract}
-This is where the abstract goes. Don't forget to change the variables in \texttt{main.tex} to change all general placeholders shown in this document. The \texttt{frontmatter.tex} file should be left alone.
+    Until the GameStop short-squeeze in early 2021, the impact of changes in sentiment of the Reddit discussion board \emph{WallStreetBets} on the financial market 
+    was vastly underappreciated. Due to the novelty of this phenomenon, there is also almost no research available on that topic. This thesis will explore methodologies 
+    on how to best measure sentiment of the discussion board. One of the challenges when measuring sentiment of WallStreetBets is the usage of novel 
+    domain-specific words and terminologies, which are shown to have a big impact on the results of sentiment analysis. Hence, this thesis proposes a method 
+    to create a dataset that covers the sentiment of text data which includes the terminology of a given domain. It will be shown that sentiment analysis machine 
+    learning models that use the domain-specific text corpus as input outperform general purpose lexicons, which are currently commonly used by both academia and industry 
+    to measure the sentiment of WallStreetBets.
 \end{abstract}
 
 \section{Introduction} \label{sec:introduction}
@@ -91,7 +97,7 @@ Hence, this thesis will try to answer the following Research Question:
 \end{quote}
 
 To begin, it must be determined how the discussions about the Gamestop stock on WallStreetBets should be handled to serve as good input features for sentiment analysis. 
-One of the challenges, is the heavy use of peculiar terminology and domain-specific phrases on the WallStreetBets forum, as well as many novel words \citep{anand2021WallstreetbetsAgainstWallstreet}. 
+One of the challenges is the heavy use of peculiar terminology and domain-specific phrases on the WallStreetBets forum, as well as many novel words \citep{anand2021WallstreetbetsAgainstWallstreet}. 
 According to recent research, sentiment lexicons and text-corpora with a focus on a certain domain produce superior sentiment analysis results compared to a 
 general-purpose sentiment lexicon or text-corpus \citep{park2015EfficientExtraction}. Furthermore, the text data needs to be cleaned and pre-processed in order to be accurately 
 processed by a machine learning algorithm \citep{jemai2021SentimentAnalysis}. As a result, the following sub-research question was formed:
@@ -100,7 +106,7 @@ processed by a machine learning algorithm \citep{jemai2021SentimentAnalysis}. As
     \item[RQ1] \emph{How can the domain-specific language of the Reddit forum WallStreetBets best be incorporated into sentiment analysis?}
 \end{itemize}
 
-Subsequently, the machine learning models can be trained to perform sentiment analysis. However, 
+Subsequently, machine learning models can be trained to perform sentiment analysis. However, 
 each machine learning algorithm has its own idiosyncrasies and assumptions, and no single classifier 
 works optimally in all possible scenarios. Hence, it is a good idea to evaluate the results and 
 performance of different machine learning algorithms. As a result, the best model with a given set 
@@ -110,10 +116,10 @@ This thesis will explore traditional machine learning methods such as Naive Baye
 and Support Vector Machines (SVMs), as well as deep learning methods like 
 Long Short Term Memory (LSTM) and Bidirectional Encoder Representations from 
 Transformers (BERT). Due to the high dimensionality of textual data, deep learning methods have shown 
-to outperform traditional machine learning techniques in recent research. That can be explained by the 
+to outperform traditional machine learning techniques. That can be explained by the 
 ability of deep learning methods to automatically learn the most important features, whereas traditional 
 methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhancedlstm}. \emph{(Note: Here I should have 5 authors. However, Latex throws an error when I add all names -> fix!!)}
-As was mentioned earlier, however, no classifier works best on all scenarios which is why the next research question needs to be answered:
+As was mentioned earlier, however, no classifier works best in all scenarios which is why the next sub-research question needs to be answered:
 
 \begin{itemize}
     \item[RQ2] \emph{Which sentiment analysis approach performs best on predefined key performance indicators?}
@@ -123,27 +129,28 @@ As was mentioned earlier, however, no classifier works best on all scenarios whi
 
 Gauging sentiment of online forums to predict movements in stock prices has been a research subject for many years now. 
 \cite{das2007yahoo} did a study on the Yahoo! message board, which was amongst the first ones on the internet for investors to exchange ideas. 
-\cite{lyocsa2021yolotrading} also showed that as the discussion volume on WallStreetBets increased, the volatility of certain stocks got amplified. 
-\cite{umar2021ataleofcompanyfundamentals} also found that sentiment of investors on WallStreetBets affected the returns of the Gamestop stock. 
+\cite{lyocsa2021yolotrading} also showcased that as the discussion volume on WallStreetBets increased, the volatility of certain stocks got amplified. 
+Additionally, the research of \cite{umar2021ataleofcompanyfundamentals} also found that sentiment of investors on WallStreetBets affected the returns of the Gamestop stock. 
 However, they also demonstrate that other features such as the put-call ratio and the short-sale volume had a strong impact on the stock price. \\
 \cite{long2021LikeTheStock} tried to uncover the impact of specific emotions such as \emph{“Angry, Fear, Happy, Sad and Surprise”} from the comments on 
 WallStreetBets discussions on intraday changes of the stock price of the affected stock. While they conclude that the tone as well as the number of 
 comments have an impact on the stock price, they show that the number of comments is not directly related to sentiment. Additionally, they argue it 
-is the number of comments that is posted within an hour that has the biggest effect on one minute changes of the stock price. Furthermore, the paper 
+is the number of comments that is posted within an hour that has the biggest effect on 1-minute changes of the stock price. Furthermore, the paper 
 shows that the emotions \emph{Sad, Angry and Surprise} have a significant impact on the gamestop 1-minute stock price. The Happy sentiment does not show a 
 significant impact on 1-minute price changes, however, a causality test showed a link between the Happy sentiment and intraday returns of the GME stock. 
-In addition, the paper shows, that sentiment only impacts intraday returns if a thread has more than 2000 comments. Hence, the authors confirm that Reddit 
+% In addition, the paper shows, that sentiment only impacts intraday returns if a thread has more than 2000 comments. // This does not fit well imo
+Hence, the authors confirm that Reddit 
 sentiment has an impact on the stock market. They also argue that any asset that is targeted by a large crowd from WallStreetBets can become a subject 
 of excessive volatility, without being driven by any fundamental reasons.
 
-However, since the WallStreetBets ‘meme-stock movement’ is a relatively recent phenomenon, there is very little research on the impact of 
+However, since the WallStreetBets \emph{‘meme-stock movement’} is a relatively recent phenomenon, there is very little research on the impact of 
 WallStreetBets on individual stocks, especially with regards to sentiment analysis. Additionally, of all the published research none account 
 for the domain-specific language used on the forum. Because of the frequent usage of terminology that is specific to WallStreetBets, 
 this can lead to incorrect conclusions.
 
 Of course, this also applies to research in other fields, which usually also use a general-purpose sentiment lexicon, 
 because of the cost associated with building a domain-specific one. However, it has been demonstrated that using a domain-specific 
-knowledge base results in more accurate sentiment analysis \citep{park2015EfficientExtraction}.
+knowledge base results in more accurate sentiment analysis results \citep{park2015EfficientExtraction}.
 It is argued that there is no general-purpose sentiment lexicon that can be optimally applied on all domains. 
 In different domains, some terms can have completely different meanings. A good example is the word “unpredictable”, 
 which would have negative sentiment for electronics but can be a positive label for movies. It has been demonstrated 
@@ -151,13 +158,13 @@ that by adapting sentiment lexicons to a certain domain performance for sentimen
 \citep{Lu2011automaticconstruction}. This adapted lexicon can then be searched to find and score the sentiment 
 of a specific word \citep{ashgar2014DetectionSlang}. 
 While lexicon-based methods have found widespread adoption, mainly due to their simplicity, more advanced machine 
-learning methods have also shown strong performance \citep{wang2020automaticconstructiondomainsentiment}. \\
-For this reason other research 
-deviates from the aforementioned lexicon-based approaches. Instead, they examine how deep learning methods can be 
-used to automatically detect and identify domain-specific words from sentences. By doing so it is assumed that the 
+learning methods have also shown stronger performance \citep{wang2020automaticconstructiondomainsentiment}.
+
+For this reason some research deviates from lexicon-based approaches. Instead, they examine how deep learning methods can be 
+used to automatically detect and identify domain-specific words in sentences. By doing so it is assumed that the 
 algorithm can not only detect whether domain-specific words are used (sentence-level detection), but also identify 
 the exact position of the term in the sentence (token-level identification). Hence, it is possible to detect new meanings 
-of words in an already existing corpus. In addition, this approach also allows to classify novel words, that do not yet 
+of words in an already existing text corpus. In addition, this approach also allows to classify novel words, that do not yet 
 exist in a lexicon. This can be achieved by having models that formulate domain-specific word detection as a 
 sequence-labelling task. Furthermore, novel domain-specific words can be learned by understanding the contextual 
 structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can be learned in the hidden layers of 
@@ -172,19 +179,20 @@ Additionally, it is hard to estimate the total annotation cost which can depend 
 the language for the given task \citep{arora2009estimationgannotationcost}. Additionally, labelling an entire dataset incurs extremely high costs, 
 which can be avoided. With the support of an Active Learner, a complete domain-specific corpus with its respective labels can be 
 created using only partial annotations \citep{park2015EfficientExtraction}. 
+
 One of the key concepts of Active Learners is that if a machine learning algorithm is allowed to choose the data from which it learns, 
 it will achieve higher accuracy with less training data. If a considerable amount of the data is unlabeled, this is especially desirable. 
 As a result, the total cost of annotation can be reduced drastically. Research shows that the total number of 
 manual annotations can be reduced by 80\% when using an Active Learner instead of randomly 
 selecting data to label \citep{baldridgeosborne2004active}.
 
-If data is manually annotated at random, the annotator will invest a lot of time into labeling irrelevant instances. 
+If data are manually annotated at random, the annotator will invest a lot of time into labeling irrelevant instances. 
 This may incur costs which could be avoided with an Active Learner. It is argued that Passive Learning, or randomly selecting instances 
 to be labeled by an annotator, is especially costly if the class distribution of the data is imbalanced or if there are many very similar documents. 
 For example, if a specific feature set appears on only 1\% of instances, the annotator would have to label 1000 documents to cover 
 the feature set on 10 relevant documents. When it comes to document similarity, large clusters of very similar documents might be 
 identifiable. Because features may be barely distinctable, the annotator might spend a lot of effort labeling uninformative instances 
-when selecting them random. An Active Learner, on the other hand, suggests which instances the annotator should label. Those instances can be 
+when selecting them randomly. An Active Learner, on the other hand, suggests which instances the annotator should label. Those instances can be 
 determined on various quantitative metrics \citep{miller2020activelearningapproaches}.
 
 \section{Method}
@@ -203,7 +211,7 @@ The FAQ on the pushshift subreddit states, that pushshift data is best used to:
 \end{itemize}
 
 Pushshift copies data from Reddit at the time it is posted. Since Pushshift uses the document-based database Elastic, it is extremely fast to query data \citep{elastic2015}. However, currently Pushshift does not regularly update certain metadata, such as scores, edits to a submission’s text or comments. Hence, there might be some minor inconsistencies of what is shown on Reddit and what is in the database. The scores, for example can easily be accessed via the official reddit API and, if needed, joined with the data obtained from Pushshift. Based on the data verification that was performed for this thesis, the number of comments only deviates by a marginally small amount. It is hypothesized that the small difference can be explained by forum moderators deleting spam. Those spam comments are assumed to not have a big impact the thesis anyways, which is why the small difference in the number of comments do not need to be addressed. \\
-To access the Pushshift API, this thesis uses an API wrapper called \emph{PMAW}. Since requests are I/O-bound, PMAW is multithreaded. Hence requests can be run asynchronously which allows the data to be loaded much faster \citep{pmaw2021}.
+To access Pushshift, this thesis uses an API wrapper called \emph{PMAW}. Since requests are I/O-bound, PMAW is multithreaded. Hence requests can be run asynchronously which allows the data to be loaded much faster \citep{pmaw2021}.
 When making the API request, the most important parameters are the following:
 \begin{itemize}
     \item subreddit: Name of the subreddit
@@ -212,11 +220,11 @@ When making the API request, the most important parameters are the following:
     \item after: The end date of the query
 \end{itemize}
 
-For this thesis all Gamestop (GME) related posts between January 1st, 2020 and October 26th, 2021 were requested from the subreddit WallStreetBets. 
+For this thesis all Gamestop (GME) related posts between January 1st, 2020 and October 26th, 2021 were requested for the subreddit WallStreetBets. 
 The query returns 89 columns. Most of which, however, can be dropped since they either aren’t useful for this thesis or contain no data. 
 The most important columns are the number of comments, the title of the post and the content of the post. 
 Emoticons are also included in the content text. In total 179,544 posts were obtained.\\
-Out of the 179,544 posts, 10\% or 17,955 were manually labeled as bearish, neutral or bullish.
+Of all obtained posts, 10\% or 17,955 were manually labeled as bearish, neutral or bullish.
 
 \subsection{Data Preprocessing} \label{subs:datapreprocessing}
 The research by \cite{jemai2021SentimentAnalysis} presents a system for structuring a sentiment analysis project. 
@@ -229,13 +237,13 @@ It is also suggested that the text is converted to lowercase. As the final step,
 the structure of a word is analyzed and converted to its normalized form.
 
 Since it is shown that having data with emoticons leads to more accurate results than data without emoticons,
-emoticons are not removed from the corpus \citep{parveen2016sentimentanalysistwitter}.
+this thesis does not remove emoticons from the text corpus \citep{parveen2016sentimentanalysistwitter}.
 Eventually, term frequency-inverse document frequency (tf-idf), was applied on the text corpus. 
 Using this representation allows the extraction of the most descriptive terms in a document and easy computations. 
-However, it fails to capture semantics and word embeddings. For computational reasons, only words that occur at least five times were included in the tf-idf representation.
+However, it fails to capture semantics and word embeddings. For computational reasons, only words that occur at least five times were included in the tf-idf representation. % Update this in the end when I know how much my computer can handle...
 
 \subsection{The Case for a Semi-Supervised Method over an Unsupervised Method} \label{subs:supervisedvsunsupervised}
-Since the data obtained from Reddit is unlabeled, it cannot be fed into a supervised machine learning algorithms. 
+Since the data obtained from Reddit is unlabeled, it cannot be fed into supervised machine learning algorithms. 
 That is because supervised sentiment analysis methods rely on labeled data \citep{sazzed2021ssentia}. One approach to label 
 data is using unsupervised machine learning models. Unsupervised models are commonly applied in Natural Language Processing 
 and text classification \citep{jung2019automatedclassification}. However, unsupervised models are a better choice for uncovering hidden 
@@ -256,10 +264,10 @@ Even though there are some approaches to clustering high dimensional data, it ge
 One of the explanations for that is the increased sparsity and the difficulty to distinguish between the distances 
 of specific instances \citep{tomasev2014roleofhubness}.
 
-If there are labeled instances, supervised learning methods can be applied to perform sentiment analysis, which are shown to lead to better results than relying on unsupervised methods.
+Once labeled instances are obtained, supervised learning methods can be applied.
 One of the major disadvantages of supervised models, however, is the cost associated with manually labelling 
 the data \citep{miller2020activelearningapproaches}.
-This thesis proposes a methodology of creating a labeled dataset for the fraction of the total annotation cost. 
+This thesis proposes a method to create a labeled dataset for the fraction of the total annotation cost. 
 As a result, a domain-specific labeled text corpus is created, which can be used to compare the performance of different supervised machine learning algorithms.
 The proposed methodology is an Active Learner. With its support, a complete domain-specific corpus can be labeled while only relying on partial annotations \citep{park2015EfficientExtraction}. 
 
@@ -275,11 +283,11 @@ In addition, a query strategy needs to be defined, based on which the Active Lea
 A query strategy evaluates the informativeness of unlabeled samples. Common strategies are \emph{uncertainty sampling, query-by-committee, 
 expected model change, expected error reduction and variance reduction}. \\
 While each strategy has its own intricacies, all essentially try to find instances that are hard for the model to classify and hence might benefit from annotation. 
-After the query function selected instances from the pool, an oracle needs to label those. An oracle is normally at 
+After the query function selected instances from the pool, an oracle needs to label those. An oracle normally is at 
 least one human with knowledge on how to annotate the data at hand \citep{settles2009activeLL}. Once the new instances are labeled, 
 those instances need to be removed from the pool, since they are now part of the labeled data. The Active Learner then needs 
 to be taught the new instances, which he can use to adjust the model. After each iteration, the results can be evaluated. 
-A common performance measure for Active Learners is accuracy.\\
+A common performance measure for Active Learners is \emph{accuracy}.\\
 If a predefined stopping criterion is not yet met, the query strategy selects more instances from the pool and repeats the process.
 If the stopping criterion is met, the process ends \citep{lu2019investigating}.
 
@@ -298,18 +306,20 @@ Additionally, SVMs can be used to solve both regression and
 classification problems. For the case at hand, the algorithm needs solve a classification problem, by optimally separating the data between bearish, 
 neutral and bullish instances. Classification is done by finding a hyper-plane with the biggest margin, meaning it looks for the greatest distance 
 to the nearest sample points \citep{jemai2021SentimentAnalysis}. SVMs use spatial transformations, commonly known as kernel functions, to fit the hyperplane. 
-Kernels can be linear, RBF or others. The radial basis function (rbf) kernel is best used for non-linear problems and is a general-purpose kernel that 
+Kernels can be linear, RBF or others. The radial basis function (RBF) kernel is best used for non-linear problems and is a general-purpose kernel that 
 is often used in pattern recognition problems. The linear kernel, on the other hand, is typically used when there are only two classes present. 
 A good example for that might be positive and negative sentiment \citep{alves2014comparisonsvm}.
 
-The initial seed data to train the estimator in the Active Learner had to be labeled manually. However, the implementation of the Active Learner in this thesis deviates from the literature a little bit: The literature that was reviewed
-does not set aside test data from the initial seed data and then evaluates the accuracy of the Active Learner on the entire seed data after every iteration. While the literature does not explain why this approach was
+The initial seed data to train the SVM-estimator in the Active Learner had to be labeled manually. To do so, every tenth instance was annotated.
+Furthermore, the implementation of the Active Learner in this thesis deviates from the literature a little bit: The literature that was reviewed
+does not set aside a test set from the initial seed data and the accuracy of the Active Learner is evaluated on the entire seed data after every iteration. 
+While the literature does not explain why this approach was
 taken, I hypothesize that is due to the cost associated with labeling the data. This thesis will not deviate from well established machine learning practices
 and therefore set aside 20\% of the seed data as test data, which will be used to evaluate the performance of the Active Learner after every iteration. \emph{Insert citation from my ML book}
 
 Uncertainty sampling was chosen as the query strategy because it has been demonstrated to be a strong baseline strategy. 
 This query strategy assumes, that instances that are far from the decision boundary are adequately explainable and instances close to the 
-decision boundary are uncertain. Naturally, this complements the SVM estimator very well. As a result, the Active Learner queries 
+decision boundary are uncertain. Naturally, this complements the SVM-estimator very well. As a result, the Active Learner queries 
 the samples about which it is most uncertain about \citep{osbonre2004ensemblebased}.
 
 \subsection{Sentiment Analysis Models} \label{subs:sentimentmodels}
@@ -325,7 +335,7 @@ which can be handled very well by NB, this algorithm has established itself as o
 This thesis will use Multinomial Naïve Bayes to classify the sentiment of the text. This is due to the model’s ability to handle 
 larger vocabulary sizes. In addition, the algorithm is simple to implement, suitable for real-time applications, and highly scalable. 
 However, the algorithm’s prediction accuracy is frequently lower than that of other sentiment analysis techniques \citep{song2017novelclassification}. 
-Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier. The classifier was implemented by using sklearn.
+Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier.
 
 \subsubsection{Long Short Term Memory (LSTM)} \label{subs:lstm}
 LSTMs are becoming increasingly popular for sentiment classification. 
@@ -334,14 +344,19 @@ As a result, the input from a time instance t\textsubscript{i} will also be used
 problem of vanishing gradients. LSTMS are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
-and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. The classifier was implemented using keras.
+and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. \\
+
+
+\noindent\textbf{Implementation}\\
+To feed the data into the LSTM, it first is converted from a tf-idf representation into a one-hot encoded array with three dimensions. However, one-hot encoding fails to incorporate similarity between words, which is why an Embedding layer was added to the LSTM. The layer takes the number of words in the text corpus as input. The output dimensions which will be used in the subsequent LSTM layer are a hyperparameter and chosen by evaluating the performance on the validation set, which is 20% of the training data. The same applies to the hidden states in the LSTM layer. The final Dense output layer uses softmax as its activation to output either bearish, neutral or bullish. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric. The optimizer is also chosen based on the hyperparameters provided.
+
 
 \subsubsection{Bidirectional Encoder Representations from Transformers (BERT)} \label{subs:bert}
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
 natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
 pretraining users won’t need as much computing power to achieve good results, even if the dataset is relatively 
 small \citep{devlin2019bertpo}. The BERT github page even states that 
-“Most NLP researchers will never need to pre-train their own model from scratch” (google-reseach). \emph{(-> fix!!)} The classifier was implemented by using huggingface.
+“Most NLP researchers will never need to pre-train their own model from scratch” (google-reseach). \emph{(-> fix!!)}
 
 \subsection{Hyperparameter Tuning} \label{subs:hyperparams}
 In order to find the best performing models, some hyperparameter tuning steps were taken. For the implementation of the Naïve model, five-fold grid search cross-validation was used to find the best parameters in a pre-defined parameter grid.
@@ -359,9 +374,9 @@ The data was manually verified, by comparing specific, randomly-sampled, instanc
 \noindent To implement the Active Learner, I used modAL: \url{https://github.com/modAL-python/modAL}\\
 
 \noindent All scikit\-learn packages and classes, such as train\_test\_split, TfidfVecotricer, LabelEncoder, GridSearchCV, 
-Pipeline, SVM and NB were implemented based by utilizing material provided during the Machine Learning course at Tilburg University, taught by Dr. Güven Ç and Dr. Önal, I.\\
+Pipeline, SVM and NB were implemented by utilizing material provided during the Machine Learning course at Tilburg University, taught by Dr. Güven and Dr. Önal.\\
 
-\noindent The LSTM was implemented by using material provided during the Deep Learning course at Tilburg University, taught by Dr. Vanmassenhove E. and Dr. Saygili G.\\
+\noindent The LSTM was implemented by using material provided during the Deep Learning course at Tilburg University, taught by Dr. Vanmassenhove and Dr. Saygili.\\
 
 \noindent To implement BERT the following tutorial was used: \url{https://skimai.com/fine-tuning-bert-for-sentiment-analysis/}\\
 
@@ -404,6 +419,8 @@ I didn't add my results yet. I will make a table as below and also add some grap
 
 You have results and want to show them --- probably in a table of some kind as you can see in Table~\ref{tab:results}. Highlight important scores with \verb|\textbf{}|, use booktabs commands for structure: \verb|\toprule \midrule \bottomrule|. APA does not allow vertical lines.
 
+\section{Conclusion}
+
 The 'to the moon' WallStreetBets movement had a tremendous impact on the lives of individuals, both to the positive and negative. 
 Besides that, however, many investment funds have also been negatively impacted by the recent short-squeezes. 
 While it might seem noble to root for individuals who try to force large funds out of their positions at big losses, it is easy to forget that many 
@@ -420,11 +437,6 @@ which can be used as the input to aforementioned models. To my knowledge, this t
 Researchers, such as Talamás (2021), specifically propose future work on “inclusion of features derived from alternative manipulation of the data like sentiment analysis 
 could lead to new insights“. I strongly believe that the methods proposed in my thesis can lead to better sentiment classifiers, 
 which can then be used in other scientific or industrial applications.
-
-
-\section{Conclusion}
-
-Done.
 
 \bibliography{references}
 
