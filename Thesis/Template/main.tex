@@ -118,7 +118,7 @@ Long Short Term Memory (LSTM) and Bidirectional Encoder Representations from
 Transformers (BERT). Due to the high dimensionality of textual data, deep learning methods have shown 
 to outperform traditional machine learning techniques. That can be explained by the 
 ability of deep learning methods to automatically learn the most important features, whereas traditional 
-methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhancedlstm}. \emph{(Note: Here I should have 5 authors. However, Latex throws an error when I add all names -> fix!!)}
+methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhancedlstm}.
 As was mentioned earlier, however, no classifier works best in all scenarios which is why the next sub-research question needs to be answered:
 
 \begin{itemize}
@@ -232,9 +232,11 @@ The data collection phase is the first step, where textual data is obtained from
 The data is then cleaned in the second step, the data pre-processing phase. To do so, several actions need to be performed. 
 Data tokenization is one of the actions. This is a natural language processing technique in which a large body of text is broken down into multiple sentences, 
 each of which is then broken down into a list of words. Stop words such as is, the, a and other common words are also removed during the 
-pre-processing phase. In addition, special characters such as @ and urls should also be removed. 
+pre-processing phase. If stop words are included, they not only may play a negative role in sentiment classification but also increase the overall vocabulary size \citep{zhao2017comparisontextprocess}.
+In addition, special characters such as @ and urls should also be removed. 
 It is also suggested that the text is converted to lowercase. As the final step, the research proposes lemmatization. By doing so,
-the structure of a word is analyzed and converted to its normalized form.
+the structure of a word is analyzed and converted to its normalized form. The research conducted by \cite{camachocollados2018role} 
+shows that lemmatization improves sentiment analysis results when using domain-specific datasets.
 
 Since it is shown that having data with emoticons leads to more accurate results than data without emoticons,
 this thesis does not remove emoticons from the text corpus \citep{parveen2016sentimentanalysistwitter}.
@@ -301,7 +303,7 @@ If the stopping criterion is met, the process ends \citep{lu2019investigating}.
 \subsection{Active Learner Implementation} \label{subs:activelearnerimplementation}
 To implement an Active Learner the \emph{modAL} package was used. modAL was designed with modularity, flexibility and extensibility as high priorities \citep{danka2018modal}. 
 The estimator defined in the Active Learner object is a Support Vector Machine (SVM). A SVM was chosen because of its strong generalization 
-performance \citep{alves2014comparisonsvm}. \emph{(Note: Here I should have 5 authors. However, Latex throws an error when I add all names -> fix!!)}
+performance \citep{alves2014comparisonsvm}.
 Additionally, SVMs can be used to solve both regression and 
 classification problems. For the case at hand, the algorithm needs solve a classification problem, by optimally separating the data between bearish, 
 neutral and bullish instances. Classification is done by finding a hyper-plane with the biggest margin, meaning it looks for the greatest distance 

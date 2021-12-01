@@ -153,6 +153,33 @@ Brasetvik, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Camacho-Collados%
+\ \BBA {} Pilehvar%
+}{%
+Camacho-Collados%
+\ \BBA {} Pilehvar%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+camachocollados2018role}
+\APACinsertmetastar {%
+camachocollados2018role}%
+\begin{APACrefauthors}%
+Camacho-Collados, J.%
+\BCBT {}\ \BBA {} Pilehvar, M\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {On the Role of Text Preprocessing in Neural Network
+  Architectures: An Evaluation Study on Text Categorization and Sentiment
+  Analysis.} {On the role of text preprocessing in neural network
+  architectures: An evaluation study on text categorization and sentiment
+  analysis.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Danbolt%
 , Siganos%
 \BCBL {}\ \BBA {} Vagenas-Nanos%
@@ -1106,6 +1133,35 @@ Zaghum, U.%
   driven pricing: The case of gamestop}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Journal of Behavioral and Experimental Finance}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhao%
+\ \BBA {} Gui%
+}{%
+Zhao%
+\ \BBA {} Gui%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+zhao2017comparisontextprocess}
+\APACinsertmetastar {%
+zhao2017comparisontextprocess}%
+\begin{APACrefauthors}%
+Zhao, J.%
+\BCBT {}\ \BBA {} Gui, X.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{02}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Comparison Research on Text Pre-processing Methods on
+  Twitter Sentiment Analysis} {Comparison research on text pre-processing
+  methods on twitter sentiment analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Access}{PP}{}{1-1}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ACCESS.2017.2672677} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

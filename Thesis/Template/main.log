@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  1 DEC 2021 11:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  1 DEC 2021 11:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -877,45 +877,40 @@ Package microtype Info: Character `029' is missing
 LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 207.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
-) [6]
-<tsne_projection.png, id=208, 364.36125pt x 324.21124pt>
+) [6] [7]
+<tsne_projection.png, id=220, 364.36125pt x 324.21124pt>
 File: tsne_projection.png Graphic file (type png)
 <use tsne_projection.png>
-Package pdftex.def Info: tsne_projection.png  used on input line 258.
+Package pdftex.def Info: tsne_projection.png  used on input line 260.
 (pdftex.def)             Requested size: 358.50473pt x 319.01108pt.
- [7] [8 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>] [9]
-<al_workflow.png, id=243, 560.0925pt x 420.06938pt>
+ [8 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>]
+<al_workflow.png, id=242, 560.0925pt x 420.06938pt>
 File: al_workflow.png Graphic file (type png)
 <use al_workflow.png>
-Package pdftex.def Info: al_workflow.png  used on input line 296.
+Package pdftex.def Info: al_workflow.png  used on input line 298.
 (pdftex.def)             Requested size: 358.50473pt x 268.88835pt.
- [10 </Users/stefanwinter/Local/Thesis/Thesis/Template/al_workflow.png>] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 341--348
+ [9] [10 </Users/stefanwinter/Local/Thesis/Thesis/Template/al_workflow.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 343--350
 
  []
 
-[12]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 367.
+[11]
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 369.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 367.
+(Font)              scaled to size 9.30756pt on input line 369.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 369--371
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
-
- []
-
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
@@ -926,12 +921,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 374--375
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--378
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
 
  []
 
@@ -941,37 +936,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--382
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--391
+Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
-[14] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [15] [16] [17]) [18] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--393
+
+ []
+
+[13] [14] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [15] [16] [17]) [18] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 98C47A6F4048CAF79608BD53B2690C9D;2854.
  ) 
 Here is how much of TeX's memory you used:
- 17762 strings out of 478994
- 303073 string characters out of 5858184
- 688484 words of memory out of 5000000
- 34253 multiletter control sequences out of 15000+600000
+ 17772 strings out of 478994
+ 303397 string characters out of 5858184
+ 688615 words of memory out of 5000000
+ 34261 multiletter control sequences out of 15000+600000
  554613 words of font info for 566 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,23n,130p,1026b,669s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 126i,23n,130p,1026b,677s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (20 pages, 320242 bytes).
+Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (20 pages, 320778 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 404 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
  151184 words of extra memory for PDF output out of 154059 (max. 10000000)
 
