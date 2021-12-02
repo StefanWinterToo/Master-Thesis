@@ -831,6 +831,44 @@ Raschka, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Ribeiro%
+, Tiels%
+, Aguirre%
+\BCBL {}\ \BBA {} Schön%
+}{%
+Ribeiro%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+vanishinggradients2020pmlr}
+\APACinsertmetastar {%
+vanishinggradients2020pmlr}%
+\begin{APACrefauthors}%
+Ribeiro, A\BPBI H.%
+, Tiels, K.%
+, Aguirre, L\BPBI A.%
+\BCBL {}\ \BBA {} Schön, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{26--28 Aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Beyond exploding and vanishing gradients: analysing RNN
+  training using attractors and smoothness} {Beyond exploding and vanishing
+  gradients: analysing rnn training using attractors and smoothness}.{\BBCQ}
+\newblock
+\BIn{} S.~Chiappa\ \BBA {} R.~Calandra\ (\BEDS), \APACrefbtitle {Proceedings of
+  the Twenty Third International Conference on Artificial Intelligence and
+  Statistics} {Proceedings of the twenty third international conference on
+  artificial intelligence and statistics}\ (\BVOL~108, \BPGS\ 2370--2380).
+\newblock
+\APACaddressPublisher{}{PMLR}.
+\newblock
+\begin{APACrefURL} \url{https://proceedings.mlr.press/v108/ribeiro20a.html}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Salah%
 \ \BBA {} Gayar%
 }{%
@@ -967,6 +1005,30 @@ Song, J.%
 \newblock
 \APACjournalVolNumPages{KSII TRANSACTIONS ON INTERNET AND INFORMATION
   SYSTEMS}{}{}{2996-3011}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Talamás%
+}{%
+Talamás%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+talamas2021socialmediaeffectsonthemarket}
+\APACinsertmetastar {%
+talamas2021socialmediaeffectsonthemarket}%
+\begin{APACrefauthors}%
+Talamás, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{05}{}.
+\newblock
+\APACrefbtitle {Social media Effects on the market: Reddit Data analysis on
+  Stocks.} {Social media effects on the market: Reddit data analysis on
+  stocks.}
+\newblock
+\begin{APACrefDOI} \doi{10.13140/RG.2.2.24180.88960} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

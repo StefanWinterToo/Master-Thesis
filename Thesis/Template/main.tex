@@ -79,8 +79,10 @@ variety of people to talk about the stock market and discuss trading strategies.
 the most well-known and influential investing online-forums.
 
 Even though the Reddit subforum was created in 2012 already, it received the majority of its media exposure in 2021 as a result of a short-squeeze 
-of the GameStop (GME) stock, which drove the stock price up hundreds of percentage points \citep{diangson2021betonreddit}. However, it was not the rapid price appreciation that 
-amazed market participants. Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the WallStreetBets 
+of the GameStop (GME) stock, which drove the stock price up hundreds of percentage points \citep{diangson2021betonreddit}. Over the ensuing months, however, 
+the stock price experienced extraordinary volatility. Prices fluctuated by double-digit percentage points which not only lead to gains, but also to large losses
+for market participants - depending on their timing. \cite{das2007yahoo} show that changes in investor sentiment and discussion board activity can be a cause of increased volatility.\\
+However, it was not the rapid price appreciation in the beginning of the short-squeeze that amazed market participants. Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the WallStreetBets 
 community that attracted attention \citep{anand2021WallstreetbetsAgainstWallstreet}.
 \\
 Organizing the mass-coordinated buying of stock, however, requires that enough participants share the same sentiment. According to studies, 
@@ -122,7 +124,7 @@ methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhanced
 As was mentioned earlier, however, no classifier works best in all scenarios which is why the next sub-research question needs to be answered:
 
 \begin{itemize}
-    \item[RQ2] \emph{Which sentiment analysis approach performs best on predefined key performance indicators?}
+    \item[RQ2] \emph{Which sentiment analysis approach performs best on predefined evaluation metrics?}
 \end{itemize}
 
 \section{Related Work}
@@ -224,15 +226,17 @@ For this thesis all Gamestop (GME) related posts between January 1st, 2020 and O
 The query returns 89 columns. Most of which, however, can be dropped since they either aren’t useful for this thesis or contain no data. 
 The most important columns are the number of comments, the title of the post and the content of the post. 
 Emoticons are also included in the content text. In total 179,544 posts were obtained.\\
-Of all obtained posts, 10\% or 17,955 were manually labeled as bearish, neutral or bullish.
+Of all obtained posts, 10\% or 17,955 were manually labeled as \emph{bearish, neutral or bullish}. Generally, bearish is associated with negative 
+sentiment where investors assume a decline in stock prices. Bullish, on the other hand, relates to positive sentiment where investors hope for rising stock prices.
 
 \subsection{Data Preprocessing} \label{subs:datapreprocessing}
 The research by \cite{jemai2021SentimentAnalysis} presents a system for structuring a sentiment analysis project. 
 The data collection phase is the first step, where textual data is obtained from a source. 
-The data is then cleaned in the second step, the data pre-processing phase. To do so, several actions need to be performed. 
-Data tokenization is one of the actions. This is a natural language processing technique in which a large body of text is broken down into multiple sentences, 
+The data is then cleaned in the second step, the data pre-processing phase. To do so, several actions need to be performed.
+One of them is tokenization. This is a natural language processing technique in which a large body of text is broken down into multiple sentences, 
 each of which is then broken down into a list of words. Stop words such as is, the, a and other common words are also removed during the 
-pre-processing phase. If stop words are included, they not only may play a negative role in sentiment classification but also increase the overall vocabulary size \citep{zhao2017comparisontextprocess}.
+pre-processing phase. If stop words are included, they may play a negative role in sentiment classification and increase the overall 
+vocabulary size while having little predictive power. \citep{zhao2017comparisontextprocess}.
 In addition, special characters such as @ and urls should also be removed. 
 It is also suggested that the text is converted to lowercase. As the final step, the research proposes lemmatization. By doing so,
 the structure of a word is analyzed and converted to its normalized form. The research conducted by \cite{camachocollados2018role} 
@@ -252,7 +256,7 @@ and text classification \citep{jung2019automatedclassification}. However, unsupe
 patterns in a dataset, especially without any a priori knowledge of the structure of the data. As a result, unsupervised models 
 excel at summarizing or exploration a large text corpus. 
 For the case at hand, a t-Distributed Stochastic Neighbor embedding (t-sne) algorithm was applied on the data to extract similarity 
-features and project them onto a lower dimension \citep{binu2020dimreductiontsne}. As can be seen in the visualization below, admittedly 
+features and project them onto a lower dimension \citep{binu2020dimreductiontsne}. As can be seen in Figure 1, admittedly 
 at a low dimension, the majority of the data do not belong to any particular cluster.
 
 \begin{figure}
@@ -284,7 +288,7 @@ which needs to be defined when creating the Active Learner.\\
 In addition, a query strategy needs to be defined, based on which the Active Learner queries new instances from the aforementioned pool. 
 A query strategy evaluates the informativeness of unlabeled samples. Common strategies are \emph{uncertainty sampling, query-by-committee, 
 expected model change, expected error reduction and variance reduction}. \\
-While each strategy has its own intricacies, all essentially try to find instances that are hard for the model to classify and hence might benefit from annotation. 
+While each strategy has its own intricacies, all essentially try to find instances that are hard for the model to classify and hence might benefit from manual annotation. 
 After the query function selected instances from the pool, an oracle needs to label those. An oracle normally is at 
 least one human with knowledge on how to annotate the data at hand \citep{settles2009activeLL}. Once the new instances are labeled, 
 those instances need to be removed from the pool, since they are now part of the labeled data. The Active Learner then needs 
@@ -326,8 +330,8 @@ the samples about which it is most uncertain about \citep{osbonre2004ensemblebas
 
 \subsection{Sentiment Analysis Models} \label{subs:sentimentmodels}
 The next section explores the machine learning models that will be used to perform sentiment analysis on the domain-specific corpus created by the Active Learner. \\
-Because a SVM was used in the Active Learner to label the ground truth data, it will not be applied in the sentiment classification task. 
-Otherwise, the results might lack robustness and be biased. \\
+%Because a SVM was used in the Active Learner to label the ground truth data, it will not be applied in the sentiment classification task. 
+%Otherwise, the results might lack robustness and be biased. \\
 Before training the models, 20\% of the data were set aside as the test set. To account for class imbalances, stratification was applied.  
 
 \subsubsection{Naïve Bayes (NB)} \label{subs:naivebayes}
@@ -343,7 +347,9 @@ Due to the easy implementation and fast training of the algorithm, Naïve Bayes 
 LSTMs are becoming increasingly popular for sentiment classification. 
 LSTMs are built on a recurrent neural network architecture (RNN). In an RNN the neurons are connected to themselves through time. 
 As a result, the input from a time instance t\textsubscript{i} will also be used as an input for the next time instance t\textsubscript{i+1}.That leads to the 
-problem of vanishing gradients. LSTMS are designed to overcome that problem.
+problem of vanishing gradients, which means that it is hard for the model to learn long-term dependencies. This occurs because
+in a long sequence, like a sentence, as the loss gradients are backpropagated through the RNN, they may shrink to zero \citep{vanishinggradients2020pmlr}.
+LSTMS are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
 and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. \\
@@ -384,44 +390,83 @@ Pipeline, SVM and NB were implemented by utilizing material provided during the 
 
 
 \noindent The code for this thesis is shared in the following github repository: \url{https://github.com/StefanWinterToo/Master-Thesis}\\
-Note: Currently the code mainly consists of notebooks. However, before the final submission, I will properly structure the code.\\
 
 \noindent All graphics used in this thesis were created by myself.\\
 
-\noindent Due to time constraints, this first-submission does not use the full set of all possible hyperparameters. 
+\noindent Due to time constraints, this first-submission does not use the full set of all possible hyperparameters and trains the LSTM and BERT only on a subset of the data.
 Furthermore, for the Active Learner the VADER sentiment lexicon was used as an oracle.\\
 
 \noindent To the best of my knowledge, the literature used was referenced appropriately.
 
 \section{Results}
-I didn't add my results yet. I will make a table as below and also add some graphics.
+
+Figure 3 shows the accuracy of the Active Learner. As can be seen in the graph, the performance of the Active Learner slightly decreases over time.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{ActiveLearner.png}
+    \caption{Accuracy of Active Learner over 20 iterations}
+    \label{fig:ActiveLearner}
+\end{figure}
+
+The overview in Table 1 shows which sentiment classifier performed best. Both the LSTM and BERT fail to outperform the NB baseline model.
+
 \begin{table}
-    \caption{Best scoring models classifying bots, on Twitter and Facebook respectively. $F_1$ scores report positive (bot) class. Outline text left (l) and numbers right (r).}
+    \caption{Test scores for NB, LSTM and BERT}
     \label{tab:results}
     \centering
     \small
-    \begin{tabular}{llrr}
+
+    \begin{tabular}{lllrr}
         \toprule
-                              &                                   & \multicolumn{2}{c}{$F_1$ score} \\
-                                                                  \cmidrule{3-4}
-        PCA                   &  Models                           &  Twitter        &  Facebook       \\ 
-        \midrule
-        \multirow{3}{*}{300}  & Linear SVM ($C = 0.1$)            &   0.51          & \textbf{0.91} \\
-                              & Random Forest ($S = 5, F = 5$)    &   0.71          & 0.85 \\
-                              & Naive Bayes                       &   0.61          & 0.73 \\
-        \midrule
-        \multirow{3}{*}{500}  & Linear SVM ($C = 0.1$)            &   0.55          & 0.84   \\
-                              & Random Forest ($S = 5, F = 5$)    &   \textbf{0.76} & 0.71 \\
-                              & Naive Bayes                       &   0.41          & 0.64 \\
-        \midrule
-                              & Majority                          &   0.50          & 0.60 \\
+                                        & \multicolumn{4}{c}{Evaluation Metrics} \\
+                                        \cmidrule{2-5}
+                            Model       & Accuracy      & Precision     & Recall    & F\textsubscript{1}-Score \\
+            \midrule
+            \multirow{1}{*}{NB}         & 0.79          & 0.74          & 0.82      & 0.76                      \\
+            \midrule
+            \multirow{1}{*}{LSTM}       & 0.00          & 0.53          & 0.53      & 0.53                      \\
+            \midrule
+            \multirow{1}{*}{BERT}       & 0.52          & 0.17          & 0.33      & 0.23                      \\
+
         \bottomrule
     \end{tabular}
+
 \end{table}
 
-You have results and want to show them --- probably in a table of some kind as you can see in Table~\ref{tab:results}. Highlight important scores with \verb|\textbf{}|, use booktabs commands for structure: \verb|\toprule \midrule \bottomrule|. APA does not allow vertical lines.
+The accuracy of the LSTM on the validation set is highest after 10 epochs, while the loss starts to increase by a lot. As a result, the weights and other parameters
+seem to be optimal at epoch 10, which is why they will be used for the final model.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{LSTM_acc.png}
+    \caption{Accuracy of LSTM over epochs}
+    \label{fig:LSTM_acc}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{LSTM_Loss.png}
+    \caption{Loss of LSTM over epochs}
+    \label{fig:LSTM_Loss}
+\end{figure}
 
-\section{Conclusion}
+Since BERT is already pre-trained, it does not need as many epochs to optimize a model. As can be seen in figure 5, there is almost no change to the accuracy.
+However, the loss drops.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{BERT_acc.png}
+    \caption{Accuracy of LSTM over epochs}
+    \label{fig:BERT_acc}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{BERT_Loss.png}
+    \caption{Loss of LSTM over epochs}
+    \label{fig:BERT_Loss}
+\end{figure}
+
+
+\section{Discussion}
 
 The 'to the moon' WallStreetBets movement had a tremendous impact on the lives of individuals, both to the positive and negative. 
 Besides that, however, many investment funds have also been negatively impacted by the recent short-squeezes. 
@@ -436,17 +481,17 @@ sentiment analysis. This thesis not only tries to shine some light on those new 
 best to perform sentiment analysis on the forum. \\
 Not only did this thesis compare the performance of different models, but also proposed a highly efficient and reliable way to create a domain-specific annotated corpus, 
 which can be used as the input to aforementioned models. To my knowledge, this thesis is the first research that creates a domain-specific corpus for the WallStreetBets forum. 
-Researchers, such as Talamás (2021), specifically propose future work on “inclusion of features derived from alternative manipulation of the data like sentiment analysis 
-could lead to new insights“. I strongly believe that the methods proposed in my thesis can lead to better sentiment classifiers, 
+Researchers, such as \cite{talamas2021socialmediaeffectsonthemarket}, specifically propose future work on “inclusion of features derived from alternative manipulation of the data like sentiment analysis 
+could lead to new insights“. I strongly believe that the methods proposed in my thesis lead to better sentiment classifiers, 
 which can then be used in other scientific or industrial applications.
+
+\section{Conclusion}
+This thesis proposes the use of an Active Learner to drastically reduce the total cost of annotation. 
+As a result, it becomes more feasible to create a fully labeled domain-specific dataset. 
+Once a fully labeled dataset is obtained, it can be used in supervised learning algorithms. 
+The results show that using state of the art models underperform the simple baseline NB classifier.
 
 \bibliography{references}
 
-\section*{Appendix A} \label{app:a}
 
-If you have nothing to append: remove this. You can do a page referral for these, like: Appendix A (page~\pageref{app:a}).
-
-\section*{Appendix B}
-
-And this!
 \end{document}
