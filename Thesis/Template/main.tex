@@ -340,7 +340,7 @@ Furthermore, the implementation of the Active Learner in this thesis deviates fr
 does not set aside a test set from the initial seed data and the accuracy of the Active Learner is evaluated on the entire seed data after every iteration. 
 While the literature does not explain why this approach was
 taken, I hypothesize that is due to the cost associated with labeling the data. This thesis will not deviate from well established machine learning practices
-and therefore set aside 20\% of the seed data as test data, which will be used to evaluate the performance of the Active Learner after every iteration. \emph{Insert citation from my ML book}
+and therefore set aside 20\% of the seed data as test data, which will be used to evaluate the performance of the Active Learner after every iteration \cite[p. 196]{raschka2019pythonmachinelearning}.
 
 Uncertainty sampling was chosen as the query strategy because it has been demonstrated to be a strong baseline strategy. 
 This query strategy assumes, that instances that are far from the decision boundary are adequately explainable and instances close to the 
