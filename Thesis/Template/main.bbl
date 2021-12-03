@@ -259,6 +259,38 @@ Das, S\BPBI R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Deng%
+\ \protect \BOthers {.}}{%
+Deng%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+deng2009transferlearning}
+\APACinsertmetastar {%
+deng2009transferlearning}%
+\begin{APACrefauthors}%
+Deng, J.%
+, Dong, W.%
+, Socher, R.%
+, Li, L\BHBI J.%
+, Kai, L.%
+\BCBL {}\ \BBA {} Li, F\BHBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {ImageNet: A large-scale hierarchical image database}
+  {Imagenet: A large-scale hierarchical image database}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2009 IEEE Conference on Computer Vision and Pattern
+  Recognition} {2009 ieee conference on computer vision and pattern
+  recognition}\ (\BPG~248-255).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/CVPR.2009.5206848} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Devlin%
 , Chang%
 , Lee%
@@ -268,9 +300,9 @@ Devlin%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2019}}%
 }]{%
-devlin2019bertpo}
+devlin2019bert}
 \APACinsertmetastar {%
-devlin2019bertpo}%
+devlin2019bert}%
 \begin{APACrefauthors}%
 Devlin, J.%
 , Chang, M\BHBI W.%
@@ -281,11 +313,9 @@ Devlin, J.%
 \newblock
 \APACrefYearMonthDay{2019}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {BERT: Pre-training of Deep Bidirectional Transformers
-  for Language Understanding} {Bert: Pre-training of deep bidirectional
-  transformers for language understanding}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {NAACL.} {Naacl.}
+\APACrefbtitle {BERT: Pre-training of Deep Bidirectional Transformers for
+  Language Understanding.} {Bert: Pre-training of deep bidirectional
+  transformers for language understanding.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -311,6 +341,38 @@ Diangson, B.%
 \APACrefbtitle {Bet it on Reddit: The Effects of Reddit Chatter on Highly
   Shorted Stocks.} {Bet it on reddit: The effects of reddit chatter on highly
   shorted stocks.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Du%
+, Sun%
+, Wang%
+, Qi%
+\BCBL {}\ \BBA {} Liao%
+}{%
+Du%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Du2020AdversarialAD}
+\APACinsertmetastar {%
+Du2020AdversarialAD}%
+\begin{APACrefauthors}%
+Du, C.%
+, Sun, H.%
+, Wang, J.%
+, Qi, Q.%
+\BCBL {}\ \BBA {} Liao, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Adversarial and Domain-Aware BERT for Cross-Domain
+  Sentiment Analysis} {Adversarial and domain-aware bert for cross-domain
+  sentiment analysis}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {ACL.} {Acl.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1093,6 +1155,38 @@ Xianghua, F.%
   sentiment analysis}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{IEEE Access}{}{}{71884-71891}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Xiao%
+, Wang%
+\BCBL {}\ \BBA {} Zuo%
+}{%
+Xiao%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+xiao2018word2veclstm}
+\APACinsertmetastar {%
+xiao2018word2veclstm}%
+\begin{APACrefauthors}%
+Xiao, L.%
+, Wang, G.%
+\BCBL {}\ \BBA {} Zuo, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Research on Patent Text Classification Based on Word2Vec
+  and LSTM} {Research on patent text classification based on word2vec and
+  lstm}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2018 11th International Symposium on Computational
+  Intelligence and Design (ISCID)} {2018 11th international symposium on
+  computational intelligence and design (iscid)}\ (\BVOL~01, \BPG~71-74).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ISCID.2018.00023} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

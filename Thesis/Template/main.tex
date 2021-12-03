@@ -21,8 +21,8 @@
 
 % !!! PLEASE CHANGE THESE VARIABLES TO MATCH YOUR INFORMATION !!!
 
-\def\thesistitle{Measuring Sentiment}                      % title
-\def\subtitle{This is the subtitle}             % subtitle
+\def\thesistitle{Measuring Domain-Specific Sentiment}                      % title
+\def\subtitle{The WallStreetBets 'Meme-Stock' Saga}             % subtitle
     % ^if there is no subtitle, replace by \def\subtitle{}  
 \def\yourname{Stefan Winter}                                                                       % ^first and last name
 \def\yourprogramme{Data Science \& Society}                         % OR (remove this)
@@ -64,7 +64,7 @@ Additionally, I want to thank Sveva Cadura and Anna Carolina van Melis for \\the
 \begin{abstract}
     Until the GameStop short-squeeze in early 2021, the impact of changes in sentiment of the Reddit discussion board \emph{WallStreetBets} on the financial market 
     was vastly underappreciated. Due to the novelty of this phenomenon, there is also almost no research available on that topic. This thesis will explore methodologies 
-    on how to best measure sentiment of the discussion board. One of the challenges when measuring sentiment of WallStreetBets is the usage of novel 
+    on how to measure sentiment of the discussion board. One of the challenges when measuring the sentiment of WallStreetBets is the usage of novel 
     domain-specific words and terminologies, which are shown to have a big impact on the results of sentiment analysis. Hence, this thesis proposes a method 
     to create a dataset that covers the sentiment of text data which includes the terminology of a given domain. It will be shown that sentiment analysis machine 
     learning models that use the domain-specific text corpus as input outperform general purpose lexicons, which are currently commonly used by both academia and industry 
@@ -81,10 +81,11 @@ the most well-known and influential investing online-forums.
 Even though the Reddit subforum was created in 2012 already, it received the majority of its media exposure in 2021 as a result of a short-squeeze 
 of the GameStop (GME) stock, which drove the stock price up hundreds of percentage points \citep{diangson2021betonreddit}. Over the ensuing months, however, 
 the stock price experienced extraordinary volatility. Prices fluctuated by double-digit percentage points which not only lead to gains, but also to large losses
-for market participants - depending on their timing. \cite{das2007yahoo} show that changes in investor sentiment and discussion board activity can be a cause of increased volatility.\\
-However, it was not the rapid price appreciation in the beginning of the short-squeeze that amazed market participants. Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the WallStreetBets 
+for market participants. Research shows that changes in investor sentiment and discussion board activity can be one cause of increased volatility \citep{das2007yahoo}.
+
+However, it was not the rapid price appreciation in the beginning of the short-squeeze and volatility of the Gamestop stock that amazed market obervers. 
+Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the WallStreetBets 
 community that attracted attention \citep{anand2021WallstreetbetsAgainstWallstreet}.
-\\
 Organizing the mass-coordinated buying of stock, however, requires that enough participants share the same sentiment. According to studies, 
 social media sentiment has a particularly strong impact on uninformed traders \citep{danbolt2015InvestorSentiment}. It is argued, that coordinated investments will also
 occur in the future, mainly due to the influence of social media and other online platforms on our society today \citep{semenova2021reddits}.
@@ -95,7 +96,7 @@ As a result, the site has been neglected in their research \citep{long2021LikeTh
 \noindent
 Hence, this thesis will try to answer the following Research Question:
 \begin{quote}
-\emph{How can sentiment analysis best be performed on the WallStreetBets Reddit-forum?}
+\emph{How can sentiment analysis be performed on the WallStreetBets Reddit-forum?}
 \end{quote}
 
 To begin, it must be determined how the discussions about the Gamestop stock on WallStreetBets should be handled to serve as good input features for sentiment analysis. 
@@ -105,7 +106,7 @@ general-purpose sentiment lexicon or text-corpus \citep{park2015EfficientExtract
 processed by a machine learning algorithm \citep{jemai2021SentimentAnalysis}. As a result, the following sub-research question was formed:
 
 \begin{itemize}
-    \item[RQ1] \emph{How can the domain-specific language of the Reddit forum WallStreetBets best be incorporated into sentiment analysis?}
+    \item[RQ1] \emph{How can the domain-specific language of the Reddit forum WallStreetBets be incorporated into sentiment analysis?}
 \end{itemize}
 
 Subsequently, machine learning models can be trained to perform sentiment analysis. However, 
@@ -124,7 +125,7 @@ methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhanced
 As was mentioned earlier, however, no classifier works best in all scenarios which is why the next sub-research question needs to be answered:
 
 \begin{itemize}
-    \item[RQ2] \emph{Which sentiment analysis approach performs best on predefined evaluation metrics?}
+    \item[RQ2] \emph{How do different sentiment analysis approaches perform based on the predefined evaluation metrics Accuracy, Precision, Recall and F$_1$-Score?}
 \end{itemize}
 
 \section{Related Work}
@@ -171,7 +172,21 @@ exist in a lexicon. This can be achieved by having models that formulate domain-
 sequence-labelling task. Furthermore, novel domain-specific words can be learned by understanding the contextual 
 structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can be learned in the hidden layers of 
 LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be improved, by applying a character-based 
-convolutional neural network to encode the spelling of words \citep{pei2019slang}. Even though the literature suggests many 
+convolutional neural network to encode the spelling of words \citep{pei2019slang}. Other research shows that the accuracy of an
+LSTM can be improved by introducing Word2Vec into pre-training the LSTM. As a result, the one-hot encoded input to the LSTM is
+converted into a low dimensional vector that covers the semantic similarity of the words in it. Due to the lower dimensionality,
+over fitting can be prevented and the network may also need less parameters \citep{xiao2018word2veclstm}.
+
+Other research demonstrates the importance of large pre-trained models using transfer learning \citep{deng2009transferlearning}.
+\cite{devlin2019bert} introduce BERT, a pre-trained model that uses the English Wikipedia and the BooksCorpus, which shows promising results.
+One of the advantages is that only one output layer needs to be added to the model to achieve state-of-the-art sentiment analysis performance.
+However, it is also shown that BERT lacks domain awareness. Hence it cannot differentiate between properties of source and target domains. One
+proposed solution is to replace a random subset of tokens by a \emph{MASK} token. The corresponding hidden values of the MASK token can be fed
+into the output layer. This adaption to a specific domain is shown to slightly enhance the performance of a vanilla implementation of BERT. However,
+it is also argued that a vanilla implementation can still outperform other models \citep{Du2020AdversarialAD}.
+
+
+Even though the literature suggests many 
 innovative ways to enhance model performance by a few percentage points, the biggest benefits seem to come from high quality 
 input data in the form of domain-specific labeled data.
 
@@ -363,13 +378,13 @@ To feed the data into the LSTM, it first is converted from a tf-idf representati
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
 natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
 pretraining users won’t need as much computing power to achieve good results, even if the dataset is relatively 
-small \citep{devlin2019bertpo}. The BERT github page even states that 
+small \citep{devlin2019bert}. The BERT github page even states that 
 “Most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}
 
 \subsection{Hyperparameter Tuning} \label{subs:hyperparams}
 In order to find the best performing models, some hyperparameter tuning steps were taken. For the implementation of the Naïve model, five-fold grid search cross-validation was used to find the best parameters in a pre-defined parameter grid.
 For the deep learning models, LSTM and BERT, a loop was created that iterates over a set of parameters. Within each iteration, the model is fit on the training data while setting aside 20\% of the data for validation. The best performing model
-and its respective parameters will then be used to classify the test data.
+and its respective parameters will then be used to classify the test data. 
 
 \subsection{Data, Code and Ethics Statements} \label{datacodeethics}
 To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: \url{https://github.com/mattpodolak/pmaw}\\
