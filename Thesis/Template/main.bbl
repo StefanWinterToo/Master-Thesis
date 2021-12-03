@@ -1,6 +1,35 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Abbas%
+\ \protect \BOthers {.}}{%
+Abbas%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+abbas2019mnb}
+\APACinsertmetastar {%
+abbas2019mnb}%
+\begin{APACrefauthors}%
+Abbas, M.%
+, Ali, K.%
+, Memon, S.%
+, Jamali, A.%
+, Memon, S.%
+\BCBL {}\ \BBA {} Ahmed, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{03}{}.
+\newblock
+\APACrefbtitle {Multinomial Naive Bayes Classification Model for Sentiment
+  Analysis.} {Multinomial naive bayes classification model for sentiment
+  analysis.}
+\newblock
+\begin{APACrefDOI} \doi{10.13140/RG.2.2.30021.40169} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Anand%
 \ \BBA {} Pathak%
 }{%
@@ -443,6 +472,35 @@ googlegithub}%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Guia%
+, Silva%
+\BCBL {}\ \BBA {} Bernardino%
+}{%
+Guia%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Guia2019ComparisonON}
+\APACinsertmetastar {%
+Guia2019ComparisonON}%
+\begin{APACrefauthors}%
+Guia, M.%
+, Silva, R\BPBI R.%
+\BCBL {}\ \BBA {} Bernardino, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Comparison of Naive Bayes, Support Vector Machine,
+  Decision Trees and Random Forest on Sentiment Analysis} {Comparison of naive
+  bayes, support vector machine, decision trees and random forest on sentiment
+  analysis}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {KDIR.} {Kdir.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hochreiter%
 \ \BBA {} Schmidhuber%
 }{%
@@ -467,6 +525,31 @@ Hochreiter, S.%
 \APACjournalVolNumPages{Neural computation}{9}{}{1735-80}.
 \newblock
 \begin{APACrefDOI} \doi{10.1162/neco.1997.9.8.1735} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hutto%
+\ \BBA {} Gilbert%
+}{%
+Hutto%
+\ \BBA {} Gilbert%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+hutto2015vader}
+\APACinsertmetastar {%
+hutto2015vader}%
+\begin{APACrefauthors}%
+Hutto, C.%
+\BCBT {}\ \BBA {} Gilbert, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {VADER: A Parsimonious Rule-based Model for Sentiment
+  Analysis of Social Media Text} {Vader: A parsimonious rule-based model for
+  sentiment analysis of social media text}.{\BBCQ}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -554,6 +637,33 @@ Kang, J.%
   classification}.{\BBCQ}
 \newblock
 \BIn{} \APACrefbtitle {PAKDD.} {Pakdd.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kotelnikova%
+, Paschenko%
+, Bochenina%
+\BCBL {}\ \BBA {} Kotelnikov%
+}{%
+Kotelnikova%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+kotelnikova2021lexiconbased}
+\APACinsertmetastar {%
+kotelnikova2021lexiconbased}%
+\begin{APACrefauthors}%
+Kotelnikova, A.%
+, Paschenko, D.%
+, Bochenina, K.%
+\BCBL {}\ \BBA {} Kotelnikov, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {Lexicon-based Methods vs. BERT for Text Sentiment Analysis.}
+  {Lexicon-based methods vs. bert for text sentiment analysis.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

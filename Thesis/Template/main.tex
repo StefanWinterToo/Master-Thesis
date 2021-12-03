@@ -173,7 +173,7 @@ sequence-labelling task. Furthermore, novel domain-specific words can be learned
 structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can be learned in the hidden layers of 
 LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be improved, by applying a character-based 
 convolutional neural network to encode the spelling of words \citep{pei2019slang}. Other research shows that the accuracy of an
-LSTM can be improved by introducing Word2Vec into pre-training the LSTM. As a result, the one-hot encoded input to the LSTM is
+LSTM can be improved by introducing Word2Vec to the LSTM. As a result, the one-hot encoded input to the LSTM is
 converted into a low dimensional vector that covers the semantic similarity of the words in it. Due to the lower dimensionality,
 over fitting can be prevented and the network may also need less parameters \citep{xiao2018word2veclstm}.
 
@@ -183,13 +183,18 @@ One of the advantages is that only one output layer needs to be added to the mod
 However, it is also shown that BERT lacks domain awareness. Hence it cannot differentiate between properties of source and target domains. One
 proposed solution is to replace a random subset of tokens by a \emph{MASK} token. The corresponding hidden values of the MASK token can be fed
 into the output layer. This adaption to a specific domain is shown to slightly enhance the performance of a vanilla implementation of BERT. However,
-it is also argued that a vanilla implementation can still outperform other models \citep{Du2020AdversarialAD}.
+it is also argued that a vanilla implementation can still outperform other models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
+lexicon approach shows that on average BERT achieves better performance. However, the better performance cannot be observed on all analyzed test sets
+which keeps the authors "optimistic about the lexicon-based approach in general" \citep{kotelnikova2021lexiconbased}.
 
+However, the implementation of deep-learning models is oftentimes much more complex than traditional machine learning methods. Furthermore, deep-learning models typically
+also require much more computing power to train the network. The Naive Bayes method, in contrast, is very easy to implement and fast to train. As a
+result, the classifier is oftentimes used as a baseline for text classification. Multinomial Naive Bayes (MMB), one type of the Naive Bayes classifier, has established
+itself as the de-facto standard for text classification \citep{abbas2019mnb}.
 
 Even though the literature suggests many 
 innovative ways to enhance model performance by a few percentage points, the biggest benefits seem to come from high quality 
 input data in the form of domain-specific labeled data.
-
 Creating a domain-specific annotated corpus to train machine learning models, however, is not without its own challenges. 
 For example, working with multiple human annotators can lead to discrepancies in the annotation results \citep{kim2008corpusannotation, rayan2019sentimentanalysisemail}. 
 Additionally, it is hard to estimate the total annotation cost which can depend of various factors. One example would be whether the annotator is capable of fluently understanding 
@@ -255,13 +260,11 @@ vocabulary size while having little predictive power. \citep{zhao2017comparisont
 In addition, special characters such as @ and urls should also be removed. 
 It is also suggested that the text is converted to lowercase. As the final step, the research proposes lemmatization. By doing so,
 the structure of a word is analyzed and converted to its normalized form. The research conducted by \cite{camachocollados2018role} 
-shows that lemmatization improves sentiment analysis results when using domain-specific datasets.
+shows that lemmatization improves sentiment analysis results especially when using domain-specific datasets.
 
 Since it is shown that having data with emoticons leads to more accurate results than data without emoticons,
 this thesis does not remove emoticons from the text corpus \citep{parveen2016sentimentanalysistwitter}.
-Eventually, term frequency-inverse document frequency (tf-idf), was applied on the text corpus. 
-Using this representation allows the extraction of the most descriptive terms in a document and easy computations. 
-However, it fails to capture semantics and word embeddings. For computational reasons, only words that occur at least five times were included in the tf-idf representation. % Update this in the end when I know how much my computer can handle...
+% Eventually, term frequency-inverse document frequency (tf-idf), was applied on the text corpus. Using this representation allows the extraction of the most descriptive terms in a document and easy computations.  However, it fails to capture semantics and word embeddings. For computational reasons, only words that occur at least five times were included in the tf-idf representation. % Update this in the end when I know how much my computer can handle...
 
 \subsection{The Case for a Semi-Supervised Method over an Unsupervised Method} \label{subs:supervisedvsunsupervised}
 Since the data obtained from Reddit is unlabeled, it cannot be fed into supervised machine learning algorithms. 
@@ -326,7 +329,8 @@ performance \citep{alves2014comparisonsvm}.
 Additionally, SVMs can be used to solve both regression and 
 classification problems. For the case at hand, the algorithm needs solve a classification problem, by optimally separating the data between bearish, 
 neutral and bullish instances. Classification is done by finding a hyper-plane with the biggest margin, meaning it looks for the greatest distance 
-to the nearest sample points \citep{jemai2021SentimentAnalysis}. SVMs use spatial transformations, commonly known as kernel functions, to fit the hyperplane. 
+to the nearest sample points \citep{jemai2021SentimentAnalysis}. SVMs use spatial transformations, commonly known as kernel functions, to fit the hyperplane.
+By doing so the data is projected into a higher dimensional space, which makes them easier to separate.
 Kernels can be linear, RBF or others. The radial basis function (RBF) kernel is best used for non-linear problems and is a general-purpose kernel that 
 is often used in pattern recognition problems. The linear kernel, on the other hand, is typically used when there are only two classes present. 
 A good example for that might be positive and negative sentiment \citep{alves2014comparisonsvm}.
@@ -356,22 +360,31 @@ which can be handled very well by NB, this algorithm has established itself as o
 This thesis will use Multinomial Naïve Bayes to classify the sentiment of the text. This is due to the model’s ability to handle 
 larger vocabulary sizes. In addition, the algorithm is simple to implement, suitable for real-time applications, and highly scalable. 
 However, the algorithm’s prediction accuracy is frequently lower than that of other sentiment analysis techniques \citep{song2017novelclassification}. 
-Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier.
+Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier.\\
+
+\noindent\textbf{Implementation}\\
+To train the classifier, the data was first converted to a Term Frequence-Inverse Document Frequence (tf-idf) representation. By using tf-idf, a weight is
+assigned to each word. The tf is calculated by the number of times a word can be counted in a document. The idf adjusts the importance of the respective word \citep{Guia2019ComparisonON}.
+The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for \emph{alpha} and \emph{fit\char`_prior}.\\
 
 \subsubsection{Long Short Term Memory (LSTM)} \label{subs:lstm}
 LSTMs are becoming increasingly popular for sentiment classification. 
 LSTMs are built on a recurrent neural network architecture (RNN). In an RNN the neurons are connected to themselves through time. 
-As a result, the input from a time instance t\textsubscript{i} will also be used as an input for the next time instance t\textsubscript{i+1}.That leads to the 
+As a result, the input from a time instance t\textsubscript{i} will also be used as an input for the next time instance t\textsubscript{i+1}. That leads to the 
 problem of vanishing gradients, which means that it is hard for the model to learn long-term dependencies. This occurs because
 in a long sequence, like a sentence, as the loss gradients are backpropagated through the RNN, they may shrink to zero \citep{vanishinggradients2020pmlr}.
-LSTMS are designed to overcome that problem.
+LSTMs are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
 and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. \\
 
 
 \noindent\textbf{Implementation}\\
-To feed the data into the LSTM, it first is converted from a tf-idf representation into a one-hot encoded array with three dimensions. However, one-hot encoding fails to incorporate similarity between words, which is why an Embedding layer was added to the LSTM. The layer takes the number of words in the text corpus as input. The output dimensions which will be used in the subsequent LSTM layer are a hyperparameter and chosen by evaluating the performance on the validation set, which is 20% of the training data. The same applies to the hidden states in the LSTM layer. The final Dense output layer uses softmax as its activation to output either bearish, neutral or bullish. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric. The optimizer is also chosen based on the hyperparameters provided.
+Before training the LSTM, data it first is fed into a word2vec model to learn the word embedding. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
+To train the network, the input data first needs to be converted to a one-hot encoded array. The input and output dimensions of the Embedding layer, as well as the weights are taken from the word2vec model.
+The output dimensions of the embedding layer are also used as the units for the LSTM. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
+a loop runs through a set of parameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
+The final Dense output layer uses softmax as its activation function. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric. The optimizer is also chosen based on the hyperparameters provided.
 
 
 \subsubsection{Bidirectional Encoder Representations from Transformers (BERT)} \label{subs:bert}
@@ -379,12 +392,23 @@ BERT is a relatively new machine learning algorithm developed by Google in 2018 
 natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
 pretraining users won’t need as much computing power to achieve good results, even if the dataset is relatively 
 small \citep{devlin2019bert}. The BERT github page even states that 
-“Most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}
+“Most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}.\\
 
-\subsection{Hyperparameter Tuning} \label{subs:hyperparams}
-In order to find the best performing models, some hyperparameter tuning steps were taken. For the implementation of the Naïve model, five-fold grid search cross-validation was used to find the best parameters in a pre-defined parameter grid.
-For the deep learning models, LSTM and BERT, a loop was created that iterates over a set of parameters. Within each iteration, the model is fit on the training data while setting aside 20\% of the data for validation. The best performing model
-and its respective parameters will then be used to classify the test data. 
+\noindent\textbf{Implementation}\\
+To train BERT, the token \emph{[CLS]} and \emph{[SEP]} are added to the beginning and end of the input sequence. Subsequently, the tokens are converted to IDs using the tokenization
+module from the bert library. Even though a maximum of 512 tokens can be used when training BERT, this implementation only uses a maximum of 100 tokens due to computational reasons.
+Furthermore, this implementation uses an Adam optimizer and a constant learning rate of 0.00001. Future work should include an optimization of those parameters. The model is trained with
+a batch size of two over three epochs.
+
+\subsubsection{Valence Aware Dictionary for sEntiment Reasoning (VADER)} \label{subs:vader}
+Due to wide spread usage of lexicons, the VADER sentiment lexicon was also included. However, this thesis relies on the recommended 
+thresholds to classify the associated sentiment and does not try to optimize those values, since a lexicon based approach is not within the research scope of this thesis. Instead, the result is intended for illustrative purposes only.
+VADER is specifically designed to classify social media sentiment and also includes emoticons, acronyms and \emph{slang} words \citep{hutto2015vader}. \\
+
+\noindent\textbf{Implementation}\\
+Vader can easily be implemented, by looking up the associated score of words in the lexicon. Typical threshold values for the obtained compound score are as follows:\\
+If the score is greater than or equal to 0.05, it is associated with positive sentiment. If the score is smaller than or equal to -0.05 it is associated with negative sentiment. For scores
+in between, neutral sentiment is assigned \citep{hutto2015vader}.
 
 \subsection{Data, Code and Ethics Statements} \label{datacodeethics}
 To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: \url{https://github.com/mattpodolak/pmaw}\\
@@ -401,7 +425,7 @@ Pipeline, SVM and NB were implemented by utilizing material provided during the 
 
 \noindent The LSTM was implemented by using material provided during the Deep Learning course at Tilburg University, taught by Dr. Vanmassenhove and Dr. Saygili.\\
 
-\noindent To implement BERT the following tutorial was used: \url{https://skimai.com/fine-tuning-bert-for-sentiment-analysis/}\\
+\noindent To implement BERT the following tutorial was used: \url{https://www.kaggle.com/xhlulu/disaster-nlp-keras-bert-using-tfhub/notebook}\\
 
 
 \noindent The code for this thesis is shared in the following github repository: \url{https://github.com/StefanWinterToo/Master-Thesis}\\
@@ -415,7 +439,8 @@ Furthermore, for the Active Learner the VADER sentiment lexicon was used as an o
 
 \section{Results}
 
-Figure 3 shows the accuracy of the Active Learner. As can be seen in the graph, the performance of the Active Learner slightly decreases over time.
+Figure 3 shows the accuracy of the Active Learner. As can be seen in the graph, the performance of the Active Learner slightly decreases over time. This is due to the oracle not doing a good
+job at labeling queried instances.
 
 \begin{figure}
     \centering
@@ -424,7 +449,10 @@ Figure 3 shows the accuracy of the Active Learner. As can be seen in the graph, 
     \label{fig:ActiveLearner}
 \end{figure}
 
-The overview in Table 1 shows which sentiment classifier performed best. Both the LSTM and BERT fail to outperform the NB baseline model.
+To determine which model delivered the best comparative performance, they were evaluated based on metrics outlined in Table 1. Since lexicons are widely used in the literature,
+the VADER sentiment lexicon was also included in the results.
+Based on the evaluation metrics in Table 1, the NB baseline model outperformed other more complex models. Interestingly, BERT even underperformed the lexicon approach on most metrics.
+However, it can be seen that a general purpose lexicon vastly underperforms other sentiment models.
 
 \begin{table}
     \caption{Test scores for NB, LSTM and BERT}
@@ -438,11 +466,13 @@ The overview in Table 1 shows which sentiment classifier performed best. Both th
                                         \cmidrule{2-5}
                             Model       & Accuracy      & Precision     & Recall    & F\textsubscript{1}-Score \\
             \midrule
-            \multirow{1}{*}{NB}         & 0.79          & 0.74          & 0.82      & 0.76                      \\
+            \multirow{1}{*}{NB}         & \textbf{0.79}          & \textbf{0.74}          & \textbf{0.82}      & \textbf{0.76}                      \\
             \midrule
-            \multirow{1}{*}{LSTM}       & 0.00          & 0.53          & 0.53      & 0.53                      \\
+            \multirow{1}{*}{LSTM}       & 0.50          & 0.53          & 0.53      & 0.53                      \\
             \midrule
             \multirow{1}{*}{BERT}       & 0.52          & 0.17          & 0.33      & 0.23                      \\
+            \midrule
+            \multirow{1}{*}{VADER}      & 0.39          & 0.38          & 0.39      & 0.38                      \\
 
         \bottomrule
     \end{tabular}
@@ -453,30 +483,29 @@ The accuracy of the LSTM on the validation set is highest after 10 epochs, while
 seem to be optimal at epoch 10, which is why they will be used for the final model.
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{LSTM_acc.png}
+    \includegraphics[scale=0.5]{LSTM_acc.png}
     \caption{Accuracy of LSTM over epochs}
     \label{fig:LSTM_acc}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{LSTM_Loss.png}
+    \includegraphics[scale=0.5]{LSTM_Loss.png}
     \caption{Loss of LSTM over epochs}
     \label{fig:LSTM_Loss}
 \end{figure}
 
-Since BERT is already pre-trained, it does not need as many epochs to optimize a model. As can be seen in figure 5, there is almost no change to the accuracy.
-However, the loss drops.
+Since BERT is already pre-trained, it does not need as many epochs to optimize a model. As can be seen in figure 6, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{BERT_acc.png}
-    \caption{Accuracy of LSTM over epochs}
+    \includegraphics[scale=0.5]{BERT_acc.png}
+    \caption{Accuracy of BERT over epochs}
     \label{fig:BERT_acc}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{BERT_Loss.png}
-    \caption{Loss of LSTM over epochs}
+    \includegraphics[scale=0.5]{BERT_Loss.png}
+    \caption{Loss of BERT over epochs}
     \label{fig:BERT_Loss}
 \end{figure}
 
@@ -492,8 +521,7 @@ lives of many people \citep{lyocsa2021yolotrading}.
 By being able to accurately measure and monitor the sentiment on WallStreetBets, market participants and regulators are able to preemptively take measures.\\
 However, since the wallstreetbets subreddit has become very popular just recently, there is little academic research about the impact of the community on 
 financial markets so far. Even though there is some research about sentiment analysis on wallstreetbets, that research does not use state of the art algorithms to perform 
-sentiment analysis. This thesis not only tries to shine some light on those new and influential market participants, but also tries to put forward some methods that work 
-best to perform sentiment analysis on the forum. \\
+sentiment analysis. This thesis shows that the wide-spread use of lexicons is not the best way to monitor sentiment and the adaption of better algorithms is urgently needed.\\
 Not only did this thesis compare the performance of different models, but also proposed a highly efficient and reliable way to create a domain-specific annotated corpus, 
 which can be used as the input to aforementioned models. To my knowledge, this thesis is the first research that creates a domain-specific corpus for the WallStreetBets forum. 
 Researchers, such as \cite{talamas2021socialmediaeffectsonthemarket}, specifically propose future work on “inclusion of features derived from alternative manipulation of the data like sentiment analysis 
