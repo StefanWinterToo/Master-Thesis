@@ -7,6 +7,9 @@ from sklearn.svm import SVC
 import os
 import pickle
 import scipy
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.preprocessing import LabelEncoder
 
 
 def check_file_in_dir(path):
@@ -15,9 +18,16 @@ def check_file_in_dir(path):
     '''
     return os.path.exists(path)
 
+def load_submissions():
+    return pd.read_pickle("./data/cleaned_submissions_2.pkl")
+
+def tfidf_encoding(data):
+    tfidf = TfidfVectorizer(preprocessor=' '.join, lowercase=False, min_df=5) # min_df = Minimum occurance of words
+    return tfidf.fit_transform(data)
+
 def initial_training():
 
-    data = pd.read_pickle("./data/cleaned_submissions.pkl")
+    data = load_submissions()
 
     text = data["text"]
     labels = data["sentiment"]
@@ -38,14 +48,12 @@ def initial_training():
             new_indices.append(i)
 
     # Encode labels
-    from sklearn.preprocessing import LabelEncoder
     lenc = LabelEncoder()
     y_train = lenc.fit_transform(y_seed)
 
     # Vectorize text using tfidf
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    tfidf = TfidfVectorizer(preprocessor=' '.join, lowercase=False, min_df=5) # min_df = Minimum occurance of words
-    X_train = tfidf.fit_transform(data["text"])
+    
+    X_train = tfidf_encoding(data["text"])
 
     # Set aside test set, to better judge the performance of the AL. This is not done in the literature
     
@@ -57,12 +65,13 @@ def initial_training():
         print("Active Learner Object already exists, loading object now.")
         learner = load_initial_model()
     else:
-        learner = ActiveLearner(
-            estimator = SVC(probability=True),
-            query_strategy = uncertainty_sampling,
-            X_training = X_train_seed,
-            y_training = y_train_seed
-        )
+        # learner = ActiveLearner(
+        #     estimator = SVC(probability=True),
+        #     query_strategy = uncertainty_sampling,
+        #     X_training = X_train_seed,
+        #     y_training = y_train_seed
+        # )
+        pass
 
     return X_train_seed, X_test, y_train_seed, y_test, X_train_pool, learner, new_indices
 
@@ -142,6 +151,17 @@ def save_pool_data(X_train_pool):
 def load_pool_data(path = "AL/data/pool/"):
     X_train_pool = scipy.sparse.load_npz(path + "X_train_pool.npz")
     return X_train_pool
+
+def get_most_recent_pool():
+    '''
+    Returns the pool file that was created most recently
+    '''
+    path = "C:\DEV\Master Thesis\App\AL\data\pool"
+    files = os.listdir(path)
+    paths = [os.path.join(path, basename) for basename in files]
+    newest_pool_file = max(paths, key=os.path.getctime)
+    return scipy.sparse.load_npz(newest_pool_file)
+
 
 def run_this():
     X_train_seed, X_test, y_train_seed, y_test, X_train_pool, learner, new_indices = initial_training()
