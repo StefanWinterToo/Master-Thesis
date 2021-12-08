@@ -19,7 +19,7 @@ def check_file_in_dir(path):
     return os.path.exists(path)
 
 def load_submissions():
-    return pd.read_pickle("./data/cleaned_submissions_2.pkl")
+    return pd.read_pickle("./data/cleaned_submissions.pkl")
 
 def tfidf_encoding(data):
     tfidf = TfidfVectorizer(preprocessor=' '.join, lowercase=False, min_df=5) # min_df = Minimum occurance of words
