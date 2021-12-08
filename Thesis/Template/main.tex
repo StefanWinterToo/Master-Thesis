@@ -96,7 +96,7 @@ As a result, the site has been neglected in their research \citep{long2021LikeTh
 \noindent
 Hence, this thesis will try to answer the following Research Question:
 \begin{quote}
-\emph{How can sentiment analysis be performed on the WallStreetBets Reddit-forum?}
+\emph{Can sentiment analysis of the WallStreetBets Reddit-forum be used to predict daily changes in the stock price of Gamestop?}
 \end{quote}
 
 To begin, it must be determined how the discussions about the Gamestop stock on WallStreetBets should be handled to serve as good input features for sentiment analysis. 
@@ -127,6 +127,20 @@ As was mentioned earlier, however, no classifier works best in all scenarios whi
 \begin{itemize}
     \item[RQ2] \emph{How do different sentiment analysis approaches perform based on the predefined evaluation metrics Accuracy, Precision, Recall and F$_1$-Score?}
 \end{itemize}
+
+An accurate measure of sentiment can represent an infromative feature, which is why the impact of sentiment on changes in stock prices has gained attention by researchers in recent years.
+However, predicting stock prices is a complex undertaking due to the nonlinearity and nonstationarity in the time series data of stock prices \citep{mahla2019stockpriceprediction}. Generally, this means that certain
+attributes of the data change over time, making it hard to forecast stock prices \citep{shetty2021nonstationary}. One established stock-price forecasting method is Auto Regressive Integrated Moving
+Average (ARIMA), which captures temporal structures in time-series data, has shown excellent predictive results \citep{caginalp1995arima}. However, it is not designed to include other features, such as sentiment.
+This is why this thesis will also compare newer models such as LSTMs and XGBoost, which have demonstrated strong predicitive capabilities with regards to time-series data \citep{chen2021meanvariance}.
+This leads to the following sub-research question:
+
+\begin{itemize}
+    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment is included as a feature, based on the predefined evaluation metrics XYZ…}
+\end{itemize}
+
+The main research question can be answered by solving the three sub research-questions.
+%By answering the three sub-research questions, an answer for the main research question can be found.
 
 \section{Related Work}
 
@@ -216,6 +230,17 @@ the feature set on 10 relevant documents. When it comes to document similarity, 
 identifiable. Because features may be barely distinctable, the annotator might spend a lot of effort labeling uninformative instances 
 when selecting them randomly. An Active Learner, on the other hand, suggests which instances the annotator should label. Those instances can be 
 determined on various quantitative metrics \citep{miller2020activelearningapproaches}.
+
+% Put the paragraph below into the literature part.
+For example, it is shown that social media sentiment can have a 
+direct effect of how market participants perceive a company, which can lead to changes in the stock price of companies. This is especially true for smaller 
+firms with low analyst coverage \citep{feng2019824}. Other researchers show that sentiment obtained from Twitter can be used to predict returns of a 
+broader stock market index \citep{gu2020twtrsentiment}. In other research the emotions of discussions on WallStreetBets are studied by performing sentiment analysis. 
+The research suggests that only some emotions demonstrate a significant impact on one-minute returns of the Gamestop shares \citep{long2021LikeTheStock}.
+There are several models that have shown strong results with regards to forecasting time-series. The most prevalent in the financial industry is Auto Regressive 
+Integrated Moving Average (ARIMA) which captures temporal structures in time-series data. However, it is not designed to include other features, such as sentiment. 
+This is why this thesis will also compare other models such as LSTMS and XGBoost, which have also demonstrated strong predictive capabilities with regards to 
+time-series data. As a result, the final sub-research question will explore the final part of the main research question:
 
 \section{Method}
 

@@ -209,6 +209,43 @@ Camacho-Collados, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Chen%
+, Zhang%
+, Mehlawat%
+\BCBL {}\ \BBA {} Jia%
+}{%
+Chen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+chen2021meanvariance}
+\APACinsertmetastar {%
+chen2021meanvariance}%
+\begin{APACrefauthors}%
+Chen, W.%
+, Zhang, H.%
+, Mehlawat, M\BPBI K.%
+\BCBL {}\ \BBA {} Jia, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Mean–variance portfolio optimization using machine
+  learning-based stock price prediction} {Mean–variance portfolio
+  optimization using machine learning-based stock price prediction}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Soft Computing}{100}{}{106943}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S1568494620308814}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.asoc.2020.106943}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Danbolt%
 , Siganos%
 \BCBL {}\ \BBA {} Vagenas-Nanos%
@@ -405,6 +442,40 @@ Du, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Feng%
+\ \BBA {} Johansson%
+}{%
+Feng%
+\ \BBA {} Johansson%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+feng2019824}
+\APACinsertmetastar {%
+feng2019824}%
+\begin{APACrefauthors}%
+Feng, X.%
+\BCBT {}\ \BBA {} Johansson, A\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Top executives on social media and information in the
+  capital market: Evidence from China} {Top executives on social media and
+  information in the capital market: Evidence from china}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Corporate Finance}{58}{}{824-857}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S0929119918303225}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.jcorpfin.2019.04.009}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Firmino%
 , Baptista%
 , Firmino%
@@ -449,6 +520,33 @@ Firmino, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+G.%
+\ \BBA {} G.%
+}{%
+G.%
+\ \BBA {} G.%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+caginalp1995arima}
+\APACinsertmetastar {%
+caginalp1995arima}%
+\begin{APACrefauthors}%
+G., C.%
+\BCBT {}\ \BBA {} G., C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Statistical inference and modelling of momentum in stock
+  prices} {Statistical inference and modelling of momentum in stock
+  prices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Mathematical Finance 2}{}{}{225-242}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 {Google Research}%
 }{%
 {Google Research}%
@@ -469,6 +567,40 @@ googlegithub}%
 \newblock
 \begin{APACrefURL} \url{https://github.com/google-research/bert}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gu%
+\ \BBA {} Kurov%
+}{%
+Gu%
+\ \BBA {} Kurov%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+gu2020twtrsentiment}
+\APACinsertmetastar {%
+gu2020twtrsentiment}%
+\begin{APACrefauthors}%
+Gu, C.%
+\BCBT {}\ \BBA {} Kurov, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Informational role of social media: Evidence from
+  Twitter sentiment} {Informational role of social media: Evidence from twitter
+  sentiment}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Banking and Finance}{121}{}{105969}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S0378426620302314}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.jbankfin.2020.105969}
+  \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -839,6 +971,38 @@ Namcheol, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Nikou%
+, Mansourfar%
+\BCBL {}\ \BBA {} Bagherzadeh%
+}{%
+Nikou%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+mahla2019stockpriceprediction}
+\APACinsertmetastar {%
+mahla2019stockpriceprediction}%
+\begin{APACrefauthors}%
+Nikou, M.%
+, Mansourfar, G.%
+\BCBL {}\ \BBA {} Bagherzadeh, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Stock price prediction using DEEP learning algorithm and
+  its comparison with machine learning algorithms} {Stock price prediction
+  using deep learning algorithm and its comparison with machine learning
+  algorithms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Intelligent Systems in Accounting, Finance and
+  Management}{26}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1002/isaf.1459} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Osborne%
 \ \BBA {} Baldridge%
 }{%
@@ -1144,6 +1308,39 @@ Settles, B.%
 \newblock
 {\BBOQ}\APACrefatitle {Active Learning Literature Survey} {Active learning
   literature survey}.{\BBCQ}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shetty%
+\ \BBA {} Ismail%
+}{%
+Shetty%
+\ \BBA {} Ismail%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+shetty2021nonstationary}
+\APACinsertmetastar {%
+shetty2021nonstationary}%
+\begin{APACrefauthors}%
+Shetty, D\BPBI K.%
+\BCBT {}\ \BBA {} Ismail, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Forecasting stock prices using hybrid non-stationary
+  time series model with ERNN} {Forecasting stock prices using hybrid
+  non-stationary time series model with ernn}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Communications in Statistics - Simulation and
+  Computation}{0}{0}{1-13}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1080/03610918.2021.1872631}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1080/03610918.2021.1872631} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
