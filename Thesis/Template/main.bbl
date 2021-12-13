@@ -58,6 +58,35 @@ Anand, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Antweiler%
+\ \BBA {} Frank%
+}{%
+Antweiler%
+\ \BBA {} Frank%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+werner2004talknoise}
+\APACinsertmetastar {%
+werner2004talknoise}%
+\begin{APACrefauthors}%
+Antweiler, W.%
+\BCBT {}\ \BBA {} Frank, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{02}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Is All That Talk Just Noise? The Information Content of
+  Internet Stock Message Boards} {Is all that talk just noise? the information
+  content of internet stock message boards}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Finance}{59}{}{1259-1294}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.282320} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Arora%
 , Nyberg%
 \BCBL {}\ \BBA {} Rose%
@@ -231,9 +260,9 @@ Chen, W.%
 \newblock
 \APACrefYearMonthDay{2021}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Mean–variance portfolio optimization using machine
-  learning-based stock price prediction} {Mean–variance portfolio
-  optimization using machine learning-based stock price prediction}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Mean-variance portfolio optimization using machine
+  learning-based stock price prediction} {Mean-variance portfolio optimization
+  using machine learning-based stock price prediction}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Applied Soft Computing}{100}{}{106943}.
 \newblock
@@ -322,6 +351,34 @@ Das, S\BPBI R.%
   web}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Management Science}{}{}{1375-1388}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{De Gooijer}%
+\ \BBA {} Hyndman%
+}{%
+{De Gooijer}%
+\ \BBA {} Hyndman%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+gooijer2006forecasting}
+\APACinsertmetastar {%
+gooijer2006forecasting}%
+\begin{APACrefauthors}%
+{De Gooijer}, J\BPBI G.%
+\BCBT {}\ \BBA {} Hyndman, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {25 Years of time series forecasting} {25 years of time
+  series forecasting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Forecasting}{22}{}{443-473}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.ijforecast.2006.01.001} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -547,6 +604,35 @@ G., C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Gennaro%
+, Buonanno%
+\BCBL {}\ \BBA {} Palmieri%
+}{%
+Gennaro%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+giovanni2021word2vec}
+\APACinsertmetastar {%
+giovanni2021word2vec}%
+\begin{APACrefauthors}%
+Gennaro, G.%
+, Buonanno, A.%
+\BCBL {}\ \BBA {} Palmieri, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{11}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Considerations about learning Word2Vec} {Considerations
+  about learning word2vec}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Supercomputing}{77}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s11227-021-03743-2} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 {Google Research}%
 }{%
 {Google Research}%
@@ -710,6 +796,36 @@ Jemai, F.%
 \newblock
 \APACjournalVolNumPages{International Wireless Communications and Mobile
   Computing}{}{}{775-779}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jin%
+, Yang%
+\BCBL {}\ \BBA {} Liu%
+}{%
+Jin%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+jin2020lstmsentiment}
+\APACinsertmetastar {%
+jin2020lstmsentiment}%
+\begin{APACrefauthors}%
+Jin, Z.%
+, Yang, Y.%
+\BCBL {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Stock closing price prediction based on sentiment
+  analysis and LSTM} {Stock closing price prediction based on sentiment
+  analysis and lstm}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Neural Computing and Applications}{32}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s00521-019-04504-2} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1142,6 +1258,34 @@ Priyantina, R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Rammurthy%
+\ \BBA {} Patil%
+}{%
+Rammurthy%
+\ \BBA {} Patil%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+rammurthy2021lstm}
+\APACinsertmetastar {%
+rammurthy2021lstm}%
+\begin{APACrefauthors}%
+Rammurthy, S\BPBI K.%
+\BCBT {}\ \BBA {} Patil, S\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An LSTM-Based Approach to Predict Stock Price Movement
+  for IT Sector Companies} {An lstm-based approach to predict stock price
+  movement for it sector companies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Cognitive Informatics and
+  Natural Intelligence}{15}{}{1-12}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Raschka%
 \ \BBA {} Mirjalili%
 }{%
@@ -1430,6 +1574,43 @@ Tomasev, N.%
   Engineering}{26}{3}{739-751}.
 \newblock
 \begin{APACrefDOI} \doi{10.1109/TKDE.2013.25} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vuong%
+, Dat%
+, Mai%
+, Uyen%
+\BCBL {}\ \BBA {} Bao%
+}{%
+Vuong%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+vuong2021forecasting}
+\APACinsertmetastar {%
+vuong2021forecasting}%
+\begin{APACrefauthors}%
+Vuong, P\BPBI H.%
+, Dat, T\BPBI T.%
+, Mai, T\BPBI K.%
+, Uyen, P\BPBI H.%
+\BCBL {}\ \BBA {} Bao, P\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Stock-Price Forecasting Based on XGBoost and LSTM}
+  {Stock-price forecasting based on xgboost and lstm}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computer Systems Science and
+  Engineering}{40}{}{237-246}.
+\newblock
+\begin{APACrefURL} \url{http://www.techscience.com/csse/v40n1/44219}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.32604/csse.2022.017685} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

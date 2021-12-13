@@ -136,7 +136,7 @@ This is why this thesis will also compare newer models such as LSTMs and XGBoost
 This leads to the following sub-research question:
 
 \begin{itemize}
-    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment is included as a feature, based on the predefined evaluation metrics XYZ…}
+    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment is included as a feature, based on the predefined evaluation MAE and RMSE?}
 \end{itemize}
 
 By answering the three sub-research questions, a scientific and thought-out answer for the main research question can be found.
@@ -188,7 +188,9 @@ LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be
 convolutional neural network to encode the spelling of words \citep{pei2019slang}. Other research shows that the accuracy of an
 LSTM can be improved by introducing Word2Vec to the LSTM. As a result, the one-hot encoded input to the LSTM is
 converted into a low dimensional vector that covers the semantic similarity of the words in it. Due to the lower dimensionality,
-over fitting can be prevented and the network may also need less parameters \citep{xiao2018word2veclstm}.
+over-fitting can be prevented and the network may also need less parameters \citep{xiao2018word2veclstm}. However, \cite{giovanni2021word2vec}
+argue that there is almost no research on specific choices of hyperparameters for the Word2Vec model. Hence, this thesis will add to the literature
+by considering varying hyperparameters of the Word2Vec embedding.
 
 Other research demonstrates the importance of large pre-trained models using transfer learning \citep{deng2009transferlearning}.
 \cite{devlin2019bert} introduce BERT, a pre-trained model that uses the English Wikipedia and the BooksCorpus, which shows promising results.
@@ -196,9 +198,9 @@ One of the advantages is that only one output layer needs to be added to the mod
 However, it is also shown that BERT lacks domain awareness. Hence it cannot differentiate between properties of source and target domains. One
 proposed solution is to replace a random subset of tokens by a \emph{MASK} token. The corresponding hidden values of the MASK token can be fed
 into the output layer. This adaption to a specific domain is shown to slightly enhance the performance of a vanilla implementation of BERT. However,
-it is also argued that a vanilla implementation can still outperform other models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
+it is also argued that a vanilla implementation can still outperform other machine learning models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
 lexicon approach shows that on average BERT achieves better performance. However, the better performance cannot be observed on all analyzed test sets
-which keeps the authors "optimistic about the lexicon-based approach in general" \citep{kotelnikova2021lexiconbased}.
+which keeps the authors "optimistic about the lexicon-based approach in general" \citep{kotelnikova2021lexiconbased}. % Maybe write that this thesis adds to the literature by comparing different models, including lexicons...
 
 However, the implementation of deep-learning models is oftentimes much more complex than traditional machine learning methods. Furthermore, deep-learning models typically
 also require much more computing power to train the network. The Naive Bayes method, in contrast, is very easy to implement and fast to train. As a
@@ -230,12 +232,28 @@ identifiable. Because features may be barely distinctable, the annotator might s
 when selecting them randomly. An Active Learner, on the other hand, suggests which instances the annotator should label. Those instances can be 
 determined on various quantitative metrics \citep{miller2020activelearningapproaches}.
 
-% Put the paragraph below into the literature part.
-For example, it is shown that social media sentiment can have a 
+% Write why stock price prediction is a challenging task.
+It is shown that social media sentiment can have a 
 direct effect of how market participants perceive a company, which can lead to changes in the stock price of companies. This is especially true for smaller 
 firms with low analyst coverage \citep{feng2019824}. Other researchers show that sentiment obtained from Twitter can be used to predict returns of a 
-broader stock market index \citep{gu2020twtrsentiment}. In other research the emotions of discussions on WallStreetBets are studied by performing sentiment analysis. 
+broader stock market index \citep{gu2020twtrsentiment}.
+Additionally, \cite{werner2004talknoise} uncover that positive sentiment has a very significant relationship with returns.
+In other research the emotions of discussions on WallStreetBets are studied by performing sentiment analysis. 
 The research suggests that only some emotions demonstrate a significant impact on one-minute returns of the Gamestop shares \citep{long2021LikeTheStock}.
+However, \cite{gooijer2006forecasting} found that most published papers mainly focus on time-series forecasting while excluding other features.
+Hence, this thesis will add to the literature by reporting the findings by implementing sentiment analysis into state of the art machine learning algorithms for
+stock price prediction.
+
+One of those algorithms are LSTMs, which have shown strong results for time series prediction \citep{rammurthy2021lstm}. That is because of its strengths in 
+analyzing connections among time-series data by using LSTM's memory function. Other feed-forwards neural networks, as a comparison, cannot handle the complex 
+time correlation between information. Even though the results seem promising whenusing an LSTM to predict the stock price of Apple, the performance of the LSTM 
+was enhanced by accounting for sentiment as well \citep{jin2020lstmsentiment}.
+Even though LSTMs are shown to outperform ARIMA in many cases, ARIMA is widely used in the financial industry. ARIMA works well on time-series data due to its
+ability to catch time-series specific features \citep{vuong2021forecasting}.
+
+While there are various studies of applying the aforementioned stock-price forecasting methods, almost none do so for the WallStreetBets subreddit. 
+
+
 There are several models that have shown strong results with regards to forecasting time-series. The most prevalent in the financial industry is Auto Regressive 
 Integrated Moving Average (ARIMA) which captures temporal structures in time-series data. However, it is not designed to include other features, such as sentiment. 
 This is why this thesis will also compare other models such as LSTMS and XGBoost, which have also demonstrated strong predictive capabilities with regards to 
