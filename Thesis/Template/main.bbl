@@ -1176,6 +1176,36 @@ Osborne, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Pang%
+\ \BBA {} Lee%
+}{%
+Pang%
+\ \BBA {} Lee%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+bo2008opinionmining}
+\APACinsertmetastar {%
+bo2008opinionmining}%
+\begin{APACrefauthors}%
+Pang, B.%
+\BCBT {}\ \BBA {} Lee, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Opinion Mining and Sentiment Analysis} {Opinion mining
+  and sentiment analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Found. Trends Inf. Retr.}{2}{}{1-135}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1561/1500000011} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1561/1500000011} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Park%
 , Lee%
 \BCBL {}\ \BBA {} Moon%
@@ -1798,7 +1828,7 @@ Yue, L.%
 \newblock
 \BIn{} \APACrefbtitle {Proceedings of the 20th International Conference on
   World Wide Web} {Proceedings of the 20th international conference on world
-  wide web}\ (\BPG~347–356).
+  wide web}\ (\BPG~347-356).
 \newblock
 \APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
 \newblock
