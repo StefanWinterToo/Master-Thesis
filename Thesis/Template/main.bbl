@@ -211,6 +211,33 @@ Brasetvik, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Caginalp%
+\ \BBA {} Constantine%
+}{%
+Caginalp%
+\ \BBA {} Constantine%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+caginalp1995arima}
+\APACinsertmetastar {%
+caginalp1995arima}%
+\begin{APACrefauthors}%
+Caginalp, G.%
+\BCBT {}\ \BBA {} Constantine, G\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Statistical inference and modelling of momentum in stock
+  prices} {Statistical inference and modelling of momentum in stock
+  prices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Mathematical Finance 2}{}{}{225-242}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Camacho-Collados%
 \ \BBA {} Pilehvar%
 }{%
@@ -577,33 +604,6 @@ Firmino, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-G.%
-\ \BBA {} G.%
-}{%
-G.%
-\ \BBA {} G.%
-}{%
-{\protect \APACyear {1995}}%
-}]{%
-caginalp1995arima}
-\APACinsertmetastar {%
-caginalp1995arima}%
-\begin{APACrefauthors}%
-G., C.%
-\BCBT {}\ \BBA {} G., C.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1995}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Statistical inference and modelling of momentum in stock
-  prices} {Statistical inference and modelling of momentum in stock
-  prices}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Applied Mathematical Finance 2}{}{}{225-242}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Gennaro%
 , Buonanno%
 \BCBL {}\ \BBA {} Palmieri%
@@ -768,6 +768,37 @@ Hutto, C.%
 {\BBOQ}\APACrefatitle {VADER: A Parsimonious Rule-based Model for Sentiment
   Analysis of Social Media Text} {Vader: A parsimonious rule-based model for
   sentiment analysis of social media text}.{\BBCQ}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ivanovic%
+, Bogdan%
+\BCBL {}\ \BBA {} Baresa%
+}{%
+Ivanovic%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+ivanovic2013arima}
+\APACinsertmetastar {%
+ivanovic2013arima}%
+\begin{APACrefauthors}%
+Ivanovic, Z.%
+, Bogdan, S.%
+\BCBL {}\ \BBA {} Baresa, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{06}{}.
+\newblock
+{\BBOQ}\APACrefatitle {FORECASTING CROATIAN STOCK MARKET INDEX: CROBEX}
+  {Forecasting croatian stock market index: Crobex}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{UTMS Journal of Economics}{4}{2}{79-91}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.proquest.com/scholarly-journals/forecasting-croatian-stock-market-index-crobex/docview/1399281625/se-2}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1199,6 +1230,35 @@ Parveen, H.%
 \BIn{} (\BPG~416-419).
 \newblock
 \begin{APACrefDOI} \doi{10.1109/ICATCCT.2016.7912034} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Piñeiro-Chousa%
+, Vizcaino-Gonzalez%
+\BCBL {}\ \BBA {} Perez-Pico%
+}{%
+Piñeiro-Chousa%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+chousa2017socialmedia}
+\APACinsertmetastar {%
+chousa2017socialmedia}%
+\begin{APACrefauthors}%
+Piñeiro-Chousa, J.%
+, Vizcaino-Gonzalez, M.%
+\BCBL {}\ \BBA {} Perez-Pico, A\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Influence of Social Media over the Stock Market}
+  {Influence of social media over the stock market}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychology and Marketing}{34}{}{101-108}.
+\newblock
+\begin{APACrefDOI} \doi{10.1002/mar.20976} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

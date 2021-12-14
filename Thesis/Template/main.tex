@@ -21,7 +21,7 @@
 
 % !!! PLEASE CHANGE THESE VARIABLES TO MATCH YOUR INFORMATION !!!
 
-\def\thesistitle{Measuring Domain-Specific Sentiment}                      % title
+\def\thesistitle{Measuring Domain-Specific Sentiment to Predict Stock Prices}                      % title
 \def\subtitle{The WallStreetBets 'Meme-Stock' Saga}             % subtitle
     % ^if there is no subtitle, replace by \def\subtitle{}  
 \def\yourname{Stefan Winter}                                                                       % ^first and last name
@@ -63,14 +63,17 @@ Additionally, I want to thank Sveva Cadura and Anna Carolina van Melis for \\the
 
 \begin{abstract}
     Until the GameStop short-squeeze in early 2021, the impact of changes in sentiment of the Reddit discussion board \emph{WallStreetBets} on the financial market 
-    was vastly underappreciated. Due to the novelty of this phenomenon, there is also almost no research available on that topic. This thesis will explore methodologies 
-    on how to measure sentiment of the discussion board. One of the challenges when measuring the sentiment of WallStreetBets is the usage of novel 
+    was vastly underappreciated. 
+    Due to the novelty of the WallStreetBets phenomenon, there is also almost no research available on that topic.
+    This thesis will explore methodologies on how to measure sentiment of the discussion board and use the sentiment to predict changes of the GameStop stock.
+    One of the challenges when measuring the sentiment of WallStreetBets is the usage of novel 
     domain-specific words and terminologies, which are shown to have a big impact on the results of sentiment analysis. Hence, this thesis proposes a method 
     to create a dataset that covers the sentiment of text data which includes the terminology of a given domain. It will be shown that sentiment analysis machine 
     learning models that use the domain-specific text corpus as input outperform general purpose lexicons, which are currently commonly used by both academia and industry 
-    to measure the sentiment of WallStreetBets.
+    to measure the sentiment of WallStreetBets. % Write a little bit more about stock prediction, once I have the results.
 \end{abstract}
 
+% Begin Introduction ----
 \section{Introduction} \label{sec:introduction}
 
 Modern society has been able to access vast amounts of information, communicate ideas, and become part of communities with the advent of the internet. 
@@ -81,20 +84,19 @@ the most well-known and influential investing online-forums.
 Even though the Reddit subforum was created in 2012 already, it received the majority of its media exposure in 2021 as a result of a short-squeeze 
 of the GameStop (GME) stock, which drove the stock price up hundreds of percentage points \citep{diangson2021betonreddit}. Over the ensuing months, however, 
 the stock price experienced extraordinary volatility. Prices fluctuated by double-digit percentage points which not only lead to gains, but also to large losses
-for market participants. Research shows that changes in investor sentiment and discussion board activity can be one cause of increased volatility \citep{das2007yahoo}.
+for market participants. Research shows that discussion board activity can be one cause of increased volatility \citep{das2007yahoo}.
+Interestingly, finance scholars did not consider Reddit as a platform capable of having such a significant impact on the financial markets. 
+As a result, the site has been neglected in their research \citep{long2021LikeTheStock}.
 
-However, it was not the rapid price appreciation in the beginning of the short-squeeze and volatility of the Gamestop stock that amazed market obervers. 
+However, it was neither the volatility nor the rapid price appreciation in the beginning of the short-squeeze of the Gamestop stock that astounded market observers. 
 Instead, it was the unprecedented decentralized and coordinated buying of Gamestop shares by members of the WallStreetBets 
 community that attracted attention \citep{anand2021WallstreetbetsAgainstWallstreet}.
-Organizing the mass-coordinated buying of stock, however, requires that enough participants share the same sentiment. According to studies, 
-social media sentiment has a particularly strong impact on uninformed traders \citep{danbolt2015InvestorSentiment}. It is argued, that coordinated investments will also
-occur in the future, mainly due to the influence of social media and other online platforms on our society today \citep{semenova2021reddits}.
-\\
-Interestingly, finance scholars did not consider Reddit as a platform capable of having such a significant impact on the financial markets. 
-As a result, the site has been neglected in their research \citep{long2021LikeTheStock}. \\*
+Organizing the mass-coordinated buying of stock, however, requires that enough participants share the same sentiment. Furthermore, 
+social media sentiment has a particularly strong impact on uninformed traders, of which WallStreetBets has plenty \citep{danbolt2015InvestorSentiment}. It is argued, that coordinated investments will also
+occur in the future, mainly due to the influence of social media and other online platforms on our society today \citep{semenova2021reddits}. Hence, it is of the utmost importance
+to study and understand the impact of WallStreetBets. This thesis attempts to answer one of the numerous questions that have arisen with the 
+growing popularity of Wallstreetbets, by answering the following research question:
 
-\noindent
-Hence, this thesis will try to answer the following Research Question:
 \begin{quote}
 \emph{Can sentiment analysis of the WallStreetBets Reddit-forum be used to predict daily changes in the stock price of Gamestop?}
 \end{quote}
@@ -118,7 +120,8 @@ of hyperparameters can be selected to solve a particular problem \citep[p. 53]{r
 This thesis will explore traditional machine learning methods such as Naive Bayes (NB) 
 and Support Vector Machines (SVMs), as well as deep learning methods like 
 Long Short Term Memory (LSTM) and Bidirectional Encoder Representations from 
-Transformers (BERT). Due to the high dimensionality of textual data, deep learning methods have shown 
+Transformers (BERT). % Maybe also talk a bit about lexicons
+Due to the high dimensionality of textual data, deep learning methods have shown 
 to outperform traditional machine learning techniques. That can be explained by the 
 ability of deep learning methods to automatically learn the most important features, whereas traditional 
 methods may suffer from the curse of dimensionality \citep{fu2018lexiconenhancedlstm}.
@@ -136,12 +139,142 @@ This is why this thesis will also compare newer models such as LSTMs and XGBoost
 This leads to the following sub-research question:
 
 \begin{itemize}
-    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment is included as a feature, based on the predefined evaluation MAE and RMSE?}
+    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment obtained from WallStreetBets is included as a feature, based on the predefined evaluation metrics MAE and RMSE?}
 \end{itemize}
 
 By answering the three sub-research questions, a scientific and thought-out answer for the main research question can be found.
 
+% End Introduction ----
+
+% Begin Related Work ----
+
 \section{Related Work}
+% Intro
+Gauging sentiment of online forums to predict movements in stock prices has been a research subject for many years now. 
+\cite{das2007yahoo} conducted a study on the \emph{Yahoo!} message board, which was amongst the first ones on the internet for investors to exchange ideas.
+Others did similar studies on platforms such as \emph{Twitter, Reddit and StockTwits} and \citep{gu2020twtrsentiment, anand2021WallstreetbetsAgainstWallstreet, chousa2017socialmedia}.
+However, since the WallStreetBets \emph{'meme-stock movement'} is a relatively recent phenomenon, there is very little research on that topic and none that accounts for the novel
+terminology used on the forum to create sentiment models which are used to predict changes in stock prices. As a result, incorrect conclusions may be drawn.
+
+\subsection{Domain Specific Terminology}
+% Domain Specific Section
+% Write about challenges of WSB with regards to slang, etc.
+Even though the literature suggests many 
+innovative ways to enhance model performance by a few percentage points, the biggest benefits seem to come from high quality 
+input data in the form of domain-specific labeled data.
+
+Of course, this also applies to research in other fields, which usually also use a general-purpose sentiment lexicon, 
+because of the cost associated with building a domain-specific one. However, it has been demonstrated that using a domain-specific 
+knowledge base results in more accurate sentiment analysis results \citep{park2015EfficientExtraction}.
+It is argued that there is no general-purpose sentiment lexicon that can be optimally applied on all domains. 
+In different domains, some terms can have completely different meanings. A good example is the word “unpredictable”, 
+which would have negative sentiment for electronics but can be a positive label for movies. It has been demonstrated 
+that by adapting sentiment lexicons to a certain domain performance for sentiment classification can be enhanced 
+\citep{Lu2011automaticconstruction}. This adapted lexicon can then be searched to find and score the sentiment 
+of a specific word \citep{ashgar2014DetectionSlang}. 
+While lexicon-based methods have found widespread adoption, mainly due to their simplicity, more advanced machine 
+learning methods have also shown stronger performance \citep{wang2020automaticconstructiondomainsentiment}.
+
+For this reason some research deviates from lexicon-based approaches. Instead, they examine how deep learning methods can be 
+used to automatically detect and identify domain-specific words in sentences. By doing so it is assumed that the 
+algorithm can not only detect whether domain-specific words are used (sentence-level detection), but also identify 
+the exact position of the term in the sentence (token-level identification). Hence, it is possible to detect new meanings 
+of words in an already existing text corpus. In addition, this approach also allows to classify novel words, that do not yet 
+exist in a lexicon.
+
+Creating a domain-specific annotated corpus to train machine learning models, however, is not without its own challenges. 
+For example, working with multiple human annotators can lead to discrepancies in the annotation results \citep{kim2008corpusannotation, rayan2019sentimentanalysisemail}. 
+Additionally, it is hard to estimate the total annotation cost which can depend of various factors. One example would be whether the annotator is capable of fluently understanding 
+the language for the given task \citep{arora2009estimationgannotationcost}. Additionally, labelling an entire dataset incurs extremely high costs, 
+which can be avoided. With the support of an Active Learner, a complete domain-specific corpus with its respective labels can be 
+created using only partial annotations \citep{park2015EfficientExtraction}. 
+
+One of the key concepts of Active Learners is that if a machine learning algorithm is allowed to choose the data from which it learns, 
+it will achieve higher accuracy with less training data. If a considerable amount of the data is unlabeled, this is especially desirable. 
+As a result, the total cost of annotation can be reduced drastically. Research shows that the total number of 
+manual annotations can be reduced by 80\% when using an Active Learner instead of randomly 
+selecting data to label \citep{baldridgeosborne2004active}.
+
+If data are manually annotated at random, the annotator will invest a lot of time into labeling irrelevant instances. 
+This may incur costs which could be avoided with an Active Learner. It is argued that Passive Learning, or randomly selecting instances 
+to be labeled by an annotator, is especially costly if the class distribution of the data is imbalanced or if there are many very similar documents. 
+For example, if a specific feature set appears on only 1\% of instances, the annotator would have to label 1000 documents to cover 
+the feature set on 10 relevant documents. When it comes to document similarity, large clusters of very similar documents might be 
+identifiable. Because features may be barely distinctable, the annotator might spend a lot of effort labeling uninformative instances 
+when selecting them randomly. An Active Learner, on the other hand, suggests which instances the annotator should label. Those instances can be 
+determined on various quantitative metrics \citep{miller2020activelearningapproaches}.
+
+\subsection{Sentiment Analysis}
+This can be achieved by having models that formulate domain-specific word detection as a 
+sequence-labelling task. Furthermore, novel domain-specific words can be learned by understanding the contextual 
+structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can be learned in the hidden layers of 
+LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be improved, by applying a character-based 
+convolutional neural network to encode the spelling of words \citep{pei2019slang}. Other research shows that the accuracy of an
+LSTM can be improved by introducing Word2Vec to the LSTM. As a result, the one-hot encoded input to the LSTM is
+converted into a low dimensional vector that covers the semantic similarity of the words in it. Due to the lower dimensionality,
+over-fitting can be prevented and the network may also need less parameters \citep{xiao2018word2veclstm}. However, \cite{giovanni2021word2vec}
+argue that there is almost no research on specific choices of hyperparameters for the Word2Vec model. Hence, this thesis will add to the literature
+by considering varying hyperparameters of the Word2Vec embedding.
+
+Other research demonstrates the importance of large pre-trained models using transfer learning \citep{deng2009transferlearning}.
+\cite{devlin2019bert} introduce BERT, a pre-trained model that uses the English Wikipedia and the BooksCorpus, which shows promising results.
+One of the advantages is that only one output layer needs to be added to the model to achieve state-of-the-art sentiment analysis performance.
+However, it is also shown that BERT lacks domain awareness. Hence it cannot differentiate between properties of source and target domains. One
+proposed solution is to replace a random subset of tokens by a \emph{MASK} token. The corresponding hidden values of the MASK token can be fed
+into the output layer. This adaption to a specific domain is shown to slightly enhance the performance of a vanilla implementation of BERT. However,
+it is also argued that a vanilla implementation can still outperform other machine learning models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
+lexicon approach shows that on average BERT achieves better performance. However, the better performance cannot be observed on all analyzed test sets
+which keeps the authors "optimistic about the lexicon-based approach in general" \citep{kotelnikova2021lexiconbased}. % Maybe write that this thesis adds to the literature by comparing different models, including lexicons...
+
+However, the implementation of deep-learning models is oftentimes much more complex than traditional machine learning methods. Furthermore, deep-learning models typically
+also require much more computing power to train the network. The Naive Bayes method, in contrast, is very easy to implement and fast to train. As a
+result, the classifier is oftentimes used as a baseline for text classification. Multinomial Naive Bayes (MMB), one type of the Naive Bayes classifier, has established
+itself as the de-facto standard for text classification \citep{abbas2019mnb}.
+
+\cite{long2021LikeTheStock} tried to uncover the impact of specific emotions such as \emph{“Angry, Fear, Happy, Sad and Surprise”} from the comments on 
+WallStreetBets discussions on intraday changes of the stock price of the affected stock. While they conclude that the tone as well as the number of 
+comments have an impact on the stock price, they show that the number of comments is not directly related to sentiment. Additionally, they argue it 
+is the number of comments that is posted within an hour that has the biggest effect on 1-minute changes of the stock price. Furthermore, the paper 
+shows that the emotions \emph{Sad, Angry and Surprise} have a significant impact on the gamestop 1-minute stock price. The Happy sentiment does not show a 
+significant impact on 1-minute price changes, however, a causality test showed a link between the Happy sentiment and intraday returns of the GME stock. 
+% In addition, the paper shows, that sentiment only impacts intraday returns if a thread has more than 2000 comments. // This does not fit well imo
+Hence, the authors confirm that Reddit 
+sentiment has an impact on the stock market. They also argue that any asset that is targeted by a large crowd from WallStreetBets can become a subject 
+of excessive volatility, without being driven by any fundamental reasons.
+
+\subsection{Stock Price Prediction}
+\cite{lyocsa2021yolotrading} also showcased that as the discussion volume on WallStreetBets increased, the volatility of certain stocks got amplified. 
+Additionally, the research of \cite{umar2021ataleofcompanyfundamentals} also found that sentiment of investors on WallStreetBets affected the returns of the Gamestop stock. 
+However, they also demonstrate that other features such as the put-call ratio and the short-sale volume had a strong impact on the stock price. \\
+
+It is shown that social media sentiment can have a 
+direct effect of how market participants perceive a company, which can lead to changes in the stock price of companies. This is especially true for smaller 
+firms with low analyst coverage \citep{feng2019824}. Other researchers show that sentiment obtained from Twitter can be used to predict returns of a 
+broader stock market index \citep{gu2020twtrsentiment}.
+Additionally, \cite{werner2004talknoise} uncover that positive sentiment has a very significant relationship with returns.
+In other research the emotions of discussions on WallStreetBets are studied by performing sentiment analysis. 
+The research suggests that only some emotions demonstrate a significant impact on one-minute returns of the Gamestop shares \citep{long2021LikeTheStock}.
+However, \cite{gooijer2006forecasting} found that most published papers mainly focus on time-series forecasting while excluding other features.
+Hence, this thesis will add to the literature by reporting the findings by implementing sentiment analysis into state of the art machine learning algorithms for
+stock price prediction.
+
+One of those algorithms are LSTMs, which have shown strong results for time series prediction \citep{rammurthy2021lstm}. That is because of its strengths in 
+analyzing connections among time-series data by using LSTM's memory function. Other feed-forwards neural networks, as a comparison, cannot handle the complex 
+time correlation between information. Even though the results seem promising when using an LSTM to predict the stock price of Apple, the performance of the LSTM 
+can be enhanced by accounting for sentiment as well \citep{jin2020lstmsentiment}.
+
+Even though LSTMs are shown to outperform ARIMA in many cases, ARIMA is widely used in the financial industry. ARIMA works well on time-series data due to its
+ability to catch time-series specific features \citep{vuong2021forecasting}. It does so by gauging the strength of one dependent variable based on other independent
+ones that may change. One of the limitations of ARIMA is that the time-series data needs to be stationary, meaning there are no trends in the data. To achieve
+stationarity, the data can be differentiated. By applying the \emph{Augmented Dickey-Fuller} test, the condition for stationarity can be tested \citep{ivanovic2013arima}.
+% Write why ARIMA cannot incorporate sentiment
+
+Even though the literature extensively studies various time-series prediction methods, there is very little research on stock price prediction for stocks that are heavily discussed on
+online forums such as WallStreetBets and even less research that also incorporates the sentiment of those online forums. This thesis tries to close that gap in the literature based
+on the case of Gamestop.
+
+
+\section{Related Work Old}
 
 Gauging sentiment of online forums to predict movements in stock prices has been a research subject for many years now. 
 \cite{das2007yahoo} did a study on the Yahoo! message board, which was amongst the first ones on the internet for investors to exchange ideas. 
@@ -159,8 +292,9 @@ Hence, the authors confirm that Reddit
 sentiment has an impact on the stock market. They also argue that any asset that is targeted by a large crowd from WallStreetBets can become a subject 
 of excessive volatility, without being driven by any fundamental reasons.
 
-However, since the WallStreetBets \emph{‘meme-stock movement’} is a relatively recent phenomenon, there is very little research on the impact of 
-WallStreetBets on individual stocks, especially with regards to sentiment analysis. Additionally, of all the published research none account 
+However, since the WallStreetBets \emph{'meme-stock movement'} is a relatively recent phenomenon, there is very little research on the impact of 
+WallStreetBets on individual stocks, especially with regards to sentiment analysis. 
+Additionally, of all the published research none account 
 for the domain-specific language used on the forum. Because of the frequent usage of terminology that is specific to WallStreetBets, 
 this can lead to incorrect conclusions.
 
@@ -181,7 +315,8 @@ used to automatically detect and identify domain-specific words in sentences. By
 algorithm can not only detect whether domain-specific words are used (sentence-level detection), but also identify 
 the exact position of the term in the sentence (token-level identification). Hence, it is possible to detect new meanings 
 of words in an already existing text corpus. In addition, this approach also allows to classify novel words, that do not yet 
-exist in a lexicon. This can be achieved by having models that formulate domain-specific word detection as a 
+exist in a lexicon. 
+This can be achieved by having models that formulate domain-specific word detection as a 
 sequence-labelling task. Furthermore, novel domain-specific words can be learned by understanding the contextual 
 structure of a sentence \citep{pei2019slang}. Those out-of-vocabulary tokens can be learned in the hidden layers of 
 LSTMs \citep{hochreiter1997lstm}. To further optimize performance, models can be improved, by applying a character-based 
@@ -246,18 +381,22 @@ stock price prediction.
 
 One of those algorithms are LSTMs, which have shown strong results for time series prediction \citep{rammurthy2021lstm}. That is because of its strengths in 
 analyzing connections among time-series data by using LSTM's memory function. Other feed-forwards neural networks, as a comparison, cannot handle the complex 
-time correlation between information. Even though the results seem promising whenusing an LSTM to predict the stock price of Apple, the performance of the LSTM 
-was enhanced by accounting for sentiment as well \citep{jin2020lstmsentiment}.
+time correlation between information. Even though the results seem promising when using an LSTM to predict the stock price of Apple, the performance of the LSTM 
+can be enhanced by accounting for sentiment as well \citep{jin2020lstmsentiment}.
+
 Even though LSTMs are shown to outperform ARIMA in many cases, ARIMA is widely used in the financial industry. ARIMA works well on time-series data due to its
-ability to catch time-series specific features \citep{vuong2021forecasting}.
+ability to catch time-series specific features \citep{vuong2021forecasting}. It does so by gauging the strength of one dependent variable based on other independent
+ones that may change. One of the limitations of ARIMA is that the time-series data needs to be stationary, meaning there are no trends in the data. To achieve
+stationarity, the data can be differentiated. By applying the \emph{Augmented Dickey-Fuller} test, the condition for stationarity can be tested \citep{ivanovic2013arima}.
+% Write why ARIMA cannot incorporate sentiment
 
-While there are various studies of applying the aforementioned stock-price forecasting methods, almost none do so for the WallStreetBets subreddit. 
+Even though the literature extensively studies various time-series prediction methods, there is very little research on stock price prediction for stocks that are heavily discussed on
+online forums such as WallStreetBets and even less research that also incorporates the sentiment of those online forums. This thesis tries to close that gap in the literature based
+on the case of Gamestop.
 
+% End Related Work ----
 
-There are several models that have shown strong results with regards to forecasting time-series. The most prevalent in the financial industry is Auto Regressive 
-Integrated Moving Average (ARIMA) which captures temporal structures in time-series data. However, it is not designed to include other features, such as sentiment. 
-This is why this thesis will also compare other models such as LSTMS and XGBoost, which have also demonstrated strong predictive capabilities with regards to 
-time-series data. As a result, the final sub-research question will explore the final part of the main research question:
+% Begin Method ----
 
 \section{Method}
 
@@ -479,6 +618,10 @@ Furthermore, for the Active Learner the VADER sentiment lexicon was used as an o
 
 \noindent To the best of my knowledge, the literature used was referenced appropriately.
 
+% End Method ----
+
+% Begin Results ----
+
 \section{Results}
 
 Figure 3 shows the accuracy of the Active Learner. As can be seen in the graph, the performance of the Active Learner slightly decreases over time. This is due to the oracle not doing a good
@@ -551,6 +694,9 @@ Since BERT is already pre-trained, it does not need as many epochs to optimize a
     \label{fig:BERT_Loss}
 \end{figure}
 
+% End Results ----
+
+% Begin Discussion ----
 
 \section{Discussion}
 
@@ -570,11 +716,17 @@ Researchers, such as \cite{talamas2021socialmediaeffectsonthemarket}, specifical
 could lead to new insights“. I strongly believe that the methods proposed in my thesis lead to better sentiment classifiers, 
 which can then be used in other scientific or industrial applications.
 
+% End Discussion ----
+
+% Begin Conclusion ----
+
 \section{Conclusion}
 This thesis proposes the use of an Active Learner to drastically reduce the total cost of annotation. 
 As a result, it becomes more feasible to create a fully labeled domain-specific dataset. 
 Once a fully labeled dataset is obtained, it can be used in supervised learning algorithms. 
 The results show that using state of the art models underperform the simple baseline NB classifier.
+
+% End Conclusion ----
 
 \bibliography{references}
 
