@@ -229,8 +229,15 @@ which keeps the authors "optimistic about the lexicon-based approach in general"
 
 However, the implementation of deep-learning models is oftentimes much more complex than traditional machine learning methods. Furthermore, deep-learning models typically
 also require much more computing power to train the network. The Naive Bayes method, in contrast, is very easy to implement and fast to train. As a
-result, the classifier is oftentimes used as a baseline for text classification. Multinomial Naive Bayes (MMB), one type of the Naive Bayes classifier, has established
-itself as the de-facto standard for text classification \citep{abbas2019mnb}.
+result, the classifier is oftentimes used as a baseline for text classification. Multinomial Naive Bayes (MNB), one type of the Naive Bayes classifier, has established
+itself as the de-facto standard for text classification \citep{abbas2019mnb}. MNB is a frequency based method that calculates the conditional probability of a word
+belonging to a specific class \citep{susanti2017sentiment}. %Maybe explain difference between NB and MNB: https://stats.stackexchange.com/questions/33185/difference-between-naive-bayes-multinomial-naive-bayes
+It is argued that MNB performs better than many rule-based lexicas, which are oftentimes
+used as baseline models \citep{wang2012NB}. Furthermore, MNB seems to perform especially well if the words in the document are shown to be significant for the
+classification problem \citep{omar2019conference}.
+
+
+\subsection{Stock Price Prediction}
 
 \cite{long2021LikeTheStock} tried to uncover the impact of specific emotions such as \emph{“Angry, Fear, Happy, Sad and Surprise”} from the comments on 
 WallStreetBets discussions on intraday changes of the stock price of the affected stock. While they conclude that the tone as well as the number of 
@@ -243,7 +250,6 @@ Hence, the authors confirm that Reddit
 sentiment has an impact on the stock market. They also argue that any asset that is targeted by a large crowd from WallStreetBets can become a subject 
 of excessive volatility, without being driven by any fundamental reasons.
 
-\subsection{Stock Price Prediction}
 \cite{lyocsa2021yolotrading} also showcased that as the discussion volume on WallStreetBets increased, the volatility of certain stocks got amplified. 
 Additionally, the research of \cite{umar2021ataleofcompanyfundamentals} also found that sentiment of investors on WallStreetBets affected the returns of the Gamestop stock. 
 However, they also demonstrate that other features such as the put-call ratio and the short-sale volume had a strong impact on the stock price. \\

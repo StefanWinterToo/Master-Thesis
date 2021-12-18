@@ -1545,6 +1545,39 @@ Settles, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Sharif%
+, Hoque%
+\BCBL {}\ \BBA {} Hossain%
+}{%
+Sharif%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+omar2019conference}
+\APACinsertmetastar {%
+omar2019conference}%
+\begin{APACrefauthors}%
+Sharif, O.%
+, Hoque, M\BPBI M.%
+\BCBL {}\ \BBA {} Hossain, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sentiment Analysis of Bengali Texts on Online Restaurant
+  Reviews Using Multinomial Naïve Bayes} {Sentiment analysis of bengali texts
+  on online restaurant reviews using multinomial naïve bayes}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2019 1st International Conference on Advances in
+  Science, Engineering and Robotics Technology (ICASERT)} {2019 1st
+  international conference on advances in science, engineering and robotics
+  technology (icasert)}\ (\BPG~1-6).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICASERT.2019.8934655} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Shetty%
 \ \BBA {} Ismail%
 }{%
@@ -1608,6 +1641,37 @@ Song, J.%
 \newblock
 \APACjournalVolNumPages{KSII TRANSACTIONS ON INTERNET AND INFORMATION
   SYSTEMS}{}{}{2996-3011}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Susanti%
+, Djatna%
+\BCBL {}\ \BBA {} Kusuma%
+}{%
+Susanti%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+susanti2017sentiment}
+\APACinsertmetastar {%
+susanti2017sentiment}%
+\begin{APACrefauthors}%
+Susanti, A.%
+, Djatna, T.%
+\BCBL {}\ \BBA {} Kusuma, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{09}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Twitter's Sentiment Analysis on Gsm Services using
+  Multinomial Naïve Bayes} {Twitter's sentiment analysis on gsm services using
+  multinomial naïve bayes}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Telkomnika (Telecommunication Computing Electronics and
+  Control)}{15}{}{1354-1361}.
+\newblock
+\begin{APACrefDOI} \doi{10.12928/TELKOMNIKA.v15i3.4284} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1701,6 +1765,33 @@ Vuong, P\BPBI H.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.32604/csse.2022.017685} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+\ \BBA {} Manning%
+}{%
+Wang%
+\ \BBA {} Manning%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+wang2012NB}
+\APACinsertmetastar {%
+wang2012NB}%
+\begin{APACrefauthors}%
+Wang, S.%
+\BCBT {}\ \BBA {} Manning, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{07}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Baselines and Bigrams: Simple, Good Sentiment and Topic
+  Classification} {Baselines and bigrams: Simple, good sentiment and topic
+  classification}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~90-94).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
