@@ -12,3 +12,4 @@ Papers/Relevant/Sentiment Analysis/Labeling/10.1007-b97861.pdf
 App/model/
 App/AL/data
 App/AL/al_init.sav
+App/model.h5
