@@ -1,0 +1,23 @@
+	Params	Accuracy
+0	alpha: 0.0, fit_prior: True	0.7895081282417239
+1	alpha: 0.0, fit_prior: False	0.7754795140460194
+2	alpha: 0.1, fit_prior: True	0.7881296341420962
+3	alpha: 0.1, fit_prior: False	0.7848922616353953
+4	alpha: 0.2, fit_prior: True	0.7858530302502872
+5	alpha: 0.2, fit_prior: False	0.7877815295714832
+6	alpha: 0.3, fit_prior: True	0.7833188289762244
+7	alpha: 0.3, fit_prior: False	0.7900163609148187
+8	alpha: 0.4, fit_prior: True	0.7804852577714346
+9	alpha: 0.4, fit_prior: False	0.7924322066348732
+10	alpha: 0.5, fit_prior: True	0.7776447244752325
+11	alpha: 0.5, fit_prior: False	0.7950638771887075
+12	alpha: 0.6, fit_prior: True	0.7747763428133811
+13	alpha: 0.6, fit_prior: False	0.7964980680196332
+14	alpha: 0.7, fit_prior: True	0.7715807428551538
+15	alpha: 0.7, fit_prior: False	0.7987050509973196
+16	alpha: 0.8, fit_prior: True	0.7691231245866259
+17	alpha: 0.8, fit_prior: False	0.800480384307446
+18	alpha: 0.9, fit_prior: True	0.766345250113134
+19	alpha: 0.9, fit_prior: False	0.8021025516065026
+20	alpha: 1.0, fit_prior: True	0.7638737076617816
+21	alpha: 1.0, fit_prior: False	0.8039405437393393
