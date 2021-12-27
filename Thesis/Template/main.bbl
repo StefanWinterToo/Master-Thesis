@@ -1499,6 +1499,37 @@ Sazzed, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Schnabel%
+, Labutov%
+, Mimno%
+\BCBL {}\ \BBA {} Joachims%
+}{%
+Schnabel%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+schnabel2015embeddings}
+\APACinsertmetastar {%
+schnabel2015embeddings}%
+\begin{APACrefauthors}%
+Schnabel, T.%
+, Labutov, I.%
+, Mimno, D.%
+\BCBL {}\ \BBA {} Joachims, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evaluation methods for unsupervised word embeddings}
+  {Evaluation methods for unsupervised word embeddings}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~298-307).
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/D15-1036} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Schöneburg%
 }{%
 Schöneburg%

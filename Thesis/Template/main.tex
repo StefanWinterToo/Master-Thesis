@@ -386,7 +386,9 @@ in a long sequence, like a sentence, as the loss gradients are backpropagated th
 LSTMs are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
-and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. \\
+and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. When training an LSTM, it is shown that
+using a pretrained Word2Vec embedding can help solving the curse of dimensionalty that might occur when using a one-hot encoded input \citep{xiao2018word2veclstm}.
+Hence, a Word2Vec embedding layer is used in the LSTM.
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
@@ -402,7 +404,7 @@ The VADER lexicon does not have any hyperparameters to tune. It is only possible
 changing the thresholds to classify the associated sentiment.
 VADER is specifically designed to classify social media sentiment and also includes emoticons, acronyms and \emph{slang} words \citep{hutto2015vader}. \\
 
-\noindent\textbf{Evaluation Metrics for Sentiment Classification}\\
+\subsubsection{Evaluation Metrics for Sentiment Classification}
 Typically, \emph{accuracy, precision, recall and the F-score} are used as evaluation metrics to assess the performance of a sentiment analysis model. \\
 Accuracy is the percentage of correctly predicted observations over all observations. However, accuracy should only be used if the classes in the data are balanced.\\
 Precision expresses the proportion of how many classes were classified as positive, that actually are positive.\\
@@ -422,13 +424,13 @@ The next section explores the machine learning models that will be used to predi
 \noindent\textbf{LSTM with Sentiment Features}\\
 ....
 
-\noindent\textbf{Evaluation Metrics}\\
+\subsubsection{Evaluation Metrics for Stock Price Prediction}
 Write about evaluation metrics...
 
 \subsection{Experimental Setup}
 Explain Section a little bit.
 
-\subsubsection{Data} \label{subs:data}
+\subsubsection{Data}
 
 While Reddit does offer an official API, the API is most useful for streaming data. 
 There are some strict limitations on accessing large amounts of historical data. As a result, the official API is not the best choice for this thesis. 
@@ -507,77 +509,54 @@ this thesis does not remove emoticons from the text corpus \citep{parveen2016sen
 % Eventually, term frequency-inverse document frequency (tf-idf), was applied on the text corpus. Using this representation allows the extraction of the most descriptive terms in a document and easy computations.  However, it fails to capture semantics and word embeddings. For computational reasons, only words that occur at least five times were included in the tf-idf representation. % Update this in the end when I know how much my computer can handle...
 
 \subsubsection{Sentiment Analysis Models Implementation}
-% #The model explanation was copied into the general description section. Keep the implementation in this section.#
-The next section explores the machine learning models that will be used to perform sentiment analysis on the domain-specific corpus created by the Active Learner. \\
-%Because a SVM was used in the Active Learner to label the ground truth data, it will not be applied in the sentiment classification task. 
-%Otherwise, the results might lack robustness and be biased. \\
-Before training the models, 20\% of the data were set aside as the test set. To account for class imbalances, stratification was applied.\\
+The next section explores how the machine learning models were implemented and how their optimal hyperparameters were determined.
+\emph{Explain} for each model: Before training the models, 20\% of the data were set aside as the test set. To account for class imbalances, stratification was applied.
+Also better explain why stratification, etc. See feedback prof.\\
 
-\noindent\textbf{Naïve Bayes (NB) Implementation}\\
-NB is a probabilistic supervised machine learning model. By working probabilistically, the classifier assigns the probability of 
-belonging to a given class based on certain features \citep{jemai2021SentimentAnalysis}. Because of the high dimensionality of textual data, 
-which can be handled very well by NB, this algorithm has established itself as one of the standards for sentiment analysis. 
-This thesis will use Multinomial Naïve Bayes to classify the sentiment of the text. This is due to the model’s ability to handle 
-larger vocabulary sizes. In addition, the algorithm is simple to implement, suitable for real-time applications, and highly scalable. 
-However, the algorithm's prediction accuracy is frequently lower than that of other sentiment analysis techniques \citep{song2017novelclassification}. 
-Due to the easy implementation and fast training of the algorithm, Naïve Bayes will serve as the baseline classifier.\\
-
-\noindent\textbf{Implementation}\\
+\noindent\textbf{Naïve Bayes (NB)}\\
 To train the classifier, the data was first converted to a tf-idf representation. By using tf-idf, a weight is
 assigned to each word. The tf is calculated by the number of times a word can be counted in a document. The idf adjusts the importance of the respective word \citep{Guia2019ComparisonON}.
-The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for \emph{alpha} and \emph{fit\char`_prior}.\\
+The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for \emph{alpha} and \emph{fit\char`_prior}.
+Write better explanation for tf-idf. \\
 
-\noindent\textbf{Long Short Term Memory (LSTM) Implementation}\\
-LSTMs are becoming increasingly popular for sentiment classification. 
-LSTMs are built on a recurrent neural network architecture (RNN). In an RNN the neurons are connected to themselves through time. 
-As a result, the input from a time instance t\textsubscript{i} will also be used as an input for the next time instance t\textsubscript{i+1}. That leads to the 
-problem of vanishing gradients, which means that it is hard for the model to learn long-term dependencies. This occurs because
-in a long sequence, like a sentence, as the loss gradients are backpropagated through the RNN, they may shrink to zero \citep{vanishinggradients2020pmlr}.
-LSTMs are designed to overcome that problem.
-The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
-from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
-and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. \\
-
-
-\noindent\textbf{Implementation}\\
-Before training the LSTM, data it first is fed into a word2vec model to learn the word embedding. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
-To train the network, the input data first needs to be converted to a one-hot encoded array. The input and output dimensions of the Embedding layer, as well as the weights are taken from the word2vec model.
-The output dimensions of the embedding layer are also used as the units for the LSTM. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
+\noindent\textbf{Long Short Term Memory (LSTM)}\\
+Before training the LSTM, data it first is fed into a Word2Vec model to learn the word embeddings. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
+Selecting optimal parameters for the Word2Vec model is oftentimes neglected, even though that may lead to performance differences.
+The Word2Vec hyperparameters that were analyzed is the vector\_size, min\_count and window. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation \citep{schnabel2015embeddings}.
+The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
+The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
 a loop runs through a set of parameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
-The final Dense output layer uses softmax as its activation function. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric. The optimizer is also chosen based on the hyperparameters provided. \\
+The final Dense output layer uses softmax as its activation function. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric. The optimizer is also chosen based on the hyperparameters provided.\\
 
-
-\noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT) Implementation}\\
-BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
-natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
-pretraining users won’t need as much computing power to achieve good results, even if the dataset is relatively 
-small \citep{devlin2019bert}. The BERT github page even states that 
-“Most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}.\\
-
-\noindent\textbf{Implementation}\\
+\noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 To train BERT, the token \emph{[CLS]} and \emph{[SEP]} are added to the beginning and end of the input sequence. Subsequently, the tokens are converted to IDs using the tokenization
 module from the bert library. Even though a maximum of 512 tokens can be used when training BERT, this implementation only uses a maximum of 100 tokens due to computational reasons.
 Furthermore, this implementation uses an Adam optimizer and a constant learning rate of 0.00001. Future work should include an optimization of those parameters. The model is trained with
-a batch size of two over three epochs.
+a batch size of two over three epochs. Write about hyperparameter tuning.\\
 
-\noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER) Implementation}\\
-Due to wide spread usage of lexicons, the VADER sentiment lexicon was also included. However, this thesis relies on the recommended 
-thresholds to classify the associated sentiment and does not try to optimize those values, since a lexicon based approach is not within the research scope of this thesis. Instead, the result is intended for illustrative purposes only.
-VADER is specifically designed to classify social media sentiment and also includes emoticons, acronyms and \emph{slang} words \citep{hutto2015vader}. \\
-
-\noindent\textbf{Implementation}\\
-Vader can easily be implemented, by looking up the associated score of words in the lexicon. Typical threshold values for the obtained compound score are as follows:\\
+\noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
+Vader can easily be implemented, by looking up the associated score of words in the lexicon. Typical threshold values for the obtained compound score are as follows: 
 If the score is greater than or equal to 0.05, it is associated with positive sentiment. If the score is smaller than or equal to -0.05 it is associated with negative sentiment. For scores
-in between, neutral sentiment is assigned \citep{hutto2015vader}.
+in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain optimal evaluation metrics, however, the thresholds 0.03, 0.05, 0.07 and 0.10 and their negative counterparts were
+also analyzed.
+
+\subsubsection{Stock Price Prediction Implementation}
+Explain challenges of stock price prediction (i.e. train test split) \\
 
 \noindent\textbf{ARIMA}\\
-text
+% https://stats.stackexchange.com/questions/394796/should-my-time-series-be-stationary-to-use-arima-model
+Since ARIMA requires some prerequisites to create good results, those need to be accounted for before applying the model.
+First of all, ARIMA does not work with seasonal data. Seasonality in the time series can be tested by applying \emph{XYZ}.
+Furthermore, ARIMA only works on stationary time-series. Even though the time series can also be differenced, and hence be transformed from
+a non-stationary to a stationary, via the hyperparameter d it is better to difference the time series before applying the ARIMA model.
+As a result, the applied dickey fuller test can be used to test for stationarity. If the null hypothesis can be rejected, the time series is stationary at a significance level.
+For the case at hand, the p-value is almost 0, which indicates statistical significane at the 1\% level.
 
 \noindent\textbf{LSTM without Sentiment Features}\\
-text
+text\\
 
 \noindent\textbf{LSTM with Sentiment Features}\\
-text
+text\\
 
 \subsection{Data, Code and Ethics Statements} \label{datacodeethics}
 To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: \url{https://github.com/mattpodolak/pmaw}\\
