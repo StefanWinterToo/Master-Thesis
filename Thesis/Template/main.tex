@@ -220,7 +220,7 @@ by considering varying hyperparameters of the Word2Vec embedding.
 Other research demonstrates the importance of large pre-trained models using transfer learning \citep{deng2009transferlearning}.
 \cite{devlin2019bert} introduce BERT, a pre-trained model that uses the English Wikipedia and the BooksCorpus, which shows promising results.
 One of the advantages is that only one output layer needs to be added to the model to achieve state-of-the-art sentiment analysis performance.
-However, it is also shown that BERT lacks domain awareness. Hence it cannot differentiate between properties of source and target domains. One
+However, it is also shown that BERT lacks domain awareness. Hence, it cannot differentiate between properties of source and target domains. One
 proposed solution is to replace a random subset of tokens by a \emph{MASK} token. The corresponding hidden values of the MASK token can be fed
 into the output layer. This adaption to a specific domain is shown to slightly enhance the performance of a vanilla implementation of BERT. However,
 it is also argued that a vanilla implementation can still outperform other machine learning models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
@@ -388,7 +388,7 @@ The LSTM architecture does so via its four constituents: A memory cell which can
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
 and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. When training an LSTM, it is shown that
 using a pretrained Word2Vec embedding can help solving the curse of dimensionalty that might occur when using a one-hot encoded input \citep{xiao2018word2veclstm}.
-Hence, a Word2Vec embedding layer is used in the LSTM.
+Hence, a Word2Vec embedding layer is used in the LSTM. \\
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
@@ -413,13 +413,24 @@ F-score is a metric that combines precision and recall (Garcia, 2020).
 
 
 \subsubsection{Stock Price Prediction Models}
-The next section explores the machine learning models that will be used to predict the stock price of GameStop.
+The next section explores the machine learning models that will be used to predict the stock price of GameStop. \\
 
 \noindent\textbf{ARIMA}\\
-....
+One of the standard methods for time series forecasting is ARIMA. Therefore, it is commonly used in forecasting stock prices.
+However, it has some limitations, especially with regards to modelling the non-linear relationships between variables. As a result,
+some prerequisites are required to create good results \citep{sima2018timeseries}.
+First of all, ARIMA does not work well with seasonal data. Seasonality can be identified by plotting the stock prices and plotting
+the Autocorrelation and Partial Autocorrelation.
+Furthermore, ARIMA only works on stationary time-series. Even though the time series can also be differenced, and hence be transformed from
+a non-stationary to a stationary, via the hyperparameter d it is better to difference the time series before applying the ARIMA model.
+As a result, the applied dickey fuller test can be used to test for stationarity \citep{jain2017ASO}. If the null hypothesis can be rejected, the time series is stationary at a significance level. \\
 
 \noindent\textbf{LSTM without Sentiment Features}\\
-....
+As stock prices are generally volatile, non-stationary and can have changes in their statistical properties it is beneficial to use
+models that can learn those attributes. Since LSTMs are able to capture such contextual information, they are shown to outperfrom many other methods
+on fincancial time series datasets \citep{preeti2019lstm}. Furthermore, LSTMs can solve the vanishing gradient problem that oftentimes arises in
+normal RNNs. This thesis implements a Vanilla LSTM, which is a model with only a single LSTM layer. This implementation was chosen, because a more complex
+implementation, such as a stacked-LSTM, does not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}.
 
 \noindent\textbf{LSTM with Sentiment Features}\\
 ....
@@ -444,7 +455,7 @@ The FAQ on the pushshift subreddit states, that pushshift data is best used to:
 \end{itemize}
 
 Pushshift copies data from Reddit at the time it is posted. Since Pushshift uses the document-based database Elastic, it is extremely fast to query data \citep{elastic2015}. However, currently Pushshift does not regularly update certain metadata, such as scores, edits to a submission’s text or comments. Hence, there might be some minor inconsistencies of what is shown on Reddit and what is in the database. The scores, for example can easily be accessed via the official reddit API and, if needed, joined with the data obtained from Pushshift. Based on the data verification that was performed for this thesis, the number of comments only deviates by a marginally small amount. It is hypothesized that the small difference can be explained by forum moderators deleting spam. Those spam comments are assumed to not have a big impact the thesis anyways, which is why the small difference in the number of comments do not need to be addressed. \\
-To access Pushshift, this thesis uses an API wrapper called \emph{PMAW}. Since requests are I/O-bound, PMAW is multithreaded. Hence requests can be run asynchronously which allows the data to be loaded much faster \citep{pmaw2021}.
+To access Pushshift, this thesis uses an API wrapper called \emph{PMAW}. Since requests are I/O-bound, PMAW is multithreaded. Hence, requests can be run asynchronously which allows the data to be loaded much faster \citep{pmaw2021}.
 When making the API request, the most important parameters are the following:
 \begin{itemize}
     \item subreddit: Name of the subreddit
@@ -541,16 +552,16 @@ in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain opti
 also analyzed.
 
 \subsubsection{Stock Price Prediction Implementation}
-Explain challenges of stock price prediction (i.e. train test split) \\
+When splitting time series data, it needs to be split into windows. The training set consists of the first 80\% of the timeseries data and
+the test set of the remainding 20\% of the data. To select the optimal hyperparameters, a rolling forecast is implemented. By doing so, the model 
+sequentially adds the most recent observation and rebuilds the model \citep{sima2018timeseries}.\\
 
 \noindent\textbf{ARIMA}\\
 % https://stats.stackexchange.com/questions/394796/should-my-time-series-be-stationary-to-use-arima-model
-Since ARIMA requires some prerequisites to create good results, those need to be accounted for before applying the model.
-First of all, ARIMA does not work with seasonal data. Seasonality in the time series can be tested by applying \emph{XYZ}.
-Furthermore, ARIMA only works on stationary time-series. Even though the time series can also be differenced, and hence be transformed from
-a non-stationary to a stationary, via the hyperparameter d it is better to difference the time series before applying the ARIMA model.
-As a result, the applied dickey fuller test can be used to test for stationarity. If the null hypothesis can be rejected, the time series is stationary at a significance level.
-For the case at hand, the p-value is almost 0, which indicates statistical significane at the 1\% level.
+For the case at hand, the p-value is almost 0, which indicates statistical significane at the 1\% level. The stock price data does not include a seasonality pattern
+and the applied dickey-fuller test shows stationarity after differencing the time series data once. The hyperparameters that can be optimized are the number of lag observations
+included in the modle (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}. As a result the following
+hyperparameters were used: (5,0,0), (1,0,1), (2,0,2), (0,0,5), (1,0,0), (0,0,1), (0,0,0). \\
 
 \noindent\textbf{LSTM without Sentiment Features}\\
 text\\

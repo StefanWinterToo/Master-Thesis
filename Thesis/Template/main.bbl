@@ -719,6 +719,46 @@ Guia, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Hai%
+\ \protect \BOthers {.}}{%
+Hai%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+hai2020lstms}
+\APACinsertmetastar {%
+hai2020lstms}%
+\begin{APACrefauthors}%
+Hai, P\BPBI N.%
+, Tien, N\BPBI M.%
+, Hieu, H\BPBI T.%
+, Chung, P\BPBI Q.%
+, Son, N\BPBI T.%
+, Ha, P\BPBI N.%
+\BCBL {}\ \BBA {} Son, N\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An Empirical Research on the Effectiveness of Different
+  LSTM Architectures on Vietnamese Stock Market} {An empirical research on the
+  effectiveness of different lstm architectures on vietnamese stock
+  market}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2020 International Conference on Control, Robotics and
+  Intelligent System} {2020 international conference on control, robotics and
+  intelligent system}\ (\BPG~144-149).
+\newblock
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1145/3437802.3437827}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3437802.3437827} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hochreiter%
 \ \BBA {} Schmidhuber%
 }{%
@@ -799,6 +839,32 @@ Ivanovic, Z.%
 \begin{APACrefURL}
   \url{https://www.proquest.com/scholarly-journals/forecasting-croatian-stock-market-index-crobex/docview/1399281625/se-2}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jain%
+\ \BBA {} Mallick%
+}{%
+Jain%
+\ \BBA {} Mallick%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+jain2017ASO}
+\APACinsertmetastar {%
+jain2017ASO}%
+\begin{APACrefauthors}%
+Jain, G.%
+\BCBT {}\ \BBA {} Mallick, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Study of Time Series Models ARIMA and ETS} {A study of
+  time series models arima and ets}.{\BBCQ}
+\newblock
+
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1317,6 +1383,40 @@ Podolak, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Preeti%
+, Bala%
+\BCBL {}\ \BBA {} Singh%
+}{%
+Preeti%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+preeti2019lstm}
+\APACinsertmetastar {%
+preeti2019lstm}%
+\begin{APACrefauthors}%
+Preeti%
+, Bala, R.%
+\BCBL {}\ \BBA {} Singh, R\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Financial and Non-Stationary Time Series Forecasting
+  using LSTM Recurrent Neural Network for Short and Long Horizon} {Financial
+  and non-stationary time series forecasting using lstm recurrent neural
+  network for short and long horizon}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2019 10th International Conference on Computing,
+  Communication and Networking Technologies (ICCCNT)} {2019 10th international
+  conference on computing, communication and networking technologies (icccnt)}\
+  (\BPG~1-7).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICCCNT45670.2019.8944624} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Priyantina%
 \ \BBA {} Sarno%
 }{%
@@ -1670,6 +1770,37 @@ Shetty, D\BPBI K.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1080/03610918.2021.1872631} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Siami-Namini%
+, Tavakoli%
+\BCBL {}\ \BBA {} Siami-Namin%
+}{%
+Siami-Namini%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+sima2018timeseries}
+\APACinsertmetastar {%
+sima2018timeseries}%
+\begin{APACrefauthors}%
+Siami-Namini, S.%
+, Tavakoli, N.%
+\BCBL {}\ \BBA {} Siami-Namin, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Comparison of ARIMA and LSTM in Forecasting Time
+  Series} {A comparison of arima and lstm in forecasting time series}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2018 17th IEEE International Conference on Machine
+  Learning and Applications (ICMLA)} {2018 17th ieee international conference
+  on machine learning and applications (icmla)}\ (\BPG~1394-1401).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICMLA.2018.00227} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
