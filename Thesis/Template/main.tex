@@ -139,7 +139,7 @@ This is why this thesis will also compare newer models such as LSTMs and XGBoost
 This leads to the following sub-research question:
 
 \begin{itemize}
-    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment obtained from WallStreetBets is included as a feature, based on the predefined evaluation metrics MAE and RMSE?}
+    \item[RQ3] \emph{Do machine learning models show stronger predictive capabilities for changes in the stock price of Gamestop if sentiment obtained from WallStreetBets is included as a feature, based on the predefined evaluation metrics MAE, MSE and RMSE?}
 \end{itemize}
 
 By answering the three sub-research questions, a scientific and thought-out answer for the main research question can be found.
@@ -411,6 +411,21 @@ Precision expresses the proportion of how many classes were classified as positi
 Recall refers to the percentage of total relevant results that were correctly classified. Hence, it is a good metric to see if the model was able to find all relevant instances in a dataset.\\
 F-score is a metric that combines precision and recall (Garcia, 2020).
 
+\begin{equation*}
+    Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
+\end{equation*}
+
+\begin{equation*}
+    Precision = \frac{TP}{TP+FP}
+\end{equation*}
+
+\begin{equation*}
+    Recall = \frac{TP}{TP+TN}
+\end{equation*}
+
+\begin{equation*}
+    F_{\beta}=\frac{(1+\beta ^{2})*(Precision * Recall)}{\beta ^{2} * Precision + Recall}
+\end{equation*}
 
 \subsubsection{Stock Price Prediction Models}
 The next section explores the machine learning models that will be used to predict the stock price of GameStop. \\
@@ -430,13 +445,35 @@ As stock prices are generally volatile, non-stationary and can have changes in t
 models that can learn those attributes. Since LSTMs are able to capture such contextual information, they are shown to outperfrom many other methods
 on fincancial time series datasets \citep{preeti2019lstm}. Furthermore, LSTMs can solve the vanishing gradient problem that oftentimes arises in
 normal RNNs. This thesis implements a Vanilla LSTM, which is a model with only a single LSTM layer. This implementation was chosen, because a more complex
-implementation, such as a stacked-LSTM, does not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}.
+implementation, such as a stacked-LSTM, does not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}. \\
 
 \noindent\textbf{LSTM with Sentiment Features}\\
-....
+One advantage of LSTMs is that they can also include other features into their time-series prediction.
+When including other input features besides the stock price, the time series is considered a multivariate time series \citep{liu2019multivariate}. \\
 
 \subsubsection{Evaluation Metrics for Stock Price Prediction}
-Write about evaluation metrics...
+Standard evaluation metrics for time-series data include MAE, MSE and RMSE \citep{rezaei2021stockpriceprediction}.
+Mean Absolute Error (MAE) computes the absolute difference between the actual and predicted price. As a result, the MAE is on the same unit scale as
+the output value.
+Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) are commonly used to evaluate stock price prediction tasks. MSE represents the squared distance
+betwen the actual and predicted prices.
+Root Mean Squared Error (RMSE) simply takes the square-root of MSE. Hence, the output value is the same unit as the required output and can still represent the
+dispersion of results.
+In the formulas $y_{i}$ represents the actual value and $\hat{y}_i$ the predicted value \citep{chen2021meanvariance}.
+Those metrics are defined as follows:
+
+\begin{equation*}
+    MAE = \frac{1}{n}\sum_{i=1}^{n}|y_{i}-\hat{y}_{i}|
+\end{equation*}
+
+\begin{equation*}
+    MSE = \frac{1}{n}\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^2
+\end{equation*}
+
+\begin{equation*}
+    RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_{i}-\hat{y}_{i})^2}
+\end{equation*}
+
 
 \subsection{Experimental Setup}
 Explain Section a little bit.

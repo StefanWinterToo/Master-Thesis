@@ -1012,6 +1012,37 @@ Kotelnikova, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Liu%
+\ \BBA {} Songcan%
+}{%
+Liu%
+\ \BBA {} Songcan%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+liu2019multivariate}
+\APACinsertmetastar {%
+liu2019multivariate}%
+\begin{APACrefauthors}%
+Liu, J.%
+\BCBT {}\ \BBA {} Songcan, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Non-stationary Multivariate Time Series Prediction with
+  Selective Recurrent Neural Networks} {Non-stationary multivariate time series
+  prediction with selective recurrent neural networks}.{\BBCQ}
+\newblock
+\BIn{} A\BPBI C.~Nayak\ \BBA {} A.~Sharma\ (\BEDS), \APACrefbtitle {PRICAI
+  2019: Trends in Artificial Intelligence} {Pricai 2019: Trends in artificial
+  intelligence}\ (\BPG~636-649).
+\newblock
+\APACaddressPublisher{Cham}{Springer International Publishing}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Long%
 , Lucey%
 \BCBL {}\ \BBA {} Yarovaya%
@@ -1498,6 +1529,41 @@ Raschka, S.%
 \APACrefbtitle {Python Machine Learning} {Python machine learning}.
 \newblock
 \APACaddressPublisher{}{Packt Publishing}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rezaei%
+, Faaljou%
+\BCBL {}\ \BBA {} Mansourfar%
+}{%
+Rezaei%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+rezaei2021stockpriceprediction}
+\APACinsertmetastar {%
+rezaei2021stockpriceprediction}%
+\begin{APACrefauthors}%
+Rezaei, H.%
+, Faaljou, H.%
+\BCBL {}\ \BBA {} Mansourfar, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Stock price prediction using deep learning and frequency
+  decomposition} {Stock price prediction using deep learning and frequency
+  decomposition}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Expert Systems with Applications}{169}{}{114332}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S0957417420310228}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.eswa.2020.114332}
+  \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
