@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  28 DEC 2021 23:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  29 DEC 2021 09:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -860,18 +860,18 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 78.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 79.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 78.
+(Font)              scaled to size 9.30756pt on input line 79.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
@@ -880,182 +880,143 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-
- []
-
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
-
+Overfull \hbox (2.97278pt too wide) in paragraph at lines 113--118
+[]\T1/pplj/m/n/10.95 (-20) To be-gin, it must be de-ter-mined how the dis-cus-sions about the Gamestop
  []
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[2]
-Overfull \hbox (2.97278pt too wide) in paragraph at lines 132--137
-[]\T1/pplj/m/n/10.95 (-20) To be-gin, it must be de-ter-mined how the dis-cus-sions about the Gamestop
- []
-
-[3] [4] [5] [6] [7] [8] [9]
-LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 325.
+[2] [3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 306.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
-)
-<tsne_projection.png, id=350, 364.36125pt x 324.21124pt>
+) [9]
+<tsne_projection.png, id=338, 364.36125pt x 324.21124pt>
 File: tsne_projection.png Graphic file (type png)
 <use tsne_projection.png>
-Package pdftex.def Info: tsne_projection.png  used on input line 353.
+Package pdftex.def Info: tsne_projection.png  used on input line 334.
 (pdftex.def)             Requested size: 358.50473pt x 319.01108pt.
- [10] [11 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>]
-<al_workflow.png, id=380, 560.0925pt x 420.06938pt>
+ [10 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>]
+<al_workflow.png, id=361, 560.0925pt x 420.06938pt>
 File: al_workflow.png Graphic file (type png)
 <use al_workflow.png>
-Package pdftex.def Info: al_workflow.png  used on input line 389.
+Package pdftex.def Info: al_workflow.png  used on input line 370.
 (pdftex.def)             Requested size: 358.50473pt x 268.88835pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--398
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 380--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--407
+Underfull \hbox (badness 10000) in paragraph at lines 389--401
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 408--420
-
- []
-
-[13 </Users/stefanwinter/Local/Thesis/Thesis/Template/al_workflow.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 421--427
+[12 </Users/stefanwinter/Local/Thesis/Thesis/Template/al_workflow.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 402--408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--434
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--458
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+Underfull \hbox (badness 10000) in paragraph at lines 459--462
+
+ []
+
+[15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 569--572
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 573--578
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 461--470
+Underfull \hbox (badness 10000) in paragraph at lines 579--587
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--477
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 478--481
-
- []
-
-[16] [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 588--591
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 592--597
+Underfull \hbox (badness 10000) in paragraph at lines 588--593
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 598--606
+Underfull \hbox (badness 10000) in paragraph at lines 601--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--612
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 620--623
+Underfull \hbox (badness 10000) in paragraph at lines 605--611
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--630
+Underfull \hbox (badness 10000) in paragraph at lines 612--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--633
+Underfull \hbox (badness 10000) in paragraph at lines 615--617
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 634--636
-
- []
-
-<ActiveLearner.png, id=517, 620.3175pt x 331.2375pt>
+<ActiveLearner.png, id=501, 620.3175pt x 331.2375pt>
 File: ActiveLearner.png Graphic file (type png)
 <use ActiveLearner.png>
-Package pdftex.def Info: ActiveLearner.png  used on input line 648.
+Package pdftex.def Info: ActiveLearner.png  used on input line 629.
 (pdftex.def)             Requested size: 358.50473pt x 191.43555pt.
-[21]
-<LSTM_acc.png, id=523, 387.4475pt x 262.9825pt>
+[20]
+<LSTM_acc.png, id=507, 387.4475pt x 262.9825pt>
 File: LSTM_acc.png Graphic file (type png)
 <use LSTM_acc.png>
-Package pdftex.def Info: LSTM_acc.png  used on input line 687.
+Package pdftex.def Info: LSTM_acc.png  used on input line 668.
 (pdftex.def)             Requested size: 193.72327pt x 131.49092pt.
-<LSTM_Loss.png, id=524, 393.47pt x 265.99374pt>
+<LSTM_Loss.png, id=508, 393.47pt x 265.99374pt>
 File: LSTM_Loss.png Graphic file (type png)
 <use LSTM_Loss.png>
-Package pdftex.def Info: LSTM_Loss.png  used on input line 693.
+Package pdftex.def Info: LSTM_Loss.png  used on input line 674.
 (pdftex.def)             Requested size: 196.73451pt x 132.99654pt.
-<BERT_acc.png, id=525, 399.4925pt x 262.9825pt>
+ [21 </Users/stefanwinter/Local/Thesis/Thesis/Template/ActiveLearner.png>]
+<BERT_acc.png, id=517, 399.4925pt x 262.9825pt>
 File: BERT_acc.png Graphic file (type png)
 <use BERT_acc.png>
-Package pdftex.def Info: BERT_acc.png  used on input line 702.
+Package pdftex.def Info: BERT_acc.png  used on input line 683.
 (pdftex.def)             Requested size: 199.74576pt x 131.49092pt.
-<BERT_Loss.png, id=526, 395.4775pt x 262.9825pt>
+<BERT_Loss.png, id=518, 395.4775pt x 262.9825pt>
 File: BERT_Loss.png Graphic file (type png)
 <use BERT_Loss.png>
-Package pdftex.def Info: BERT_Loss.png  used on input line 708.
+Package pdftex.def Info: BERT_Loss.png  used on input line 689.
 (pdftex.def)             Requested size: 197.73827pt x 131.49092pt.
- [22 </Users/stefanwinter/Local/Thesis/Thesis/Template/ActiveLearner.png>] [23 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_acc.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Loss.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_acc.png>] [24 </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Loss.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [25]
+ [22 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_acc.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Loss.png>] [23 </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_acc.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Loss.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [24]
 Underfull \hbox (badness 1297) in paragraph at lines 281--303
 \T1/pplj/m/n/10.95 (+20) price pre-dic-tion.  \T1/pplj/m/it/10.95 (+20) Ap-plied Soft Com-put-ing\T1/pplj/m/n/10.95 (+20) , \T1/pplj/m/it/10.95 (+20) 100\T1/pplj/m/n/10.95 (+20) , 106943.  Re-
  []
@@ -1065,12 +1026,12 @@ Underfull \hbox (badness 1565) in paragraph at lines 281--303
 \T1/pplj/m/n/10.95 (+20) trieved from [][]$\T1/fvm/m/n/10.95 https :// www [] .sciencedirect [] .com / science / article /
  []
 
-[26]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 826--843
 \T1/fvm/m/n/10.95 forecasting [] -croatian [] -stock [] -market [] -index [] -crobex / docview /
  []
 
-[27] [28]
+[26] [27]
 Underfull \hbox (badness 4518) in paragraph at lines 1547--1568
 []\T1/pplj/m/n/10.95 (+20) Rezaei, H., Faaljou, H., & Man-sour-far, G.  (2021).  Stock
  []
@@ -1085,7 +1046,7 @@ Underfull \hbox (badness 1565) in paragraph at lines 1547--1568
 \T1/pplj/m/n/10.95 (+20) trieved from [][]$\T1/fvm/m/n/10.95 https :// www [] .sciencedirect [] .com / science / article /
  []
 
-
+[28]
 Underfull \hbox (badness 1112) in paragraph at lines 1709--1728
 \T1/pplj/m/n/10.95 (+20) works: A project re-port.  \T1/pplj/m/it/10.95 (+20) Neu-ro-com-put-ing\T1/pplj/m/n/10.95 (+20) , \T1/pplj/m/it/10.95 (+20) 2\T1/pplj/m/n/10.95 (+20) (1), 17-27.  Re-
  []
@@ -1102,16 +1063,16 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  18114 strings out of 478994
  309940 string characters out of 5858184
- 692740 words of memory out of 5000000
+ 691740 words of memory out of 5000000
  34446 multiletter control sequences out of 15000+600000
  564210 words of font info for 637 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,23n,130p,1026b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 126i,23n,130p,1026b,753s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (33 pages, 465104 bytes).
+Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (33 pages, 462843 bytes).
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 630 compressed objects within 7 object streams
+ 687 PDF objects out of 1000 (max. 8388607)
+ 618 compressed objects within 7 object streams
  141 named destinations out of 1000 (max. 500000)
  159457 words of extra memory for PDF output out of 184870 (max. 10000000)
 
