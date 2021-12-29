@@ -20,8 +20,10 @@ The LSTM for sentiment classification was implemented by using material provided
 
 All scikit-learn packages and classes, such as train_test_split, TfidfVecotriser, LabelEncoder, GridSearchCV, Pipeline, SVM and NB were implemented by utilizing material provided during the Machine Learning course at Tilburg University, taught by Dr. Güven and Dr. Önal.
 
-To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: https://github.com/mattpodolak/pmaw
+To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: https://github.com/mattpodolak/pmaw  
 The data was manually verified, by comparing specific, randomly-sampled, instances with the actual posts on reddit.
+
+All visualizations and graphics were created by myself. In addition to python's visualization packages the were used (can be found in the Requirements.txt file) I also used PowerBI and the website lucid.app
 
 ## Papers
 The papers folder contains all papers used for this thesis.
