@@ -786,6 +786,34 @@ Hochreiter, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Hossin%
+\ \BBA {} Sulaiman%
+}{%
+Hossin%
+\ \BBA {} Sulaiman%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+hossin2015evaluationmetrics}
+\APACinsertmetastar {%
+hossin2015evaluationmetrics}%
+\begin{APACrefauthors}%
+Hossin, M.%
+\BCBT {}\ \BBA {} Sulaiman, M\BPBI N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{03}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Review on Evaluation Metrics for Data Classification
+  Evaluations} {A review on evaluation metrics for data classification
+  evaluations}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Data Mining and Knowledge
+  Management Process}{5}{}{1-11}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hutto%
 \ \BBA {} Gilbert%
 }{%
@@ -1556,7 +1584,7 @@ Rezaei, H.%
   decomposition} {Stock price prediction using deep learning and frequency
   decomposition}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Expert Systems with Applications}{169}{}{114332}.
+\APACjournalVolNumPages{Expert Systems with Applications}{169}{}{}.
 \newblock
 \begin{APACrefURL}
   \url{https://www.sciencedirect.com/science/article/pii/S0957417420310228}
@@ -1628,6 +1656,44 @@ Salah, R.%
   analysis using unlabeled email data.}
 \newblock
 \APAChowpublished {EasyChair Preprint no. 2080}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Saud%
+\ \BBA {} Shakya%
+}{%
+Saud%
+\ \BBA {} Shakya%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+saud2020lookback}
+\APACinsertmetastar {%
+saud2020lookback}%
+\begin{APACrefauthors}%
+Saud, A\BPBI S.%
+\BCBT {}\ \BBA {} Shakya, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Analysis of look back period for stock price prediction
+  with RNN variants: A case study on banking sector of NEPSE} {Analysis of look
+  back period for stock price prediction with rnn variants: A case study on
+  banking sector of nepse}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Procedia Computer Science}{167}{}{788-798}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/S1877050920308851}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{International Conference on Computational Intelligence and Data
+  Science}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.procs.2020.03.419}
+  \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

@@ -76,11 +76,9 @@ Additionally, I want to thank Sveva Cadura and Anna Carolina van Melis for \\the
 
 \section{Data, Code and Ethics Statements}
 
-\noindent The code for this thesis is shared in the following github repository: \url{https://github.com/StefanWinterToo/Master-Thesis}\\
-
-\noindent All graphics used in this thesis were created by myself.\\
-
-\noindent To the best of my knowledge, the literature used was referenced appropriately.
+\noindent The code for this thesis is publicly available in the following github repository: \url{https://github.com/StefanWinterToo/Master-Thesis}\\
+The Readme file in the repository lists all sources that were used in the thesis. The data required to complete this thesis was obtained from Reddit and Yahoo Finance. All the data are publicly available and accessible for free. The author of this thesis acknowledges that he does not have any legal claim to this data.
+All graphics, images and visualizations used in this thesis were created by the author of this thesis. To the best the author's knowledge, the literature used was referenced appropriately.
 
 % Begin Introduction ----
 \section{Introduction} \label{sec:introduction}
@@ -415,10 +413,11 @@ VADER is specifically designed to classify social media sentiment and also inclu
 
 \subsubsection{Evaluation Metrics for Sentiment Classification}
 Typically, \emph{accuracy, precision, recall and the F-score} are used as evaluation metrics to assess the performance of a sentiment analysis model. \\
-Accuracy is the percentage of correctly predicted observations over all observations. However, accuracy should only be used if the classes in the data are balanced.\\
+Accuracy is the percentage of correctly predicted observations over all instances. Even though it is commonly applied, accuracy should only be used if the classes in the data are balanced.
+Otherwise, a model that only predicts the majority class may be able to achieve quite high accuracy.\\
 Precision expresses the proportion of how many classes were classified as positive, that actually are positive.\\
 Recall refers to the percentage of total relevant results that were correctly classified. Hence, it is a good metric to see if the model was able to find all relevant instances in a dataset.\\
-F-score is a metric that combines precision and recall (Garcia, 2020).
+F-score is a metric that combines precision and recall and hence presents the harmonic mean of the two \citep{hossin2015evaluationmetrics}.
 
 \begin{equation*}
     Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
@@ -433,8 +432,13 @@ F-score is a metric that combines precision and recall (Garcia, 2020).
 \end{equation*}
 
 \begin{equation*}
-    F_{\beta}=\frac{(1+\beta ^{2})*(Precision * Recall)}{\beta ^{2} * Precision + Recall}
+    F_{1}=\frac{2*(Precision * Recall)}{Precision + Recall}
 \end{equation*}
+
+\noindent In the formulas above, \emph{TP} and \emph{TN} are positive and negative classes that were correctly classified. Contrary, \emph{FP} and \emph{FN} are
+incorrectly classified instances.\\
+Even though the class distribution of the data used in this thesis is skewed towards to label \emph{bullish}, the remaining two classes still represent
+almost 50\% of the data. As a result, accuracy can still lead to representative results, which is why this metric is used for hyperparameter tuning and model selection.
 
 \subsubsection{Stock Price Prediction Models}
 The next section explores the machine learning models that will be used to predict the stock price of GameStop. \\
@@ -456,6 +460,7 @@ on fincancial time series datasets \citep{preeti2019lstm}. Furthermore, LSTMs ca
 normal RNNs. This thesis implements a Vanilla LSTM, which is a model with only a single LSTM layer. This implementation was chosen, because a more complex
 implementation, such as a stacked-LSTM, does not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}. \\
 
+
 \noindent\textbf{LSTM with Sentiment Features}\\
 One advantage of LSTMs is that they can also include other features into their time-series prediction.
 When including other input features besides the stock price, the time series is considered a multivariate time series \citep{liu2019multivariate}. \\
@@ -467,9 +472,9 @@ the output value.
 Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) are commonly used to evaluate stock price prediction tasks. MSE represents the squared distance
 betwen the actual and predicted prices.
 Root Mean Squared Error (RMSE) simply takes the square-root of MSE. Hence, the output value is the same unit as the required output and can still represent the
-dispersion of results.
+dispersion of results. Therefore, RMSE will be used as the evaluation metric to select the best hyperparameters and model.
 In the formulas $y_{i}$ represents the actual value and $\hat{y}_i$ the predicted value \citep{chen2021meanvariance}.
-Those metrics are defined as follows:
+The aforementioned metrics are defined as follows:
 
 \begin{equation*}
     MAE = \frac{1}{n}\sum_{i=1}^{n}|y_{i}-\hat{y}_{i}|
@@ -485,7 +490,8 @@ Those metrics are defined as follows:
 
 
 \subsection{Experimental Setup}
-Explain Section a little bit.
+This section will explore the experimental setup by explaining the dataset, Active Learner, preprocessing steps and the implementation of the
+sentiment models and time-series forecasting models.
 
 \subsubsection{Data}
 
@@ -580,6 +586,7 @@ Write better explanation for tf-idf. \\
 Before training the LSTM, data it first is fed into a Word2Vec model to learn the word embeddings. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
 Selecting optimal parameters for the Word2Vec model is oftentimes neglected, even though that may lead to performance differences.
 The Word2Vec hyperparameters that were analyzed is the vector\_size, min\_count and window. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation \citep{schnabel2015embeddings}.
+A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:A}.
 The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
 The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
 a loop runs through a set of parameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
@@ -604,16 +611,25 @@ sequentially adds the most recent observation and rebuilds the model \citep{sima
 
 \noindent\textbf{ARIMA}\\
 % https://stats.stackexchange.com/questions/394796/should-my-time-series-be-stationary-to-use-arima-model
-For the case at hand, the p-value is almost 0, which indicates statistical significane at the 1\% level. The stock price data does not include a seasonality pattern
-and the applied dickey-fuller test shows stationarity after differencing the time series data once. The hyperparameters that can be optimized are the number of lag observations
-included in the modle (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}. As a result the following
+First the stock price data was analyzed to identify a seasonality pattern and to check for stationarity. No seasonality was identified
+by plotting the stock chart and other metrics. See \emph{appendix B} for more. %Still need to write about that.
+After differentiating the time-series once the dickey-fuller test was applied, which showed stationarity at the 1\% significance level.
+The hyperparameters that can be optimized are the number of lag observations
+included in the model (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}. As a result the following
 hyperparameters were used: (5,0,0), (1,0,1), (2,0,2), (0,0,5), (1,0,0), (0,0,1), (0,0,0). \\
 
 \noindent\textbf{LSTM without Sentiment Features}\\
-text\\
+The data fed into the LSTM, in comparison to the ARIMA model, was not differenciated as one of the strengths of an LSTM is that it can also work well with non-stationary data.
+To confirm that the data was not differenciated.
+As the first step, the input data was scaled to be between 0 and 1. This is standard practice and commonly applied in the literature. As a result, the LSTM is expected to be
+less sensitive to the scale of the input data. The LSTM uses a batch size of 1, because it will be making forecasts for the next day. 
+The LSTM analyzes the hyperparameters of the optimizer, the dropout on the input which excludes a random subset of the data from the node activation and update of the weights
+and the lookback period. The lookback period of XYZ was chosen, because \cite{saud2020lookback} found that a suitable lookback period for LSTMs is less than 5. \\
 
 \noindent\textbf{LSTM with Sentiment Features}\\
-text\\
+The LSTM model that includes sentiment features uses the same hyperparameters as the model without sentiment.
+Difference: Sentiment was encoded as -1 for bearish, 0 for neutral and 1 for bullish. Then the sentiment was summed up and added
+to the relevant date. Find literature to confirm this approach.
 
 % End Method ----
 
@@ -726,6 +742,16 @@ The results show that using state of the art models underperform the simple base
 % End Conclusion ----
 
 \bibliography{references}
+
+\section{Appendices}
+\subsection{Appendix A}
+\label{appendix:A}
+
+Example of the similarity (denoted in the parentheses) of the three most similar words of an input word: \\
+robinhood -> rh (0.98), etrade (0.87), webull (0.86) \\
+andromeda -> jupiter (0.95), mars (0.94), uranus (0.93) \\
+ape -> autist (0.94), monkey (0.91), retard (0.90) \\
+hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 
 
 \end{document}
