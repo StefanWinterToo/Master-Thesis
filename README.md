@@ -22,3 +22,12 @@ All scikit-learn packages and classes, such as train_test_split, TfidfVecotriser
 
 To query the data from pushshift, the explanation of pmaw API wrapper from Github was used: https://github.com/mattpodolak/pmaw
 The data was manually verified, by comparing specific, randomly-sampled, instances with the actual posts on reddit.
+
+## Papers
+The papers folder contains all papers used for this thesis.
+
+## Proposal
+The proposal folder contains the thesis proposal, which was required to kick off the process.
+
+## Thesis
+The thesis contains everything that was important for the writing process of the thesis. The template folder in the thesis folder contains the latex files of the actual thesis.
