@@ -2,12 +2,12 @@
 This is the repository for Stefan Winter's Master thesis at Tilburg University.
 
 ## App
-The app folder contains all the code.
-Note: Due to time pressure technical debt was incurred. As a result, the project structure is quite messy and will be fixed in due time.
+The app folder contains all the code.  
+Note: Due to time pressure technical debt was incurred. As a result, the project structure is quite messy and will be fixed in due time.  
 Most data is not pushed to the repository, because of Github's size constraints.
 All packages and modules that were used can be found in the Requirements.txt file.
 
-Additional information on some important packages:
+Additional information on some important packages:  
 To label the initial train set, I created a graphical user interface using tkinter: https://docs.python.org/3/library/tkinter.html
 
 To create the t-sne visualization, I relied on the documentation provided by Yellowbrick: https://www.scikit-yb.org/en/latest/api/text/tsne.html
