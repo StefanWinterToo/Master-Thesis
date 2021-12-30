@@ -583,13 +583,13 @@ class distribution as the full set \citep{sahu2017stratification}. Find paper wh
 To train the classifier, the data was first converted to a tf-idf representation.
 The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for
 \emph{fit\char`_prior}, which determines if prior class probabilities shall be learned, and \emph{alpha}, which is a smoothing parameter that solves
-the problem of zero probability in NB. If 
-\\
+the problem of zero probability. That problem might occur, if a an unseen word appears in the test sample. By setting alpha to a value greater than
+zero, the model pretends to have seen a word.\\
 
 \noindent\textbf{Long Short Term Memory (LSTM)}\\
 Before training the LSTM, data it first is fed into a Word2Vec model to learn the word embeddings. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
 Selecting optimal parameters for the Word2Vec model is oftentimes neglected, even though that may lead to performance differences.
-The Word2Vec hyperparameters that were analyzed is the vector\_size, min\_count and window. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation \citep{schnabel2015embeddings}.
+The Word2Vec hyperparameters that were analyzed is the \emph{vector\_size, min\_count} and \emph{window}. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation \citep{schnabel2015embeddings}.
 A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:A}.
 The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
 The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
