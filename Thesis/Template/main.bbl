@@ -1040,6 +1040,38 @@ Kotelnikova, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Lim%
+\ \BBA {} Zohren%
+}{%
+Lim%
+\ \BBA {} Zohren%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+lim2020lookback}
+\APACinsertmetastar {%
+lim2020lookback}%
+\begin{APACrefauthors}%
+Lim, B.%
+\BCBT {}\ \BBA {} Zohren, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{Feb}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Time-series forecasting with deep learning: a survey}
+  {Time-series forecasting with deep learning: a survey}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Philosophical Transactions of the Royal Society A:
+  Mathematical, Physical and Engineering Sciences}{379}{2194}{}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1098/rsta.2020.0209}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1098/rsta.2020.0209} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Liu%
 \ \BBA {} Songcan%
 }{%
@@ -1633,6 +1665,39 @@ Ribeiro, A\BPBI H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Sahu%
+, Mukhopadhyay%
+, Szengel%
+\BCBL {}\ \BBA {} Zachow%
+}{%
+Sahu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+sahu2017stratification}
+\APACinsertmetastar {%
+sahu2017stratification}%
+\begin{APACrefauthors}%
+Sahu, M.%
+, Mukhopadhyay, A.%
+, Szengel, A.%
+\BCBL {}\ \BBA {} Zachow, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{03}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Addressing multi-label imbalance problem of surgical
+  tool detection using CNN} {Addressing multi-label imbalance problem of
+  surgical tool detection using cnn}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International journal of computer assisted radiology
+  and surgery}{12}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s11548-017-1565-x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Salah%
 \ \BBA {} Gayar%
 }{%
@@ -1966,6 +2031,41 @@ Song, J.%
 \newblock
 \APACjournalVolNumPages{KSII TRANSACTIONS ON INTERNET AND INFORMATION
   SYSTEMS}{}{}{2996-3011}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sugitomo%
+, Kevin%
+, Jannatri%
+\BCBL {}\ \BBA {} Suhartono%
+}{%
+Sugitomo%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+jason2021tfidf}
+\APACinsertmetastar {%
+jason2021tfidf}%
+\begin{APACrefauthors}%
+Sugitomo, J\BPBI C.%
+, Kevin, N.%
+, Jannatri, N.%
+\BCBL {}\ \BBA {} Suhartono, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sentiment Analysis using SVM and Naïve Bayes
+  Classifiers on Restaurant Review Dataset} {Sentiment analysis using svm and
+  naïve bayes classifiers on restaurant review dataset}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2021 1st International Conference on Computer Science
+  and Artificial Intelligence (ICCSAI)} {2021 1st international conference on
+  computer science and artificial intelligence (iccsai)}\ (\BVOL~1,
+  \BPG~100-108).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICCSAI53272.2021.9609776} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

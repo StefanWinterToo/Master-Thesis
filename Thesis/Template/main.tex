@@ -32,8 +32,7 @@
 \def\finalyear{2022}
 \def\supervisor{Dr. Peter Hendrix}
 \def\committee{Dr. Raquel Garrido Alhama}
-\def\acknowledgments{I want to thank Dr. Peter Hendrix for his invaluable guidance during this thesis.\\
-Additionally, I want to thank Sveva Cadura and Anna Carolina van Melis for \\their support during the writing process.}
+\def\acknowledgments{I want to thank Dr. Peter Hendrix for his invaluable guidance during this thesis.}
 
 % METADATA
 
@@ -297,22 +296,23 @@ on the case of Gamestop.
 
 \section{Methodology}
 
-\subsection{General Description}
+\subsection{General Description} \label{general_description}
 
-This subsection describes the methodology used to 
+For better understanding of the methodologies used, this paragraph will provide a brief summary of the steps taken, before
+explaining each step in more detail. To answer the research questions outlined in the introduction, the following solutions
+were identified:
 \begin{itemize}
     \item create a domain-specific annotated dataset, 
     \item using the dataset for sentiment analysis and
     \item predicting the stock price of GameStop.
 \end{itemize}
 
-For better understanding of the methodologies used, this paragraph will provide a brief summary of the entire workflow before explaining each step in more detail.
-To begin with, stock prices and posts from the WallStreetBets subreddit are obtained for GameStop. Since the posts are completely
-unlabeled, ten percent of the data are manually labeled to perform some data exploration and gain some basic understanding.
-The annotated targets are either \emph{bearish, neutral or bullish}. Generally, bearish is associated with negative 
-sentiment where investors assume a decline in stock prices. Bullish, on the other hand, relates to positive sentiment where investors hope for rising stock prices.
-Subsequently, an Active Learner is applied to label the rest of the data. As a result, \emph{Ground Truth} data are created which can be used
-for the machine learning sentiment models. Subsequently, the model with the best evaluation metrics is used to predict the sentiment of the entire
+\noindent To begin with, stock prices and posts from the WallStreetBets subreddit are obtained for GameStop. Since the posts are completely
+unlabeled, ten percent of the data are manually labeled at the document level to explore the data. This helps in determining how to best create a fully annotated dataset.
+The labelled targets are either \emph{bearish, neutral or bullish}. Generally, bearish is associated with negative 
+sentiment where investors assume a decline in stock prices. Bullishness, on the other hand, relates to positive sentiment where investors hope for rising stock prices. \\
+Subsequently, it was determined that an Active Learner is a good solution to label the rest of the data. As a result, \emph{Ground Truth} data are created which can be used
+for supervised machine learning sentiment models. Afterwards, the model with the best evaluation metrics is used to predict the sentiment of the entire
 dataset. The predicted sentiment can then be applied as an additional input feature for the stock price prediction task.
 
 \subsubsection{The Case for a Semi-Supervised Method over an Unsupervised Method to Label Data}
@@ -322,10 +322,15 @@ data is using unsupervised machine learning models. Unsupervised models are comm
 and text classification \citep{jung2019automatedclassification}. However, unsupervised models are a better choice for uncovering hidden 
 patterns in a dataset, especially without any a priori knowledge of the structure of the data. As a result, unsupervised models 
 excel at summarizing or exploring a large text corpus. 
-For the case at hand, a t-Distributed Stochastic Neighbor embedding (t-sne) algorithm was applied on the data to extract similarity 
+For the case at hand, a \emph{t-Distributed Stochastic Neighbor embedding (t-sne)} algorithm was applied on the data to extract similarity 
 features and project them onto a lower dimension \citep{binu2020dimreductiontsne}. As can be seen in Figure 1, admittedly 
-at a low dimension, the majority of the data do not belong to any particular cluster. The data used for the t-sne algorithm was the
-manually labeled text data that was transformed into a Term Frequence-Inverse Document Frequence (tf-idf) representation.
+at a low dimension, the majority of the data do not belong to any particular cluster. The colours represent the three different 
+labels. The data used for the t-sne algorithm was the
+manually labeled text data that was transformed into a \emph{Term Frequence-Inverse Document Frequence (tf-idf)} representation.
+By using tf-idf, the relevancy of a word in a set of documents is determined. If a word occurs often, but also in many documents
+it will rank low, as such a word might not mean much to a particular document. tf-idf is calculated by multiplying the tf part with the
+idf part. The tf part represents how often a word appears while the idf part accounts for the importance of the word, depending on
+the number of documents the word can be found in. \citep{Guia2019ComparisonON, jason2021tfidf}.
 
 \begin{figure} % Also need a legend
     \centering
@@ -336,7 +341,7 @@ manually labeled text data that was transformed into a Term Frequence-Inverse Do
 
 Even though there are some approaches to clustering high dimensional data, it generally is difficult to do so accurately. 
 One of the explanations is the increased sparsity and the difficulty to distinguish between the distances 
-of specific instances \citep{tomasev2014roleofhubness}. As a result, an unsupervised approach was not chosen for this thesis.
+of specific instances \citep{tomasev2014roleofhubness}. For these reasons, an unsupervised approach was not chosen.
 
 However, labelled data is still needed to train supervised machine learning models for sentiment analysis. While manually labelling
 all data might be the most accurate solution, it is associated with high costs \citep{miller2020activelearningapproaches}.
@@ -353,7 +358,7 @@ instances will become the pool data, which need to be labeled. The seed data is 
 which needs to be defined when creating the Active Learner.\\
 In addition, a query strategy needs to be defined, based on which the Active Learner queries new instances from the aforementioned pool. 
 A query strategy evaluates the informativeness of unlabeled samples. Common strategies are \emph{uncertainty sampling, query-by-committee, 
-expected model change, expected error reduction and variance reduction}. \\
+expected model change, expected error reduction and variance reduction}.\\
 While each strategy has its own intricacies, all essentially try to find instances that are hard for the model to classify and hence might benefit from manual annotation. 
 After the query function selected instances from the pool, an oracle needs to label those. An oracle normally is at 
 least one human with knowledge on how to annotate the data at hand \citep{settles2009activeLL}. Once the new instances are labeled, 
@@ -394,8 +399,8 @@ LSTMs are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
 and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. When training an LSTM, it is shown that
-using a pretrained Word2Vec embedding can help solving the curse of dimensionalty that might occur when using a one-hot encoded input \citep{xiao2018word2veclstm}.
-Hence, a Word2Vec embedding layer is used in the LSTM. \\
+using a pretrained Word2Vec embedding can help solving the curse of dimensionalty that might occur when using a one-hot encoded input \citep{xiao2018word2veclstm}.\\
+%Hence, a Word2Vec embedding layer is used in the LSTM. 
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
@@ -405,7 +410,7 @@ small \citep{devlin2019bert}. The BERT github page even states that
 “Most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}.\\
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
-Due to wide spread usage of lexicons, the VADER sentiment lexicon was also included. The results of VADER are intended for illustrative purposes only,
+Due to wide spread usage of lexicons, the VADER sentiment lexicon was also included. However, the results of VADER are intended for illustrative purposes only,
 as a lexicon based approach is not within the research scope of this thesis.
 The VADER lexicon does not have any hyperparameters to tune. It is only possible to optimize the classification results by
 changing the thresholds to classify the associated sentiment.
@@ -413,11 +418,11 @@ VADER is specifically designed to classify social media sentiment and also inclu
 
 \subsubsection{Evaluation Metrics for Sentiment Classification}
 Typically, \emph{accuracy, precision, recall and the F-score} are used as evaluation metrics to assess the performance of a sentiment analysis model. \\
-Accuracy is the percentage of correctly predicted observations over all instances. Even though it is commonly applied, accuracy should only be used if the classes in the data are balanced.
+\emph{Accuracy} is the percentage of correctly predicted observations over all instances. Even though it is commonly applied, accuracy should only be used if the classes in the data are balanced.
 Otherwise, a model that only predicts the majority class may be able to achieve quite high accuracy.\\
-Precision expresses the proportion of how many classes were classified as positive, that actually are positive.\\
-Recall refers to the percentage of total relevant results that were correctly classified. Hence, it is a good metric to see if the model was able to find all relevant instances in a dataset.\\
-F-score is a metric that combines precision and recall and hence presents the harmonic mean of the two \citep{hossin2015evaluationmetrics}.
+\emph{Precision} expresses the proportion of how many classes were classified as positive, that actually are positive.\\
+\emph{Recall} refers to the percentage of total relevant results that were correctly classified. Hence, it is a good metric to see if the model was able to find all relevant instances in a dataset.\\
+\emph{F-score} is a metric that combines precision and recall and presents the harmonic mean of the two \citep{hossin2015evaluationmetrics}.
 
 \begin{equation*}
     Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
@@ -447,31 +452,29 @@ The next section explores the machine learning models that will be used to predi
 One of the standard methods for time series forecasting is ARIMA. Therefore, it is commonly used in forecasting stock prices.
 However, it has some limitations, especially with regards to modelling the non-linear relationships between variables. As a result,
 some prerequisites are required to create good results \citep{sima2018timeseries}.
-First of all, ARIMA does not work well with seasonal data. Seasonality can be identified by plotting the stock prices and plotting
-the Autocorrelation and Partial Autocorrelation.
-Furthermore, ARIMA only works on stationary time-series. Even though the time series can also be differenced, and hence be transformed from
-a non-stationary to a stationary, via the hyperparameter d it is better to difference the time series before applying the ARIMA model.
-As a result, the applied dickey fuller test can be used to test for stationarity \citep{jain2017ASO}. If the null hypothesis can be rejected, the time series is stationary at a significance level. \\
+First of all, ARIMA does not work well with seasonal data. Seasonality can be identified by plotting the stock prices, Autocorrelation and Partial Autocorrelation.
+Furthermore, ARIMA only works on stationary time-series. 
+By differencing the time-series it can be made stationary and then be used in the ARIMA model.
+The dickey fuller test can be used to test for stationarity \citep{jain2017ASO}. If the null hypothesis can be rejected, the time series is assumed to be stationary. \\
 
 \noindent\textbf{LSTM without Sentiment Features}\\
 As stock prices are generally volatile, non-stationary and can have changes in their statistical properties it is beneficial to use
 models that can learn those attributes. Since LSTMs are able to capture such contextual information, they are shown to outperfrom many other methods
 on fincancial time series datasets \citep{preeti2019lstm}. Furthermore, LSTMs can solve the vanishing gradient problem that oftentimes arises in
-normal RNNs. This thesis implements a Vanilla LSTM, which is a model with only a single LSTM layer. This implementation was chosen, because a more complex
-implementation, such as a stacked-LSTM, does not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}. \\
-
+normal RNNs. This thesis implements a Vanilla LSTM, which is a model with only a single LSTM layer. This implementation was chosen because others, such as a stacked-LSTM, do not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}.
+Additionally, a look-back period needs to be defined which chooses how many previous timestamps, for the case at hand - days, will be used to predict the 
+stock price at the next timestamp \citep{lim2020lookback}.\\
 
 \noindent\textbf{LSTM with Sentiment Features}\\
 One advantage of LSTMs is that they can also include other features into their time-series prediction.
-When including other input features besides the stock price, the time series is considered a multivariate time series \citep{liu2019multivariate}. \\
+When including other input features besides the stock price, the time series is considered a multivariate time series \citep{liu2019multivariate}.
 
 \subsubsection{Evaluation Metrics for Stock Price Prediction}
-Standard evaluation metrics for time-series data include MAE, MSE and RMSE \citep{rezaei2021stockpriceprediction}.
-Mean Absolute Error (MAE) computes the absolute difference between the actual and predicted price. As a result, the MAE is on the same unit scale as
-the output value.
-Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) are commonly used to evaluate stock price prediction tasks. MSE represents the squared distance
-betwen the actual and predicted prices.
-Root Mean Squared Error (RMSE) simply takes the square-root of MSE. Hence, the output value is the same unit as the required output and can still represent the
+Standard evaluation metrics for time-series data include Mean Absolute Error (MAE), Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) \citep{rezaei2021stockpriceprediction}.\\
+\emph{MAE} computes the absolute difference between the actual and predicted price. As a result, the MAE is on the same unit scale as
+the output value.\\
+\emph{MSE} represents the squared distance betwen the actual and predicted prices. \\
+\emph{RMSE} simply takes the square-root of MSE. Hence, the output value is the same unit as the required output and can still represent the
 dispersion of results. Therefore, RMSE will be used as the evaluation metric to select the best hyperparameters and model.
 In the formulas $y_{i}$ represents the actual value and $\hat{y}_i$ the predicted value \citep{chen2021meanvariance}.
 The aforementioned metrics are defined as follows:
@@ -490,8 +493,7 @@ The aforementioned metrics are defined as follows:
 
 
 \subsection{Experimental Setup}
-This section will explore the experimental setup by explaining the dataset, Active Learner, preprocessing steps and the implementation of the
-sentiment models and time-series forecasting models.
+The following subsection will explore how the methods outlined in the \nameref{general_description} were implemented.
 
 \subsubsection{Data}
 
@@ -526,11 +528,11 @@ text of every tenth Reddit post. The relevant target sentiment was then assigned
 
 \subsubsection{Active Learner Implementation}
 To implement an Active Learner the \emph{modAL} package was used. modAL was designed with modularity, flexibility and extensibility as high priorities \citep{danka2018modal}. 
-The estimator defined in the Active Learner object is a Support Vector Machine (SVM). A SVM was chosen because of its strong generalization 
+The estimator defined in the Active Learner object is a \emph{Support Vector Machine (SVM)}. A SVM was chosen because of its strong generalization 
 performance \citep{alves2014comparisonsvm}.
 Additionally, SVMs can be used to solve both regression and 
-classification problems. For the case at hand, the algorithm needs solve a classification problem, by optimally separating the data between bearish, 
-neutral and bullish instances. Classification is done by finding a hyper-plane with the biggest margin, meaning it looks for the greatest distance 
+classification problems. For the case at hand, the algorithm needs to solve a classification problem by optimally separating the data between bearish, 
+neutral and bullish instances. Classification is done by fitting a hyper-plane with the biggest margin, meaning it looks for the greatest distance 
 to the nearest sample points \citep{jemai2021SentimentAnalysis}. SVMs use spatial transformations, commonly known as kernel functions, to fit the hyperplane.
 By doing so the data is projected into a higher dimensional space, which makes them easier to separate.
 Kernels can be linear, RBF or others. The radial basis function (RBF) kernel is best used for non-linear problems and is a general-purpose kernel that 
@@ -549,13 +551,13 @@ Uncertainty sampling was chosen as the query strategy because it has been demons
 This query strategy assumes, that instances that are far from the decision boundary are adequately explainable and instances close to the 
 decision boundary are uncertain. Naturally, this complements the SVM-estimator very well. As a result, the Active Learner queries 
 the samples about which it is most uncertain about \citep{osbonre2004ensemblebased}. Two human oracles labelled an additional 10\% of the data,
-which were chosen by the Active Learner. Those 10\% were chosen by the Active Learner in ten iterations, meaning the Active Learner was retrained
+which were chosen by the Active Learner. Those 10\% were chosen by the Active Learner in ten iterations, meaning the Active Learner loop was repeated
 every time an additional 1\% of the data was labelled. Even though modAL supports the retraining of the estimator based on the new instances only,
 the estimator was retrained on all data. This was decided because the training of the SVM estimator did not take too long and more training data
 usually leads to better results (Find citation).
 
 \subsubsection{Data Preprocessing}
-The research by \cite{jemai2021SentimentAnalysis} presents a system for structuring a sentiment analysis project, which was also used applied in this thesis.
+The research by \cite{jemai2021SentimentAnalysis} presents a system for structuring a sentiment analysis project, which was also applied in this thesis.
 The data collection phase is the first step, where textual data is obtained from a source. 
 The data is then cleaned in the second step, the data pre-processing phase. To do so, several actions need to be performed.
 One of them is tokenization. This is a natural language processing technique in which a large body of text is broken down into multiple sentences, 
@@ -573,14 +575,16 @@ this thesis does not remove emoticons from the text corpus \citep{parveen2016sen
 
 \subsubsection{Sentiment Analysis Models Implementation}
 The next section explores how the machine learning models were implemented and how their optimal hyperparameters were determined.
-\emph{Explain} for each model: Before training the models, 20\% of the data were set aside as the test set. To account for class imbalances, stratification was applied.
-Also better explain why stratification, etc. See feedback prof.\\
+Before training the models, 20\% of the data were set aside as the test set. By setting aside 10\% of the training data as a validation set 
+the optimal hyperparameters were selected. To account for class imbalances, stratification was applied. As a result, the sets have approximately the same
+class distribution as the full set \citep{sahu2017stratification}. Find paper why resampling is not needed. \\
 
-\noindent\textbf{Naïve Bayes (NB)}\\
-To train the classifier, the data was first converted to a tf-idf representation. By using tf-idf, a weight is
-assigned to each word. The tf is calculated by the number of times a word can be counted in a document. The idf adjusts the importance of the respective word \citep{Guia2019ComparisonON}.
-The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for \emph{alpha} and \emph{fit\char`_prior}.
-Write better explanation for tf-idf. \\
+\noindent\textbf{Multinomial Naïve Bayes (MNB)}\\
+To train the classifier, the data was first converted to a tf-idf representation.
+The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for
+\emph{fit\char`_prior}, which determines if prior class probabilities shall be learned, and \emph{alpha}, which is a smoothing parameter that solves
+the problem of zero probability in NB. If 
+\\
 
 \noindent\textbf{Long Short Term Memory (LSTM)}\\
 Before training the LSTM, data it first is fed into a Word2Vec model to learn the word embeddings. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
