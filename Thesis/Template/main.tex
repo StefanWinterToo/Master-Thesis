@@ -497,34 +497,24 @@ The following subsection will explore how the methods outlined in the \nameref{g
 
 \subsubsection{Data}
 
+\noindent\textbf{Reddit Posts}\\
 While Reddit does offer an official API, the API is most useful for streaming data. 
 There are some strict limitations on accessing large amounts of historical data. As a result, the official API is not the best choice for this thesis. 
-However, \emph{pushshift.io} provides a solution for the strict limits.
-The FAQ on the pushshift subreddit states, that pushshift data is best used to:
-\begin{itemize}
-    \item 'Analyze large quantities of Reddit data'
-    \item 'Grab data for a specific date range in the past'
-    \item 'Search for comments'
-    \item 'Aggregate data'
-\end{itemize}
-
-Pushshift copies data from Reddit at the time it is posted. Since Pushshift uses the document-based database Elastic, it is extremely fast to query data \citep{elastic2015}. However, currently Pushshift does not regularly update certain metadata, such as scores, edits to a submission’s text or comments. Hence, there might be some minor inconsistencies of what is shown on Reddit and what is in the database. The scores, for example can easily be accessed via the official reddit API and, if needed, joined with the data obtained from Pushshift. Based on the data verification that was performed for this thesis, the number of comments only deviates by a marginally small amount. It is hypothesized that the small difference can be explained by forum moderators deleting spam. Those spam comments are assumed to not have a big impact the thesis anyways, which is why the small difference in the number of comments do not need to be addressed. \\
+However, \emph{pushshift.io} provides a solution for the strict limits. Essentially, Pushshift copies data from Reddit at the time it is posted. Since Pushshift uses the document-based database Elastic, it is extremely fast to query data \citep{elastic2015}.
 To access Pushshift, this thesis uses an API wrapper called \emph{PMAW}. Since requests are I/O-bound, PMAW is multithreaded. Hence, requests can be run asynchronously which allows the data to be loaded much faster \citep{pmaw2021}.
-When making the API request, the most important parameters are the following:
-\begin{itemize}
-    \item subreddit: Name of the subreddit
-    \item q: The search term based on which the subreddit is queried
-    \item before: The starting date of the query
-    \item after: The end date of the query
-\end{itemize}
 
 For this thesis all Gamestop (GME) related posts between January 1st, 2020 and October 26th, 2021 were requested for the subreddit WallStreetBets. 
-The query returns 89 columns. Most of which, however, can be dropped since they either aren’t useful for this thesis or contain no data. 
-The most important columns are the number of comments, the title of the post and the content of the post. 
-Emoticons are also included in the content text. In total 179,544 posts were obtained.\\
-Of all obtained posts, 10\% or 17,955 were manually labeled as either bearish, neutral or bullish. This was done by creating a graphical user interface that displayed the title and
-text of every tenth Reddit post. The relevant target sentiment was then assigned to each post by clicking a button by either a mouse click or a keyboard shortcut. Of all manually labelled data
-3479 (19.4\%) are bearish, 5119 (28.5\%) are neutral and 9357 (52.1\%) are bullish.
+The query returns 89 columns. Most of which, however, can be dropped since they either are not useful for this thesis or contain no data. 
+The most important columns are the title and the content of the post. 
+Emoticons are also included in the content text. In total 179,544 posts were obtained.
+
+Of all obtained posts, 10\% or 17,955 were manually labeled as either bearish, neutral or bullish. This was done by using a graphical user interface that displayed the title and
+text of every tenth Reddit post. Of all manually labelled data 3479 (19.4\%) are bearish, 5119 (28.5\%) are neutral and 9357 (52.1\%) are bullish. \\
+
+\noindent\textbf{GameStop Stock Price}\\
+By using the python library yfinance, stock prices for GameStop can easily be obtained from Yahoo Finance. The start and end dates are the same as the ones used to load data from Reddit.
+By loading the data, the columns Date, Open, High, Low, Close, Adjusted Close and Volume are returned. This thesis only uses the Date, Volume and Adjusted Close, which is the closing price
+of the stock after adjusting for factors such as dividend payouts.
 
 \subsubsection{Active Learner Implementation}
 To implement an Active Learner the \emph{modAL} package was used. modAL was designed with modularity, flexibility and extensibility as high priorities \citep{danka2018modal}. 
@@ -641,20 +631,30 @@ to the relevant date. Find literature to confirm this approach.
 
 \section{Results}
 
-Figure 3 shows the accuracy of the Active Learner. As can be seen in the graph, the performance of the Active Learner slightly decreases over time. This is due to the oracle not doing a good
-job at labeling queried instances.
+This section is broken down into three parts. First the Active Learner results are looked at, then the sentiment models and
+lastly the stock price prediction models.
+
+\subsection{Active Learner}
+The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the y-axis.
+As can be seen in Figure 2, the performance of the Active Learner hit a plateau relatively quickly. It is hypothesized that
+this plateau was reached for two reasons. First, by labelling the data at the document level, a document can contain both bearish
+and bullish statements. Those contradictions not only make it hard for the model to learn the structure of the input, but also for 
+the human annotator to label the data properly. Additionally, by having two different human oracles to label the data, inconsistencies
+may occur.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{ActiveLearner.png}
-    \caption{Accuracy of Active Learner over 20 iterations}
+    \caption{Accuracy of Active Learner over 10 query instances}
     \label{fig:ActiveLearner}
 \end{figure}
 
-To determine which model delivered the best comparative performance, they were evaluated based on metrics outlined in Table 1. Since lexicons are widely used in the literature,
-the VADER sentiment lexicon was also included in the results.
-Based on the evaluation metrics in Table 1, the NB baseline model outperformed other more complex models. Interestingly, BERT even underperformed the lexicon approach on most metrics.
-However, it can be seen that a general purpose lexicon vastly underperforms other sentiment models.
+\subsection{Sentiment Models}
+The best performing model is selected based on the validation set and will subsequently be used to determine the sentiment for the
+rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.8, the LSTM XYZ and BERT XYZ.
+Based on that the ABC classifier was chosen to label the rest of the data. To compare how well the models generalize, the evaluation metrics
+of the testsets are outlined in table XYZ. As can be seen the commonly used VADER lexicon underperforms the NB baseline model by a big margin.
+The deep learning models, however, show quite strong results even though they overfit quite a bit.
 
 \begin{table}
     \caption{Test scores for NB, LSTM and BERT}
@@ -709,6 +709,67 @@ Since BERT is already pre-trained, it does not need as many epochs to optimize a
     \includegraphics[scale=0.5]{BERT_Loss.png}
     \caption{Loss of BERT over epochs}
     \label{fig:BERT_Loss}
+\end{figure}
+
+\subsection{Stock Price Prediction}
+The best performing stock price prediction model was selected based on the RMSE, where the LSTM model that includes sentiment
+outperformed the other models. Based on the validation set, the ARIMA model scored XYZ, the LSTM without sentiment achieved
+XYZ and the LSTM that includes other features XYZ.
+
+The generalization performance of the test set is represented in table ABC.
+\begin{table}
+    \caption{Test scores for ARIMA and LSTM}
+    \label{tab:results_stocks}
+    \centering
+    \small
+
+    \begin{tabular}{lllrr}
+        \toprule
+                                        & \multicolumn{3}{c}{Evaluation Metrics} \\
+                                        \cmidrule{2-4}
+                            Model       & RMSE      & MSE     & MAE    \\
+            \midrule
+            \multirow{1}{*}{ARIMA}         & 187.3          & 35,071.2          & 186.2 \\
+            \midrule
+            \multirow{1}{*}{LSTM without Sentiment}       & 9.1          & 82.8          & 7.3 \\
+            \midrule
+            \multirow{1}{*}{BERT with Sentiment}       & \textbf{7.8}          & \textbf{60.8}          & \textbf{5.1} \\
+            \midrule
+            \multirow{1}{*}{nothing}      & 0          & 0          & 0 \\
+
+        \bottomrule
+    \end{tabular}
+
+\end{table}
+
+To better understand the results in table ABC, the price predictions were plotted over the actual stock data as red dashed lines.
+Both the actual and predicted stock price is on the y-axis plotted over time.
+The predictions start exactly at the position of the test set.
+
+As can be seen in figure ABC, ARIMA seems to simply remember the past longer term trend and extrapolates it out into the future. This
+suggests that the model overfitted the data and does not perform well.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.4]{prediction_arima.png}
+    \caption{ARIMA}
+\end{figure}
+
+The LSTM without sentiment features, on the other hand seems to perform much better than the baseline ARIMA model. As can be seen in
+figure ABC, the model is able to capture the general trend of the stock price, even though there seems to be some minor divergence.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.4]{prediction_lstm_no_sentiment.png}
+    \caption{LSTM without Sentiment}
+\end{figure}
+
+The LSTM that includes sentiment features, however, fits the data almost perfectly. 
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.4]{prediction_lstm_with_sentiment.png}
+    \caption{LSTM with Sentiment}
 \end{figure}
 
 % End Results ----
