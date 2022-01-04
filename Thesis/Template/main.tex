@@ -627,13 +627,13 @@ Whereas, if more people are less optimistic about the stock, that should lead to
 This section is broken down into three parts. First the Active Learner results are looked at, then the sentiment models and
 lastly the stock price prediction models.
 
-\subsection{Active Learner}
-The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the y-axis.
+\subsection{Active Learner Results}
+The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the x-axis.
 The accuracy at query-instance 0 is the performance after the initial training on the seed data.
-As can be seen in Figure 2, the performance of the Active Learner hit a plateau relatively quickly. It is hypothesized that
-this plateau was reached for two reasons. First, by labelling the data at the document level, a document can contain both bearish
-and bullish statements. Those contradictions not only make it hard for the model to learn the structure of the input, but also for 
-the human annotator to label the data properly. Additionally, by having two different human oracles to label the data, inconsistencies
+As can be seen in Figure \ref{fig:ActiveLearner}, the performance of the Active Learner hit a plateau relatively quickly. It is hypothesized that
+this plateau was reached for two reasons: First, by labelling the data at the document level, a document can contain bearish, neutral
+and bullish words. Those contradictions may not only make it hard for the model to learn the structure of the input, but also for 
+the human annotator when labeling the data. Additionally, by having two different human oracles to label the data, inconsistencies
 may occur.
 
 \begin{figure}
@@ -643,15 +643,55 @@ may occur.
     \label{fig:ActiveLearner}
 \end{figure}
 
-\subsection{Sentiment Models}
+\subsection{Sentiment Models Results}
 The best performing model is selected based on the validation set and will subsequently be used to determine the sentiment for the
-rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.8, the LSTM XYZ and BERT XYZ.
+rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.80, the LSTM 0.89 and BERT XYZ. \\
+
+\noindent\textbf{MNB}\\
+Since the Naive Bayes model does not train over epochs, its results are visualized on a bar chart. As can be seen in Figure \ref{fig:nb_hyperparam} the
+highest accuracy of 80.4\% can be achieved with by setting hyperparameters alpha to one and fit\_prior to False. Since this baseline estimator
+performs much better, than just randomly guessing the majority class (bullish), this result is quite good. \\
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{NB_hyperparam.png}
+    \caption{Accuracy of NB with varying hyperparameters}
+    \label{fig:nb_hyperparam}
+\end{figure}
+
+
+\noindent\textbf{LSTM}\\
+The LSTM finds its optimal hyperparameters after three epochs, after which it seems to start overfitting a little bit.
+This can be concluded, as the valuation set accuracy in Figure \ref{fig:lstm_acc} starts dropping, while the training set
+accuracy keeps improving. The same can be concluded for the loss as visualized in Figure \ref{fig:lstm_loss}. \\
+
+\noindent\textbf{BERT}\\
+Since BERT is already pre-trained, it does not need as many epochs to optimize a model.
+As can be seen in figure ABC, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
+To be continued.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{LSTM_Accuracy.png}
+    \caption{Accuracy of LSTM with varying hyperparameters}
+    \label{fig:lstm_acc}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{LSTM_Loss.png}
+    \caption{Loss of LSTM with varying hyperparameters}
+    \label{fig:lstm_loss}
+\end{figure}
+
+
+\subsubsection{Write later about Test set}
 Based on that the ABC classifier was chosen to label the rest of the data. To compare how well the models generalize, the evaluation metrics
-of the testsets are outlined in table XYZ. As can be seen the commonly used VADER lexicon underperforms the NB baseline model by a big margin.
+of the testsets are outlined in Table \ref{tab:results}. As can be seen the commonly used VADER lexicon underperforms the NB baseline model by a big margin.
 The deep learning models, however, show quite strong results even though they overfit quite a bit.
 
-\begin{table}
-    \caption{Test scores for NB, LSTM and BERT}
+\begin{table}[!htb]
+    \caption{Test scores for NB, LSTM and BERT - Needs to be updated!}
     \label{tab:results}
     \centering
     \small
@@ -674,38 +714,9 @@ The deep learning models, however, show quite strong results even though they ov
     \end{tabular}
 
 \end{table}
-
-The accuracy of the LSTM on the validation set is highest after 10 epochs, while the loss starts to increase by a lot. As a result, the weights and other parameters
-seem to be optimal at epoch 10, which is why they will be used for the final model.
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.5]{LSTM_acc.png}
-    \caption{Accuracy of LSTM over epochs}
-    \label{fig:LSTM_acc}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.5]{LSTM_Loss.png}
-    \caption{Loss of LSTM over epochs}
-    \label{fig:LSTM_Loss}
-\end{figure}
-
-Since BERT is already pre-trained, it does not need as many epochs to optimize a model. As can be seen in figure 6, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.5]{BERT_acc.png}
-    \caption{Accuracy of BERT over epochs}
-    \label{fig:BERT_acc}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.5]{BERT_Loss.png}
-    \caption{Loss of BERT over epochs}
-    \label{fig:BERT_Loss}
-\end{figure}
-
-\subsection{Stock Price Prediction}
+\pagebreak
+\pagebreak
+\subsection{Stock Prediction Results}
 The best performing stock price prediction model was selected based on the RMSE, where the LSTM model that includes sentiment
 outperformed the other models. Based on the validation set, the ARIMA model scored XYZ, the LSTM without sentiment achieved
 XYZ and the LSTM that includes other features XYZ.
@@ -743,6 +754,7 @@ The predictions start exactly at the position of the test set.
 As can be seen in figure ABC, ARIMA seems to simply remember the past longer term trend and extrapolates it out into the future. This
 suggests that the model overfitted the data and does not perform well.
 
+% Put in Appendix
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=0.4]{prediction_arima.png}
@@ -752,6 +764,7 @@ suggests that the model overfitted the data and does not perform well.
 The LSTM without sentiment features, on the other hand seems to perform much better than the baseline ARIMA model. As can be seen in
 figure ABC, the model is able to capture the general trend of the stock price, even though there seems to be some minor divergence.
 
+%Put in Appendix
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=0.4]{prediction_lstm_no_sentiment.png}

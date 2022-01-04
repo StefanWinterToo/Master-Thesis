@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 JAN 2022 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  4 JAN 2022 22:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,7 +762,7 @@ Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf logo.eps>
 (epstopdf)             \includegraphics on input line 8.
 Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=116, 339.2675pt x 86.3225pt>
+<logo-eps-converted-to.pdf, id=120, 339.2675pt x 86.3225pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
 Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 8.
@@ -879,13 +879,13 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 [2] [3] [4] [5] [6] [7] [8] [9]
-<tsne_projection.png, id=369, 364.36125pt x 324.21124pt>
+<tsne_projection.png, id=373, 364.36125pt x 324.21124pt>
 File: tsne_projection.png Graphic file (type png)
 <use tsne_projection.png>
 Package pdftex.def Info: tsne_projection.png  used on input line 324.
 (pdftex.def)             Requested size: 358.50473pt x 319.01108pt.
  [10 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>]
-<al_workflow.png, id=393, 560.0925pt x 420.06938pt>
+<al_workflow.png, id=397, 560.0925pt x 420.06938pt>
 File: al_workflow.png Graphic file (type png)
 <use al_workflow.png>
 Package pdftex.def Info: al_workflow.png  used on input line 360.
@@ -966,50 +966,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 604--610
  []
 
 [20]
-<ActiveLearner.png, id=555, 620.3175pt x 331.2375pt>
+<ActiveLearner.png, id=560, 595.47469pt x 384.6872pt>
 File: ActiveLearner.png Graphic file (type png)
 <use ActiveLearner.png>
 Package pdftex.def Info: ActiveLearner.png  used on input line 641.
-(pdftex.def)             Requested size: 358.50473pt x 191.43555pt.
- [21]
-<LSTM_acc.png, id=561, 387.4475pt x 262.9825pt>
-File: LSTM_acc.png Graphic file (type png)
-<use LSTM_acc.png>
-Package pdftex.def Info: LSTM_acc.png  used on input line 682.
-(pdftex.def)             Requested size: 193.72327pt x 131.49092pt.
-<LSTM_Loss.png, id=562, 393.47pt x 265.99374pt>
+(pdftex.def)             Requested size: 358.50473pt x 231.60065pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--649
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 650--654
+
+ []
+
+<NB_hyperparam.png, id=569, 738.50906pt x 542.77782pt>
+File: NB_hyperparam.png Graphic file (type png)
+<use NB_hyperparam.png>
+Package pdftex.def Info: NB_hyperparam.png  used on input line 657.
+(pdftex.def)             Requested size: 358.50473pt x 263.4871pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--667
+
+ []
+
+[22 </Users/stefanwinter/Local/Thesis/Thesis/Template/ActiveLearner.png>]
+<LSTM_Accuracy.png, id=580, 612.78937pt x 609.02531pt>
+File: LSTM_Accuracy.png Graphic file (type png)
+<use LSTM_Accuracy.png>
+Package pdftex.def Info: LSTM_Accuracy.png  used on input line 675.
+(pdftex.def)             Requested size: 358.50473pt x 356.3016pt.
+<LSTM_Loss.png, id=581, 606.76688pt x 606.76688pt>
 File: LSTM_Loss.png Graphic file (type png)
 <use LSTM_Loss.png>
-Package pdftex.def Info: LSTM_Loss.png  used on input line 688.
-(pdftex.def)             Requested size: 196.73451pt x 132.99654pt.
- [22 </Users/stefanwinter/Local/Thesis/Thesis/Template/ActiveLearner.png>] [23 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_acc.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Loss.png>]
-<BERT_acc.png, id=581, 399.4925pt x 262.9825pt>
-File: BERT_acc.png Graphic file (type png)
-<use BERT_acc.png>
-Package pdftex.def Info: BERT_acc.png  used on input line 697.
-(pdftex.def)             Requested size: 199.74576pt x 131.49092pt.
-<BERT_Loss.png, id=582, 395.4775pt x 262.9825pt>
-File: BERT_Loss.png Graphic file (type png)
-<use BERT_Loss.png>
-Package pdftex.def Info: BERT_Loss.png  used on input line 703.
-(pdftex.def)             Requested size: 197.73827pt x 131.49092pt.
-<prediction_arima.png, id=583, 896.148pt x 391.76363pt>
+Package pdftex.def Info: LSTM_Loss.png  used on input line 682.
+(pdftex.def)             Requested size: 358.50473pt x 358.50783pt.
+ [23 </Users/stefanwinter/Local/Thesis/Thesis/Template/NB_hyperparam.png>] [24 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Accuracy.png>]
+<prediction_arima.png, id=596, 896.148pt x 391.76363pt>
 File: prediction_arima.png Graphic file (type png)
 <use prediction_arima.png>
-Package pdftex.def Info: prediction_arima.png  used on input line 748.
+Package pdftex.def Info: prediction_arima.png  used on input line 760.
 (pdftex.def)             Requested size: 358.45284pt x 156.70267pt.
- [24 </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_acc.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Loss.png>]
-<prediction_lstm_no_sentiment.png, id=592, 896.148pt x 392.36588pt>
+<prediction_lstm_no_sentiment.png, id=597, 896.148pt x 392.36588pt>
 File: prediction_lstm_no_sentiment.png Graphic file (type png)
 <use prediction_lstm_no_sentiment.png>
-Package pdftex.def Info: prediction_lstm_no_sentiment.png  used on input line 757.
+Package pdftex.def Info: prediction_lstm_no_sentiment.png  used on input line 770.
 (pdftex.def)             Requested size: 358.45284pt x 156.94356pt.
-<prediction_lstm_with_sentiment.png, id=593, 896.148pt x 392.36588pt>
+ [25 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Loss.png>]
+<prediction_lstm_with_sentiment.png, id=603, 896.148pt x 392.36588pt>
 File: prediction_lstm_with_sentiment.png Graphic file (type png)
 <use prediction_lstm_with_sentiment.png>
-Package pdftex.def Info: prediction_lstm_with_sentiment.png  used on input line 765.
+Package pdftex.def Info: prediction_lstm_with_sentiment.png  used on input line 778.
 (pdftex.def)             Requested size: 358.45284pt x 156.94356pt.
- [25 </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_arima.png>] [26 </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_lstm_no_sentiment.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_lstm_with_sentiment.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [27]
+ [26 </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_arima.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_lstm_no_sentiment.png>] [27 </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_lstm_with_sentiment.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [28]
 Underfull \hbox (badness 1297) in paragraph at lines 281--303
 \T1/pplj/m/n/10.95 (+20) price pre-dic-tion.  \T1/pplj/m/it/10.95 (+20) Ap-plied Soft Com-put-ing\T1/pplj/m/n/10.95 (+20) , \T1/pplj/m/it/10.95 (+20) 100\T1/pplj/m/n/10.95 (+20) , 106943.  Re-
  []
@@ -1019,12 +1029,12 @@ Underfull \hbox (badness 1565) in paragraph at lines 281--303
 \T1/pplj/m/n/10.95 (+20) trieved from [][]$\T1/fvm/m/n/10.95 https :// www [] .sciencedirect [] .com / science / article /
  []
 
-[28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 879--896
 \T1/fvm/m/n/10.95 forecasting [] -croatian [] -stock [] -market [] -index [] -crobex / docview /
  []
 
-[29] [30] [31]
+[30] [31] [32]
 Underfull \hbox (badness 1112) in paragraph at lines 1865--1884
 \T1/pplj/m/n/10.95 (+20) works: A project re-port.  \T1/pplj/m/it/10.95 (+20) Neu-ro-com-put-ing\T1/pplj/m/n/10.95 (+20) , \T1/pplj/m/it/10.95 (+20) 2\T1/pplj/m/n/10.95 (+20) (1), 17-27.  Re-
  []
@@ -1034,28 +1044,28 @@ Underfull \hbox (badness 1565) in paragraph at lines 1865--1884
 \T1/pplj/m/n/10.95 (+20) trieved from [][]$\T1/fvm/m/n/10.95 https :// www [] .sciencedirect [] .com / science / article /
  []
 
-[32] [33])
-Underfull \hbox (badness 10000) in paragraph at lines 809--814
+[33] [34])
+Underfull \hbox (badness 10000) in paragraph at lines 822--827
 
  []
 
-[34] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
+[35] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B27F8D370451D9B81D5022BC68A6616A;5005.
+(rerunfilecheck)             Checksum: 017C99BEA196624CC625AE07663E6317;5311.
  ) 
 Here is how much of TeX's memory you used:
- 18171 strings out of 478994
- 311279 string characters out of 5858184
- 692155 words of memory out of 5000000
- 34475 multiletter control sequences out of 15000+600000
+ 18167 strings out of 478994
+ 311276 string characters out of 5858184
+ 692174 words of memory out of 5000000
+ 34471 multiletter control sequences out of 15000+600000
  564696 words of font info for 646 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,23n,130p,596b,761s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 126i,23n,130p,596b,763s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (36 pages, 924339 bytes).
+Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (37 pages, 1138272 bytes).
 PDF statistics:
- 763 PDF objects out of 1000 (max. 8388607)
- 686 compressed objects within 7 object streams
- 159 named destinations out of 1000 (max. 500000)
- 157464 words of extra memory for PDF output out of 184870 (max. 10000000)
+ 776 PDF objects out of 1000 (max. 8388607)
+ 700 compressed objects within 7 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 157467 words of extra memory for PDF output out of 184870 (max. 10000000)
 
