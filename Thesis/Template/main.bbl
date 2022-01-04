@@ -604,6 +604,31 @@ Firmino, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Ganganwar%
+}{%
+Ganganwar%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+ganganwar2012overview}
+\APACinsertmetastar {%
+ganganwar2012overview}%
+\begin{APACrefauthors}%
+Ganganwar, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An overview of classification algorithms for imbalanced
+  datasets} {An overview of classification algorithms for imbalanced
+  datasets}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Emerging Technology and
+  Advanced Engineering}{2}{4}{42-47}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Gennaro%
 , Buonanno%
 \BCBL {}\ \BBA {} Palmieri%
