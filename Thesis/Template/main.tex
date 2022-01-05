@@ -485,7 +485,7 @@ The aforementioned metrics are defined as follows:
 \subsection{Experimental Setup}
 The following subsection will explore how the methods outlined in the \nameref{general_description} were implemented.
 All the code was written in Python version 3.9.7 in the Visual Studio Code IDE. All the packages that were installed in the 
-virtual development environment of this thesis can be found in Appendix ABC.
+virtual development environment of this thesis can be found in \nameref{appendix:A}.
 
 \subsubsection{Data}
 
@@ -568,7 +568,7 @@ zero, the model pretends to have seen a word before.\\
 Before training the LSTM, data is first fed into a Word2Vec model to learn the word embeddings. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
 Selecting optimal hyperparameters for the Word2Vec model is oftentimes neglected, even though that may lead to performance differences.
 The Word2Vec hyperparameters that were analyzed is the \emph{vector\_size, min\_count} and \emph{window}. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation \citep{schnabel2015embeddings}.
-A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:A}.
+A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:B}.
 The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
 The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
 a loop runs through a set of parameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
@@ -625,7 +625,8 @@ Whereas, if more people are less optimistic about the stock, that should lead to
 \section{Results}
 
 This section is broken down into three parts. First the Active Learner results are looked at, then the sentiment models and
-lastly the stock price prediction models.
+lastly the stock price prediction models. If the visualization uses a horizontal bar chart, the best result is the one on top.
+If the visualization contains multiple line charts, the best result is a solid line and the rest a dashed line.
 
 \subsection{Active Learner Results}
 The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the x-axis.
@@ -649,39 +650,34 @@ rest of the dataset. The best performing hyperparameter-set of the NB classifier
 
 \noindent\textbf{MNB}\\
 Since the Naive Bayes model does not train over epochs, its results are visualized on a bar chart. As can be seen in Figure \ref{fig:nb_hyperparam} the
-highest accuracy of 80.4\% can be achieved with by setting hyperparameters alpha to one and fit\_prior to False. Since this baseline estimator
-performs much better, than just randomly guessing the majority class (bullish), this result is quite good. \\
+highest accuracy of 80.4\% can be achieved by setting the hyperparameters alpha to one and fit\_prior to False. This baseline estimator
+performs much better, than just randomly guessing the majority class (bullish). \\
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=\textwidth]{NB_hyperparam.png}
-    \caption{Accuracy of NB with varying hyperparameters}
+    \includegraphics[scale=0.5]{NB_hyperparam.png}
+    \caption{Accuracy of NB With Varying Hyperparameters}
     \label{fig:nb_hyperparam}
 \end{figure}
 
 
 \noindent\textbf{LSTM}\\
 The LSTM finds its optimal hyperparameters after three epochs, after which it seems to start overfitting a little bit.
-This can be concluded, as the valuation set accuracy in Figure \ref{fig:lstm_acc} starts dropping, while the training set
-accuracy keeps improving. The same can be concluded for the loss as visualized in Figure \ref{fig:lstm_loss}. \\
+This can be concluded, as the valuation set accuracy in Figure \ref{fig:lstm_acc_loss} starts dropping, while the training set
+accuracy keeps improving. The same can be concluded for the loss as visualized in Figure.
+The optimal hyperparameters are a dropout rate of zero and the Adam optimizer.\\
 
 \noindent\textbf{BERT}\\
 Since BERT is already pre-trained, it does not need as many epochs to optimize a model.
 As can be seen in figure ABC, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
 To be continued.
 
-\begin{figure}[!htb]
+\begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{LSTM_Accuracy.png}
-    \caption{Accuracy of LSTM with varying hyperparameters}
-    \label{fig:lstm_acc}
-\end{figure}
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=\textwidth]{LSTM_Loss.png}
-    \caption{Loss of LSTM with varying hyperparameters}
-    \label{fig:lstm_loss}
+    \includegraphics[scale=0.55]{LSTM_Accuracy.png}
+    \includegraphics[scale=0.55]{LSTM_Loss.png}
+    \caption{Accuracy and Loss of LSTM-Classifier with Varying Hyperparameters}
+    \label{fig:lstm_acc_loss}
 \end{figure}
 
 
@@ -691,7 +687,7 @@ of the testsets are outlined in Table \ref{tab:results}. As can be seen the comm
 The deep learning models, however, show quite strong results even though they overfit quite a bit.
 
 \begin{table}[!htb]
-    \caption{Test scores for NB, LSTM and BERT - Needs to be updated!}
+    \caption{Test Set Evaluation Metrics for NB, LSTM and BERT - Needs to be updated!}
     \label{tab:results}
     \centering
     \small
@@ -717,13 +713,76 @@ The deep learning models, however, show quite strong results even though they ov
 \pagebreak
 \pagebreak
 \subsection{Stock Prediction Results}
-The best performing stock price prediction model was selected based on the RMSE, where the LSTM model that includes sentiment
-outperformed the other models. Based on the validation set, the ARIMA model scored XYZ, the LSTM without sentiment achieved
-XYZ and the LSTM that includes other features XYZ.
+The best performing stock price prediction model and its hyperparameters was selected based on the RMSE of the validation set. As can be seen
+in Table \ref{tab:results_stocks_valset}, the LSTM that only used Price as its input feature achieved the lowest RMSE for a given set of hyperparameters.
 
-The generalization performance of the test set is represented in table ABC.
+\begin{table}[!htb]
+    \caption{Validation Set RMSE for ARIMA and LSTM Time-Series Models}
+    \label{tab:results_stocks_valset}
+    \centering
+    \small
+
+    \begin{tabular}{lllrr}
+        \toprule                                        
+                            Model       & RMSE  \\
+            \midrule
+            \multirow{1}{*}{ARIMA}         & 22.227  \\
+            \midrule
+            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 0.087   \\
+            \midrule
+            \multirow{1}{*}{LSTM including Price and Sentiment}       & 0.084   \\
+            \midrule
+            \multirow{1}{*}{LSTM including Price and Trading Volume}      & 0.070    \\
+            \midrule
+            \multirow{1}{*}{LSTM that only includes Price}      & \textbf{0.061} \\
+
+        \bottomrule
+    \end{tabular}
+
+\end{table}
+
+Figure \ref{fig:lstm_models_rmse_loss} shows the RMSE and Loss for each LSTM model's respective input features with their optimal hyperparameter setting.
+Even though on the validation set all models seem to flatten out eventually, the visualizations of the training set indicate that the model hasn't finished
+learning its optimal weights yet and more epochs may be benefitial.
+
+The RMSE and Loss of the best performing model on the validation set are presented in Figure \ref{fig:lstm_price_rmse_loss}. As can be seen, the lowest loss can be achieved
+at epoch 28 with the hyperparameter setting Dropout equals zero, an Adam optimizer and lookback equals one. Since too many hyperparameters
+were analyzed, only the five best performing ones were visualized. The RMSE and Loss for the models with other input features can 
+be found in \nameref{appendix:Graphics}.
+Because ARIMA is not trained over epochs, it is visualized as a bar-chart in Figure \ref{fig:arima_rmse}. As can be seen, the optimal hyperparameter setting is (0, 0, 1).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{ARIMA_RMSE.png}
+    \caption{RMSE of ARIMA}
+    \label{fig:arima_rmse}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.55]{Best_Params_Of_Model_RMSE.png}
+    \includegraphics[scale = 0.55]{Best_Params_Of_Model_Loss.png}
+    \caption{RMSE and Loss of Models with Various Input Features and Their Optimal Hyperparameters}
+    \label{fig:lstm_models_rmse_loss}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.55]{Only_Price_Params_RMSE.png}
+    \includegraphics[scale = 0.55]{Only_Price_Params_Loss.png}
+    \caption{Five Optimal Hyperparameters of LSTM Model With Only Price as Input Feature}
+    \label{fig:lstm_price_rmse_loss}
+\end{figure}
+
+
+To see how well the different stock price prediction models generalize, they were evaluated based on their test set.
+While all models seem to overfit quite a lot, the results of the LSTM models still seem promising. On the test set, however,
+the model that includes price and trading volume seems to achieve the best performance. However, models shall always be selected
+by their training set, which is why the model that only includes price shall be used. On the test set, it only ranks slighly worse
+than the best performing model.
+
 \begin{table}
-    \caption{Test scores for ARIMA and LSTM}
+    \caption{Test Set Evaluation Metrics for ARIMA and LSTM Time-Series Models}
     \label{tab:results_stocks}
     \centering
     \small
@@ -736,47 +795,27 @@ The generalization performance of the test set is represented in table ABC.
             \midrule
             \multirow{1}{*}{ARIMA}         & 187.3          & 35,071.2          & 186.2 \\
             \midrule
-            \multirow{1}{*}{LSTM without Sentiment}       & 9.1          & 82.8          & 7.3 \\
+            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 14.0          & 196.8          & 11.3 \\
             \midrule
-            \multirow{1}{*}{BERT with Sentiment}       & \textbf{7.8}          & \textbf{60.8}          & \textbf{5.1} \\
+            \multirow{1}{*}{LSTM including Price and Sentiment}       & 9.2          & 84.3          & 6.5 \\
             \midrule
-            \multirow{1}{*}{nothing}      & 0          & 0          & 0 \\
+            \multirow{1}{*}{LSTM including Price and Trading Volume}      & \textbf{7.9}           & \textbf{63.0}          & \textbf{5.5} \\
+            \midrule
+            \multirow{1}{*}{LSTM that only includes Price}      & 8.5         & 71.7          & 6.4 \\
 
         \bottomrule
     \end{tabular}
 
 \end{table}
 
-To better understand the results in table ABC, the price predictions were plotted over the actual stock data as red dashed lines.
-Both the actual and predicted stock price is on the y-axis plotted over time.
-The predictions start exactly at the position of the test set.
-
-As can be seen in figure ABC, ARIMA seems to simply remember the past longer term trend and extrapolates it out into the future. This
-suggests that the model overfitted the data and does not perform well.
-
-% Put in Appendix
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[scale=0.4]{prediction_arima.png}
-    \caption{ARIMA}
-\end{figure}
-
-The LSTM without sentiment features, on the other hand seems to perform much better than the baseline ARIMA model. As can be seen in
-figure ABC, the model is able to capture the general trend of the stock price, even though there seems to be some minor divergence.
-
-%Put in Appendix
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[scale=0.4]{prediction_lstm_no_sentiment.png}
-    \caption{LSTM without Sentiment}
-\end{figure}
-
-The LSTM that includes sentiment features, however, fits the data almost perfectly. 
+As the plot of the predition of the test set in Figure \ref{fig:price_forecast_best_model}, it can be seen that the model does a fairly good job at predicting prices.
+The price forecasts of the other models are represented in \nameref{appendix:Forecast}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[scale=0.4]{prediction_lstm_with_sentiment.png}
-    \caption{LSTM with Sentiment}
+    \includegraphics[scale=0.4]{no_other_feature_pred.png}
+    \caption{Price Forecast of Selected Model from Validation Set}
+    \label{fig:price_forecast_best_model}
 \end{figure}
 
 % End Results ----
@@ -816,8 +855,13 @@ The results show that using state of the art models underperform the simple base
 \bibliography{references}
 
 \section{Appendices}
+
 \subsection{Appendix A}
 \label{appendix:A}
+List of packages used.
+
+\subsection{Appendix B}
+\label{appendix:B}
 
 Example of the similarity (denoted in the parentheses) of the three most similar words of an input word: \\
 robinhood -> rh (0.98), etrade (0.87), webull (0.86) \\
@@ -825,5 +869,55 @@ andromeda -> jupiter (0.95), mars (0.94), uranus (0.93) \\
 ape -> autist (0.94), monkey (0.91), retard (0.90) \\
 hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 
+\subsection{Appendix Graphics}
+\label{appendix:Graphics}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Only_Trading_Volume.png}
+    \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price and Trading Volume}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Only_Sentiment.png}
+    \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price and Sentiment}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{All_Features.png}
+    \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price, Trading Volume and Sentiment}
+\end{figure}
+
+\pagebreak
+\subsection{Appendix Forecast}
+\label{appendix:Forecast}
+As can be seen in Figure \ref{fig:arima_prediction_test_set} the ARIMA model simply seems to extrapolate the previous trend into the future.
+In contrast, Figure \ref{fig:model_only_trading_volume_forecast_test_set} represents the model with the best metrics on the test set, which shows quite strong predictive results.
+Based on Figure \ref{fig:high_lookback} it seems that if a model uses a lookback period of three or greater, its predictions
+will be smoothed quite a lot.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{prediction_arima_pred.png}
+    \caption{Forecast of ARIMA Model}
+    \label{fig:arima_prediction_test_set}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{only_trading_volume_pred.png}
+    \caption{Forecast of Model with Best Metrics on Test Set}
+    \label{fig:model_only_trading_volume_forecast_test_set}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{only_sentiment_pred.png}
+    \includegraphics[width=\textwidth]{all_features_pred.png}
+    \caption{Forecast of Models with Higher Lookback}
+    \label{fig:high_lookback}
+\end{figure}
 
 \end{document}
