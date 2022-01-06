@@ -1009,35 +1009,6 @@ Jin-Dong, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Kang%
-, Ryu%
-\BCBL {}\ \BBA {} Kwon%
-}{%
-Kang%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2004}}%
-}]{%
-kang2004usingclusterbasedsampling}
-\APACinsertmetastar {%
-kang2004usingclusterbasedsampling}%
-\begin{APACrefauthors}%
-Kang, J.%
-, Ryu, K\BPBI R.%
-\BCBL {}\ \BBA {} Kwon, H.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2004}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Using Cluster-Based Sampling to Select Initial Training
-  Set for Active Learning in Text Classification} {Using cluster-based sampling
-  to select initial training set for active learning in text
-  classification}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {PAKDD.} {Pakdd.}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Kotelnikova%
 , Paschenko%
 , Bochenina%

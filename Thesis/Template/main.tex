@@ -227,9 +227,7 @@ by considering varying hyperparameters of the Word2Vec embedding.
 Other research demonstrates the importance of large pre-trained models using transfer learning \citep{deng2009transferlearning}.
 \cite{devlin2019bert} introduce BERT, a pre-trained model that uses the English Wikipedia and the BooksCorpus, which shows promising results.
 One of the advantages is that only one output layer needs to be added to the model to achieve state-of-the-art sentiment analysis performance.
-However, it is also shown that BERT lacks domain awareness. Hence, it cannot differentiate between properties of source and target domains. One
-proposed solution is to replace a random subset of tokens by a \emph{MASK} token. The corresponding hidden values of the MASK token can be fed
-into the output layer. This adaption to a specific domain is shown to slightly enhance the performance of a vanilla implementation of BERT. However,
+However, it is also shown that BERT lacks domain awareness. Hence, it cannot differentiate between properties of source and target domains. However,
 it is also argued that a vanilla implementation can still outperform other machine learning models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
 lexicon approach shows that on average BERT achieves better performance. However, the better performance cannot be observed on all analyzed test sets
 which keeps the authors "optimistic about the lexicon-based approach in general" \citep{kotelnikova2021lexiconbased}. % Maybe write that this thesis adds to the literature by comparing different models, including lexicons...
@@ -339,19 +337,19 @@ As a result, a domain-specific labeled text corpus is created that can be used a
 The illustrated workflow in Figure 2 provides an overview of how an Active Learner works. 
 To begin with, cleaned and pre-processed data needs to be available that can be used by the Active Learner. 
 Furthermore, the Active Learner can also be trained with some initial training data, which is also referred to as the seed. 
-By using clustering algorithms, the seed data can be selected and labeled methodologically, which allows the Active Learner to achieve 
-higher accuracy faster when compared to randomly picking the initial seed data \citep{kang2004usingclusterbasedsampling}. All the unlabeled 
-instances will become the pool data, which need to be labeled. The seed data is fed into the Active Learner and trains an estimator, 
-which needs to be defined when creating the Active Learner.\\
+All the unlabeled instances will become the pool data, which need to be labeled. The seed data is fed into the Active Learner and trains an estimator, 
+which needs to be defined when creating the Active Learner.
+
 In addition, a query strategy needs to be defined, based on which the Active Learner queries new instances from the aforementioned pool. 
 A query strategy evaluates the informativeness of unlabeled samples. Common strategies are \emph{uncertainty sampling, query-by-committee, 
-expected model change, expected error reduction and variance reduction}.\\
+expected model change, expected error reduction and variance reduction}.
 While each strategy has its own intricacies, all essentially try to find instances that are hard for the model to classify and hence might benefit from manual annotation. 
 After the query function selected instances from the pool, an oracle needs to label those. An oracle normally is at 
 least one human with knowledge on how to annotate the data at hand \citep{settles2009activeLL}. Once the new instances are labeled, 
 those instances need to be removed from the pool, since they are now part of the labeled data. The Active Learner then needs 
 to be taught the new instances, which he can use to adjust the model. After each iteration, the results can be evaluated. 
-A common performance measure for Active Learners is \emph{accuracy}.\\
+A common performance measure for Active Learners is \emph{accuracy}.
+
 If a predefined stopping criterion is not yet met, the query strategy selects more instances from the pool and repeats the process.
 If the stopping criterion is met, the process ends \citep{lu2019investigating}.
 
@@ -425,7 +423,7 @@ Otherwise, a model that only predicts the majority class may be able to achieve 
 \begin{equation*}
     F_{1}=\frac{2*(Precision * Recall)}{Precision + Recall}
 \end{equation*}
-
+\\
 \noindent In the formulas above, \emph{TP} and \emph{TN} are positive and negative classes that were correctly classified. Contrary, \emph{FP} and \emph{FN} are
 incorrectly classified instances.\\
 Even though the class distribution of the data used in this thesis is skewed towards to label \emph{bullish}, the remaining two classes still represent
@@ -484,7 +482,7 @@ The aforementioned metrics are defined as follows:
 
 \subsection{Experimental Setup}
 The following subsection will explore how the methods outlined in the \nameref{general_description} were implemented.
-All the code was written in Python version 3.9.7 in the Visual Studio Code IDE. All the packages that were installed in the 
+All the code was written in Python version 3.9.5 on a Windows machine and version 3.9.7 on a Mac in the Visual Studio Code IDE. All the packages that were installed in the 
 virtual development environment of this thesis can be found in \nameref{appendix:A}.
 
 \subsubsection{Data}
@@ -571,7 +569,7 @@ The Word2Vec hyperparameters that were analyzed is the \emph{vector\_size, min\_
 A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:B}.
 The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
 The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
-a loop runs through a set of parameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
+a loop runs through a set of hyperparameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
 The final Dense output layer uses softmax as its activation function. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric.\\
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
@@ -581,10 +579,10 @@ Furthermore, this implementation uses an Adam optimizer and a constant learning 
 a batch size of two over three epochs. Write about hyperparameter tuning.\\
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
-Typical threshold values for the obtained compound score are as follows: 
-If the score is greater than or equal to 0.05, it is associated with positive sentiment. If the score is smaller than or equal to -0.05 it is associated with negative sentiment. For scores
-in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain optimal evaluation metrics, however, the thresholds 0.03, 0.05, 0.07 and 0.10 and their negative counterparts were
-also analyzed.
+VADER classifies data based on a threshold value.
+If the score is greater than or equal to the threshold, it is associated with positive sentiment. If the score is smaller than or equal to the threshold it is associated with negative sentiment. For scores
+in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain optimal evaluation metrics the thresholds 0.03, 0.05, 0.07 and 0.10 and their negative counterparts were
+analyzed.
 
 \subsubsection{Stock Price Prediction Implementation}
 When splitting time series data, it needs to be split into windows. The training set consists of the first 80\% of the timeseries data and
@@ -594,8 +592,8 @@ sequentially adds the most recent observation and then rebuilds the model \citep
 \noindent\textbf{ARIMA}\\
 % https://stats.stackexchange.com/questions/394796/should-my-time-series-be-stationary-to-use-arima-model
 First the stock price data was analyzed to identify a seasonality pattern and to check for stationarity.
-By visualizing the stock price, no seasonality was identified. This makes sense, because the data does not contain many years.
-As a result, 
+By visualizing the stock price, no seasonality was identified. This makes sense, because the data does not contain many years and
+hence does not contain any repeating patterns.
 After differencing the time-series once the dickey-fuller test was applied, which showed stationarity at the 1\% significance level.
 The hyperparameters that can be optimized are the number of lag observations
 included in the model (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}. As a result the following
@@ -615,8 +613,9 @@ For the model that also includes sentiment, however, some additional preprocessi
 can be multiple per day, whereas there is only one time-series observation per day.
 Therefore, sentiment was encoded as -1 for bearish, 0 for neutral and 1 for bullish. Then the sentiment was summed up and added
 to the relevant date. 
-By doing so, the collective sentiment of the entire WallStreetBets forum on a given day can be included. If, for example, more people are bullish that should lead to higher stock prices.
-Whereas, if more people are less optimistic about the stock, that should lead to lower stock prices.
+By doing so, the collective sentiment of the entire WallStreetBets forum on a given day can be included. 
+If, for example, more people are bullish that leads to a higher collective sentiment score.
+Whereas, if more people are pessimistic about the stock, that leads to a lower score.
 
 % End Method ----
 
@@ -624,9 +623,9 @@ Whereas, if more people are less optimistic about the stock, that should lead to
 
 \section{Results}
 
-This section is broken down into three parts. First the Active Learner results are looked at, then the sentiment models and
+This section is broken down into three parts. First the results of the Active Learner are looked at, then the sentiment models and
 lastly the stock price prediction models. If the visualization uses a horizontal bar chart, the best result is the one on top.
-If the visualization contains multiple line charts, the best result is a solid line and the rest a dashed line.
+If the visualization contains multiple line charts, the best result is drawn as a solid line and the rest as a dashed line.
 
 \subsection{Active Learner Results}
 The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the x-axis.
@@ -634,13 +633,13 @@ The accuracy at query-instance 0 is the performance after the initial training o
 As can be seen in Figure \ref{fig:ActiveLearner}, the performance of the Active Learner hit a plateau relatively quickly. It is hypothesized that
 this plateau was reached for two reasons: First, by labelling the data at the document level, a document can contain bearish, neutral
 and bullish words. Those contradictions may not only make it hard for the model to learn the structure of the input, but also for 
-the human annotator when labeling the data. Additionally, by having two different human oracles to label the data, inconsistencies
+the human annotator when labeling the data. Additionally, by having two different human oracles labeling the data, inconsistencies
 may occur.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{ActiveLearner.png}
-    \caption{Accuracy of Active Learner over 10 query instances}
+    \caption{Accuracy of Active Learner over 10 Query Instances}
     \label{fig:ActiveLearner}
 \end{figure}
 
@@ -710,8 +709,7 @@ The deep learning models, however, show quite strong results even though they ov
     \end{tabular}
 
 \end{table}
-\pagebreak
-\pagebreak
+
 \subsection{Stock Prediction Results}
 The best performing stock price prediction model and its hyperparameters was selected based on the RMSE of the validation set. As can be seen
 in Table \ref{tab:results_stocks_valset}, the LSTM that only used Price as its input feature achieved the lowest RMSE for a given set of hyperparameters.
