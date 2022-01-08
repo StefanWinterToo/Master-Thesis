@@ -645,8 +645,7 @@ better results. Additionally, by having two human oracles labeling the data, inc
 
 \subsection{Sentiment Models Results}
 The best performing model is selected based on the validation set and will subsequently be used to determine the sentiment for the
-rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.80, the LSTM 0.89 and BERT 0.90.
-Even though BERT was pretrained on a non domain-specific dataset, it showed better results than the LSTM which can learn domain-specific terminology. \\
+rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.80, the LSTM 0.89 and BERT 0.90. \\
 
 \noindent\textbf{MNB}\\
 Since the Naive Bayes model does not train over epochs, its results are visualized on a bar chart. As can be seen in Figure \ref{fig:nb_hyperparam} the
@@ -655,32 +654,39 @@ performs much better, than just randomly guessing the majority class (bullish). 
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[scale=0.5]{NB_hyperparam.png}
+    \includegraphics[scale=0.45]{NB_hyperparam.png}
     \caption{Accuracy of NB With Varying Hyperparameters}
     \label{fig:nb_hyperparam}
 \end{figure}
 
 
 \noindent\textbf{LSTM}\\
-The LSTM finds its optimal hyperparameters with an accuracy of 89\% after three epochs, after which it seems to start overfitting a little bit.
-This can be concluded, as the valuation set accuracy in Figure \ref{fig:lstm_acc_loss} starts dropping, while the training set
-accuracy keeps improving. The same can be argued for the loss.
-The optimal hyperparameters are a dropout rate of zero and the Adam optimizer.\\
+The LSTM finds its optimal hyperparameters with an accuracy of 89\% after three epochs, as can be seen in Figure \ref{fig:LSTM_Accuracy_Val_Set}.
+After three epochs the model seems to start overfitting a little bit. This can be concluded, as the valuation set accuracy starts dropping, while the training set
+accuracy keeps improving. The same can be argued for the loss. The accuracy and loss for the trainining and validation set can be found in \nameref{appendix:LSTM_Sentiment_Classifier}.
+The optimal hyperparameters are a dropout rate of zero and the Adam optimizer. \\
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.5]{LSTM_Accuracy_Val_Set.PNG}
+    \caption{Accuracy of LSTM Validation Set With Varying Hyperparameters}
+    \label{fig:LSTM_Accuracy_Val_Set}
+\end{figure}
+
 
 \noindent\textbf{BERT}\\
 Since BERT is already pre-trained, it does not need as many epochs to optimize a model.
-As can be seen in figure ABC, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
+As can be seen in Figure \ref{fig:Figure BERT_Accuracy_Validation_Set}, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
 As the literature suggests, even though BERT lacks domain awareness it managed to show better accuracy than other machine learning models, albeit by a small margin.
-The optimal hyperparameters are an AdamW optimizer, a learning rate of 1e-5 and eps of ABC.
+accuracy keeps improving. The same can be argued for the loss. The accuracy and loss for the trainining and validation set can be found in \nameref{appendix:BERT_Sentiment_Classifier}.
+The optimal hyperparameters are an AdamW optimizer, a learning rate of 1e-5 and eps of 1e-8. \\
 
-\begin{figure}
+\begin{figure}[!htb]
     \centering
-    \includegraphics[scale=0.55]{LSTM_Accuracy.png}
-    \includegraphics[scale=0.55]{LSTM_Loss.png}
-    \caption{Accuracy and Loss of LSTM-Classifier with Varying Hyperparameters}
-    \label{fig:lstm_acc_loss}
+    \includegraphics[scale=0.5]{BERT_Accuracy_Validation_Set.PNG}
+    \caption{Accuracy of BERT Validation Set With Varying Hyperparameters}
+    \label{fig:Figure BERT_Accuracy_Validation_Set}
 \end{figure}
-
 
 \subsubsection{Write later about Test set}
 Based on that the accuracy BERT was chosen to label the rest of the data. To compare how well the models generalize, the evaluation metrics
@@ -849,7 +855,7 @@ The results show that using state of the art models underperform the simple base
 % End Conclusion ----
 
 \bibliography{references}
-
+\pagebreak
 \section{Appendices}
 
 \subsection{Appendix A}
@@ -865,6 +871,28 @@ andromeda -> jupiter (0.95), mars (0.94), uranus (0.93) \\
 ape -> autist (0.94), monkey (0.91), retard (0.90) \\
 hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 
+\subsection{Appendix LSTM\_Sentiment\_Classifier}
+\label{appendix:LSTM_Sentiment_Classifier}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{LSTM_Accuracy.png}
+    \includegraphics[scale=0.5]{LSTM_Loss.png}
+    \caption{Accuracy and Loss of LSTM-Classifier with Varying Hyperparameters}
+    \label{fig:lstm_acc_loss}
+\end{figure}
+
+\pagebreak
+\subsection{Appendix BERT\_Sentiment\_Classifier}
+\label{appendix:BERT_Sentiment_Classifier}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.5]{BERT_Accuracy.png}
+    \includegraphics[scale=0.5]{BERT_Loss.png}
+    \caption{Accuracy and Loss of BERT-Classifier with Varying Hyperparameters}
+    \label{fig:bert_acc_loss}
+\end{figure}
+
+\pagebreak
 \subsection{Appendix Graphics}
 \label{appendix:Graphics}
 
@@ -885,6 +913,7 @@ hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
     \includegraphics[width=\textwidth]{All_Features.png}
     \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price, Trading Volume and Sentiment}
 \end{figure}
+
 
 \pagebreak
 \subsection{Appendix Forecast}
