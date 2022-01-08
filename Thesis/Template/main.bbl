@@ -2096,30 +2096,6 @@ Susanti, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Talamás%
-}{%
-Talamás%
-}{%
-{\protect \APACyear {2021}}%
-}]{%
-talamas2021socialmediaeffectsonthemarket}
-\APACinsertmetastar {%
-talamas2021socialmediaeffectsonthemarket}%
-\begin{APACrefauthors}%
-Talamás, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{05}{}.
-\newblock
-\APACrefbtitle {Social media Effects on the market: Reddit Data analysis on
-  Stocks.} {Social media effects on the market: Reddit data analysis on
-  stocks.}
-\newblock
-\begin{APACrefDOI} \doi{10.13140/RG.2.2.24180.88960} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Tomasev%
 , Radovanovic%
 , Mladenic%

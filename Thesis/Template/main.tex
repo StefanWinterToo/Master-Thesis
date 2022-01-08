@@ -465,6 +465,7 @@ the output value.\\
 \emph{RMSE} simply takes the square-root of MSE. Hence, the output value is the same unit as the required output and can still represent the
 dispersion of results. Therefore, RMSE will be used as the evaluation metric to select the best hyperparameters and model.
 In the formulas $y_{i}$ represents the actual value and $\hat{y}_i$ the predicted value \citep{chen2021meanvariance}.
+Since the ARIMA and LSTM models are on different scales, they need to be rescaled before calculating the evaluation metrics to ensure comparable results.
 The aforementioned metrics are defined as follows:
 
 \begin{equation*}
@@ -590,7 +591,6 @@ the test set of the remainding 20\% of the data. To select the optimal hyperpara
 sequentially adds the most recent observation and then rebuilds the model \citep{sima2018timeseries}.\\
 
 \noindent\textbf{ARIMA}\\
-% https://stats.stackexchange.com/questions/394796/should-my-time-series-be-stationary-to-use-arima-model
 First the stock price data was analyzed to identify a seasonality pattern and to check for stationarity.
 By visualizing the stock price, no seasonality was identified. This makes sense, because the data does not contain many years and
 hence does not contain any repeating patterns.
@@ -631,10 +631,10 @@ If the visualization contains multiple line charts, the best result is drawn as 
 The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the x-axis.
 The accuracy at query-instance 0 is the performance after the initial training on the seed data.
 As can be seen in Figure \ref{fig:ActiveLearner}, the performance of the Active Learner hit a plateau relatively quickly. It is hypothesized that
-this plateau was reached for two reasons: First, by labelling the data at the document level, a document can contain bearish, neutral
+this plateau was reached for two reasons: First, by labeling the data at the document level, a document can contain bearish, neutral
 and bullish words. Those contradictions may not only make it hard for the model to learn the structure of the input, but also for 
-the human annotator when labeling the data. Additionally, by having two different human oracles labeling the data, inconsistencies
-may occur.
+the human annotator when labeling the data. Other methods, such as part-of-speech tagging may lead to more accurate annotations and hence
+better results. Additionally, by having two human oracles labeling the data, inconsistencies seem to have occured.
 
 \begin{figure}
     \centering
@@ -645,7 +645,8 @@ may occur.
 
 \subsection{Sentiment Models Results}
 The best performing model is selected based on the validation set and will subsequently be used to determine the sentiment for the
-rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.80, the LSTM 0.89 and BERT XYZ. \\
+rest of the dataset. The best performing hyperparameter-set of the NB classifier achieved accuracy of 0.80, the LSTM 0.89 and BERT 0.90.
+Even though BERT was pretrained on a non domain-specific dataset, it showed better results than the LSTM which can learn domain-specific terminology. \\
 
 \noindent\textbf{MNB}\\
 Since the Naive Bayes model does not train over epochs, its results are visualized on a bar chart. As can be seen in Figure \ref{fig:nb_hyperparam} the
@@ -661,15 +662,16 @@ performs much better, than just randomly guessing the majority class (bullish). 
 
 
 \noindent\textbf{LSTM}\\
-The LSTM finds its optimal hyperparameters after three epochs, after which it seems to start overfitting a little bit.
+The LSTM finds its optimal hyperparameters with an accuracy of 89\% after three epochs, after which it seems to start overfitting a little bit.
 This can be concluded, as the valuation set accuracy in Figure \ref{fig:lstm_acc_loss} starts dropping, while the training set
-accuracy keeps improving. The same can be concluded for the loss as visualized in Figure.
+accuracy keeps improving. The same can be argued for the loss.
 The optimal hyperparameters are a dropout rate of zero and the Adam optimizer.\\
 
 \noindent\textbf{BERT}\\
 Since BERT is already pre-trained, it does not need as many epochs to optimize a model.
 As can be seen in figure ABC, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
-To be continued.
+As the literature suggests, even though BERT lacks domain awareness it managed to show better accuracy than other machine learning models, albeit by a small margin.
+The optimal hyperparameters are an AdamW optimizer, a learning rate of 1e-5 and eps of ABC.
 
 \begin{figure}
     \centering
@@ -681,9 +683,11 @@ To be continued.
 
 
 \subsubsection{Write later about Test set}
-Based on that the ABC classifier was chosen to label the rest of the data. To compare how well the models generalize, the evaluation metrics
-of the testsets are outlined in Table \ref{tab:results}. As can be seen the commonly used VADER lexicon underperforms the NB baseline model by a big margin.
-The deep learning models, however, show quite strong results even though they overfit quite a bit.
+Based on that the accuracy BERT was chosen to label the rest of the data. To compare how well the models generalize, the evaluation metrics
+of the testsets are outlined in Table \ref{tab:results}.
+The commonly used VADER lexicon is included for illustrative purposes.
+As can be seen VADER underperforms the NB baseline model by a big margin.
+Both BERT and the LSTM, however, show quite strong results even though they overfit quite a bit.
 
 \begin{table}[!htb]
     \caption{Test Set Evaluation Metrics for NB, LSTM and BERT - Needs to be updated!}
@@ -724,15 +728,15 @@ in Table \ref{tab:results_stocks_valset}, the LSTM that only used Price as its i
         \toprule                                        
                             Model       & RMSE  \\
             \midrule
-            \multirow{1}{*}{ARIMA}         & 22.227  \\
+            \multirow{1}{*}{ARIMA}         & 51.96  \\
             \midrule
-            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 0.087   \\
+            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 29.53   \\
             \midrule
-            \multirow{1}{*}{LSTM including Price and Sentiment}       & 0.084   \\
+            \multirow{1}{*}{LSTM including Price and Sentiment}       & 25.29   \\
             \midrule
-            \multirow{1}{*}{LSTM including Price and Trading Volume}      & 0.070    \\
+            \multirow{1}{*}{LSTM including Price and Trading Volume}      & 33.40    \\
             \midrule
-            \multirow{1}{*}{LSTM that only includes Price}      & \textbf{0.061} \\
+            \multirow{1}{*}{LSTM that only includes Price}      & \textbf{24.11} \\
 
         \bottomrule
     \end{tabular}
@@ -791,15 +795,15 @@ than the best performing model.
                                         \cmidrule{2-4}
                             Model       & RMSE      & MSE     & MAE    \\
             \midrule
-            \multirow{1}{*}{ARIMA}         & 187.3          & 35,071.2          & 186.2 \\
+            \multirow{1}{*}{ARIMA}         & 80.00          & 6,399.72          & 75.96 \\
             \midrule
-            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 14.0          & 196.8          & 11.3 \\
+            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 9.14          & 83.60          & 6.39 \\
             \midrule
-            \multirow{1}{*}{LSTM including Price and Sentiment}       & 9.2          & 84.3          & 6.5 \\
+            \multirow{1}{*}{LSTM including Price and Sentiment}       & 10.47          & 109.62          & 8.54 \\
             \midrule
-            \multirow{1}{*}{LSTM including Price and Trading Volume}      & \textbf{7.9}           & \textbf{63.0}          & \textbf{5.5} \\
+            \multirow{1}{*}{LSTM including Price and Trading Volume}      & \textbf{8.07}           & \textbf{65.12}          & \textbf{5.52} \\
             \midrule
-            \multirow{1}{*}{LSTM that only includes Price}      & 8.5         & 71.7          & 6.4 \\
+            \multirow{1}{*}{LSTM that only includes Price}      & 11.29         & 127.40          & 9.76 \\
 
         \bottomrule
     \end{tabular}
@@ -822,21 +826,15 @@ The price forecasts of the other models are represented in \nameref{appendix:For
 
 \section{Discussion}
 
-The 'to the moon' WallStreetBets movement had a tremendous impact on the lives of individuals, both to the positive and negative. 
-Besides that, however, many investment funds have also been negatively impacted by the recent short-squeezes. 
-While it might seem noble to root for individuals who try to force large funds out of their positions at big losses, it is easy to forget that many 
-of those funds manage money for charitable endowments, pensions and others. 
-Furthermore, such disruptions to the financial markets can harm its stability, thus causing spillover effects which can also negatively impact the 
-lives of many people \citep{lyocsa2021yolotrading}.
-By being able to accurately measure and monitor the sentiment on WallStreetBets, market participants and regulators are able to preemptively take measures.\\
-However, since the wallstreetbets subreddit has become very popular just recently, there is little academic research about the impact of the community on 
-financial markets so far. Even though there is some research about sentiment analysis on wallstreetbets, that research does not use state of the art algorithms to perform 
-sentiment analysis. This thesis shows that the wide-spread use of lexicons is not the best way to monitor sentiment and the adaption of better algorithms is urgently needed.\\
-Not only did this thesis compare the performance of different models, but also proposed a highly efficient and reliable way to create a domain-specific annotated corpus, 
-which can be used as the input to aforementioned models. To my knowledge, this thesis is the first research that creates a domain-specific corpus for the WallStreetBets forum. 
-Researchers, such as \cite{talamas2021socialmediaeffectsonthemarket}, specifically propose future work on “inclusion of features derived from alternative manipulation of the data like sentiment analysis 
-could lead to new insights“. I strongly believe that the methods proposed in my thesis lead to better sentiment classifiers, 
-which can then be used in other scientific or industrial applications.
+As the 'to the moon' WallStreetBets movement had a tremendous impact on the financial markets and the lives of individuals, the methodology proposed in this thesis aims to accurately measure and monitor the subreddit. As a result, the disruptions to the financial markets may be avoided and stability be ensured.
+The underlying hypothesis of this thesis is that by accurately measuring the sentiment of the forum, changes in the stock price can be predicted. This is not with its own challenges, however. First of all, the terminology used on the forum is currently not covered by any sentiment lexicas. Additionally, there are no datasets that contain labeled data of the forum. As a result, this thesis proposes an Active Learner to annotate the data for a fraction of the total cost. However, the performance of the Active Learner was not as high as hoped. This can be attributed to the ambiguity of posts at the document level. Even when manually labeling the data it was not always entirely clear on how to classify a post. While the advantages of an Active Learner still seem promising, a different labeling approach, such as part-of-speech tagging might be a better solution than on the document level.
+The data obtained by the Active Learner can subsequently be used as the ground truth data which can be fed into various sentiment analysis methods.
+Even though BERT achieved the best performance, generalization, etc.
+Once the sentiment is obtained, it can be tested whether it actually contributes to the predictive capabilities. Even though predictions are quite accurate when including sentiment, especially generalization -> how does it do?
+It is shown that a LSTM model that only makes predictions based on price, actually performs better than a model that includes sentiment. One possible explanation for that is the efficient market hypothesis, which assumes that all available information is already priced into the stock price. Find paper. Furthermore, the results show that an LSTM performs better than ARIMA.
+Therefore, it can be concluded that while the inclusion of sentiment shows better predictive capabilities than for example the feature trading volume, it does not enhance the performance of a model that only relies on price.
+I strongly believe that this thesis contributes to the existing literature on WallStreetBets.
+
 
 % End Discussion ----
 
