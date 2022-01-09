@@ -569,15 +569,18 @@ Selecting optimal hyperparameters for the Word2Vec model is oftentimes neglected
 The Word2Vec hyperparameters that were analyzed is the \emph{vector\_size, min\_count} and \emph{window}. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation \citep{schnabel2015embeddings}.
 A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:B}.
 The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
-The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a Dropout layer to improve generalization. To find the optimal dropout parameter and optimizer for the model,
+The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a dropout layer to improve generalization. To find the optimal \emph{dropout} parameter and \emph{optimizer} for the model,
 a loop runs through a set of hyperparameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
-The final Dense output layer uses softmax as its activation function. Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric.\\
+The final Dense output layer uses softmax as its activation function, which is typically used for multiclass classification. 
+Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric.
+The identified optimal hyperparameters are an Adam optimizer and a dropout rate of zero.\\
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
-To train BERT, the token \emph{[CLS]} and \emph{[SEP]} are added to the beginning and end of the input sequence. Subsequently, the tokens are converted to IDs using the tokenization
-module from the bert library. Even though a maximum of 512 tokens can be used when training BERT, this implementation only uses a maximum of 100 tokens due to computational reasons.
-Furthermore, this implementation uses an Adam optimizer and a constant learning rate of 0.00001. Future work should include an optimization of those parameters. The model is trained with
-a batch size of two over three epochs. Write about hyperparameter tuning.\\
+The BERT model used in this thesis uses the \emph{bert base uncased} implementation, which has 12 encoders, 12 self-attention heads and
+110 million parameters \citep{devlin2019bert}. Even though a maximum of 512 tokens can be used when training BERT, this implementation only uses 64 tokens because of computational reasons.
+For hyperparameter tuning the \emph{optimizer} and its \emph{learning rate}, which is used to find the minimum of a loss function, are analyzed.
+The model is trained with a batch size of two over three epochs. Typically, BERT does not show performance increases after more than three epochs.
+The optimal hyperparameters that were found are an AdamW optimizer with a learning rate of 0.00001.\\
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
 VADER classifies data based on a threshold value.
@@ -749,14 +752,14 @@ in Table \ref{tab:results_stocks_valset}, the LSTM that only used Price as its i
 
 \end{table}
 
-Figure \ref{fig:lstm_models_rmse_loss} shows the RMSE and Loss for each LSTM model's respective input features with their optimal hyperparameter setting.
+Figure \ref{fig:lstm_models_rmse_validation_set} shows the RMSE of the validation set for each LSTM model's respective input features with their optimal hyperparameter setting.
 Even though on the validation set all models seem to flatten out eventually, the visualizations of the training set indicate that the model hasn't finished
-learning its optimal weights yet and more epochs may be benefitial.
+learning its optimal weights yet and more epochs may be benefitial. The RMSE and Loss of the training and validation set can be found in \nameref{appendix:lstm_models_rmse_loss}.
 
-The RMSE and Loss of the best performing model on the validation set are presented in Figure \ref{fig:lstm_price_rmse_loss}. As can be seen, the lowest loss can be achieved
+The RMSE of the best performing model on the validation set are presented in Figure \ref{fig:lstm_price_rmse_best_params}. As can be seen, the lowest loss can be achieved
 at epoch 28 with the hyperparameter setting Dropout equals zero, an Adam optimizer and lookback equals one. Since too many hyperparameters
-were analyzed, only the five best performing ones were visualized. The RMSE and Loss for the models with other input features can 
-be found in \nameref{appendix:Graphics}.
+were analyzed, only the five best performing ones were visualized. 
+The RMSE and Loss of the model can be found in \nameref{appendix:RMSE_Loss_Best_Model} and the models with other input features can be found in \nameref{appendix:Graphics}.
 Because ARIMA is not trained over epochs, it is visualized as a bar-chart in Figure \ref{fig:arima_rmse}. As can be seen, the optimal hyperparameter setting is (0, 0, 1).
 
 \begin{figure}
@@ -768,18 +771,16 @@ Because ARIMA is not trained over epochs, it is visualized as a bar-chart in Fig
 
 \begin{figure}
     \centering
-    \includegraphics[scale = 0.55]{Best_Params_Of_Model_RMSE.png}
-    \includegraphics[scale = 0.55]{Best_Params_Of_Model_Loss.png}
-    \caption{RMSE and Loss of Models with Various Input Features and Their Optimal Hyperparameters}
-    \label{fig:lstm_models_rmse_loss}
+    \includegraphics[scale = 0.55]{Best_Params_Of_Model_RMSE_Validation_Set.png}
+    \caption{Validation Set RMSE of Models with Various Input Features and Their Optimal Hyperparameters}
+    \label{fig:lstm_models_rmse_validation_set}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[scale = 0.55]{Only_Price_Params_RMSE.png}
-    \includegraphics[scale = 0.55]{Only_Price_Params_Loss.png}
-    \caption{Five Optimal Hyperparameters of LSTM Model With Only Price as Input Feature}
-    \label{fig:lstm_price_rmse_loss}
+    \includegraphics[scale = 0.55]{Only_Price_Params_RMSE_Validation_Set.png}
+    \caption{RMSE of Five Optimal Hyperparameters of LSTM Model With Only Price as Input Feature}
+    \label{fig:lstm_price_rmse_best_params}
 \end{figure}
 
 
@@ -893,6 +894,27 @@ hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 \end{figure}
 
 \pagebreak
+
+\subsection{Appendix RMSE and Loss of Input Features}
+\label{appendix:lstm_models_rmse_loss}
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.55]{Best_Params_Of_Model_RMSE.png}
+    \includegraphics[scale = 0.55]{Best_Params_Of_Model_Loss.png}
+    \caption{RMSE and Loss of Models with Various Input Features and Their Optimal Hyperparameters}
+    \label{fig:lstm_models_rmse_loss}
+\end{figure}
+
+\subsection{Appendix RMSE and Loss of Best Model}
+\label{appendix:RMSE_Loss_Best_Model}
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.55]{Only_Price_Params_RMSE.png}
+    \includegraphics[scale = 0.55]{Only_Price_Params_Loss.png}
+    \caption{Five Optimal Hyperparameters of LSTM Model With Only Price as Input Feature}
+    \label{fig:lstm_price_rmse_loss}
+\end{figure}
+
 \subsection{Appendix Graphics}
 \label{appendix:Graphics}
 
