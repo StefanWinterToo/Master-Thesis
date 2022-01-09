@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  9 JAN 2022 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.1)  9 JAN 2022 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -879,13 +879,13 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 [2] [3] [4] [5] [6] [7] [8]
-<tsne_projection.png, id=394, 364.36125pt x 324.21124pt>
+<tsne_projection.png, id=395, 364.36125pt x 324.21124pt>
 File: tsne_projection.png Graphic file (type png)
 <use tsne_projection.png>
 Package pdftex.def Info: tsne_projection.png  used on input line 322.
 (pdftex.def)             Requested size: 358.50473pt x 319.01108pt.
  [9] [10 </Users/stefanwinter/Local/Thesis/Thesis/Template/tsne_projection.png>]
-<al_workflow.png, id=421, 560.0925pt x 420.06938pt>
+<al_workflow.png, id=424, 560.0925pt x 420.06938pt>
 File: al_workflow.png Graphic file (type png)
 <use al_workflow.png>
 Package pdftex.def Info: al_workflow.png  used on input line 358.
@@ -901,140 +901,133 @@ Underfull \hbox (badness 10000) in paragraph at lines 366--374
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--387
+Underfull \hbox (badness 10000) in paragraph at lines 375--385
 
  []
 
 [12 </Users/stefanwinter/Local/Thesis/Thesis/Template/al_workflow.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 388--394
+Underfull \hbox (badness 10000) in paragraph at lines 386--392
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--444
+Underfull \hbox (badness 10000) in paragraph at lines 434--443
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 445--453
+Underfull \hbox (badness 10000) in paragraph at lines 450--457
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 497--502
+Underfull \hbox (badness 10000) in paragraph at lines 495--500
 
  []
 
 [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 552--558
+Underfull \hbox (badness 10000) in paragraph at lines 550--556
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 559--565
+Underfull \hbox (badness 10000) in paragraph at lines 557--563
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--577
+Underfull \hbox (badness 10000) in paragraph at lines 564--574
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--580
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 578--584
+Underfull \hbox (badness 10000) in paragraph at lines 587--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--595
+Underfull \hbox (badness 10000) in paragraph at lines 597--604
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 596--604
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 605--611
-
- []
-
-[21]
-<ActiveLearner.png, id=593, 595.47469pt x 384.6872pt>
+[20] [21]
+<ActiveLearner.png, id=599, 595.47469pt x 384.6872pt>
 File: ActiveLearner.png Graphic file (type png)
 <use ActiveLearner.png>
-Package pdftex.def Info: ActiveLearner.png  used on input line 644.
+Package pdftex.def Info: ActiveLearner.png  used on input line 641.
 (pdftex.def)             Requested size: 358.50473pt x 231.60065pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--652
+Underfull \hbox (badness 10000) in paragraph at lines 647--649
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--657
+Underfull \hbox (badness 10000) in paragraph at lines 650--654
 
  []
 
-[22 </Users/stefanwinter/Local/Thesis/Thesis/Template/ActiveLearner.png>]
 <NB_hyperparam.png, id=601, 738.50906pt x 542.77782pt>
 File: NB_hyperparam.png Graphic file (type png)
 <use NB_hyperparam.png>
-Package pdftex.def Info: NB_hyperparam.png  used on input line 660.
+Package pdftex.def Info: NB_hyperparam.png  used on input line 657.
 (pdftex.def)             Requested size: 332.326pt x 244.24776pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--671
+[22 </Users/stefanwinter/Local/Thesis/Thesis/Template/ActiveLearner.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 663--668
 
  []
 
-<LSTM_Accuracy_Val_Set.PNG, id=604, 612.78937pt x 307.1475pt>
+<LSTM_Accuracy_Val_Set.PNG, id=611, 612.78937pt x 307.1475pt>
 File: LSTM_Accuracy_Val_Set.PNG Graphic file (type png)
 <use LSTM_Accuracy_Val_Set.PNG>
-Package pdftex.def Info: LSTM_Accuracy_Val_Set.PNG  used on input line 674.
+Package pdftex.def Info: LSTM_Accuracy_Val_Set.PNG  used on input line 671.
 (pdftex.def)             Requested size: 306.39394pt x 153.57336pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--686
+Underfull \hbox (badness 10000) in paragraph at lines 677--683
 
  []
 
-[23 </Users/stefanwinter/Local/Thesis/Thesis/Template/NB_hyperparam.png>]
-<BERT_Accuracy_Validation_Set.PNG, id=617, 559.33969pt x 277.035pt>
+<BERT_Accuracy_Validation_Set.PNG, id=614, 559.33969pt x 277.035pt>
 File: BERT_Accuracy_Validation_Set.PNG Graphic file (type png)
 <use BERT_Accuracy_Validation_Set.PNG>
-Package pdftex.def Info: BERT_Accuracy_Validation_Set.PNG  used on input line 689.
+Package pdftex.def Info: BERT_Accuracy_Validation_Set.PNG  used on input line 686.
 (pdftex.def)             Requested size: 279.66916pt x 138.51715pt.
- [24 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Accuracy_Val_Set.PNG> </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Accuracy_Validation_Set.PNG>] [25]
-<ARIMA_RMSE.png, id=644, 733.23938pt x 592.46344pt>
+[23 </Users/stefanwinter/Local/Thesis/Thesis/Template/NB_hyperparam.png>] [24 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Accuracy_Val_Set.PNG> </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Accuracy_Validation_Set.PNG>]
+<ARIMA_RMSE.png, id=639, 733.23938pt x 592.46344pt>
 File: ARIMA_RMSE.png Graphic file (type png)
 <use ARIMA_RMSE.png>
-Package pdftex.def Info: ARIMA_RMSE.png  used on input line 767.
+Package pdftex.def Info: ARIMA_RMSE.png  used on input line 764.
 (pdftex.def)             Requested size: 358.50473pt x 289.6768pt.
-<Best_Params_Of_Model_RMSE_Validation_Set.png, id=645, 607.51968pt x 298.86656pt>
+<Best_Params_Of_Model_RMSE_Validation_Set.png, id=640, 607.51968pt x 298.86656pt>
 File: Best_Params_Of_Model_RMSE_Validation_Set.png Graphic file (type png)
 <use Best_Params_Of_Model_RMSE_Validation_Set.png>
-Package pdftex.def Info: Best_Params_Of_Model_RMSE_Validation_Set.png  used on input line 774.
+Package pdftex.def Info: Best_Params_Of_Model_RMSE_Validation_Set.png  used on input line 771.
 (pdftex.def)             Requested size: 334.13686pt x 164.3771pt.
-<Only_Price_Params_RMSE_Validation_Set.png, id=646, 612.78937pt x 301.125pt>
+<Only_Price_Params_RMSE_Validation_Set.png, id=641, 612.78937pt x 301.125pt>
 File: Only_Price_Params_RMSE_Validation_Set.png Graphic file (type png)
 <use Only_Price_Params_RMSE_Validation_Set.png>
-Package pdftex.def Info: Only_Price_Params_RMSE_Validation_Set.png  used on input line 781.
+Package pdftex.def Info: Only_Price_Params_RMSE_Validation_Set.png  used on input line 778.
 (pdftex.def)             Requested size: 337.03519pt x 165.61925pt.
-
-Overfull \hbox (17.51512pt too wide) in paragraph at lines 799--817
+ [25] [26 </Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_RMSE_Validation_Set.png>]
+Overfull \hbox (17.51512pt too wide) in paragraph at lines 796--814
  [][] 
  []
 
-<no_other_feature_pred.png, id=649, 896.148pt x 391.76363pt>
+<no_other_feature_pred.png, id=662, 896.148pt x 391.76363pt>
 File: no_other_feature_pred.png Graphic file (type png)
 <use no_other_feature_pred.png>
-Package pdftex.def Info: no_other_feature_pred.png  used on input line 825.
+Package pdftex.def Info: no_other_feature_pred.png  used on input line 824.
 (pdftex.def)             Requested size: 358.45284pt x 156.70267pt.
-[26 </Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png>] [27 </Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_RMSE_Validation_Set.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/Only_Price_Params_RMSE_Validation_Set.png>] [28 </Users/stefanwinter/Local/Thesis/Thesis/Template/no_other_feature_pred.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [29]
+[27 </Users/stefanwinter/Local/Thesis/Thesis/Template/Only_Price_Params_RMSE_Validation_Set.png>] [28 </Users/stefanwinter/Local/Thesis/Thesis/Template/no_other_feature_pred.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.bbl [29]
 Underfull \hbox (badness 1297) in paragraph at lines 281--303
 \T1/pplj/m/n/10.95 (+20) price pre-dic-tion.  \T1/pplj/m/it/10.95 (+20) Ap-plied Soft Com-put-ing\T1/pplj/m/n/10.95 (+20) , \T1/pplj/m/it/10.95 (+20) 100\T1/pplj/m/n/10.95 (+20) , 106943.  Re-
  []
@@ -1050,129 +1043,129 @@ Underfull \hbox (badness 10000) in paragraph at lines 879--896
  []
 
 [31] [32] [33]
-Underfull \hbox (badness 1112) in paragraph at lines 1836--1855
+Underfull \hbox (badness 1112) in paragraph at lines 1865--1884
 \T1/pplj/m/n/10.95 (+20) works: A project re-port.  \T1/pplj/m/it/10.95 (+20) Neu-ro-com-put-ing\T1/pplj/m/n/10.95 (+20) , \T1/pplj/m/it/10.95 (+20) 2\T1/pplj/m/n/10.95 (+20) (1), 17-27.  Re-
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 1836--1855
+Underfull \hbox (badness 1565) in paragraph at lines 1865--1884
 \T1/pplj/m/n/10.95 (+20) trieved from [][]$\T1/fvm/m/n/10.95 https :// www [] .sciencedirect [] .com / science / article /
  []
 
 [34] [35]) [36]
-Underfull \hbox (badness 10000) in paragraph at lines 869--874
+Underfull \hbox (badness 10000) in paragraph at lines 868--873
 
  []
 
-<LSTM_Accuracy.png, id=749, 612.78937pt x 609.02531pt>
+<LSTM_Accuracy.png, id=755, 612.78937pt x 609.02531pt>
 File: LSTM_Accuracy.png Graphic file (type png)
 <use LSTM_Accuracy.png>
-Package pdftex.def Info: LSTM_Accuracy.png  used on input line 879.
+Package pdftex.def Info: LSTM_Accuracy.png  used on input line 878.
 (pdftex.def)             Requested size: 306.39394pt x 304.5119pt.
-<LSTM_Loss.png, id=750, 606.76688pt x 606.76688pt>
+<LSTM_Loss.png, id=756, 606.76688pt x 606.76688pt>
 File: LSTM_Loss.png Graphic file (type png)
 <use LSTM_Loss.png>
-Package pdftex.def Info: LSTM_Loss.png  used on input line 880.
+Package pdftex.def Info: LSTM_Loss.png  used on input line 879.
 (pdftex.def)             Requested size: 303.38269pt x 303.38269pt.
 
-LaTeX Warning: Float too large for page by 25.45091pt on input line 883.
+LaTeX Warning: Float too large for page by 25.45091pt on input line 882.
 
 [37] [38 </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Accuracy.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/LSTM_Loss.png>]
-<BERT_Accuracy.png, id=762, 559.33969pt x 553.31718pt>
+<BERT_Accuracy.png, id=768, 559.33969pt x 553.31718pt>
 File: BERT_Accuracy.png Graphic file (type png)
 <use BERT_Accuracy.png>
-Package pdftex.def Info: BERT_Accuracy.png  used on input line 890.
+Package pdftex.def Info: BERT_Accuracy.png  used on input line 889.
 (pdftex.def)             Requested size: 279.66916pt x 276.65791pt.
-<BERT_Loss.png, id=763, 555.57562pt x 552.56438pt>
+<BERT_Loss.png, id=769, 555.57562pt x 552.56438pt>
 File: BERT_Loss.png Graphic file (type png)
 <use BERT_Loss.png>
-Package pdftex.def Info: BERT_Loss.png  used on input line 891.
+Package pdftex.def Info: BERT_Loss.png  used on input line 890.
 (pdftex.def)             Requested size: 277.78712pt x 276.28151pt.
  [39]
 
 LaTeX Warning: Text page 40 contains only floats.
 
 [40 </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Accuracy.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Loss.png>]
-<Best_Params_Of_Model_RMSE.png, id=775, 607.51968pt x 601.4972pt>
+<Best_Params_Of_Model_RMSE.png, id=781, 607.51968pt x 601.4972pt>
 File: Best_Params_Of_Model_RMSE.png Graphic file (type png)
 <use Best_Params_Of_Model_RMSE.png>
-Package pdftex.def Info: Best_Params_Of_Model_RMSE.png  used on input line 902.
+Package pdftex.def Info: Best_Params_Of_Model_RMSE.png  used on input line 901.
 (pdftex.def)             Requested size: 334.13686pt x 330.82448pt.
-<Best_Params_Of_Model_Loss.png, id=776, 604.50844pt x 603.0028pt>
+<Best_Params_Of_Model_Loss.png, id=782, 604.50844pt x 603.0028pt>
 File: Best_Params_Of_Model_Loss.png Graphic file (type png)
 <use Best_Params_Of_Model_Loss.png>
-Package pdftex.def Info: Best_Params_Of_Model_Loss.png  used on input line 903.
+Package pdftex.def Info: Best_Params_Of_Model_Loss.png  used on input line 902.
 (pdftex.def)             Requested size: 332.48067pt x 331.65256pt.
 
 
-LaTeX Warning: Float too large for page by 92.63339pt on input line 906.
+LaTeX Warning: Float too large for page by 92.63339pt on input line 905.
 
-<Only_Price_Params_RMSE.png, id=777, 612.78937pt x 606.76688pt>
+<Only_Price_Params_RMSE.png, id=783, 612.78937pt x 606.76688pt>
 File: Only_Price_Params_RMSE.png Graphic file (type png)
 <use Only_Price_Params_RMSE.png>
-Package pdftex.def Info: Only_Price_Params_RMSE.png  used on input line 912.
+Package pdftex.def Info: Only_Price_Params_RMSE.png  used on input line 911.
 (pdftex.def)             Requested size: 337.03519pt x 333.72281pt.
-<Only_Price_Params_Loss.png, id=778, 607.51968pt x 603.75563pt>
+<Only_Price_Params_Loss.png, id=784, 607.51968pt x 603.75563pt>
 File: Only_Price_Params_Loss.png Graphic file (type png)
 <use Only_Price_Params_Loss.png>
-Package pdftex.def Info: Only_Price_Params_Loss.png  used on input line 913.
+Package pdftex.def Info: Only_Price_Params_Loss.png  used on input line 912.
 (pdftex.def)             Requested size: 334.13686pt x 332.06662pt.
 
-LaTeX Warning: Float too large for page by 95.94579pt on input line 916.
+LaTeX Warning: Float too large for page by 95.94579pt on input line 915.
 
-<Only_Trading_Volume.png, id=779, 1219.55624pt x 607.51968pt>
+<Only_Trading_Volume.png, id=785, 1219.55624pt x 607.51968pt>
 File: Only_Trading_Volume.png Graphic file (type png)
 <use Only_Trading_Volume.png>
-Package pdftex.def Info: Only_Trading_Volume.png  used on input line 923.
+Package pdftex.def Info: Only_Trading_Volume.png  used on input line 922.
 (pdftex.def)             Requested size: 358.50473pt x 178.58638pt.
-<Only_Sentiment.png, id=780, 1218.05063pt x 604.50844pt>
+<Only_Sentiment.png, id=786, 1218.05063pt x 604.50844pt>
 File: Only_Sentiment.png Graphic file (type png)
 <use Only_Sentiment.png>
-Package pdftex.def Info: Only_Sentiment.png  used on input line 929.
+Package pdftex.def Info: Only_Sentiment.png  used on input line 928.
 (pdftex.def)             Requested size: 358.50473pt x 177.92258pt.
-<All_Features.png, id=781, 1214.28656pt x 605.26125pt>
+<All_Features.png, id=787, 1214.28656pt x 605.26125pt>
 File: All_Features.png Graphic file (type png)
 <use All_Features.png>
-Package pdftex.def Info: All_Features.png  used on input line 935.
+Package pdftex.def Info: All_Features.png  used on input line 934.
 (pdftex.def)             Requested size: 358.50473pt x 178.68904pt.
 [41] [42 </Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_RMSE.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_Loss.png>] [43 </Users/stefanwinter/Local/Thesis/Thesis/Template/Only_Price_Params_RMSE.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/Only_Price_Params_Loss.png>] [44 </Users/stefanwinter/Local/Thesis/Thesis/Template/Only_Trading_Volume.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/Only_Sentiment.png>]
-<prediction_arima_pred.png, id=812, 896.148pt x 391.76363pt>
+<prediction_arima_pred.png, id=818, 896.148pt x 391.76363pt>
 File: prediction_arima_pred.png Graphic file (type png)
 <use prediction_arima_pred.png>
-Package pdftex.def Info: prediction_arima_pred.png  used on input line 950.
+Package pdftex.def Info: prediction_arima_pred.png  used on input line 949.
 (pdftex.def)             Requested size: 358.50473pt x 156.72658pt.
-<only_trading_volume_pred.png, id=813, 896.148pt x 392.36588pt>
+<only_trading_volume_pred.png, id=819, 896.148pt x 392.36588pt>
 File: only_trading_volume_pred.png Graphic file (type png)
 <use only_trading_volume_pred.png>
-Package pdftex.def Info: only_trading_volume_pred.png  used on input line 957.
+Package pdftex.def Info: only_trading_volume_pred.png  used on input line 956.
 (pdftex.def)             Requested size: 358.50473pt x 156.96751pt.
-<only_sentiment_pred.png, id=814, 896.148pt x 392.36588pt>
+<only_sentiment_pred.png, id=820, 896.148pt x 392.36588pt>
 File: only_sentiment_pred.png Graphic file (type png)
 <use only_sentiment_pred.png>
-Package pdftex.def Info: only_sentiment_pred.png  used on input line 964.
+Package pdftex.def Info: only_sentiment_pred.png  used on input line 963.
 (pdftex.def)             Requested size: 358.50473pt x 156.96751pt.
-<all_features_pred.png, id=815, 896.148pt x 392.36588pt>
+<all_features_pred.png, id=821, 896.148pt x 392.36588pt>
 File: all_features_pred.png Graphic file (type png)
 <use all_features_pred.png>
-Package pdftex.def Info: all_features_pred.png  used on input line 965.
+Package pdftex.def Info: all_features_pred.png  used on input line 964.
 (pdftex.def)             Requested size: 358.50473pt x 156.96751pt.
  [45 </Users/stefanwinter/Local/Thesis/Thesis/Template/All_Features.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/prediction_arima_pred.png>] [46 </Users/stefanwinter/Local/Thesis/Thesis/Template/only_trading_volume_pred.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/only_sentiment_pred.png> </Users/stefanwinter/Local/Thesis/Thesis/Template/all_features_pred.png>] (/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D35439DECEE2006A2E67F09B2B6F91C5;6720.
  ) 
 Here is how much of TeX's memory you used:
- 18331 strings out of 478994
- 314771 string characters out of 5858184
- 694698 words of memory out of 5000000
- 34580 multiletter control sequences out of 15000+600000
+ 18336 strings out of 478994
+ 314883 string characters out of 5858184
+ 694761 words of memory out of 5000000
+ 34584 multiletter control sequences out of 15000+600000
  565258 words of font info for 654 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,23n,130p,956b,759s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 126i,23n,130p,956b,761s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (48 pages, 2409504 bytes).
+Output written on /Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf (48 pages, 2409725 bytes).
 PDF statistics:
- 914 PDF objects out of 1000 (max. 8388607)
- 794 compressed objects within 8 object streams
- 188 named destinations out of 1000 (max. 500000)
+ 920 PDF objects out of 1000 (max. 8388607)
+ 800 compressed objects within 8 object streams
+ 189 named destinations out of 1000 (max. 500000)
  157603 words of extra memory for PDF output out of 184870 (max. 10000000)
 

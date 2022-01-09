@@ -1036,6 +1036,35 @@ Kotelnikova, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+LeBaron%
+\ \BBA {} Weigend%
+}{%
+LeBaron%
+\ \BBA {} Weigend%
+}{%
+{\protect \APACyear {1998}}%
+}]{%
+lebaron1998split}
+\APACinsertmetastar {%
+lebaron1998split}%
+\begin{APACrefauthors}%
+LeBaron, B.%
+\BCBT {}\ \BBA {} Weigend, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1998}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A bootstrap evaluation of the effect of data splitting
+  on financial time series} {A bootstrap evaluation of the effect of data
+  splitting on financial time series}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Neural Networks}{9}{1}{213-220}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/72.655043} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Lim%
 \ \BBA {} Zohren%
 }{%

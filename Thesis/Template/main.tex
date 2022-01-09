@@ -301,40 +301,40 @@ for supervised machine learning sentiment models. Afterwards, the model with the
 dataset. The sentiment was then used as an additional input feature for the stock price prediction task.
 
 \subsubsection{The Case for a Semi-Supervised Method over an Unsupervised Method to Label Data}
-Since the data obtained from Reddit are unlabeled, it cannot be fed into supervised machine learning algorithms. 
+Since the data obtained from Reddit are unlabeled, they cannot be fed into supervised machine learning algorithms. 
 That is because supervised sentiment analysis methods rely on labeled data \citep{sazzed2021ssentia}. One approach to label 
 data is using unsupervised machine learning models. Unsupervised models are commonly applied in Natural Language Processing 
 and text classification \citep{jung2019automatedclassification}. However, unsupervised models are a better choice for uncovering hidden 
 patterns in a dataset, especially without any a priori knowledge of the structure of the data. As a result, unsupervised models 
 excel at summarizing or exploring a large text corpus. 
 For the case at hand, a \emph{t-Distributed Stochastic Neighbor embedding (t-sne)} algorithm was applied on the data to extract similarity 
-features and project them onto a lower dimension \citep{binu2020dimreductiontsne}. As can be seen in Figure 1, admittedly 
-at a low dimension, the majority of the data do not belong to any particular cluster. The different colours represent the three different 
-labels. The data used for the t-sne algorithm were the
-manually labeled text data that was transformed into a \emph{Term Frequency-Inverse Document Frequency (tf-idf)} representation.
-By using tf-idf, the relevancy of a word in a set of documents is determined. If a word occurs often, but also in many documents
+features and project them onto a lower dimension \citep{binu2020dimreductiontsne}. As can be seen in Figure \ref{fig:t-sne}, admittedly 
+at a low dimension, the majority of the data do not belong to any particular cluster.
+The data used for the t-sne algorithm were the
+manually labeled text data that were transformed into a \emph{Term Frequency-Inverse Document Frequency (tf-idf)} representation.
+By using tf-idf, the relevancy of a word in a set of documents is determined. If a word occurs often, but in many documents
 it will rank low, as such a word might not mean much to a particular document. tf-idf is calculated by multiplying the tf part with the
-idf part. The tf part represents how often a word appears while the idf part accounts for the importance of the word, depending on
+idf part. The tf represents how often a word appears while the idf part accounts for the importance of the word, depending on
 the number of documents the word can be found in \citep{Guia2019ComparisonON, jason2021tfidf}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{tsne_projection.png}
-    \caption{t-sne visualization of seed data}
+    \caption{t-sne Visualization of Seed Data}
     \label{fig:t-sne}
 \end{figure}
-
+\pagebreak
 Even though there are some approaches to clustering high dimensional data, it generally is difficult to do so accurately. 
 One of the explanations is the increased sparsity and the difficulty to distinguish between the distances 
 of specific instances \citep{tomasev2014roleofhubness}. For these reasons, an unsupervised approach was not chosen.
 
-However, labeled data is still needed to train supervised machine learning models for sentiment analysis. While manually labelling
+However, labeled data are still needed to train supervised machine learning models for sentiment analysis. While manually labelling
 all data might be the most accurate solution, it is associated with high costs \citep{miller2020activelearningapproaches}.
 Hence, this thesis proposes the implementation of an Active Learner. With its support, a complete domain-specific corpus can be labeled while only relying on partial annotations \citep{park2015EfficientExtraction}.
-As a result, a domain-specific labeled text corpus is created that can be used as input to different supervised machine learning algorithms.
+As a result, a domain-specific labeled dataset is created that can be used as input to different supervised machine learning algorithms.
 
 \subsubsection{Active Learner Workflow}
-The illustrated workflow in Figure 2 provides an overview of how an Active Learner works. 
+The illustrated workflow in Figure \ref{fig:AL_Workflow} provides an overview of how an Active Learner works. 
 To begin with, cleaned and pre-processed data needs to be available that can be used by the Active Learner. 
 Furthermore, the Active Learner can also be trained with some initial training data, which is also referred to as the seed. 
 All the unlabeled instances will become the pool data, which need to be labeled. The seed data is fed into the Active Learner and trains an estimator, 
@@ -373,32 +373,30 @@ However, the algorithm's prediction accuracy is frequently lower than that of ot
 Due to the easy implementation and fast training of the algorithm, MNB will serve as the baseline classifier.\\
 
 \noindent\textbf{Long Short Term Memory (LSTM)}\\
-LSTMs are becoming increasingly popular for sentiment classification. 
 LSTMs are built on a recurrent neural network architecture (RNN). In an RNN the neurons are connected to themselves through time. 
 As a result, the input from a time instance t\textsubscript{i} will also be used as an input for the next time instance t\textsubscript{i+1}. That leads to the 
 problem of vanishing gradients, which means that it is hard for the model to learn long-term dependencies. This occurs because
-in a long sequence, like a sentence, as the loss gradients are backpropagated through the RNN, they may shrink to zero \citep{vanishinggradients2020pmlr}.
+in a long sequence like a sentence, as the loss gradients are backpropagated through the RNN, they may shrink to zero \citep{vanishinggradients2020pmlr}.
 LSTMs are designed to overcome that problem.
 The LSTM architecture does so via its four constituents: A memory cell which can remember a lot of information 
 from previous states, an input gate which controls the inputs into the neurons, an output gate with an activation function 
 and lastly a forget gate which resets the neuron \citep{priyantina2019sentimentanalysishotel}. When training an LSTM, it is shown that
-using a pretrained Word2Vec embedding can help solving the curse of dimensionalty that might occur when using a one-hot encoded input \citep{xiao2018word2veclstm}.\\
-%Hence, a Word2Vec embedding layer is used in the LSTM.
+using a Word2Vec embedding can help solving the curse of dimensionalty that might occur when using a one-hot encoded input \citep{xiao2018word2veclstm}.\\
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
 natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
 pretraining users won't need as much computing power to achieve good results, even if the dataset is relatively 
 small \citep{devlin2019bert}. The BERT github page even states that 
-“Most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}.\\
+“most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}.\\
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
 Due to widespread usage of lexicons, the VADER sentiment lexicon was also included. However, the results of VADER are intended for illustrative purposes only,
 as a lexicon based approach is not within the research scope of this thesis.
 VADER is specifically designed to classify social media sentiment and also includes emoticons, acronyms and \emph{slang} words \citep{hutto2015vader}. 
 Vader looks up the associated compound score of words in the lexicon. Based on the score, the sentiment is determined.
-The VADER lexicon does not have any hyperparameters to tune. It is only possible to optimize the classification results by
-changing the thresholds of the score.
+The VADER lexicon does not have any hyperparameters to tune. It is only possible to optimize results by
+changing classification thresholds.
 
 \subsubsection{Evaluation Metrics for Sentiment Classification}
 Typically, \emph{accuracy, precision, recall and the F-score} are used as evaluation metrics to assess the performance of a sentiment analysis model. \\
@@ -425,37 +423,37 @@ Otherwise, a model that only predicts the majority class may be able to achieve 
 \end{equation*}
 \\
 \noindent In the formulas above, \emph{TP} and \emph{TN} are positive and negative classes that were correctly classified. Contrary, \emph{FP} and \emph{FN} are
-incorrectly classified instances.\\
+incorrectly classified instances.
+
 Even though the class distribution of the data used in this thesis is skewed towards to label \emph{bullish}, the remaining two classes still represent
 almost 50\% of the data. As a result, accuracy can still lead to representative results, which is why this metric is used for hyperparameter tuning and model selection.
 
 \subsubsection{Stock Price Prediction Models}
 The next section explores the machine learning models that will be used to predict the stock price of GameStop. \\
 
-\noindent\textbf{ARIMA}\\
+\noindent\textbf{Auto-Regressive Integrated Moving Average (ARIMA)}\\
 One of the standard methods for time series forecasting is ARIMA. Therefore, it is commonly used in forecasting stock prices.
-However, it has some limitations, especially with regards to modelling the non-linear relationships between variables. As a result,
-some prerequisites are required to create good results \citep{sima2018timeseries}.
+However, it has some limitations, especially with regards to nonlinearity.
+As a result, some prerequisites are required to create good results \citep{sima2018timeseries}.
 First of all, ARIMA does not work well with seasonal data. Seasonality can be identified by plotting the stock prices, Autocorrelation and Partial Autocorrelation.
 Furthermore, ARIMA only works on stationary time-series. 
-By differencing the time-series it can be made stationary and then be used in the ARIMA model.
-The dickey fuller test can be used to test for stationarity \citep{jain2017ASO}.
+That can be achieved by differencing the time-series data. By using the \emph{augmented-dickey-fuller} test (adf),
+the data can be checked for stationarity \citep{jain2017ASO}.
 If the null hypothesis of the test can be rejected, the time series is assumed to be stationary. \\
 
-\noindent\textbf{LSTM without Other Features}\\
+\noindent\textbf{Long Short Term Memory (LSTM)}\\
 As stock prices are generally volatile, non-stationary and can have changes in their statistical properties it is beneficial to use
 models that can learn those attributes. Since LSTMs are able to capture such contextual information, they are shown to outperform many other methods \citep{preeti2019lstm}.
 This thesis implements a Vanilla LSTM, which is a model with only a single LSTM layer. This implementation was chosen because others, such as a stacked-LSTM, do not necessarily outperform a Vanilla LSTM for stock price prediction tasks \citep{hai2020lstms}.
-Even though this thesis explores various hyperparameters for the Vanilla implementation, it does not explore other implementations as that would go
-beyond the research-scope of the thesis.
-When using an LSTM for time-series tasks, a look-back period needs to be defined which chooses how many previous timestamps, for the case at hand - days, will be used to predict the 
-stock price at the next timestamp \citep{lim2020lookback}.\\
+Comparing other implementations would be beyond the research-scope of the thesis.
 
-\noindent\textbf{LSTM with Other Features}\\
+When using an LSTM for time-series tasks, a look-back period needs to be defined which chooses how many previous timesteps, for the case at hand - days, will be used to predict the 
+stock price at the next timestep \citep{lim2020lookback}.
 One advantage of LSTMs is that they can also include other features into their time-series prediction.
 When including other input features in addtition to the stock price, the time series is considered to be multivariate \citep{liu2019multivariate}.
 To answer the research question outlined in the \nameref{introduction}, the obtained sentiment was added as an input feature to the model. However, since the literature
-also identified other features, besides sentiment, as strong predictors this thesis will also explore the performance of a model that only includes trading volume.
+also identified other features, besides sentiment, as strong predictors this thesis will also explore the performance of a model that includes trading volume
+and a combination of sentiment and trading volume in addition to the stock price.\\
 
 \subsubsection{Evaluation Metrics for Stock Price Prediction}
 Standard evaluation metrics for time-series data include Mean Absolute Error (MAE), Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) \citep{rezaei2021stockpriceprediction}.\\
@@ -551,7 +549,7 @@ this thesis does not remove emoticons from the text corpus \citep{parveen2016sen
 \subsubsection{Sentiment Analysis Models Implementation}
 The next section explores how the machine learning models to classify sentiment were implemented and how their optimal hyperparameters were chosen.
 Before training the models, 20\% of the data were set aside as the test set. By setting aside 20\% of the training data as a validation set 
-the optimal hyperparameters were selected. To account for class imbalances, stratification was applied. As a result, the sets have approximately the same
+the optimal hyperparameters were selected. To account for class imbalances, stratification was applied. As a result, all sets have approximately the same
 class distribution as the full set \citep{sahu2017stratification}.
 Stratification was chosen over other methods to handle class imbalances, such as over- or undersampling, because the imbalance
 is not too extreme \citep{ganganwar2012overview}.\\
@@ -572,26 +570,29 @@ The input and output dimensions of the Embedding layer of the LSTM, as well as t
 The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a dropout layer to improve generalization. To find the optimal \emph{dropout} parameter and \emph{optimizer} for the model,
 a loop runs through a set of hyperparameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
 The final Dense output layer uses softmax as its activation function, which is typically used for multiclass classification. 
-Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric.
-The identified optimal hyperparameters are an Adam optimizer and a dropout rate of zero.\\
+Furthermore, the model uses categorical crossentropy as its cost function and accuracy as its metric.\\
 
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 The BERT model used in this thesis uses the \emph{bert base uncased} implementation, which has 12 encoders, 12 self-attention heads and
 110 million parameters \citep{devlin2019bert}. Even though a maximum of 512 tokens can be used when training BERT, this implementation only uses 64 tokens because of computational reasons.
-For hyperparameter tuning the \emph{optimizer} and its \emph{learning rate}, which is used to find the minimum of a loss function, are analyzed.
-The model is trained with a batch size of two over three epochs. Typically, BERT does not show performance increases after more than three epochs.
-The optimal hyperparameters that were found are an AdamW optimizer with a learning rate of 0.00001.\\
+For hyperparameter tuning the \emph{optimizer} and its \emph{learning rate}, which is used to find the minimum of the loss function, are analyzed.
+The model is trained with a batch size of two over three epochs. Typically, BERT does not show performance increases after more than three epochs.\\
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
 VADER classifies data based on a threshold value.
 If the score is greater than or equal to the threshold, it is associated with positive sentiment. If the score is smaller than or equal to the threshold it is associated with negative sentiment. For scores
-in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain optimal evaluation metrics the thresholds 0.03, 0.05, 0.07 and 0.10 and their negative counterparts were
-analyzed.
+in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain optimal evaluation metrics varying thresholds were analyzed.
 
 \subsubsection{Stock Price Prediction Implementation}
-When splitting time series data, it needs to be split into windows. The training set consists of the first 80\% of the timeseries data and
-the test set of the remainding 20\% of the data. To select the optimal hyperparameters, a rolling forecast is implemented. By doing so, the model 
-sequentially adds the most recent observation and then rebuilds the model \citep{sima2018timeseries}.\\
+When splitting time series data, it needs to be split into windows. In time series data, the sequence of the values is important.
+Therefore, it cannot be randomly split \citep{lebaron1998split}.
+The training set consists of the first 80\% of the timeseries data and the test set of the remainding 20\% of the data. Furthermore, 20\% of the training set is set aside as the validation set.
+To select the optimal hyperparameters, a rolling forecast is implemented. 
+By doing so, the model is first trained on the train set and then predicts the first timestep of the validation set. After that, the
+predicted value can be compared to the actual value of the validation set at the given timestep. Subsequently, the actual value
+is added to the train set and the process repeated. \citep{sima2018timeseries}. To test the generalization performance, however, no
+rolling window approach is applied on the test set. Instead, the model is supposed to predict the entire test set based on the parameters
+it has learned before. By doing so, it is tested how well it would perform in a real world scenario.\\
 
 \noindent\textbf{ARIMA}\\
 First the stock price data was analyzed to identify a seasonality pattern and to check for stationarity.
@@ -599,19 +600,15 @@ By visualizing the stock price, no seasonality was identified. This makes sense,
 hence does not contain any repeating patterns.
 After differencing the time-series once the dickey-fuller test was applied, which showed stationarity at the 1\% significance level.
 The hyperparameters that can be optimized are the number of lag observations
-included in the model (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}. As a result the following
-hyperparameters were used: (5,0,0), (1,0,1), (2,0,2), (0,0,5), (1,0,0), (0,0,1), (0,0,0). \\
+included in the model (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}.\\
 
-\noindent\textbf{LSTM without Other Features}\\
-The data fed into the LSTM, in comparison to the ARIMA model, was not differentiated as one of the strengths of an LSTM is that it can also work well with non-stationary data.
+\noindent\textbf{LSTM}\\
+The data fed into the LSTM, in comparison to the ARIMA model, was not differenced as one of the strengths of an LSTM is that it can also work well with non-stationary data.
 As the first step, the input data was scaled to be between 0 and 1. This is standard practice and commonly applied in the literature. As a result, the LSTM is expected to be
 less sensitive to the scale of the input data.
 The LSTM looks for the optimal hyperparameters of the optimizer, the lookback period, and the dropout on the input which excludes a random subset of the data from the node activation and update of the weights.
-A lookback period between one and five days was chosen, because \cite{saud2020lookback} found that a suitable lookback period for LSTMs is less than 5. \\
-
-\noindent\textbf{LSTM with Other Features}\\
-The LSTM model that includes other features uses the same hyperparameters as the model without sentiment. The only difference is
-that sentiment or trading volume are also included as scaled input features.
+A lookback period between one and five days was chosen, because \cite{saud2020lookback} found that a suitable lookback period for LSTMs is less than 5. 
+In addition to only the price as an input feature, trading volume and sentiment were also included as scaled input features.
 For the model that also includes sentiment, however, some additional preprocessing steps were required. That is because sentiment is measured for every post, of which there
 can be multiple per day, whereas there is only one time-series observation per day.
 Therefore, sentiment was encoded as -1 for bearish, 0 for neutral and 1 for bullish. Then the sentiment was summed up and added
@@ -681,8 +678,8 @@ The optimal hyperparameters are a dropout rate of zero and the Adam optimizer. \
 Since BERT is already pre-trained, it does not need as many epochs to optimize a model.
 As can be seen in Figure \ref{fig:Figure BERT_Accuracy_Validation_Set}, there is almost no change to the accuracy, meaning the model does not benefit from training over more epochs.
 As the literature suggests, even though BERT lacks domain awareness it managed to show better accuracy than other machine learning models, albeit by a small margin.
-accuracy keeps improving. The same can be argued for the loss. The accuracy and loss for the trainining and validation set can be found in \nameref{appendix:BERT_Sentiment_Classifier}.
-The optimal hyperparameters are an AdamW optimizer, a learning rate of 1e-5 and eps of 1e-8. \\
+The accuracy and loss for the trainining and validation set can be found in \nameref{appendix:BERT_Sentiment_Classifier}.
+The optimal hyperparameters that were found are an AdamW optimizer with a learning rate of 0.00001.\\
 
 \begin{figure}[!htb]
     \centering
@@ -817,7 +814,9 @@ than the best performing model.
 
 \end{table}
 
-As the plot of the predition of the test set in Figure \ref{fig:price_forecast_best_model}, it can be seen that the model does a fairly good job at predicting prices.
+As the plot of the predition of the test set in Figure \ref{fig:price_forecast_best_model}, it can be seen that the model does a relatively good job at generalizing.
+Even though it does not overlap with the actual stock price at most occasions, it generally got the direction correct.
+Additionally, the prediction was able to identify when the direction of the stock price changes to both the up- and downside.
 The price forecasts of the other models are represented in \nameref{appendix:Forecast}.
 
 \begin{figure}[!htb]

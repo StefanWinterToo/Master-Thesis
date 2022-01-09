@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex main"] 1641725692 "main.aux" "main.bbl" "main" 1641725698
+["bibtex main"] 1641759965 "main.aux" "main.bbl" "main" 1641761034
   "/usr/local/texlive/2021/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
-  "main.aux" 1641725697 27994 132e9335deb7452a99b04c68d2483b61 "pdflatex"
-  "references.bib" 1641298719 38430 db76dc3fe2421c042282b6d97623cda2 ""
+  "main.aux" 1641760875 28133 d05e4bf24fea369a0a32c56ca9e4a352 "pdflatex"
+  "references.bib" 1641744204 38738 e6893d7ebedf6553b777f080e1c87147 ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1641725692 "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.tex" "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf" "main" 1641725698
-  "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux" 1641725697 27994 132e9335deb7452a99b04c68d2483b61 ""
-  "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.tex" 1641725685 73078 b693cf24edc453b203756928df72489f ""
+["pdflatex"] 1641760870 "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.tex" "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf" "main" 1641761034
+  "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.aux" 1641760875 28133 d05e4bf24fea369a0a32c56ca9e4a352 ""
+  "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.tex" 1641761031 73197 4d410e44a81a8ec2ae1558d9e9818308 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -186,10 +186,10 @@
   "all_features_pred.png" 1641577035 182111 35d32986b774d43596e0d6bae7ea3eef ""
   "frontmatter.tex" 1640769336 1624 ebabac08278c07f121fee01f3ce58da2 ""
   "logo.eps" 1632850362 1093622 093f63d042513f0ccc15394223a221a3 ""
-  "main.aux" 1641725697 27994 132e9335deb7452a99b04c68d2483b61 "pdflatex"
-  "main.bbl" 1641725692 62109 e4fb58ecbb388cd2d6546a2dc5102933 "bibtex main"
-  "main.out" 1641725697 6720 d35439decee2006a2e67f09b2b6f91c5 "pdflatex"
-  "main.tex" 1641725685 73078 b693cf24edc453b203756928df72489f ""
+  "main.aux" 1641760875 28133 d05e4bf24fea369a0a32c56ca9e4a352 "pdflatex"
+  "main.bbl" 1641759965 62841 ea97009a1e147d75c37f97f838b20878 "bibtex main"
+  "main.out" 1641760875 6720 d35439decee2006a2e67f09b2b6f91c5 "pdflatex"
+  "main.tex" 1641761031 73197 4d410e44a81a8ec2ae1558d9e9818308 ""
   "no_other_feature_pred.png" 1641574659 182836 3031e6c0c10317d8a51c5b9731887614 ""
   "only_sentiment_pred.png" 1641392110 179092 255f4cef6c0cfe95416e9041c6257bfc ""
   "only_trading_volume_pred.png" 1641582221 181451 73216cfc7fbeb9e2837876c471f3394c ""
@@ -199,6 +199,6 @@
   "main.aux"
   "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.log"
   "main.log"
-  "main.out"
   "/Users/stefanwinter/Local/Thesis/Thesis/Template/main.pdf"
+  "main.out"
   "main.pdf"
