@@ -526,6 +526,32 @@ Du, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Fama%
+}{%
+Fama%
+}{%
+{\protect \APACyear {1970}}%
+}]{%
+fama1970emh}
+\APACinsertmetastar {%
+fama1970emh}%
+\begin{APACrefauthors}%
+Fama, E\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1970}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Efficient Capital Markets: A Review of Theory and
+  Empirical Work} {Efficient capital markets: A review of theory and empirical
+  work}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{25}{2}{383-417}.
+\newblock
+\begin{APACrefURL} \url{http://www.jstor.org/stable/2325486} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Feng%
 \ \BBA {} Johansson%
 }{%
@@ -1471,31 +1497,6 @@ Piñeiro-Chousa, J.%
 \APACjournalVolNumPages{Psychology and Marketing}{34}{}{101-108}.
 \newblock
 \begin{APACrefDOI} \doi{10.1002/mar.20976} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Podolak%
-}{%
-Podolak%
-}{%
-{\protect \APACyear {2021}}%
-}]{%
-pmaw2021}
-\APACinsertmetastar {%
-pmaw2021}%
-\begin{APACrefauthors}%
-Podolak, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{October}{1}.
-\newblock
-\APACrefbtitle {PMAW: Pushshift Multithread API Wrapper.} {Pmaw: Pushshift
-  multithread api wrapper.}
-\newblock
-\APAChowpublished {Web}.
-\newblock
-\begin{APACrefURL} \url{https://github.com/mattpodolak/pmaw} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

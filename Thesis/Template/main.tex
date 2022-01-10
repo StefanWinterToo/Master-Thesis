@@ -363,11 +363,11 @@ If the stopping criterion is met, the process ends \citep{lu2019investigating}.
 \subsubsection{Sentiment Analysis Models}
 The next sub-section explores the machine learning models that will be used to perform sentiment analysis on the domain-specific corpus created by the Active Learner. \\
 
-\noindent\textbf{Naïve Bayes (NB)}\\
+\noindent\textbf{Multinomial Naïve Bayes (MNB)}\\
 NB is a probabilistic supervised machine learning model. By working probabilistically, the classifier assigns the probability of 
 belonging to a given class based on certain features \citep{jemai2021SentimentAnalysis}. Because of the high dimensionality of text data, 
 which can be handled very well by NB, this algorithm has established itself as one of the standards for sentiment analysis. 
-This thesis will use Multinomial Naïve Bayes (MNB) to classify the sentiment of the text. This is due to the model's ability to handle 
+This thesis will use Multinomial Naïve Bayes to classify the sentiment of the text. This is due to the model's ability to handle 
 larger vocabulary sizes \citep{abbas2019mnb}. In addition, the algorithm is simple to implement, suitable for real-time applications, and highly scalable. 
 However, the algorithm's prediction accuracy is frequently lower than that of other sentiment analysis techniques \citep{song2017novelclassification}. 
 Due to the easy implementation and fast training of the algorithm, MNB will serve as the baseline classifier.\\
@@ -490,7 +490,6 @@ virtual development environment of this thesis can be found in \nameref{appendix
 While Reddit does offer an official API, the API is most useful for streaming data. 
 There are some strict limitations on accessing large amounts of historical data. As a result, the official API is not the best choice for this thesis. 
 However, \emph{pushshift.io} provides a solution for the strict limits. Essentially, Pushshift copies data from Reddit at the time it is posted. Since Pushshift uses the document-based database Elastic, it is extremely fast to query data \citep{elastic2015}.
-To access Pushshift, this thesis uses an API wrapper called \emph{PMAW}. Since requests are I/O-bound, PMAW is multithreaded. Hence, requests can be run asynchronously which allows the data to be loaded much faster \citep{pmaw2021}.
 
 For this thesis all Gamestop (GME) related posts between January 1st, 2020 and October 26th, 2021 were requested for the subreddit WallStreetBets. 
 The query returns 89 columns. Most of which, however, can be dropped since they either are not useful for this thesis or contain no data. 
@@ -499,9 +498,9 @@ Emoticons are also included in the content text. In total 179,544 posts were obt
 text of every tenth Reddit post. Of all manually labeled data 3479 (19.4\%) are bearish, 5119 (28.5\%) are neutral and 9357 (52.1\%) are bullish. \\
 
 \noindent\textbf{GameStop Stock Price}\\
-By using the python library yfinance, stock prices for GameStop can easily be obtained from Yahoo Finance. The start and end dates are the same as the ones used to load data from Reddit.
-By loading the data, the columns Date, Open, High, Low, Close, Adjusted Close and Volume are returned. This thesis only uses the Date, Volume and Adjusted Close, which is the closing price
-of the stock after adjusting for factors such as dividend payouts.
+By using the python library yfinance, stock prices for GameStop were obtained from Yahoo Finance. The start and end dates are the same as the ones used to load data from Reddit.
+The query returns the columns Date, Open, High, Low, Close, Adjusted Close and Volume. This thesis only uses the Date, Volume and Adjusted Close, which is the closing price
+of the stock after adjusting for factors such as dividend payouts. Volume refers to the number of stocks traded on a given day.
 
 \subsubsection{Active Learner Implementation}
 To implement an Active Learner the \emph{modAL} package was used. modAL was designed with modularity, flexibility and extensibility as high priorities \citep{danka2018modal}. 
@@ -590,8 +589,8 @@ The training set consists of the first 80\% of the timeseries data and the test 
 To select the optimal hyperparameters, a rolling forecast is implemented. 
 By doing so, the model is first trained on the train set and then predicts the first timestep of the validation set. After that, the
 predicted value can be compared to the actual value of the validation set at the given timestep. Subsequently, the actual value
-is added to the train set and the process repeated. \citep{sima2018timeseries}. To test the generalization performance, however, no
-rolling window approach is applied on the test set. Instead, the model is supposed to predict the entire test set based on the parameters
+is added to the train set and the process is repeated. \citep{sima2018timeseries}. To test the generalization performance, however, no
+rolling window approach is applied on the test set. Instead, the model will predict the entire test set based on the parameters
 it has learned before. By doing so, it is tested how well it would perform in a real world scenario.\\
 
 \noindent\textbf{ARIMA}\\
@@ -600,7 +599,7 @@ By visualizing the stock price, no seasonality was identified. This makes sense,
 hence does not contain any repeating patterns.
 After differencing the time-series once the dickey-fuller test was applied, which showed stationarity at the 1\% significance level.
 The hyperparameters that can be optimized are the number of lag observations
-included in the model (p), the number of times the data needs to be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}.\\
+included in the model (p), the number of times the data shall be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}.\\
 
 \noindent\textbf{LSTM}\\
 The data fed into the LSTM, in comparison to the ARIMA model, was not differenced as one of the strengths of an LSTM is that it can also work well with non-stationary data.
@@ -608,7 +607,7 @@ As the first step, the input data was scaled to be between 0 and 1. This is stan
 less sensitive to the scale of the input data.
 The LSTM looks for the optimal hyperparameters of the optimizer, the lookback period, and the dropout on the input which excludes a random subset of the data from the node activation and update of the weights.
 A lookback period between one and five days was chosen, because \cite{saud2020lookback} found that a suitable lookback period for LSTMs is less than 5. 
-In addition to only the price as an input feature, trading volume and sentiment were also included as scaled input features.
+In addition to the price, trading volume and sentiment were also included as scaled input features.
 For the model that also includes sentiment, however, some additional preprocessing steps were required. That is because sentiment is measured for every post, of which there
 can be multiple per day, whereas there is only one time-series observation per day.
 Therefore, sentiment was encoded as -1 for bearish, 0 for neutral and 1 for bullish. Then the sentiment was summed up and added
@@ -625,7 +624,7 @@ Whereas, if more people are pessimistic about the stock, that leads to a lower s
 
 This section is broken down into three parts. First the results of the Active Learner are looked at, then the sentiment models and
 lastly the stock price prediction models. If the visualization uses a horizontal bar chart, the best result is the one on top.
-If the visualization contains multiple line charts, the best result is drawn as a solid line and the rest as a dashed line.
+If the visualization contains multiple line charts, the best result is drawn as a solid line and the rest as dashed lines.
 
 \subsection{Active Learner Results}
 The Active Learner is represented as  a line chart with the accuracy on the y-axis and the respective query instance on the x-axis.
@@ -654,21 +653,21 @@ performs much better, than just randomly guessing the majority class (bullish). 
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[scale=0.45]{NB_hyperparam.png}
+    \includegraphics[scale=0.43]{NB_hyperparam.png}
     \caption{Accuracy of NB With Varying Hyperparameters}
     \label{fig:nb_hyperparam}
 \end{figure}
 
-
+\newpage
 \noindent\textbf{LSTM}\\
 The LSTM finds its optimal hyperparameters with an accuracy of 89\% after three epochs, as can be seen in Figure \ref{fig:LSTM_Accuracy_Val_Set}.
-After three epochs the model seems to start overfitting a little bit. This can be concluded, as the valuation set accuracy starts dropping, while the training set
+After three epochs the model seems to start overfitting a little bit. This can be concluded, as the validation set accuracy starts dropping, while the training set
 accuracy keeps improving. The same can be argued for the loss. The accuracy and loss for the trainining and validation set can be found in \nameref{appendix:LSTM_Sentiment_Classifier}.
 The optimal hyperparameters are a dropout rate of zero and the Adam optimizer. \\
 
-\begin{figure}[!htb]
+\begin{figure}[!hb]
     \centering
-    \includegraphics[scale=0.5]{LSTM_Accuracy_Val_Set.PNG}
+    \includegraphics[scale=0.54]{LSTM_Accuracy_Val_Set.PNG}
     \caption{Accuracy of LSTM Validation Set With Varying Hyperparameters}
     \label{fig:LSTM_Accuracy_Val_Set}
 \end{figure}
@@ -683,111 +682,111 @@ The optimal hyperparameters that were found are an AdamW optimizer with a learni
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[scale=0.5]{BERT_Accuracy_Validation_Set.PNG}
+    \includegraphics[scale=0.55]{BERT_Accuracy_Validation_Set.PNG}
     \caption{Accuracy of BERT Validation Set With Varying Hyperparameters}
     \label{fig:Figure BERT_Accuracy_Validation_Set}
 \end{figure}
 
-\subsubsection{Write later about Test set}
-Based on that the accuracy BERT was chosen to label the rest of the data. To compare how well the models generalize, the evaluation metrics
-of the testsets are outlined in Table \ref{tab:results}.
-The commonly used VADER lexicon is included for illustrative purposes.
-As can be seen VADER underperforms the NB baseline model by a big margin.
-Both BERT and the LSTM, however, show quite strong results even though they overfit quite a bit.
+Based on the validation accuracy BERT was chosen to label the rest of the data.
+To compare how well the models generalize, the evaluation metrics of the testsets are outlined in Table \ref{tab:results}.
+All models seem to generalize very well and their accuracy on the test set is only marginally lower than on the validation set.
+Again, BERT shows better performance than the LSTM and NB, even though their metrics also show satisfactory results.
+VADER, however, does not perform very well.
+With regards to predicting the classes, all models achieve high Precision, Recall and F\textsubscript{1}-Score when predicting the target bullish.
+While both BERT and the LSTM also do relatively well on other classes, MNB does not show as strong results. Interestingly, however, the LSTM achieves better metrics
+for some classes than BERT.
+How well certain classifiers do on specific classes can be found in \nameref{appendix:classification_report_for_classes}.
 
-\begin{table}[!htb]
-    \caption{Test Set Evaluation Metrics for NB, LSTM and BERT - Needs to be updated!}
+\begin{table}[!ht]
+    \caption{Test Set Macro Average Evaluation Metrics Models}
     \label{tab:results}
     \centering
     \small
+    \scalebox{0.93}{
+        \begin{tabular}{lllrr}
+            \toprule
+                                            & \multicolumn{4}{c}{Evaluation Metrics} \\
+                                            \cmidrule{2-5}
+                                Model       & Accuracy      & Precision     & Recall    & F\textsubscript{1}-Score \\
+                \midrule
+                \multirow{1}{*}{MNB}         & 0.80          & 0.72          & 0.79      & 0.75                      \\
+                \midrule
+                \multirow{1}{*}{LSTM}       & 0.86          & 0.86          & 0.85      & 0.85                      \\
+                \midrule
+                \multirow{1}{*}{BERT}       & \textbf{0.89}          & \textbf{0.87}          & \textbf{0.85}      & \textbf{0.86}                      \\
+                \midrule
+                \multirow{1}{*}{VADER}      & 0.39          & 0.38          & 0.39      & 0.38                      \\
 
-    \begin{tabular}{lllrr}
-        \toprule
-                                        & \multicolumn{4}{c}{Evaluation Metrics} \\
-                                        \cmidrule{2-5}
-                            Model       & Accuracy      & Precision     & Recall    & F\textsubscript{1}-Score \\
-            \midrule
-            \multirow{1}{*}{NB}         & \textbf{0.79}          & \textbf{0.74}          & \textbf{0.82}      & \textbf{0.76}                      \\
-            \midrule
-            \multirow{1}{*}{LSTM}       & 0.50          & 0.53          & 0.53      & 0.53                      \\
-            \midrule
-            \multirow{1}{*}{BERT}       & 0.52          & 0.17          & 0.33      & 0.23                      \\
-            \midrule
-            \multirow{1}{*}{VADER}      & 0.39          & 0.38          & 0.39      & 0.38                      \\
-
-        \bottomrule
-    \end{tabular}
-
+            \bottomrule
+        \end{tabular}
+    }
 \end{table}
-
-\subsection{Stock Prediction Results}
+\newpage
+\subsection{Stock Prediction Evaluation}
 The best performing stock price prediction model and its hyperparameters was selected based on the RMSE of the validation set. As can be seen
 in Table \ref{tab:results_stocks_valset}, the LSTM that only used Price as its input feature achieved the lowest RMSE for a given set of hyperparameters.
+Figure \ref{fig:lstm_models_rmse_validation_set} shows the RMSE of the validation set for each LSTM model's respective input features with their optimal hyperparameter setting.
+The RMSE and Loss of the training and validation set can be found in \nameref{appendix:lstm_models_rmse_loss}.
 
-\begin{table}[!htb]
+\begin{table}[!h]
     \caption{Validation Set RMSE for ARIMA and LSTM Time-Series Models}
     \label{tab:results_stocks_valset}
     \centering
     \small
+    \scalebox{0.93}{
+        \begin{tabular}{lllrr}
+            \toprule                                        
+                                Model       & RMSE  \\
+                \midrule
+                \multirow{1}{*}{ARIMA}         & 51.96  \\
+                \midrule
+                \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 29.53   \\
+                \midrule
+                \multirow{1}{*}{LSTM including Price and Sentiment}       & 25.29   \\
+                \midrule
+                \multirow{1}{*}{LSTM including Price and Trading Volume}      & 33.40    \\
+                \midrule
+                \multirow{1}{*}{LSTM that only includes Price}      & \textbf{24.11} \\
 
-    \begin{tabular}{lllrr}
-        \toprule                                        
-                            Model       & RMSE  \\
-            \midrule
-            \multirow{1}{*}{ARIMA}         & 51.96  \\
-            \midrule
-            \multirow{1}{*}{LSTM including Price, Trading Volume and Sentiment}       & 29.53   \\
-            \midrule
-            \multirow{1}{*}{LSTM including Price and Sentiment}       & 25.29   \\
-            \midrule
-            \multirow{1}{*}{LSTM including Price and Trading Volume}      & 33.40    \\
-            \midrule
-            \multirow{1}{*}{LSTM that only includes Price}      & \textbf{24.11} \\
-
-        \bottomrule
-    \end{tabular}
-
+            \bottomrule
+        \end{tabular}
+    }
 \end{table}
 
-Figure \ref{fig:lstm_models_rmse_validation_set} shows the RMSE of the validation set for each LSTM model's respective input features with their optimal hyperparameter setting.
-Even though on the validation set all models seem to flatten out eventually, the visualizations of the training set indicate that the model hasn't finished
-learning its optimal weights yet and more epochs may be benefitial. The RMSE and Loss of the training and validation set can be found in \nameref{appendix:lstm_models_rmse_loss}.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Best_Params_Of_Model_RMSE_Validation_Set.png}
+    \caption{Validation Set RMSE of Models with Various Input Features and Their Optimal Hyperparameters}
+    \label{fig:lstm_models_rmse_validation_set}
+\end{figure}
 
 The RMSE of the best performing model on the validation set are presented in Figure \ref{fig:lstm_price_rmse_best_params}. As can be seen, the lowest loss can be achieved
 at epoch 28 with the hyperparameter setting Dropout equals zero, an Adam optimizer and lookback equals one. Since too many hyperparameters
 were analyzed, only the five best performing ones were visualized. 
 The RMSE and Loss of the model can be found in \nameref{appendix:RMSE_Loss_Best_Model} and the models with other input features can be found in \nameref{appendix:Graphics}.
-Because ARIMA is not trained over epochs, it is visualized as a bar-chart in Figure \ref{fig:arima_rmse}. As can be seen, the optimal hyperparameter setting is (0, 0, 1).
-
-\begin{figure}
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=\textwidth]{ARIMA_RMSE.png}
-    \caption{RMSE of ARIMA}
-    \label{fig:arima_rmse}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[scale = 0.55]{Best_Params_Of_Model_RMSE_Validation_Set.png}
-    \caption{Validation Set RMSE of Models with Various Input Features and Their Optimal Hyperparameters}
-    \label{fig:lstm_models_rmse_validation_set}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[scale = 0.55]{Only_Price_Params_RMSE_Validation_Set.png}
+    \includegraphics[scale = 0.45]{Only_Price_Params_RMSE_Validation_Set.png}
     \caption{RMSE of Five Optimal Hyperparameters of LSTM Model With Only Price as Input Feature}
     \label{fig:lstm_price_rmse_best_params}
 \end{figure}
 
+Because ARIMA is not trained over epochs, it is visualized as a bar-chart in Figure \ref{fig:arima_rmse}. As can be seen, the optimal hyperparameter setting is (0, 0, 1).
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.38]{ARIMA_RMSE.png}
+    \caption{RMSE of ARIMA}
+    \label{fig:arima_rmse}
+\end{figure}
 
 To see how well the different stock price prediction models generalize, they were evaluated based on their test set.
-While all models seem to overfit quite a lot, the results of the LSTM models still seem promising. On the test set, however,
-the model that includes price and trading volume seems to achieve the best performance. However, models shall always be selected
-by their training set, which is why the model that only includes price shall be used. On the test set, it only ranks slighly worse
-than the best performing model.
+Because the time series training, validation and test sets are split into windows, they do not necessarily share the same
+characteristics. As can be seen in Table \ref{tab:results_stocks}, the RMSE of most models is lower than that of the
+validation set. This can be explained by the circumstance that the test set does not contain as volatile periods as the
+validation set.
 
-\begin{table}
+\begin{table}[!h]
     \caption{Test Set Evaluation Metrics for ARIMA and LSTM Time-Series Models}
     \label{tab:results_stocks}
     \centering
@@ -814,12 +813,17 @@ than the best performing model.
 
 \end{table}
 
-As the plot of the predition of the test set in Figure \ref{fig:price_forecast_best_model}, it can be seen that the model does a relatively good job at generalizing.
-Even though it does not overlap with the actual stock price at most occasions, it generally got the direction correct.
+While the LSTM seems to understand the strucut of the time-series and hence achieve good evaluation metrics, the ARIMA model
+overfit a lot. While the LSTM that only includes price as its input feature was selected as the preferred model based on the
+validation set, the LSTMs that include other features as well achieve better metrics on the test set. However, the generalization
+performance of the model that only includes price still seems satisfactory.
+This can also be concluded when plotting the LSTM that only includes price as its input.
+As can be seen in \ref{fig:price_forecast_best_model} the model generally gets the price direction correct, even though it does not
+overlap with the actual stock price at most timesteps.
 Additionally, the prediction was able to identify when the direction of the stock price changes to both the up- and downside.
 The price forecasts of the other models are represented in \nameref{appendix:Forecast}.
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{no_other_feature_pred.png}
     \caption{Price Forecast of Selected Model from Validation Set}
@@ -829,31 +833,59 @@ The price forecasts of the other models are represented in \nameref{appendix:For
 % End Results ----
 
 % Begin Discussion ----
-
+\newpage
 \section{Discussion}
 
-As the 'to the moon' WallStreetBets movement had a tremendous impact on the financial markets and the lives of individuals, the methodology proposed in this thesis aims to accurately measure and monitor the subreddit. As a result, the disruptions to the financial markets may be avoided and stability be ensured.
-The underlying hypothesis of this thesis is that by accurately measuring the sentiment of the forum, changes in the stock price can be predicted. This is not with its own challenges, however. First of all, the terminology used on the forum is currently not covered by any sentiment lexicas. Additionally, there are no datasets that contain labeled data of the forum. As a result, this thesis proposes an Active Learner to annotate the data for a fraction of the total cost. However, the performance of the Active Learner was not as high as hoped. This can be attributed to the ambiguity of posts at the document level. Even when manually labeling the data it was not always entirely clear on how to classify a post. While the advantages of an Active Learner still seem promising, a different labeling approach, such as part-of-speech tagging might be a better solution than on the document level.
-The data obtained by the Active Learner can subsequently be used as the ground truth data which can be fed into various sentiment analysis methods.
-Even though BERT achieved the best performance, generalization, etc.
-Once the sentiment is obtained, it can be tested whether it actually contributes to the predictive capabilities. Even though predictions are quite accurate when including sentiment, especially generalization -> how does it do?
-It is shown that a LSTM model that only makes predictions based on price, actually performs better than a model that includes sentiment. One possible explanation for that is the efficient market hypothesis, which assumes that all available information is already priced into the stock price. Find paper. Furthermore, the results show that an LSTM performs better than ARIMA.
-Therefore, it can be concluded that while the inclusion of sentiment shows better predictive capabilities than for example the feature trading volume, it does not enhance the performance of a model that only relies on price.
-I strongly believe that this thesis contributes to the existing literature on WallStreetBets.
+As the 'to the moon' WallStreetBets movement had and will have a tremendous impact on the financial markets
+and the lives of individuals, it is important to accurately measure and monitor the eponymous subreddit.
+As a result, disruptions to the financial markets may be avoided and stability ensured.
+The underlying hypothesis of this thesis is that by accurately measuring the sentiment of the forum changes in the Gamestop stock price can be predicted.
+This is not without its own challenges, however.
 
+First of all, to the best of my knowledge there are no datasets available that contain labeled data of the forum. It is
+argued that having a labeled dataset that is tailored to a specific domain generally leads to better results \emph{(reference to literature)}.
+Therefore, this thesis proposes an Active Learner to annotate the data for a fraction of the total cost.
+However, the accuracy of the Active Learner was not as high as expected.
+This can be attributed to the ambiguity of forum-posts at the document level.
+Even when manually labeling the data it was not always entirely clear how to appropriately classify it. 
+While the advantages of an Active Learner still seem promising, a different labeling approach, such as part-of-speech tagging or
+named entity recognition might be a better solutions than simply labeling the data on the document level \emph{(reference to literature)}.\\
+After the ground truth data is created, it can be used by machine learning models which have demonstrated to perform well on sentiment classification tasks \emph{(reference to literature)}.
+The literature, in contrast, usually uses a lexicon based approach to classify the sentiment of WallStreetBets.
+However, to the best of my knowledge the domain-specific terminology used on the forum is currently not covered by any sentiment lexicas,
+which may lead to incorrect conclusions.
+
+This thesis shows that the general purpose VADER lexicon is not suitable for sentiment classification on WallStreetBets.
+In contrast, a traditional machine learning model such as Naive Bayes or deep learning approaches such as BERT or LSTMs
+show much better performance. While BERT produces the best evaluation metrics, the LSTM only performs marginally worse.
+Further research, however, is needed on why the machine learning models performed that well even 
+though the Active Learner did not deliver highly accurate ground truth data. 
+It could be argued that the Active Learner did in fact deliver good results, but that the test set used contained many
+complex instances. 
+Additionally, one reason may be that the test set was simply too small and did not reflect the true properties of the dataset.
+Of course, it can also be argued that the commonly applied approach in the literature of merging the train and test set at 
+every iteration of the Active Learner is better than the approach chosen in this thesis, which is having the test set set aside initially.
+Answering these questions, however, is subject for future research.
+Nonetheless, arguing that the models overfit would in my opinion not be correct, because all models show good results on the test set.
+For all models the accuracy on the test set is only slightly lower than on the validation set, which would make overfitting unlikely.
+
+
+Once accurate sentiment is obtained it can be tested whether or not it adds to predictive capabilities with regards to time-series forecasting.
+This thesis shows, that while the results seem promising when including sentiment as an input feature, it does not necessarily outperform a
+model that only includes price to forecast stock prices. One possible explanation for that is the Efficient Market Hypothesis, which states
+that all publicly available information and expectations are already priced into the stock price \citep{fama1970emh}.
+However, it needs to be noted that this thesis only analyzed the impact on the subsequent day which gives the market enough time to incorporate
+the sentiment of the forum. The immediate influence of sentiment on changes in the stock price may be more pronounced. 
 
 % End Discussion ----
 
 % Begin Conclusion ----
 
 \section{Conclusion}
-This thesis proposes the use of an Active Learner to drastically reduce the total cost of annotation. 
-As a result, it becomes more feasible to create a fully labeled domain-specific dataset. 
-Once a fully labeled dataset is obtained, it can be used in supervised learning algorithms. 
-The results show that using state of the art models underperform the simple baseline NB classifier.
+Yet to be written...
 
 % End Conclusion ----
-
+\newpage
 \bibliography{references}
 \pagebreak
 \section{Appendices}
@@ -871,65 +903,113 @@ andromeda -> jupiter (0.95), mars (0.94), uranus (0.93) \\
 ape -> autist (0.94), monkey (0.91), retard (0.90) \\
 hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 
-\subsection{Appendix LSTM\_Sentiment\_Classifier}
+\newpage
+\subsection{Appendix C}
+This is appendix C.
 \label{appendix:LSTM_Sentiment_Classifier}
-\begin{figure}
+\begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{LSTM_Accuracy.png}
-    \includegraphics[scale=0.5]{LSTM_Loss.png}
+    \includegraphics[scale=0.43]{LSTM_Accuracy.png}
+    \includegraphics[scale=0.43]{LSTM_Loss.png}
     \caption{Accuracy and Loss of LSTM-Classifier with Varying Hyperparameters}
     \label{fig:lstm_acc_loss}
 \end{figure}
 
 \pagebreak
-\subsection{Appendix BERT\_Sentiment\_Classifier}
+\subsection{Appendix D}
+This is appendix D.
 \label{appendix:BERT_Sentiment_Classifier}
 \begin{figure}[!htb]
     \centering
-    \includegraphics[scale=0.5]{BERT_Accuracy.png}
-    \includegraphics[scale=0.5]{BERT_Loss.png}
+    \includegraphics[scale=0.43]{BERT_Accuracy.png}
+    \includegraphics[scale=0.43]{BERT_Loss.png}
     \caption{Accuracy and Loss of BERT-Classifier with Varying Hyperparameters}
     \label{fig:bert_acc_loss}
 \end{figure}
 
-\pagebreak
+\subsection{Appendix E}
+\label{appendix:classification_report_for_classes}
 
-\subsection{Appendix RMSE and Loss of Input Features}
-\label{appendix:lstm_models_rmse_loss}
-\begin{figure}
+\begin{table}[!htb]
+    \caption{Class Performance of Sentiment Classifiers}
+    \label{tab:ClassPerformanceOfModels}
     \centering
-    \includegraphics[scale = 0.55]{Best_Params_Of_Model_RMSE.png}
-    \includegraphics[scale = 0.55]{Best_Params_Of_Model_Loss.png}
+    \small
+
+    \begin{tabular}{lllrr}
+        \toprule
+                                        & \multicolumn{3}{c}{MNB} \\
+                                        \cmidrule{2-4}
+                            Class       & Precision     & Recall    & F\textsubscript{1}-Score \\
+            \midrule
+            \multirow{1}{*}{Bearish}       & 0.57          & 0.79      & 0.66                      \\
+            \midrule
+            \multirow{1}{*}{Neutral}       & 0.68          & 0.75      & 0.71                      \\
+            \midrule
+            \multirow{1}{*}{Bullish}       & 0.91          & 0.81      & 0.86                      \\
+        \bottomrule
+    \end{tabular}
+    \begin{tabular}{lllrr}
+                                        & \multicolumn{3}{c}{LSTM} \\
+                                        \cmidrule{2-4}
+                            Class       & Precision     & Recall    & F\textsubscript{1}-Score \\
+            \midrule
+            \multirow{1}{*}{Bearish}       & 0.82          & 0.80      & 0.81                      \\
+            \midrule
+            \multirow{1}{*}{Neutral}       & 0.82          & \textbf{0.80}      & \textbf{0.81}                      \\
+            \midrule
+            \multirow{1}{*}{Bullish}       & \textbf{0.93}          & 0.94      & \textbf{0.93}                      \\
+        \bottomrule
+    \end{tabular}
+    \begin{tabular}{lllrr}
+                                        & \multicolumn{3}{c}{BERT} \\
+                                        \cmidrule{2-4}
+                            Class       & Precision     & Recall    & F\textsubscript{1}-Score \\
+            \midrule
+            \multirow{1}{*}{Bearish}       & \textbf{0.83}          & \textbf{0.83}      & \textbf{0.83}                      \\
+            \midrule
+            \multirow{1}{*}{Neutral}       & \textbf{0.84}         & 0.77      & 0.80                      \\
+            \midrule
+            \multirow{1}{*}{Bullish}       & 0.92          & \textbf{0.94}      & 0.93                      \\
+        \bottomrule
+    \end{tabular}
+
+\end{table}
+\newpage
+\subsection{Appendix F}
+\label{appendix:lstm_models_rmse_loss}
+This is appendix F.
+\begin{figure}[!hb]
+    \centering
+    \includegraphics[scale = 0.4]{Best_Params_Of_Model_RMSE.png}
+    \includegraphics[scale = 0.4]{Best_Params_Of_Model_Loss.png}
     \caption{RMSE and Loss of Models with Various Input Features and Their Optimal Hyperparameters}
     \label{fig:lstm_models_rmse_loss}
 \end{figure}
 
-\subsection{Appendix RMSE and Loss of Best Model}
+\subsection{Appendix G}
 \label{appendix:RMSE_Loss_Best_Model}
-\begin{figure}
+This is appendix G.
+\begin{figure}[!hb]
     \centering
-    \includegraphics[scale = 0.55]{Only_Price_Params_RMSE.png}
-    \includegraphics[scale = 0.55]{Only_Price_Params_Loss.png}
+    \includegraphics[scale = 0.4]{Only_Price_Params_RMSE.png}
+    \includegraphics[scale = 0.4]{Only_Price_Params_Loss.png}
     \caption{Five Optimal Hyperparameters of LSTM Model With Only Price as Input Feature}
     \label{fig:lstm_price_rmse_loss}
 \end{figure}
 
-\subsection{Appendix Graphics}
+\subsection{Appendix H}
 \label{appendix:Graphics}
-
-\begin{figure}
+This is appendix H.
+\begin{figure}[!hb]
     \centering
     \includegraphics[width=\textwidth]{Only_Trading_Volume.png}
     \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price and Trading Volume}
-\end{figure}
-
-\begin{figure}
-    \centering
     \includegraphics[width=\textwidth]{Only_Sentiment.png}
     \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price and Sentiment}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{All_Features.png}
     \caption{5 Best Hyperparameters of LSTM Time-Series Model That Uses Price, Trading Volume and Sentiment}
@@ -937,7 +1017,7 @@ hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 
 
 \pagebreak
-\subsection{Appendix Forecast}
+\subsection{Appendix I}
 \label{appendix:Forecast}
 As can be seen in Figure \ref{fig:arima_prediction_test_set} the ARIMA model simply seems to extrapolate the previous trend into the future.
 In contrast, Figure \ref{fig:model_only_trading_volume_forecast_test_set} represents the model with the best metrics on the test set, which shows quite strong predictive results.
