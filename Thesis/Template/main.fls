@@ -1233,11 +1233,6 @@ INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Accuracy_Validation_
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Accuracy_Validation_Set.PNG
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/BERT_Accuracy_Validation_Set.PNG
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
-INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
-INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
-INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
-INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
-INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_RMSE_Validation_Set.png
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_RMSE_Validation_Set.png
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/Best_Params_Of_Model_RMSE_Validation_Set.png
@@ -1252,6 +1247,11 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
+INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
+INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
+INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
+INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
+INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/ARIMA_RMSE.png
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/no_other_feature_pred.png
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/no_other_feature_pred.png
 INPUT /Users/stefanwinter/Local/Thesis/Thesis/Template/no_other_feature_pred.png

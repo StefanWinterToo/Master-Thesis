@@ -526,6 +526,32 @@ Du, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Fama%
+}{%
+Fama%
+}{%
+{\protect \APACyear {1970}}%
+}]{%
+fama1970emh}
+\APACinsertmetastar {%
+fama1970emh}%
+\begin{APACrefauthors}%
+Fama, E\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1970}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Efficient Capital Markets: A Review of Theory and
+  Empirical Work} {Efficient capital markets: A review of theory and empirical
+  work}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Finance}{25}{2}{383-417}.
+\newblock
+\begin{APACrefURL} \url{http://www.jstor.org/stable/2325486} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Feng%
 \ \BBA {} Johansson%
 }{%
@@ -1036,6 +1062,36 @@ Kotelnikova, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Lagrari%
+\ \BBA {} Elkettani%
+}{%
+Lagrari%
+\ \BBA {} Elkettani%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+Lagrari2021}
+\APACinsertmetastar {%
+Lagrari2021}%
+\begin{APACrefauthors}%
+Lagrari, F\BHBI E.%
+\BCBT {}\ \BBA {} Elkettani, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Traditional and Deep Learning Approaches for Sentiment
+  Analysis: A Survey} {Traditional and deep learning approaches for sentiment
+  analysis: A survey}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Advances in Science, Technology and Engineering Systems
+  Journal}{6}{5}{1-7}.
+\newblock
+\begin{APACrefDOI} \doi{10.25046/aj060501} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 LeBaron%
 \ \BBA {} Weigend%
 }{%
@@ -1471,31 +1527,6 @@ Piñeiro-Chousa, J.%
 \APACjournalVolNumPages{Psychology and Marketing}{34}{}{101-108}.
 \newblock
 \begin{APACrefDOI} \doi{10.1002/mar.20976} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Podolak%
-}{%
-Podolak%
-}{%
-{\protect \APACyear {2021}}%
-}]{%
-pmaw2021}
-\APACinsertmetastar {%
-pmaw2021}%
-\begin{APACrefauthors}%
-Podolak, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{October}{1}.
-\newblock
-\APACrefbtitle {PMAW: Pushshift Multithread API Wrapper.} {Pmaw: Pushshift
-  multithread api wrapper.}
-\newblock
-\APAChowpublished {Web}.
-\newblock
-\begin{APACrefURL} \url{https://github.com/mattpodolak/pmaw} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -2059,6 +2090,35 @@ Song, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Stanislawek%
+, Wróblewska%
+, Wójcicka%
+, Ziembicki%
+\BCBL {}\ \BBA {} Biecek%
+}{%
+Stanislawek%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+stanislawek2019named}
+\APACinsertmetastar {%
+stanislawek2019named}%
+\begin{APACrefauthors}%
+Stanislawek, T.%
+, Wróblewska, A.%
+, Wójcicka, A.%
+, Ziembicki, D.%
+\BCBL {}\ \BBA {} Biecek, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+\APACrefbtitle {Named Entity Recognition -- Is there a glass ceiling?} {Named
+  entity recognition -- is there a glass ceiling?}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Sugitomo%
 , Kevin%
 , Jannatri%
@@ -2482,6 +2542,32 @@ Zhengqi, P.%
 \begin{APACrefURL} \url{https://aclanthology.org/K19-1082} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.18653/v1/K19-1082} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ötker Robe%
+\ \BBA {} Podpiera%
+}{%
+Ötker Robe%
+\ \BBA {} Podpiera%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+robe2013markets}
+\APACinsertmetastar {%
+robe2013markets}%
+\begin{APACrefauthors}%
+Ötker Robe, I.%
+\BCBT {}\ \BBA {} Podpiera, A\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{11}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Social Impact of Financial Crises} {The social
+  impact of financial crises}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{World Bank Policy Research Working Paper}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
