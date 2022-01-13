@@ -1121,10 +1121,10 @@ LeBaron, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Lim%
+B.~Lim%
 \ \BBA {} Zohren%
 }{%
-Lim%
+B.~Lim%
 \ \BBA {} Zohren%
 }{%
 {\protect \APACyear {2020}}%
@@ -1150,6 +1150,35 @@ Lim, B.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1098/rsta.2020.0209} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Y.~Lim%
+, Seo%
+\BCBL {}\ \BBA {} Jung%
+}{%
+Y.~Lim%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+lim2020fine}
+\APACinsertmetastar {%
+lim2020fine}%
+\begin{APACrefauthors}%
+Lim, Y.%
+, Seo, D.%
+\BCBL {}\ \BBA {} Jung, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fine-tuning BERT Models for Keyphrase Extraction in
+  Scientific Articles} {Fine-tuning bert models for keyphrase extraction in
+  scientific articles}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{JOURNAL OF ADVANCED INFORMATION TECHNOLOGY AND
+  CONVERGENCE}{10}{1}{45-56}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
