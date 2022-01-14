@@ -16,43 +16,43 @@ apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in jain2017ASO
 You've used 86 entries,
             6951 wiz_defined-function locations,
-            1807 strings with 29701 characters,
-and the built_in function-call counts, 181976 in all, are:
-= -- 22526
+            1807 strings with 29705 characters,
+and the built_in function-call counts, 181456 in all, are:
+= -- 22462
 > -- 1634
-< -- 8968
-+ -- 8983
+< -- 8954
++ -- 8943
 - -- 176
-* -- 11740
-:= -- 33312
+* -- 11710
+:= -- 33219
 add.period$ -- 386
 call.type$ -- 86
 change.case$ -- 1538
 chr.to.int$ -- 0
 cite$ -- 173
-duplicate$ -- 4776
-empty$ -- 6843
-format.name$ -- 2651
-if$ -- 34393
+duplicate$ -- 4731
+empty$ -- 6827
+format.name$ -- 2635
+if$ -- 34313
 int.to.chr$ -- 0
 int.to.str$ -- 258
 missing$ -- 0
 newline$ -- 2354
 num.names$ -- 692
-pop$ -- 3602
+pop$ -- 3594
 preamble$ -- 1
 purify$ -- 404
 quote$ -- 0
-skip$ -- 11172
+skip$ -- 11159
 stack$ -- 0
-substring$ -- 9923
-swap$ -- 2739
+substring$ -- 9862
+swap$ -- 2715
 text.length$ -- 357
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 8288
 warning$ -- 1
-while$ -- 976
+while$ -- 960
 width$ -- 0
 write$ -- 3023
 (There was 1 warning)

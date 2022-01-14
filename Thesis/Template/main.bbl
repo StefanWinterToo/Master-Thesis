@@ -1005,11 +1005,11 @@ Jin, Z.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Jin-Dong%
-, Tomoko%
-\BCBL {}\ \BBA {} Junichi%
+Kim%
+, Ohta%
+\BCBL {}\ \BBA {} Tsujii%
 }{%
-Jin-Dong%
+Kim%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2008}}%
 }]{%
@@ -1017,9 +1017,9 @@ kim2008corpusannotation}
 \APACinsertmetastar {%
 kim2008corpusannotation}%
 \begin{APACrefauthors}%
-Jin-Dong, K.%
-, Tomoko, O.%
-\BCBL {}\ \BBA {} Junichi, T.%
+Kim, J\BHBI D.%
+, Ohta, T.%
+\BCBL {}\ \BBA {} Tsujii, J.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
@@ -1121,10 +1121,10 @@ LeBaron, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-B.~Lim%
+{Lim}%
 \ \BBA {} Zohren%
 }{%
-B.~Lim%
+{Lim}%
 \ \BBA {} Zohren%
 }{%
 {\protect \APACyear {2020}}%
@@ -1133,7 +1133,7 @@ lim2020lookback}
 \APACinsertmetastar {%
 lim2020lookback}%
 \begin{APACrefauthors}%
-Lim, B.%
+{Lim}, B.%
 \BCBT {}\ \BBA {} Zohren, S.%
 \end{APACrefauthors}%
 \unskip\
@@ -1153,11 +1153,11 @@ Lim, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Y.~Lim%
+Lim%
 , Seo%
 \BCBL {}\ \BBA {} Jung%
 }{%
-Y.~Lim%
+Lim%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2020}}%
 }]{%
@@ -1527,6 +1527,42 @@ Parveen, H.%
 \BIn{} (\BPG~416-419).
 \newblock
 \begin{APACrefDOI} \doi{10.1109/ICATCCT.2016.7912034} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pei%
+, Sun%
+\BCBL {}\ \BBA {} Xu%
+}{%
+Pei%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+pei2019slang}
+\APACinsertmetastar {%
+pei2019slang}%
+\begin{APACrefauthors}%
+Pei, Z.%
+, Sun, Z.%
+\BCBL {}\ \BBA {} Xu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{{\APACmonth{11}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Slang Detection and Identification} {Slang detection and
+  identification}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 23rd Conference on Computational
+  Natural Language Learning (CoNLL)} {Proceedings of the 23rd conference on
+  computational natural language learning (conll)}\ (\BPGS\ 881--889).
+\newblock
+\APACaddressPublisher{Hong Kong, China}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefURL} \url{https://aclanthology.org/K19-1082} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.18653/v1/K19-1082} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -2283,11 +2319,11 @@ Vuong, P\BPBI H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-H.~Wang%
+Wang%
 , Guo%
 \BCBL {}\ \BBA {} Chen%
 }{%
-H.~Wang%
+Wang%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2019}}%
 }]{%
@@ -2316,10 +2352,10 @@ Wang, H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-S.~Wang%
+{Wang}%
 \ \BBA {} Manning%
 }{%
-S.~Wang%
+{Wang}%
 \ \BBA {} Manning%
 }{%
 {\protect \APACyear {2012}}%
@@ -2328,7 +2364,7 @@ wang2012NB}
 \APACinsertmetastar {%
 wang2012NB}%
 \begin{APACrefauthors}%
-Wang, S.%
+{Wang}, S.%
 \BCBT {}\ \BBA {} Manning, C.%
 \end{APACrefauthors}%
 \unskip\
@@ -2340,6 +2376,38 @@ Wang, S.%
   classification}.{\BBCQ}
 \newblock
 \BIn{} (\BPG~90-94).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+, Yin%
+, Liu%
+\BCBL {}\ \BBA {} Tosato%
+}{%
+Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+wang2020automaticconstructiondomainsentiment}
+\APACinsertmetastar {%
+wang2020automaticconstructiondomainsentiment}%
+\begin{APACrefauthors}%
+Wang, Y.%
+, Yin, F.%
+, Liu, J.%
+\BCBL {}\ \BBA {} Tosato, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{08}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automatic construction of domain sentiment lexicon for
+  semantic disambiguation} {Automatic construction of domain sentiment lexicon
+  for semantic disambiguation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Multimedia Tools and Applications}{79}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s11042-020-09030-1} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -2407,42 +2475,10 @@ Xiao, L.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Yanyan%
-, Fulian%
-, Jianbo%
-\BCBL {}\ \BBA {} Marco%
-}{%
-Yanyan%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2020}}%
-}]{%
-wang2020automaticconstructiondomainsentiment}
-\APACinsertmetastar {%
-wang2020automaticconstructiondomainsentiment}%
-\begin{APACrefauthors}%
-Yanyan, W.%
-, Fulian, Y.%
-, Jianbo, L.%
-\BCBL {}\ \BBA {} Marco, T.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2020}{08}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Automatic construction of domain sentiment lexicon for
-  semantic disambiguation} {Automatic construction of domain sentiment lexicon
-  for semantic disambiguation}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Multimedia Tools and Applications}{79}{}{}.
-\newblock
-\begin{APACrefDOI} \doi{10.1007/s11042-020-09030-1} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Yue%
 , Malu%
 , Umeshwar%
-\BCBL {}\ \BBA {} ChengXiang%
+\BCBL {}\ \BBA {} Zhai%
 }{%
 Yue%
 \ \protect \BOthers {.}}{%
@@ -2455,7 +2491,7 @@ Lu2011automaticconstruction}%
 Yue, L.%
 , Malu, C.%
 , Umeshwar, D.%
-\BCBL {}\ \BBA {} ChengXiang, Z.%
+\BCBL {}\ \BBA {} Zhai, C.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
@@ -2535,42 +2571,6 @@ Zhao, J.%
 \APACjournalVolNumPages{IEEE Access}{PP}{}{1-1}.
 \newblock
 \begin{APACrefDOI} \doi{10.1109/ACCESS.2017.2672677} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Zhengqi%
-, Zhewei%
-\BCBL {}\ \BBA {} Yang%
-}{%
-Zhengqi%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2019}}%
-}]{%
-pei2019slang}
-\APACinsertmetastar {%
-pei2019slang}%
-\begin{APACrefauthors}%
-Zhengqi, P.%
-, Zhewei, S.%
-\BCBL {}\ \BBA {} Yang, X.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{{\APACmonth{11}}}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Slang Detection and Identification} {Slang detection and
-  identification}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {Proceedings of the 23rd Conference on Computational
-  Natural Language Learning (CoNLL)} {Proceedings of the 23rd conference on
-  computational natural language learning (conll)}\ (\BPGS\ 881--889).
-\newblock
-\APACaddressPublisher{Hong Kong, China}{Association for Computational
-  Linguistics}.
-\newblock
-\begin{APACrefURL} \url{https://aclanthology.org/K19-1082} \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.18653/v1/K19-1082} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

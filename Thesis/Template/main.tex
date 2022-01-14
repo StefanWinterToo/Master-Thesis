@@ -70,8 +70,8 @@
     domain-specific words and terminologies, which are shown to have a big impact on the results of sentiment analysis models. Hence, this thesis proposes a method 
     to create a labeled dataset that covers the sentiment of text data, including the terminology of a given domain. It will be shown that supervised sentiment analysis machine 
     learning models that use the domain-specific text corpus as input outperform general purpose lexicons, which are currently commonly used in both academia and industry 
-    to measure the sentiment of WallStreetBets. Furthermore, this thesis will demonstrate that stock prices can be predicted more accurately
-    if the aforementioned sentiment is included as an input feature.
+    to measure the sentiment of WallStreetBets. Furthermore, this thesis will demonstrate that stock prices can be predicted based on
+    sentiment, albeit other input features show better predictive capabilities.
 \end{abstract}
 
 \section{Data, Code and Ethics Statements}
@@ -171,7 +171,7 @@ innovative ways to enhance model performance by a few percentage points, the big
 input data in the form of a domain-specific knowledge base. It has been demonstrated that adapting data to a certain domain
 results in more accurate sentiment analysis results \citep{park2015EfficientExtraction}.
 Furthermore, it is argued that there is no general-purpose sentiment lexicon that can be optimally applied on all domains. 
-This is due to different meaning of terms, depending on the domain. A good example is the word \emph{unpredictable}, 
+This is due to different meanings of terms, depending on the domain. A good example is the word \emph{unpredictable}, 
 which would be associated with negative sentiment for a car but can be a positive label for movies \citep{bo2008opinionmining}.
 
 One proposed approach is to adapt sentiment lexicons to a specific domain \citep{Lu2011automaticconstruction}. This adapted lexicon can then be searched to find and score the sentiment 
@@ -216,8 +216,7 @@ by machine learning models.
 Once an annotated text corpus is obtained and pre-processed it can be used by machine learning models to perform sentiment analysis.
 %% Write about popular sentiment models.
 
-To further optimize performance, models can be improved, by applying a character-based 
-convolutional neural network to encode the spelling of words \citep{pei2019slang}. Other research shows that the accuracy of an
+To further optimize performance research shows that the accuracy of an
 LSTM can be improved by introducing Word2Vec to the LSTM. As a result, the one-hot encoded input to the LSTM is
 converted into a low dimensional vector that covers the semantic similarity of the words in it. Due to the lower dimensionality,
 over-fitting can be prevented and the network may also need less parameters \citep{xiao2018word2veclstm}. However, \cite{giovanni2021word2vec}
@@ -227,8 +226,8 @@ by considering varying hyperparameters of the Word2Vec embedding.
 Other research demonstrates the importance of large pre-trained models using transfer learning \citep{deng2009transferlearning}.
 \cite{devlin2019bert} introduce BERT, a pre-trained model that uses the English Wikipedia and the BooksCorpus, which shows promising results.
 One of the advantages is that only one output layer needs to be added to the model to achieve state-of-the-art sentiment analysis performance.
-However, it is also shown that BERT lacks domain awareness. Hence, it cannot differentiate between properties of source and target domains. However,
-it is also argued that a vanilla implementation can still outperform other machine learning models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
+However, it is also shown that BERT lacks domain awareness. Hence, it cannot differentiate between properties of source and target domains.
+It is also argued that a vanilla implementation can still outperform other machine learning models \citep{Du2020AdversarialAD}. Other research that compares BERT to a
 lexicon approach shows that on average BERT achieves better performance. However, the better performance cannot be observed on all analyzed test sets
 which keeps the authors "optimistic about the lexicon-based approach in general" \citep{kotelnikova2021lexiconbased}. % Maybe write that this thesis adds to the literature by comparing different models, including lexicons...
 
@@ -312,10 +311,11 @@ features and project them onto a lower dimension \citep{binu2020dimreductiontsne
 at a low dimension, the majority of the data do not belong to any particular cluster.
 The data used for the t-sne algorithm were the
 manually labeled text data that were transformed into a \emph{Term Frequency-Inverse Document Frequency (tf-idf)} representation.
-By using tf-idf, the relevancy of a word in a set of documents is determined. If a word occurs often, but in many documents
-it will rank low, as such a word might not mean much to a particular document. tf-idf is calculated by multiplying the tf part with the
+By using tf-idf, the relevancy of a word in a set of documents is determined. tf-idf is calculated by multiplying the tf part with the
 idf part. The tf represents how often a word appears while the idf part accounts for the importance of the word, depending on
-the number of documents the word can be found in \citep{Guia2019ComparisonON, jason2021tfidf}.
+the number of documents the word can be found in.
+If a word occurs often but in many documents
+it will rank low, as such a word might not mean much to a particular document \citep{Guia2019ComparisonON, jason2021tfidf}.
 
 \begin{figure}
     \centering
@@ -386,15 +386,15 @@ using a Word2Vec embedding can help solving the curse of dimensionalty that migh
 \noindent\textbf{Bidirectional Encoder Representations from Transformers (BERT)}\\
 BERT is a relatively new machine learning algorithm developed by Google in 2018 and mainly designed for 
 natural language processing. BERT is pretrained on the English Wikipedia and BooksCorpus. Because of the 
-pretraining users won't need as much computing power to achieve good results, even if the dataset is relatively 
+pretraining users will not need as much computing power to achieve good results, even if the dataset is relatively 
 small \citep{devlin2019bert}. The BERT github page even states that 
 “most NLP researchers will never need to pre-train their own model from scratch” \citep{googlegithub}.\\
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
-Due to widespread usage of lexicons, the VADER sentiment lexicon was also included. However, the results of VADER are intended for illustrative purposes only,
+Due to widespread usage of lexicons, the VADER sentiment lexicon is also included. However, the results of VADER are intended for illustrative purposes only,
 as a lexicon based approach is not within the research scope of this thesis.
 VADER is specifically designed to classify social media sentiment and also includes emoticons, acronyms and \emph{slang} words \citep{hutto2015vader}. 
-Vader looks up the associated compound score of words in the lexicon. Based on the score, the sentiment is determined.
+VADER looks up the associated compound score of words in the lexicon. Based on the score, the sentiment is determined.
 The VADER lexicon does not have any hyperparameters to tune. It is only possible to optimize results by
 changing classification thresholds.
 
@@ -557,16 +557,16 @@ is not too extreme \citep{ganganwar2012overview}.\\
 To train the classifier, the data was first converted to a tf-idf representation.
 The classifier uses five-fold gridsearch cross-validation to find the optimal parameters for
 \emph{fit\char`_prior}, which determines if prior class probabilities shall be learned, and \emph{alpha}, which is a smoothing parameter that solves
-the problem of zero probability. That problem might occur, if a an unseen word appears in the test set. By setting alpha to a value greater than
+the problem of zero probability. That problem might occur, if an unseen word appears in the test set. By setting alpha to a value greater than
 zero, the model pretends to have seen a word before.\\
 
 \noindent\textbf{Long Short Term Memory (LSTM)}\\
 Before training the LSTM, data is first fed into a Word2Vec model to learn the word embeddings. As explained in the literature, this can enhance the performance of the model by learning the similarity between words.
 Selecting optimal hyperparameters for the Word2Vec model is oftentimes neglected, even though that may lead to performance differences.
-The Word2Vec hyperparameters that were analyzed is the \emph{vector\_size, min\_count} and \emph{window}. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation,
-which asks human evaluators for their preference of among numerous word embeddings \citep{schnabel2015embeddings}.
+The Word2Vec hyperparameters that were analyzed are the \emph{vector\_size, min\_count} and \emph{window}. The optimal respective hyperparameters are 50, 1 and 1. Those were determined based on a comparative intrinsic evaluation,
+which asks human evaluators for their preference among numerous word embeddings \citep{schnabel2015embeddings}.
 A subset of the most similar words, calculated as the cosine similarity, of given words can be found in \nameref{appendix:B}.
-The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the word2vec model.
+The input and output dimensions of the Embedding layer of the LSTM, as well as the weights are taken from the Word2Vec model.
 The output dimensions of the embedding layer are also used as the units for the subsequent LSTM layer. Furthermore, the model adds a dropout layer to improve generalization. To find the optimal \emph{dropout} parameter and \emph{optimizer} for the model,
 a loop runs through a set of hyperparameters when fitting the model. The optimal model is determined by evaluating the performance on the validation set, which is 20\% of the training data. 
 The final Dense output layer uses softmax as its activation function, which is typically used for multiclass classification. 
@@ -580,7 +580,7 @@ The model is trained with a batch size of two over three epochs. Typically, BERT
 
 \noindent\textbf{Valence Aware Dictionary for sEntiment Reasoning (VADER)}\\
 VADER classifies data based on a threshold value.
-If the score is greater than or equal to the threshold, it is associated with positive sentiment. If the score is smaller than or equal to the threshold it is associated with negative sentiment. For scores
+If the score is greater than or equal to the upper bound threshold, it is associated with positive sentiment. If the score is smaller than or equal to the lower bound threshold it is associated with negative sentiment. For scores
 in between, neutral sentiment is assigned \citep{hutto2015vader}. To obtain optimal evaluation metrics varying thresholds were analyzed.
 
 \subsubsection{Stock Price Prediction Implementation}
@@ -598,7 +598,7 @@ it has learned before. By doing so, it is tested how well it would perform in a 
 First the stock price data was analyzed to identify a seasonality pattern and to check for stationarity.
 By visualizing the stock price, no seasonality was identified. This makes sense, because the data does not contain many years and
 hence does not contain any repeating patterns.
-After differencing the time-series once the dickey-fuller test was applied, which showed stationarity at the 1\% significance level.
+After differencing the time-series once the augmented dickey-fuller test was applied, which showed stationarity at the 1\% significance level.
 The hyperparameters that can be optimized are the number of lag observations
 included in the model (p), the number of times the data shall be differenced (d) and the size of the moving average window (q) \citep{sima2018timeseries}.\\
 
@@ -701,7 +701,7 @@ for some classes than BERT.
 How well certain classifiers do on specific classes can be found in \nameref{appendix:classification_report_for_classes}.
 
 \begin{table}[!ht]
-    \caption{Test Set Macro Average Evaluation Metrics Models}
+    \caption{Test Set Macro Average Evaluation Metrics}
     \label{tab:results}
     \centering
     \small
@@ -887,6 +887,7 @@ However, it needs to be noted that this thesis only analyzed the impact on the s
 the sentiment of the forum. The immediate influence of sentiment on changes in the stock price may be more pronounced, because the market might
 not be able to incorporate changes in sentiment in real time.
 
+
 % End Discussion ----
 
 % Begin Conclusion ----
@@ -935,7 +936,12 @@ would qualify as the preferred model.
 In conclusion, it can be argued sentiment obtained from WallStreetBets can be used to predict daily changes in the stock price
 of Gamestop, because it generally performed well. However, it
 does not necessarily add to the predictive capabilities of a model which would only include price as its input feature for the set
-of analyzed hyperparameters.
+of analyzed hyperparameters to predict daily changes in Gamestop.
+
+However, the meme-stock saga is not only limited to Gamestop and also affected other stocks.
+As a result, future research may be interested in analyzing the effect of domain-specific sentiment on other stocks as well.
+The hypothesis that domain-specificity affects the results of sentiment analysis should also be further explored and applied
+on different platforms.
 
 % End Conclusion ----
 \bibliography{references}
@@ -1125,7 +1131,7 @@ hedgefund -> hfs (0.93), hf (0.89), shorter (0.88) \\
 
 \newpage
 \subsection{Appendix C}
-LSTM accuracy and loss of the validation and training set.
+LSTM-Classifier accuracy and loss of the validation and training set.
 \label{appendix:LSTM_Sentiment_Classifier}
 \begin{figure}[!h]
     \centering
@@ -1137,7 +1143,7 @@ LSTM accuracy and loss of the validation and training set.
 
 \pagebreak
 \subsection{Appendix D}
-BERT accuracy and loss of the validation and training set.
+BERT-Classifer accuracy and loss of the validation and training set.
 \label{appendix:BERT_Sentiment_Classifier}
 \begin{figure}[!htb]
     \centering
@@ -1202,7 +1208,7 @@ are highlighted in \textbf{bold}.
 \newpage
 \subsection{Appendix F}
 \label{appendix:lstm_models_rmse_loss}
-RMSE and Loss of training and validation set for LSTM with different input features.
+RMSE and loss of training and validation set for LSTM with different input features.
 \begin{figure}[!hb]
     \centering
     \includegraphics[scale = 0.4]{Best_Params_Of_Model_RMSE.png}
@@ -1213,7 +1219,7 @@ RMSE and Loss of training and validation set for LSTM with different input featu
 
 \subsection{Appendix G}
 \label{appendix:RMSE_Loss_Best_Model}
-RMSE and Loss of LSTM with price as an input feature.
+RMSE and loss of LSTM with price as an input feature.
 \begin{figure}[!hb]
     \centering
     \includegraphics[scale = 0.4]{Only_Price_Params_RMSE.png}
@@ -1224,12 +1230,13 @@ RMSE and Loss of LSTM with price as an input feature.
 
 \subsection{Appendix H}
 \label{appendix:Graphics}
+The analyzed hyperparameters are: SGD, rmsprop and Adam as the optimizer; 0, 0.1 and 0.2 as the dropout rate; and a lookback period between 1 and 5. \\
 Figure \ref{fig:lstmpricetradingvolume5best} shows that the optimal hyperparameter set for an LSTM with price and trading
-volume as input features are: Dropoutrate equals zero, an Adam optimizer and lookback of one.\\
+volume as input features are: Dropout rate equals zero, an Adam optimizer and lookback of one.\\
 Figure \ref{fig:lstmpricenotradingvolume5best} shows that the optimal hyperparameter set for an LSTM with price and
-sentiment as input features are: Dropoutrate equals 0.1, an rmsprop optimizer and lookback of two.\\
+sentiment as input features are: Dropout rate equals 0.1, an rmsprop optimizer and lookback of two.\\
 Figure \ref{fig:lstmpricetradingvolumeandsentiment5best} shows that the optimal hyperparameter set for an LSTM with price,
-sentiment and trading volume as input features are: Dropoutrate equals 0.1, an rmsprop optimizer and lookback of three.
+sentiment and trading volume as input features are: Dropout rate equals 0.1, an rmsprop optimizer and lookback of three.
 
 
 \begin{figure}[!h]

@@ -14,7 +14,7 @@ To create the t-sne visualization, I relied on the documentation provided by Yel
 
 To implement the Active Learner, I used modAL: https://github.com/modAL-python/modAL
 
-To implement BERT the following tutorial was used: https://www.kaggle.com/xhlulu/disaster-nlp-keras-bert-using-tfhub/notebook
+To implement BERT the following github page was used as a rough guideline: https://github.com/carlosjsaez/MultiClassBERT/blob/main/BERT_Multi_Class_for_Scoring_Classification.ipynb
 
 The LSTM for sentiment classification was implemented by using material provided during the Deep Learning course at Tilburg University, taught by Dr. Vanmassenhove and Dr. Saygili. The LSTM implementation for time-series forecasting mostly relied on the tutorial at machinelearningmastery: https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/
 
